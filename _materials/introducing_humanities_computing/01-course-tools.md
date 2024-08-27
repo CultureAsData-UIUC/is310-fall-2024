@@ -21,26 +21,26 @@ The remainder of this page contains installation instructions for the tools/soft
 
 You should do your best to get through the majority of the installation instructions before our next class, but if you get stuck, please reach out to the instructor via Slack (especially if you've been trying for more than ~20 minutes) and also know that we will have time in our Thursday class session to help troubleshoot any installation issues. Again, any issue you face is a feature of the difficulty of working with computers, not a reflection or indication of your ability to code.
 
-## Slack
+## Discord
 
 <figure>
-   <a href="{{site.baseurl}}/assets/images/dh_slack.png">
-      <img src="{{site.baseurl}}/assets/images/dh_slack.png" alt="Our Slack Channel on DH@UIUC Slack Team" style="width:100%" class="image-popup">
+   <a href="{{site.baseurl}}/assets/images/dh_discord.png">
+      <img src="{{site.baseurl}}/assets/images/dh_discord.png" alt="Our Discord Channel on DH@UIUC Discord Team" style="width:100%" class="image-popup">
    </a>
-   <figcaption>Our Slack Channel on DH@UIUC Slack Team</figcaption>
+   <figcaption>Our Discord Channel on DH@UIUC Discord Team</figcaption>
 </figure>
 
-Slack is a communication tool that we will use for this course. You can download the app for your computer or use the web version. You can also download the app for your phone. You will need to create an account and join the course channel `is310-2024` on `DH@UIUC` team. The link to join Slack is available on Canvas and in the syllabus, and you can add yourself to our channel or ask the Instructors for assistance. 
+Discord is the primary communication tool we will use for this course. You can download the Discord app for your computer, use the web version, or download the mobile app. You will need to create an account if you don’t have one already and join our course server, DH@UIUC. The invite link to join the Discord server is available on Canvas and in the syllabus. Once you’ve joined the server, please navigate to the `#is310-2024` channel, where all course-related discussions will take place.
 
-I realize that Slack is less popular than a platform like Discord, but it is a very popular platform for Digital Humanities. In fact, the primary `DH Slack` Team is a great place to ask questions and get help from other DHers. You can read more about it and how this field uses Slack in this writeup by Amanda Visconti [https://literaturegeek.com/2016/07/06/digital-humanities-slack-community-design](https://literaturegeek.com/2016/07/06/digital-humanities-slack-community-design).
+**Important: Please change your Discord display name on our server to reflect your actual name.** This helps us maintain a clear and professional communication environment, making it easier for everyone to recognize and interact with each other.
 
-You are welcome to make any username you want, but please be sure to share who you are in the course channel so we can all get to know each other.
+Discord is a popular platform for both academic and non-academic communities, offering various features that will support our communication and collaboration throughout the course. If you need any assistance with setting up Discord or navigating the server, please don’t hesitate to ask.
 
 ## Hypothesis
 
 For our collective annotations, we will be using the Hypothesis platform. You can sign up for Hypothesis here [hypothes.is/signup]( hypothes.is/signup) and join our collective group at the link in our syllabus or via Canvas. You will need to install the Hypothesis Browser Extension for your preferred browser as well. You should follow the instructions available in this Quick Start Guide [https://web.hypothes.is/help/quick-start-guide/](https://web.hypothes.is/help/quick-start-guide/).
 
-You are welcome to make your username whatever you choose, but please share your username with the instructor. And please be sure to make your annotations in our hypothes.is group `is310-2024` and that these annotations are public. For more about using Hypothesis groups, see this guide [https://web.hypothes.is/help/annotating-with-groups/](https://web.hypothes.is/help/annotating-with-groups/).
+You are welcome to make your username whatever you choose, but please share your username with the instructor. And please be sure to make your annotations in our hypothes.is group `is310-Fall-2024` and that these annotations are public. For more about using Hypothesis groups, see this guide [https://web.hypothes.is/help/annotating-with-groups/](https://web.hypothes.is/help/annotating-with-groups/).
 
 <figure>
    <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/21135305/scopeselector-groupname-1024x585.png">

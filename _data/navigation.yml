@@ -8,8 +8,6 @@ main:
     url: /policies
   - title: "Resources"
     url: /materials/introducing-humanities-computing/01-course-tools
-  - title: "Joining Late?"
-    url: /late-join
 
 assessments:
   - title: Assessments
@@ -30,118 +28,77 @@ materials:
     children:
       - title: "Course Software & Tools"
         url: /materials/introducing-humanities-computing/01-course-tools
-      - title: "Introduction to the Command Line & File Formats"
-        url: /materials/introducing-humanities-computing/02-intro-cli-file-formats
-      - title: "Command Line Cheatsheet"
-        url: /materials/introducing-humanities-computing/04-command-line-cheatsheet
-      - title: "Introduction to Git & GitHub"
-        url: /materials/introducing-humanities-computing/03-intro-versioning
-      - title: "Advanced Git & GitHub"
-        url: /materials/introducing-humanities-computing/05-advanced-git-github
-      - title: "Introduction to Markup & Styling Web Documents"
-        url: /materials/introducing-humanities-computing/06-intro-markup
-      - title: "Introduction to the Web"
-        url: /materials/introducing-humanities-computing/07-intro-web
-  - title: Creating & Curating Humanities Data
-    children:
-      - title: "Python Refresher: Foundations (Optional)"
-        url: /materials/creating-curating-humanities-data/01-python-refresher-foundations
-      - title: "Python Refresher: Advanced (Optional)"
-        url: /materials/creating-curating-humanities-data/02-python-refresher-advanced
-      - title: "Setting Up Virtual Environments"
-        url: /materials/creating-curating-humanities-data/03-virtual-environments
-      - title: "Complex Python"
-        url: /materials/creating-curating-humanities-data/04-complex-python
-      - title: "Introduction to Web Scraping"
-        url: /materials/creating-curating-humanities-data/05-web-scraping
-      - title: "Introduction to APIs"
-        url: /materials/creating-curating-humanities-data/06-getting-data-apis
-      - title: "(Re)Introduction to Notebooks"
-        url: materials/creating-curating-humanities-data/07-intro-notebooks
-  - title: "Interpreting & Communicating Humanities Data"
-    children:
-      - title: "EDA & Data Visualization"
-        url: /materials/interpreting-communicating-humanities-data/01-eda-data-viz
-      - title: "Introduction to Text Analysis"
-        url: /materials/interpreting-communicating-humanities-data/02-intro-text
-      - title: "Advanced Text Mining"
-        url: /materials/interpreting-communicating-humanities-data/03-advanced-text-analysis/
-      - title: "Introduction to Network Analysis"
-        url: /materials/interpreting-communicating-humanities-data/04-intro-networks/
-      - title: "Introduction to Web Publishing"
-        url: /materials/interpreting-communicating-humanities-data/05-web-publishing/
-
-
+    
 schedule:
   - title: Overview
     children:
       - title: "Schedule Overview"
         url: /schedule/00-overview
-  - title: January Detailed Activities
+  - title: August Detailed Activities
     children:
-      - title: "<b>January 16</b><br> Introducing Computing in the Humanities"
-        url: /schedule/01-introducing-computing-in-the-humanities/
-      - title: "<b>January 18</b><br> Programming and Processing"
+      - title: "<b>August 27</b><br> Introducing Computing in the Humanities & Culture As Data"
+        url: /schedule/01-introducing-computing-in-the-humanities-culture-as-data/
+      - title: "<b>August 29</b><br> Programming and Processing"
         url: /schedule/02-programming-and-processing/
-      - title: "<b>January 23</b><br> Change over Time & Histories of Computing"
-        url: /schedule/03-change-over-time-histories-of-computing/
-      - title: "<b>January 25</b><br> Version & File Histories"
+  - title: September Detailed Activities
+    children:
+      - title: "<b>September 3</b><br> Histories of Culture & Computing"
+        url: /schedule/03-histories-of-culture-and-computing/
+      - title: "<b>September 5</b><br> Version & File Histories"
         url: /schedule/04-version-file-histories/
-      - title: "<b>January 30</b><br> Histories of Power and Data"
-        url: /schedule/05-histories-of-power-and-data/
-  - title: February Detailed Activities
+      - title: "<b>September 10</b><br> Digital Objects & Obsolescence"
+        url: /schedule/05-digital-objects-and-obsolescence/
+      - title: "<b>September 12</b><br> Markup & Markdown"
+        url: /schedule/06-markup-and-markdown/
+      - title: "<b>September 17</b><br> Data Feminism & Culture As Data"
+        url: /schedule/07-data-feminism-and-culture-as-data/
+      - title: "<b>September 19</b><br> Servers & Web Standards"
+        url: /schedule/08-servers-and-web-standards/
+      - title: "<b>September 24</b><br> Documentation & Definitions"
+        url: /schedule/09-documentation-and-definitions/
+      - title: "<b>September 26</b><br> Scrapes & Structures"
+        url: /schedule/10-scrapes-and-structures/
+  - title: October Detailed Activities
     children:
-      - title: "<b>February 1</b><br> Markup & Markdown"
-        url: /schedule/06-markup-and-markdown
-      - title:  "<b>February 6</b><br> Power Hierarchies & Data Feminism"
-        url:  /schedule/07-power-hierarchies-data-feminism/
-      - title:  "<b>February 8</b><br> Scrape Off & Web Structures"
-        url: /schedule/08-scraped-off-and-web-structures
-      - title:  "<b>February 13</b><br> Culture as Data & Data Cultures"
-        url: /schedule/09-culture-as-data-and-data-cultures
-      - title:  "<b>February 15</b><br> GETting Data"
-        url: /schedule/10-getting-data
-      - title:  "<b>February 20</b><br> Culture at Scale & Digital Collections"
-        url:  /schedule/11-culture-at-scale-and-digital-collections
-      - title:  "<b>February 22</b><br> Structuring Data"
-        url: /schedule/12-structuring-data
-      - title:  "<b>February 27</b><br> T(r)ending & Cleaning"
-        url:  /schedule/13-trending-and-cleaning
-      - title:  "<b>February 29</b><br> Curate & Collect"
-        url: /schedule/14-curate-and-collect
-  - title: March Detailed Activities
+      - title: "<b>October 1</b><br> Standardizing Culture & Data Archeology"
+        url: /schedule/11-standardizing-culture-and-data-archeology/
+      - title: "<b>October 3</b><br> GETting Culture"
+        url: /schedule/12-getting-culture/
+      - title: "<b>October 8</b><br> Curating vs. Cleaning"
+        url: /schedule/13-curating-vs-cleaning/
+      - title: "<b>October 10</b><br> Notes & Points"
+        url: /schedule/14-notes-and-points/
+      - title: "<b>October 15</b><br> Arguments & Plots"
+        url: /schedule/15-arguments-and-plots/
+      - title: "<b>October 17</b><br> Making A Point"
+        url: /schedule/16-making-a-point/
+      - title: "<b>October 22</b><br> Patterns & Outliers"
+        url: /schedule/17-patterns-and-outliers/
+      - title: "<b>October 24</b><br> Structuring Data"
+        url: /schedule/18-structuring-data/
+      - title: "<b>October 29</b><br> Modeling Culture"
+        url: /schedule/19-modeling-culture/
+      - title: "<b>October 31</b><br> Algorithmic Failures"
+        url: /schedule/20-algorithmic-failures/
+  - title: November Detailed Activities
     children:
-      - title: "<b>March 5</b><br> Making A Point"
-        url: /schedule/15-making-a-point
-      - title: "<b>March 7</b><br> Making A Point, Again"
-        url: /schedule/16-making-a-point-again
-      - title: "<b>March 12 & 14</b><br> SPRING BREAK"
-        url: /schedule/00-overview
-      - title: "<b>March 19</b><br> Patterns & Outliers - Class Canceled"
-        url: /schedule/17-patterns-and-outliers
-      - title: "<b>March 21</b><br> Making A Point, Again Redux"
-        url: /schedule/18-making-a-point-again-redux
-      - title: "<b>March 26</b><br> Patterns & Outliers Redux"
-        url: /schedule/19-patterns-and-outliers-redux
-      - title: "<b>March 28</b><br> Making It Count"
-        url: /schedule/20-making-it-count
-  - title: April Detailed Activities
+      - title: "<b>November 5</b><br> Reproducibility & Responsibility"
+        url: /schedule/21-reproducibility-and-responsibility/
+      - title: "<b>November 7</b><br> Augmentation & AI"
+        url: /schedule/22-augmentation-and-ai/
+      - title: "<b>November 12</b><br> Preservation & Publics"
+        url: /schedule/23-preservation-and-publics/
+      - title: "<b>November 14</b><br> Serving Looks"
+        url: /schedule/24-serving-looks/
+      - title: "<b>November 19</b><br> I Dream of Data"
+        url: /schedule/25-i-dream-of-data/
+      - title: "<b>November 21</b><br> Hauntings & Ghosts"
+        url: /schedule/26-hauntings-and-ghosts/
+  - title: December Detailed Activities
     children:
-      - title: "<b>April 2</b><br> Categories & Topics"
-        url: /schedule/21-categories-and-topics
-      - title: "<b>April 4</b><br> Clusters & Classes"
-        url: /schedule/22-clusters-and-classes
-      - title: "<b>April 9</b><br> Connecting the Dots"
-        url: /schedule/23-connecting-the-dots
-      - title: "<b>April 11</b><br> Nodes & Edges"
-        url: /schedule/24-nodes-and-edges
-      - title: "<b>April 16</b><br> Preservation & Publications"
-        url: /schedule/25-preservation-and-publications
-      - title: "<b>April 18</b><br> Serving Looks"
-        url: /schedule/26-serving-looks
-      - title: "<b>April 23</b><br> Culture & Data Futures"
-        url: /schedule/27-culture-and-data-futures
-      - title: "<b>April 25</b><br> Review & Reflect"
-        url: /schedule/28-review-and-reflect
-      - title: "<b>April 30</b><br> Demo Day & Final Projects"
-        url: /schedule/29-demo-day-and-final-projects
+      - title: "<b>December 3</b><br> Reflections & Reviewing (In-Class Project Working Session)"
+        url: /schedule/27-reflections-and-reviewing/
+      - title: "<b>December 5</b><br> Next Steps & Final Notes (In-Class Project Working Session)"
+        url: /schedule/28-next-steps-and-final-notes/
+      - title: "<b>December 10</b><br> Future Horizons & Final Projects"
+        url: /schedule/29-future-horizons-and-final-projects/

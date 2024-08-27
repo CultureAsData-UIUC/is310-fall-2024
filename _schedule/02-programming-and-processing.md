@@ -2,15 +2,13 @@
 title: "Programming and Processing"
 permalink: /schedule/02-programming-and-processing/
 toc: true
-class_date: 2024-01-18
+class_date: 2024-08-29
 ---
 
 ## In-Class Agenda
 
-- [x] Complete the Installation Progress form [https://forms.gle/3513nM7qdFXe1xgc9](https://forms.gle/3513nM7qdFXe1xgc9).
-- [x] Discuss the assigned readings.
-- [x] Work through the Introduction to [Command Line and Files]({{site.baseurl}}/materials/introducing-humanities-computing/02-intro-cli-file-formats) tutorial.
-- [x] Start working on the assigned [homework]({{site.baseurl}}/materials/introducing-humanities-computing/02-intro-cli-file-formats/#homework-exercises).
+- [ ] Discuss the assigned readings.
+- [ ] Work through the Introduction to [Course Tools]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/).
 
 ## Assigned Materials
 
@@ -22,6 +20,3 @@ class_date: 2024-01-18
 
 - Chiang, Ted. “ChatGPT Is a Blurry JPEG of the Web.” *The New Yorker*, February 9, 2023. [https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web).
 
-## Assignments
-
-- [ ] Complete to the best of your ability the installations for the course tools, available [here]({{site.baseurl}}//materials/introducing-humanities-computing/01-course-tools/).

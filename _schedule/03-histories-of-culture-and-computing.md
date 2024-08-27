@@ -16,4 +16,8 @@ class_date: 2024-09-03
 
 ## Additional Materials
 
-- Mcpherson, Tara. “Why Are the Digital Humanities So White?: Or Thinking the Histories of Race and Computation.” In *Debates in the Digital Humanities*, edited by Matthew K. Gold, 139–60. University of Minnesota Press​⬤
+- Mcpherson, Tara. “Why Are the Digital Humanities So White?: Or Thinking the Histories of Race and Computation.” In *Debates in the Digital Humanities*, edited by Matthew K. Gold, 139–60. University of Minnesota Press​.
+
+## Assignments
+
+- Complete Initial Interest Survey (link available on Canvas)

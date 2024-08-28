@@ -45,4 +45,5 @@ This overview gives a top level view of the topics for each of our meetings. You
 |Assignment | Due Date (Subject to Change) |
 | -----------------: | --------------: |
 | Initial Interest Survey (Link Available on Canvas)| [September 2]({{site.baseurl}}/schedule/03-change-over-time-histories-of-computing/) |
+| [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310) | [September 5]({{site.baseurl}}/schedule/04-version-file-histories/) |
 

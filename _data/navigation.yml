@@ -24,6 +24,14 @@ materials:
     children:
       - title: "Course Software & Tools"
         url: /materials/introducing-humanities-computing/01-course-tools
+      - title: "Command Line & Prompt Engineering"
+        url: /materials/introducing-humanities-computing/02-intro-cli-prompt-engineering/
+      - title: "Introduction to Versioning & Git"
+        url: /materials/introducing-humanities-computing/03-intro-versioning-git/
+      - title: "Command Line Cheatsheet"
+        url: /materials/introducing-humanities-computing/04-command-line-cheatsheet
+      - title: "Advanced Git and GitHub"
+        url: /materials/introducing-humanities-computing/05-advanced-git-github
     
 schedule:
   - title: Overview

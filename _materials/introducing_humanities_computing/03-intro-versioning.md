@@ -574,7 +574,7 @@ For this assignment, you need to do the following:
 - Create a Markdown file called `README.md` within `init-is310-homework`.
 - Create a folder called `images` within `init-is310-homework`.
 
-The final piece is updating your `README.md` file with evidence that you have completed all **Required** tool installations for the course, listed [here]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/#assigned-list-of-course-software--tools) (though you are welcome to post also proof of Optional tools). **If you are using your own setup, please also post proof of your equivalent setup.** You can do this by adding a list of the tools you have installed and adding screenshots of the tools running on your computer. You can use the `images` folder to store these screenshots.
+The final piece is updating your `README.md` file with evidence that you have completed all **Required** tool installations for the course, listed [here]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/#assigned-list-of-course-software--tools) (though you are welcome to post also proof of Optional tools). **If you are using your own setup, please also post proof of your equivalent.** You can do this by adding a list of the tools you have installed and adding screenshots of the tools running on your computer. You can use the `images` folder to store these screenshots.
 
 We have yet to learn much about Markdown but you can use the following template to structure your `README.md` file:
 
@@ -606,7 +606,7 @@ git push origin main
 
 You are also encouraged to try out using GitHub Co-Pilot or any other AI chatbot to help you complete this assignment, and if you have questions you can always reach out to the Instructors.
 
-Once you have completed this assignment, post the link to your GitHub repository in our first discussion forum [https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/1](https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/1).
+Once you have completed this assignment, post the link to your GitHub repository in our first discussion forum [https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/1](https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/1).
 
 ----
 

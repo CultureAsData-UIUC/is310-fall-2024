@@ -15,11 +15,29 @@ In this course, we will be utilizing a number of different software platforms an
 </figure>
 
 Essentially, modern software is a bit of a house of cards, and it's not uncommon to spend hours trying to get something to work, only to find out that you were missing a single character in a configuration file or have some conflicting dependency. The key thing to know is that this is not a reflection of your ability to work with computers, but rather a reflection of the state of modern software. In fact, an HCI professor wrote an excellent post about how this type of configuration errors can deter students (you can read a bit about that here [https://www.kevinbrowne.ca/command-line-bullshittery-and-other-realities-of-computing/](https://www.kevinbrowne.ca/command-line-bullshittery-and-other-realities-of-computing/)). There's also this great free MIT resources called *The Missing Semester of Your CS Education* [https://missing.csail.mit.edu/2020/course-shell/](https://missing.csail.mit.edu/2020/course-shell/) and [https://missing.csail.mit.edu/2020/command-line/](https://missing.csail.mit.edu/2020/command-line/) that covers some of what we will be doing here if you would like more background information.
-
  
 The remainder of this page contains installation instructions for the tools/software/programming languages we will be using in this course, listed in order of complexity of installation. Most of the links are operating system agnostic, but if indicated, please follow the instructions for your computer type (`Windows` = any computer running windows, `Mac` = any apple computer). Most of the instructions involve clicking on links to download programs, though a few also require you to paste text into your computer.
 
 You should do your best to get through the majority of the installation instructions before our next class, but if you get stuck, please reach out to the instructor via Slack (especially if you've been trying for more than ~20 minutes) and also know that we will have time in our Thursday class session to help troubleshoot any installation issues. Again, any issue you face is a feature of the difficulty of working with computers, not a reflection or indication of your ability to code.
+
+## Assigned List of Course Software & Tools
+
+### Required
+
+- [ ] Discord Account with DH@UIUC Server. **Remember to change your server name to your actual name**
+- [ ] Hypothesis Account with IS310-Fall-2024 Group.
+- [ ] GitHub Account.
+- [ ] Local Python 3 Installation.
+- [ ] Git.
+- [ ] Local Text Editor (VS Code Recommended).
+
+### Optional
+
+- [ ] GitHub Education Benefits to get access to Co-Pilot.
+- [ ] GitHub Co-Pilot.
+- [ ] Visual Studio Code.
+- [ ] Visual Studio Code Extensions.
+- [ ] Oh-My-Zsh.
 
 ## Discord
 
@@ -44,7 +62,7 @@ You are welcome to make your username whatever you choose, but please share your
 
 <figure>
    <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/21135305/scopeselector-groupname-1024x585.png">
-      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/21135305/scopeselector-groupname-1024x585.png" alt="Hypothesis Annotation" style="width:100%" class="image-popup">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/21135305/scopeselector-groupname-1024x585.png" alt="Hypothesis Annotation" class="image-popup">
    </a>
    <figcaption>Hypothesis Annotation</figcaption>
 </figure>
@@ -63,11 +81,11 @@ GitHub is free to use (part of its popularity) and once you have an account you 
 
 We will be delving into GitHub's functionality in the next few weeks, but first you will need to sign up for an account. You can sign up for an account here [https://github.com/join](https://github.com/join). GitHub provides additional documentation on [signing up for an account](https://docs.github.com/en/get-started/signing-up-for-github/signing-up-for-a-new-github-account). In terms of selecting a username, I would recommend choosing something that you plan to use professionally.
 
-<div class="notice--info">⚡️ <del>As of Wednesday January 17 at 5pm, GitHub Education is not working correctly, so we cannot currently signup for the benefits. I'm hoping GitHub gets this fixed ASAP and there's currently a discussion thread about the issues here <a href="https://github.com/orgs/community/discussions/88611">https://github.com/orgs/community/discussions/88611</a> that you can also check. If it's been a few hours, I would recommend trying again but for now, hold off until this is fixed.</del> Now been fixed 🥳!</div>
+<div class="notice--info">⚡️ If you have issues signing up for the GitHub Education Benefits, please contact the Instructor for assistance. You do not need to apply for GitHub Educational Benefits, if you do not plan </div>
 
 Once you have an account, you will also need to sign up for the GitHub Education Global Campus account [https://education.github.com/benefits](https://education.github.com/benefits). You can find step-by-step instructions on how to sign up here [https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student](https://docs.github.com/en/education/explore-the-benefits-of-teaching-and-learning-with-github-education/github-global-campus-for-students/apply-to-github-global-campus-as-a-student), but you will need to use your `@illinois.edu` email and show proof of your student status (either ID or academic record).
 
-Getting approved might take a few days, but once you are approved, you will be able to not only create private repositories for free (we will get into what repositories are soon), but also use GitHub's AI coding tool called Co-Pilot. 
+Getting approved might take a few days, but once you are approved, you will be able to not only create private repositories for free (we will get into what repositories are soon), but also use GitHub's AI coding tool called Co-Pilot.
 
 Both GitHub and Co-Pilot are owned by Microsoft, which acquired the platform in 2018 for 7.5 Billion dollars[^1], and the platform has become the de facto platform for hosting code, with the platform recently announcing that they had over 100 million of users.[^2]
 
@@ -75,7 +93,7 @@ Both GitHub and Co-Pilot are owned by Microsoft, which acquired the platform in 
 
 <figure>
    <a href="https://github.blog/wp-content/uploads/2023/01/100million-header.png?resize=1200%2C627">
-      <img src="https://github.blog/wp-content/uploads/2023/01/100million-header.png?resize=1200%2C627" alt="100 million users" style="width:100%" class="image-popup">
+      <img src="https://github.blog/wp-content/uploads/2023/01/100million-header.png?resize=1200%2C627" alt="100 million users" class="image-popup">
    </a>
    <figcaption>100 million users</figcaption>
 </figure>
@@ -121,7 +139,7 @@ If for whatever reason you cannot get access, please let the instructor know and
 
 ## VS Code
 
-We will be using Visual Studio Code (VS Code) as our primary code editor for this course. You can download VS Code here [https://code.visualstudio.com/](https://code.visualstudio.com/) ~~though I would highly recommend you download the `Insiders Edition` [https://code.visualstudio.com/insiders/](https://code.visualstudio.com/insiders/)~~. You should be able to use the link above to download VS Code for Windows, Mac, and Linux.
+We will be using Visual Studio Code (VS Code) as our primary code editor for this course. You can download VS Code here [https://code.visualstudio.com/](https://code.visualstudio.com/). You should be able to use the link above to download VS Code for Windows, Mac, and Linux.
 
 Like GitHub and Co-Pilot, VS Code is also owned by Microsoft, which is why all three work relatively well together. VS Code is something called a Integrated Development Environment (IDE), which is a fancy way of saying it is a program for writing code. You can read more about IDEs here [https://en.wikipedia.org/wiki/Integrated_development_environment](https://en.wikipedia.org/wiki/Integrated_development_environment). Other popular IDEs include Atom, Sublime Text, and PyCharm. While you are welcome to use any IDE you want, I will be using VS Code in this course and I'm not sure that Co-Pilot works with other IDEs, so would highly encourage you to at least test it out.
 
@@ -145,7 +163,12 @@ Another benefit of getting used to VS Code is that you can use it in the browser
 
 For Macs, you will need to check if you have an `Intel Chip` or an `Apple Silicon`. You can check this by going to the Apple menu  > About This Mac.
 
-![Mac chip](https://cdsassets.apple.com/live/7WUAS350/images/mac/macos-ventura-mac-mini-m2-pro-2023-apple-menu-about-this-mac.png)
+<figure>
+   <a href="https://cdsassets.apple.com/live/7WUAS350/images/mac/macos-ventura-mac-mini-m2-pro-2023-apple-menu-about-this-mac.png">
+      <img src="https://cdsassets.apple.com/live/7WUAS350/images/mac/macos-ventura-mac-mini-m2-pro-2023-apple-menu-about-this-mac.png" alt="Mac chip" style="width:100%" class="image-popup">
+   </a>
+   <figcaption>Mac chip</figcaption>
+</figure>
 
 You can see in this example the Chip says `Apple M2 Pro`, which means this is an `Apple Silicon`. If you see `Intel` then you have an `Intel Chip`. Download the appropriate version for your computer through selecting the `zip` option and then opening and installing the program.
 
@@ -153,7 +176,11 @@ You can see in this example the Chip says `Apple M2 Pro`, which means this is an
 
 For Windows, you will need to check if you have a `64-bit` or `Arm64` operating system. You can check this by going to `Settings > System > About` and looking at the `System type` field.
 
-![Windows chip](https://www.tenforums.com/attachments/tutorials/325540d1617307951-how-check-if-processor-32-bit-64-bit-arm-windows-10-a-arm_processor_settings.png)
+<figure>
+   <a href="https://www.tenforums.com/attachments/tutorials/325540d1617307951-how-check-if-processor-32-bit-64-bit-arm-windows-10-a-arm_processor_settings.png">
+      <img src="https://www.tenforums.com/attachments/tutorials/325540d1617307951-how-check-if-processor-32-bit-64-bit-arm-windows-10-a-arm_processor_settings.png" alt="Windows chip" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
 Once identified, you should select the User Installer option and then open and install the program.
 
@@ -161,7 +188,11 @@ Once identified, you should select the User Installer option and then open and i
 
 Once you have VS Code installed, you will need to install a few extensions. Extensions are a bit like apps for VS Code, and you can read more about them here [https://code.visualstudio.com/docs/editor/extension-gallery](https://code.visualstudio.com/docs/editor/extension-gallery). You can install extensions by clicking on the `Extensions` icon in the left sidebar of VS Code and then searching for your relevant extension. We will be installing various extensions over the course of the semester, but the first one you should install is the `GitHub Copilot` extension. You can find it by searching for `GitHub Copilot` in the Extensions Marketplace.
 
-![VS Code GitHub Copilot](https://www.freecodecamp.org/news/content/images/2022/07/Screenshot-2022-07-02-181954.png)
+<figure>
+   <a href="https://www.freecodecamp.org/news/content/images/2022/07/Screenshot-2022-07-02-181954.png">
+      <img src="https://www.freecodecamp.org/news/content/images/2022/07/Screenshot-2022-07-02-181954.png" alt="VS Code GitHub Copilot" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
 Once you click install, you will need to reload VS Code and then you should be able to use Co-Pilot. We will be learning how to use Co-Pilot with VS Code in the next few weeks, but you can read more about it here [https://code.visualstudio.com/docs/editor/github-copilot](https://code.visualstudio.com/docs/editor/github-copilot).
 
@@ -189,18 +220,42 @@ Once it is disabled, you will need to reload VS Code. And then you can re-enable
 
 ### What is Python?
 
-![python logo](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
+<figure>
+   <a href="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png">
+      <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python Logo" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
-![python definition]({{site.baseurl}}/assets/images/python_def.png)
+<figure>
+   <a href="{{site.baseurl}}/assets/images/python_def.png">
+      <img src="{{site.baseurl}}/assets/images/python_def.png" alt="Python Definition" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
 You can read more about Python here [https://en.wikipedia.org/wiki/Python_(programming_language)](https://en.wikipedia.org/wiki/Python_(programming_language)) and here [https://www.python.org/about/](https://www.python.org/about/) (also in case you did not know, yes Python is named after the comedic Monty Python series). This course presumes you already have about a semester of experience with Python, if not more, but if you are new to Python, please let the Instructor know and also would highly recommend taking a look at the resources on *The Programming Historian* [https://programminghistorian.org/en/lessons/](https://programminghistorian.org/en/lessons/) and looking at Melanie Walsh, *Introduction to Cultural Analytics & Python*, [https://melaniewalsh.github.io/Intro-Cultural-Analytics/02-Python/00-Python.html](https://melaniewalsh.github.io/Intro-Cultural-Analytics/02-Python/00-Python.html).
 
 ### Why Python?
 
-|![python twitter]({{site.baseurl}}/assets/images/python_twitter.png)| ![python stack overflow]({{site.baseurl}}/assets/images/python_so.png) |
-|:--:|:--:|
-| [Jake VanderPlas Tweet](https://twitter.com/jakevdp/status/994934052091318272?lang=en) |[Stack Overflow's Annual Survey](https://insights.stackoverflow.com/survey/2019)|
-
+<table>
+  <tr>
+    <td>
+      <figure>
+        <a href="{{site.baseurl}}/assets/images/python_twitter.png">
+          <img src="{{site.baseurl}}/assets/images/python_twitter.png" alt="python twitter" style="width:100%" class="image-popup">
+        </a>
+        <figcaption style="text-align:center;"><a href="https://twitter.com/jakevdp/status/994934052091318272?lang=en">Jake VanderPlas Tweet</a></figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <a href="{{site.baseurl}}/assets/images/python_so.png">
+          <img src="{{site.baseurl}}/assets/images/python_so.png" alt="python stack overflow" style="width:100%" class="image-popup">
+        </a>
+        <figcaption style="text-align:center;"><a href="https://insights.stackoverflow.com/survey/2019">Stack Overflow's Annual Survey</a></figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
 
 In this course, you'll be writing code in a few different programming languages, but we'll primarily be using Python. The choice of Python is for a few different reasons. First, Python is well suited to both web development and data analysis -- two of the core activities of this course. Second, Python is increasingly becoming a standard in a number of industries and academic disciplines, though other languages like R are also popular. Third is that many of the programming concepts you will learn in Python can transfer relatively well to other programming languages. And finally, Python is a popular language for Digital Humanities research and is used by a number of different DH projects and platforms.
 
@@ -320,8 +375,6 @@ While your version number might be different, you should see `Python 3` in the o
 
 You can download the official installer here [https://www.python.org/downloads/macos/](https://www.python.org/downloads/macos/). You should download the latest version of Python 3, which should be 3.12 and use the macOS 64-bit universal installer. Once downloaded, you should open the installer and follow the instructions. You can find more detailed instructions here [https://realpython.com/installing-python/#how-to-install-from-the-official-installer](https://realpython.com/installing-python/#how-to-install-from-the-official-installer).
 
-![Python Installer](https://realpython.com/installing-python/#how-to-install-from-the-official-installer)
-
 Once installed, you can check that you have Python 3 installed by typing the following command in the VS Code terminal:
 
 ```sh
@@ -368,7 +421,12 @@ After this you'll need to setup your WSL environment following these instruction
 
 Specifically you'll need to set up your Linux username and password [https://docs.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password](https://docs.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password).
 
-![WSL Setup](https://docs.microsoft.com/en-us/windows/wsl/media/ubuntuinstall.png)
+<figure>
+   <a href="https://docs.microsoft.com/en-us/windows/wsl/media/ubuntuinstall.png">
+      <img src="https://docs.microsoft.com/en-us/windows/wsl/media/ubuntuinstall.png" alt="WSL Setup" style="width:100%" class="image-popup">
+   </a>
+   <figcaption>WSL Setup</figcaption>
+</figure>
 
 Once setup, I would recommend first checking which version of WSL you are running and upgrading to WSL 2 if you are not already using it [https://docs.microsoft.com/en-us/windows/wsl/install#check-which-version-of-wsl-you-are-running](https://docs.microsoft.com/en-us/windows/wsl/install#check-which-version-of-wsl-you-are-running). And then I would recommend updating your packages for Ubuntu [https://docs.microsoft.com/en-us/windows/wsl/setup/environment#update-and-upgrade-packages](https://docs.microsoft.com/en-us/windows/wsl/setup/environment#update-and-upgrade-packages).
 
@@ -390,12 +448,21 @@ code .
 ```
 
 And that should start your VS Code Server
-![VS Code Server](https://docs.microsoft.com/en-us/windows/wsl/media/wsl-open-vs-code.gif)
+
+<figure>
+   <a href="https://docs.microsoft.com/en-us/windows/wsl/media/wsl-open-vs-code.gif">
+      <img src="https://docs.microsoft.com/en-us/windows/wsl/media/wsl-open-vs-code.gif" alt="VS Code Server" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
 OR you can open VS Code and follow these instructions:
 > You can also access more VS Code Remote options by using the shortcut: CTRL+SHIFT+P in VS Code to bring up the command palette. If you then type Remote-WSL you will see a list of the VS Code Remote options available, allowing you to reopen the folder in a remote session, specify which distribution you want to open in, and more.
 
-![VS Code Remote Options](https://docs.microsoft.com/en-us/windows/wsl/media/vscode-remote-command-palette.png)
+<figure>
+   <a href="https://docs.microsoft.com/en-us/windows/wsl/media/vscode-remote-command-palette.png">
+      <img src="https://docs.microsoft.com/en-us/windows/wsl/media/vscode-remote-command-palette.png" alt="VS Code Remote Options" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
 #### Break In Case of Emergency (Google Colab or Anaconda)
 
@@ -437,7 +504,11 @@ Then you install oh-my-zsh with the following:
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-![install zsh](https://res.cloudinary.com/practicaldev/image/fetch/s--HnDFRLC1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qpu02quwb9iwo6gguxg.png)
+<figure>
+   <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--HnDFRLC1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qpu02quwb9iwo6gguxg.png" class="image-popup">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--HnDFRLC1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qpu02quwb9iwo6gguxg.png" alt="install zsh" style="width:100%">
+   </a>
+</figure>
 
 You can find more in depth instructions here [https://dev.to/contactsunny/installing-zsh-and-oh-my-zsh-on-windows-11-with-wsl2-1p5i](https://dev.to/contactsunny/installing-zsh-and-oh-my-zsh-on-windows-11-with-wsl2-1p5i)
 
@@ -451,7 +522,11 @@ Install oh-my-zsh with the following:
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-![install zsh](https://res.cloudinary.com/practicaldev/image/fetch/s--HnDFRLC1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qpu02quwb9iwo6gguxg.png)
+<figure>
+   <a href="https://res.cloudinary.com/practicaldev/image/fetch/s--HnDFRLC1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qpu02quwb9iwo6gguxg.png" class="image-popup">
+      <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--HnDFRLC1--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/5qpu02quwb9iwo6gguxg.png" alt="install zsh" style="width:100%">
+   </a>
+</figure>
 
 You can find more in depth instructions here [https://dev.to/hannahgooding/how-i-customise-my-terminal-with-oh-my-zsh-macos-427i](https://dev.to/hannahgooding/how-i-customise-my-terminal-with-oh-my-zsh-macos-427i)
 
@@ -471,9 +546,17 @@ If you decided not to install WSL and our instead using PowerShell, rather than 
 
 ### What is Git?
 
-![git logo](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png)
+<figure>
+   <a href="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png">
+      <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
-![git example](https://www.nobledesktop.com/image/blog/git-branches-merge.png)
+<figure>
+   <a href="https://www.nobledesktop.com/image/blog/git-branches-merge.png">
+      <img src="https://www.nobledesktop.com/image/blog/git-branches-merge.png" alt="Git Definition" style="width:100%" class="image-popup">
+   </a>
+</figure>
 
 You can read more about Git here [https://en.wikipedia.org/wiki/Git](https://en.wikipedia.org/wiki/Git) and here [https://git-scm.com/about](https://git-scm.com/about). Git is a version control system that allows you to track changes to files over time that was first created by Linus Torvals in 2005. It is a bit like Google Drive, but instead of just tracking changes to files, it also allows you to track changes to folders and directories. Somewhat confusingly, git is not the same as GitHub, though the two often are used together. We will be delving into these differences and how to use them later this week.
 

@@ -7,7 +7,7 @@ class_date: 2024-09-05
 
 ## In-Class Agenda
 
-- [ ] Review any questions from introduction to CLI and GitHub.
+- [ ] Review responses to Init IS310 Homework.
 - [ ] Complete the Introduction to File Formats & Markup Languages.
 
 ## Additional Materials

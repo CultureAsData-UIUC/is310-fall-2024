@@ -7,9 +7,10 @@ class_date: 2024-08-29
 
 ## In-Class Agenda
 
+- [ ] Update response on survey to include preferred pronouns and names (if you have not already).
 - [ ] Discuss the assigned readings.
-- [ ] Continue working through the Introduction to [Course Tools]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/).
-- [ ] Start working on introduction to the terminal and GitHub (to be posted).
+- [ ] Continue working through the Introduction to [Course Tools]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/) and answer any questions (though this is primarily to be completed outside of class).
+- [ ] Start [Introduction to the Command Line & Prompt Engineering]({{site.baseurl}}/materials/introducing-humanities-computing/02-intro-cli-prompt-engineering/) and [Introduction to Versioning & Git]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/) (if not completed, these will become homework).
 
 ## Assigned Materials
 

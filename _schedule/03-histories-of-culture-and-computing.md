@@ -14,7 +14,7 @@ class_date: 2024-09-03
 ## Assigned Materials
 
 - Kahle, Brewster. “Universal Access to All Knowledge.” *The American Archivist* 70, no. 1 (2007): 23–31. [https://www.jstor.org/stable/40294448](https://www.jstor.org/stable/40294448).
-- Hennessey, Amardeep Singh and Kate. “African American Periodical Poetry (1900-1928) – Responsible Datasets in Context.” *Responsible Datasets in Context*, July 1, 2024. [https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html?tab=data-essay](https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html?tab=data-essay).
+- Hennessey, Amardeep Singh and Kate. “African American Periodical Poetry (1900-1928) – Responsible Datasets in Context.” *Responsible Datasets in Context*, July 1, 2024. [https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html?tab=data-essay](https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html?tab=data-essay). While you are encouraged to explore the entirety of this dataset, we will primarily be discussing the section "Where Did the Data Come From? Who Collected It?" in the data essay.
 
 ## Additional Materials
 

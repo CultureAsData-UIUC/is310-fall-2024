@@ -596,6 +596,8 @@ We have yet to learn much about Markdown but you can use the following template 
 ![VS Code Installation](images/vscode-installation.png)
 ```
 
+This should also include your Discord and Hypothesis usernames.
+
 Once you have created everything locally, you will need to add, commit, and push your changes to your GitHub repository. You can use the following commands to do this:
 
 ```sh

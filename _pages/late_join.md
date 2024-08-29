@@ -5,7 +5,7 @@ toc: true
 toc_sticky: true
 author_profile: false
 ---
-Last updated: 2024-01-19
+Last updated: 2024-08-29
 
 **Welcome to IS 310: Computing in the Humanities**
 
@@ -24,14 +24,18 @@ In particular, you should make sure that you understand the core goals of this c
 
 ## Catching Up on Materials & Assignments
 
-In the first week of class, we covered two lessons:
+In the second class of our first week, we covered three lessons:
 
 1. [Course Tools & Software]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/), which covers all the tools and software we will be using in this course and provides instructions on how to get your computer setup and signed up for all relevant tools. If you have any issues with this, please reach out to the Instructor.
-2. [Introduction to the Command Line & File Formats]({{site.baseurl}}/materials/introducing-humanities-computing/02-intro-cli-file-formats/), which covers the basics of the command line and file formats. You should read through the materials, and complete the homework assignments to the best of your ability.
+2. [Introduction to the Command Line & Prompt Engineering]({{site.baseurl}}/materials/introducing-humanities-computing/02-intro-cli-prompt-engineering/), which covers the basics of the command line and prompt engineering with AI Chatbots. You should read through the materials, and complete the exercises to the best of your ability.
+3. [Introduction to Versioning & Git]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/), which covers the basics of versioning and Git. You should read through the materials, and complete the homework assignment to the best of your ability.
 
 We have also read and discussed the following articles:
 
-1. [Readings for the Programming & Processing Module]({{site.baseurl}}/schedule/02-programming-and-processing/). You should read through these articles and add your annotations for them via Hypothesis.
+1. [Readings for the Programming & Processing Module]({{site.baseurl}}/schedule/02-programming-and-processing/). You should read through these articles for your own understanding.
 
+Finally, please complete the following assignments:
+
+1. [Initial Interest Survey]({{site.baseurl}}/schedule/03-change-over-time-histories-of-computing/). This survey is available on Canvas and should be completed by the due date.
 
 Hopefully this guide will help, but again, please reach out to the Instructor if you have any questions.

@@ -8,6 +8,8 @@ class_date: 2024-09-03
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
+- [ ] Answer any questions from the [Introduction to Versioning & Git]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/) and discuss some advanced collaborative coding features of GitHub
+- [ ] Assign groups based on Initial Interest Survey responses and work through the first group prompt (To Be Posted).
 
 ## Assigned Materials
 

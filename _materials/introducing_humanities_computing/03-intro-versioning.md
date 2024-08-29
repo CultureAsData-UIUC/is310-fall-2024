@@ -569,7 +569,7 @@ Now it's your turn to try this out! Trying following the steps above to create a
 For this assignment, you need to do the following:
 
 - Create a new GitHub repository called `is310-coding-assignments`.
-- Create a new directory in your local computer called `is310-coding-assignments`.
+- Create a new directory in your local computer called `is310-coding-assignments` and enable it as a git repository.
 - Create a folder called `init-is310-homework` within `is310-coding-assignments`.
 - Create a Markdown file called `README.md` within `init-is310-homework`.
 - Create a folder called `images` within `init-is310-homework`.
@@ -596,7 +596,7 @@ We have yet to learn much about Markdown but you can use the following template 
 ![VS Code Installation](images/vscode-installation.png)
 ```
 
-This should also include your Discord and Hypothesis usernames.
+**This should also include your Discord and Hypothesis usernames.**
 
 Once you have created everything locally, you will need to add, commit, and push your changes to your GitHub repository. You can use the following commands to do this:
 
@@ -606,7 +606,9 @@ git commit -m "Init IS310 Homework"
 git push origin main
 ```
 
-You are also encouraged to try out using GitHub Co-Pilot or any other AI chatbot to help you complete this assignment, and if you have questions you can always reach out to the Instructors.
+However, remember to connect your **local repository with your GitHub repository** (hint: `git remote add origin` if your GitHub repository is empty OR `git remote set-url origin` if you have files in your GitHub). If you get any errors, you can always ask for help in the Discord channel or reach out to the Instructors directly.
+
+You are also encouraged to try out using GitHub Co-Pilot or any other AI chatbot to help you complete this assignment, and we also have a mored detailed [lesson on git & GitHub]({{site.baseurl}}/materials/introducing-humanities-computing/05-advanced-git-github) that should cover most issues you might face.
 
 Once you have completed this assignment, post the link to your GitHub repository in our first discussion forum [https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/1](https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/1).
 

@@ -153,7 +153,7 @@ touch .gitignore
 
 Even though we didn't add a file extension, `.gitignore` is a plain text file. But this is a special type of file that lets you tell git to ignore certain files and folders in your **local** repository. While `.gitignore` is technically a hidden file (notice it starts with a period), it should show up in your VS Code file explorer or other IDEs.
 
-We usually add any file that **we do not want to  push up** to your **remote** GitHub repository to the `.gitignore` file. So if you had a draft file, like `test.txt` and didn't want to push it up to GitHub, you would add it to the `.gitignore` file.
+We usually add any file that **we do not want to  push up** to your **remote** GitHub repository to the `.gitignore` file. So if you had a draft file, like `test.txt` and didn't want to push it up to GitHub, you would add it to the `.gitignore` file. Other common files to add to the `.gitignore` file include `.DS_Store` files, which are created by macOS, and `.env` files, which are used to store sensitive information like passwords and API keys.
 
 To add the file to the `.gitignore` file, you can open it in your IDE and add the file name to it. For example, if we wanted to add `test.txt` to the `.gitignore` file, we would type in the file:
 
@@ -356,7 +356,14 @@ But remember these are advanced concepts so if you have any questions, please re
 | `git log`                       | Outputs a log of past commits (snapshots) with their commit messages                  |
 | `git status`                    | Shows our current status, including what branch you are on and what changes are staged or un-staged  |
 | `git clone URL`                 | Makes a clone of the repository at the specified URL                     |
-     
+
+
+## General Best Practices for git and GitHub
+
+1. Do your best to keep your local git enabled project and remote GitHub project in sync. This means that you should always do a `git pull` before you start working on a project and a `git push` when you finish working on a project. This will help to avoid conflicts and make sure that your changes are up to date.
+2. Always include a `.gitignore` file. This will help to avoid pushing up files that you don't want to share or that are too large. It will also help to keep your repository clean and organized.
+3. Always include a `README.md` file. This is a good way to introduce your project and explain what it is about. It's also a good way to explain how to use your project and what the license is.
+4. For projects with multiple collaborators, try to use branches. This will help to avoid conflicts and make sure that everyone's changes are incorporated into the main project.
 
 ## Resources
 

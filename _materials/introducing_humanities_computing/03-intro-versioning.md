@@ -564,7 +564,7 @@ This is the core workflow for using git and GitHub.
 
 ## Homework: Init IS310
 
-Now it's your turn to try this out! Trying following the steps above to create a new GitHub repository called `is310-coding-assignments` in your GitHub account.
+Now it's your turn to try this out! Trying following the steps above to create a new GitHub repository called `is310-coding-assignments` in your GitHub account. For this assignment, I would highly recommend you use this [`git` cheatsheet]({{site.baseurl}}/materials/introducing-humanities-computing/05-advanced-git-github#git-commands-cheat-sheet) and also take a look at [this overview of best practices]({{site.baseurl}}/materials/introducing-humanities-computing/05-advanced-git-github#general-best-practices-for-git-and-github), though we will be discussing this in-class as well.
 
 For this assignment, you need to do the following:
 

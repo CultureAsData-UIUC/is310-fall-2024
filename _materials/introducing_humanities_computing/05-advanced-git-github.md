@@ -222,7 +222,7 @@ Finally you would push the changes up to GitHub by typing:
 git push origin main
 ```
 
-You can read more about removing files from a repository here [https://docs.github.com/en/get-started/getting-started-with-git/removing-files](https://docs.github.com/en/get-started/getting-started-with-git/removing-files).
+You can also remove files remotely via GitHub, though remember you will need to then fix any merge conflicts locally. Read more about removing files from a GitHub repository here [https://docs.github.com/en/repositories/working-with-files/managing-files/deleting-files-in-a-repository](https://docs.github.com/en/repositories/working-with-files/managing-files/deleting-files-in-a-repository).
 
 ### Branches
 

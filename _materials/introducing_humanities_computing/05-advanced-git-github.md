@@ -183,6 +183,47 @@ You'll notice git is telling us we have a new file `.gitignore` that is untracke
 
 Beyond files you don't want to share (whether that's work in progress or private information), GitHub also restricts the size of files we can put in our repositories. The limit is 100MB, so if you have a large file, you can add it to the `.gitignore` file so that it doesn't get pushed up to GitHub. You can read more about GitHub's file size restrictions here [https://docs.github.com/en/github/managing-large-files/what-is-my-disk-quota](https://docs.github.com/en/github/managing-large-files/what-is-my-disk-quota) and you can read more about `.gitignore` files here [https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files).
 
+#### What to do if you forget to add a file to `.gitignore`
+
+Don't panic since this happens to everyone at some point! If you forget to add a file to the `.gitignore` file and you've already pushed it up to GitHub, you can still add it to the `.gitignore` file and then remove it from the repository. To do this, you can use the `git rm` command. For example, if you wanted to remove the `test.txt` file from the repository, you would type:
+
+```sh
+rm -rf test.txt
+```
+
+Then you would remove it from the git log by typing:
+
+```sh
+git rm --cached test.txt
+```
+
+Then you want to add it to the `.gitignore` file and save it. If you haven't created one yet, you can do so by typing:
+
+```sh
+touch .gitignore
+```
+
+Then you would add the file to the `.gitignore` file by typing:
+
+```sh
+test.txt
+```
+
+Once you save the file, you can commit the changes by typing:
+
+```sh
+git add .
+git commit -m "adding test.txt to .gitignore"
+```
+
+Finally you would push the changes up to GitHub by typing:
+
+```sh
+git push origin main
+```
+
+You can read more about removing files from a repository here [https://docs.github.com/en/get-started/getting-started-with-git/removing-files](https://docs.github.com/en/get-started/getting-started-with-git/removing-files).
+
 ### Branches
 
 So far we have been doing a very standard git workflow of creating a repository, adding files to it, then committing those files, pushing those to our remote repository or pulling them back down. However, there are a number of other features that git offers that are worth highlighting. One of these is branches.

@@ -46,4 +46,5 @@ This overview gives a top level view of the topics for each of our meetings. You
 | -----------------: | --------------: |
 | Initial Interest Survey (Link Available on Canvas)| [September 2]({{site.baseurl}}/schedule/03-change-over-time-histories-of-computing/) |
 | [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310) | Now due [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |
+| Group Assignment [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |
 

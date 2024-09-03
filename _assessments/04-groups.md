@@ -24,6 +24,7 @@ The groups are as follows:
        - Thea K.
        - Ellis L.
        - A.G. S.
+       - Taerin K.
 
 2. **Group 2**
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-fall-2024-group-2)
@@ -33,6 +34,7 @@ The groups are as follows:
        - Ryan P.
        - Rebeca R.
        - Avery W.
+       - Henry R. 
 
 3. **Group 3**
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-fall-2024-group-3)
@@ -41,6 +43,7 @@ The groups are as follows:
         - Shoi R.
         - Yukatha S.
         - Weiting Y.
+        - H. Charles
 
 4. **Group 4**
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-fall-2024-group-4)
@@ -51,6 +54,7 @@ The groups are as follows:
         - Alan K.
         - Ahmad S.
 
+
 5. **Group 5**
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-fall-2024-group-5)
    - Members:
@@ -59,6 +63,7 @@ The groups are as follows:
         - Ethan R.
         - Kohta S.
         - Yosef S.
+        - Sam S.
 
 6. **Group 6**
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-fall-2024-group-6)
@@ -68,3 +73,4 @@ The groups are as follows:
         - Cindy L.
         - Gloria L.
         - Lucas W.
+        - Yunchae (Sophia) C.

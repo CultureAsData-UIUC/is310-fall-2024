@@ -5,11 +5,14 @@ toc: true
 class_date: 2024-09-03
 ---
 
-## In-Class Agenda
+## REVISED In-Class Agenda
 
-- [ ] Discuss the assigned readings
-- [ ] Answer any questions from the [Introduction to Versioning & Git]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/) and discuss some advanced collaborative coding features of GitHub
-- [ ] Assign groups based on Initial Interest Survey responses and work through the first group prompt (To Be Posted).
+**Unfortunately, Prof. LeBlanc has a family emergency and cannot attend class in person today. Class will instead be lead by TA, Jess Frye. Please note will there is not participation grades for discussion, there will be for the group activity.**
+
+- [ ] Discuss the assigned readings is **now postponed until Thursday**.
+- [ ] Short talk on career opportunities from the iSchool.
+- [ ] Meet your group members and start working through the first group assignment [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture).
+- [ ] Time permitting: Continue working through the [Introduction to Versioning & Git]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/) and start reading through the [Advanced Git & GitHub]({{site.baseurl}}/materials/introducing-humanities-computing/05-advanced-git-github). Please contact Prof. LeBlanc via Discord if you have questions or difficulties with the materials, and we will be discussing them in class on Thursday.
 
 ## Assigned Materials
 

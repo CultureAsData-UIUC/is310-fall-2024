@@ -8,6 +8,7 @@ class_date: 2024-09-10
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
+- [ ] First group presentations on [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture).
 
 ## Assigned Materials
 
@@ -18,3 +19,13 @@ class_date: 2024-09-10
 
 - Onuoha, Mimi. “The Library of Missing Datasets — MIMI ỌNỤỌHA.” MIMI   ỌNỤỌHA. Accessed January 11, 2024. [https://mimionuoha.com/the-library-of-missing-datasets](https://mimionuoha.com/the-library-of-missing-datasets).
 - Onuoha, Mimi. “MimiOnuoha/Missing-Datasets,” January 9, 2024. [https://github.com/MimiOnuoha/missing-datasets](https://github.com/MimiOnuoha/missing-datasets).
+
+## Assignments
+
+### Individual
+
+- [ ] Complete [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310).
+
+### Group
+
+- [ ] [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) group assignment.

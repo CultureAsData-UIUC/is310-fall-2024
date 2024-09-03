@@ -45,6 +45,8 @@ This list is not exhaustive, and you are welcome to choose a different area of f
 
 Once you have decided on an area(s) to focus on, you will work together to find and analyze examples that fit the following prompts. Each group member should take responsibility for at least one prompt, but you should all work together to discuss and analyze the examples you find. You do not need to use the same examples for each prompt, though I strongly encourage you should also consider how these examples might relate to your semester-long project.
 
+**You are welcome to use AI tools to help you with your assignment, but you should include links and screenshots to all materials you find. You should also be prepared to discuss how you found these materials and what tools you used to find them.**
+
 In our readings this week, we started to learn about how cultural objects and practices are turned into digital representations, and how these representations are then shared and preserved online. To help you understand this process, you will be exploring what this looks like for your selected area of focus.
 
 Here are the following prompts you should answer for your area of focus:

@@ -14,6 +14,13 @@ class_date: 2024-09-05
 ## Additional Materials
 
 - Weingart, Scott B. “The Route of a Text Message.” *Vice*, February 2019. [https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story](https://www.vice.com/en_us/article/kzdn8n/the-route-of-a-text-message-a-love-story).
-- Veen, Jeffrey. “A Brief History of HTML.” *Wired*, April 28, 1997. [https://www.wired.com/1997/04/a-brief-history-of-html/](https://www.wired.com/1997/04/a-brief-history-of-html/).
-- Ford, Paul. “What Is Code? If You Don’t Know, You Need to Read This.” *Business Week*, June 11, 2015. Sections 1-2. [http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/](http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/).
 
+### Additional Links
+
+- [Vannevar Bush, "As We May Think"](https://www.theatlantic.com/magazine/archive/1945/07/as-we-may-think/303881/) and [pdf version](https://cdn.theatlantic.com/media/archives/1945/07/176-1/132407932.pdf).
+  - [Example of a potential memex machine](https://mediartinnovation.com/wp-content/uploads/2014/06/1945_bush_memex-diagram_bc_c.jpg?w=1272).
+- The History of the Old Bailey Online Project [https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation](https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#digitisation).
+- HathiTrust Digital Library [https://www.hathitrust.org/](https://www.hathitrust.org/) and an issue of *The Crisis* [https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&seq=1](https://babel.hathitrust.org/cgi/pt?id=coo.31924055965465&seq=1).
+- [The Art of Google Books by Krissy Wilson](https://theartofgooglebooks.tumblr.com/) and [The Darker Side of Digitization by Leah Henrickson](https://bhilluminated.wordpress.com/2014/03/20/google-book-scanners/).
+- Scanning Labor Project by Eliie Colbert, Lucian Li, David Satten-Lopez, and Elizabeth Schwartz [https://scanninglabor.github.io/IAScanningLabor/scanners.html](https://scanninglabor.github.io/IAScanningLabor/scanners.html).
+- Breeding, Marshall. “History of Mergers and Acquisitions in the Library Technology Industry.” Library Technology Guides.[http://librarytechnology.org/mergers/](http://librarytechnology.org/mergers/).

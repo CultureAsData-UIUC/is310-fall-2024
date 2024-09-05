@@ -36,6 +36,8 @@ materials:
         url: /materials/introducing-humanities-computing/04-command-line-cheatsheet
       - title: "Advanced Git and GitHub"
         url: /materials/introducing-humanities-computing/05-advanced-git-github
+      - title: "Introduction to File Formats & Text"
+        url: /materials/introducing-humanities-computing/06-intro-file-formats
     
 schedule:
   - title: Overview
@@ -61,27 +63,27 @@ schedule:
       - title: "<b>September 17</b><br> Data Feminism & Culture As Data"
         url: /schedule/07-data-feminism-and-culture-as-data/
       - title: "<b>September 19</b><br> Servers & Web Standards"
-        url: /schedule/08-servers-and-web-standards/
+        url: /schedule/08-servers-web-standards/
       - title: "<b>September 24</b><br> Documentation & Definitions"
-        url: /schedule/09-documentation-and-definitions/
+        url: /schedule/09-documentation-definitions/
       - title: "<b>September 26</b><br> Scrapes & Structures"
-        url: /schedule/10-scrapes-and-structures/
+        url: /schedule/10-scrapes-structures/
   - title: October Detailed Activities
     children:
       - title: "<b>October 1</b><br> Standardizing Culture & Data Archeology"
-        url: /schedule/11-standardizing-culture-and-data-archeology/
+        url: /schedule/11-standardizing-culture-data-archeology/
       - title: "<b>October 3</b><br> GETting Culture"
         url: /schedule/12-getting-culture/
       - title: "<b>October 8</b><br> Curating vs. Cleaning"
         url: /schedule/13-curating-vs-cleaning/
       - title: "<b>October 10</b><br> Notes & Points"
-        url: /schedule/14-notes-and-points/
+        url: /schedule/14-notes-points/
       - title: "<b>October 15</b><br> Arguments & Plots"
-        url: /schedule/15-arguments-and-plots/
+        url: /schedule/15-arguments-plots/
       - title: "<b>October 17</b><br> Making A Point"
         url: /schedule/16-making-a-point/
       - title: "<b>October 22</b><br> Patterns & Outliers"
-        url: /schedule/17-patterns-and-outliers/
+        url: /schedule/17-patterns-outliers/
       - title: "<b>October 24</b><br> Structuring Data"
         url: /schedule/18-structuring-data/
       - title: "<b>October 29</b><br> Modeling Culture"
@@ -91,22 +93,22 @@ schedule:
   - title: November Detailed Activities
     children:
       - title: "<b>November 5</b><br> Reproducibility & Responsibility"
-        url: /schedule/21-reproducibility-and-responsibility/
+        url: /schedule/21-reproducibility-responsibility/
       - title: "<b>November 7</b><br> Augmentation & AI"
-        url: /schedule/22-augmentation-and-ai/
+        url: /schedule/22-augmentation-ai/
       - title: "<b>November 12</b><br> Preservation & Publics"
-        url: /schedule/23-preservation-and-publics/
+        url: /schedule/23-preservation-publics/
       - title: "<b>November 14</b><br> Serving Looks"
         url: /schedule/24-serving-looks/
       - title: "<b>November 19</b><br> I Dream of Data"
         url: /schedule/25-i-dream-of-data/
       - title: "<b>November 21</b><br> Hauntings & Ghosts"
-        url: /schedule/26-hauntings-and-ghosts/
+        url: /schedule/26-hauntings-ghosts/
   - title: December Detailed Activities
     children:
       - title: "<b>December 3</b><br> Reflections & Reviewing (In-Class Project Working Session)"
-        url: /schedule/27-reflections-and-reviewing/
+        url: /schedule/27-reflections-reviewing/
       - title: "<b>December 5</b><br> Next Steps & Final Notes (In-Class Project Working Session)"
-        url: /schedule/28-next-steps-and-final-notes/
+        url: /schedule/28-next-steps-final-notes/
       - title: "<b>December 10</b><br> Future Horizons & Final Projects"
-        url: /schedule/29-future-horizons-and-final-projects/
+        url: /schedule/29-future-horizons-final-projects/

@@ -9,7 +9,7 @@ class_date: 2024-09-05
 
 - [ ] Discuss assigned readings from Tuesday, available [here]({{site.baseurl}}/schedule/03-histories-of-culture-and-computing/).
 - [ ] Work through remainder of Git & GitHub materials.
-- [ ] Start the Introduction to File Formats & Markup Languages.
+- [ ] Start the [Introduction to File Formats & Text]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats).
 
 ## Additional Materials
 

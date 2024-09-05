@@ -364,6 +364,43 @@ git pull origin main
 
 Now both our local and remote repositories are up to date, and we've tried using branches, merging, and pull requests to update our repository. I realize this is fairly advanced topic, so if you want to keep learning more, I would highly recommend taking a look at the Learn Git Branching interactive tutorial [https://learngitbranching.js.org/](https://learngitbranching.js.org/).
 
+### Cloning a Repository
+
+So far we have been creating new repositories on GitHub and then pushing content from our local computer. But what if we want to pull a repository that already exists on GitHub? This is where **cloning** becomes useful.
+
+Cloning is GitHub's term for downloading a repository from GitHub to your local computer. To clone a repository, we need to use the `git clone` command and then the URL of the remote repository.
+
+```sh
+git clone https://github.com/USERNAME/REPOSITORY
+```
+
+You can find the correct URL of a repository by clicking on the green `Code` button and then copying the URL. Do not copy the above example, since it's just a placeholder. You need to copy the URL of the repository you want to clone.
+
+<figure>
+  <a href="https://docs.github.com/assets/cb-69468/mw-1440/images/help/repository/https-url-clone-cli.webp"><img src="https://docs.github.com/assets/cb-69468/mw-1440/images/help/repository/https-url-clone-cli.webp" class="image-popup"></a>
+</figure>
+
+If you setup `SSH`, you should select the `Use SSH` button, but otherwise you can use `HTTPS` and then copy the URL.
+
+Now we can clone the repository by using the `git clone` command and then the URL of the remote repository. Let's clone our `is310-test-repo`.
+
+```sh
+git clone git@github.com:ZoeLeBlanc/is310-test-repo.git
+```
+
+You should see something that looks like the following:
+
+```sh
+$ git clone https://github.com/ZoeLeBlanc/is310-test-repo.git
+> Cloning into `is310-test-repo`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Now if we type `ls` we will see that we have a new directory called `is310-test-repo`. If we navigate into that directory, we will see that it has all the files from our remote repository.
+
 ### Forking
 
 The final concept you might want to try out is *forking*. While forking sounds like it should involve cutlery, it is actually a way to create a copy of a repository in your own GitHub account.

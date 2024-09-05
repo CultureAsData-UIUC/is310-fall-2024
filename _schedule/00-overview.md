@@ -42,9 +42,16 @@ This overview gives a top level view of the topics for each of our meetings. You
 
 *Assignments will be added throughout the semester depending on how much material we get through.*
 
-|Assignment | Due Date (Subject to Change) |
-| -----------------: | --------------: |
-| Initial Interest Survey (Link Available on Canvas)| [September 2]({{site.baseurl}}/schedule/03-change-over-time-histories-of-computing/) |
-| [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310) | Now due [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |
-| Group Assignment [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |
+### Individual Assignments
 
+| Assignment | Due Date (Subject to Change) |
+| -----------------: | --------------: |
+| Initial Interest Survey (Link Available on Canvas) | [September 2]({{site.baseurl}}/schedule/03-change-over-time-histories-of-computing/) |
+| [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310) | Now due [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |
+| [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line) | [September 12]({{site.baseurl}}/schedule/06-markup-markdown/) |
+
+### Group Assignments
+
+| Assignment | Due Date (Subject to Change) |
+| -----------------: | --------------: |
+| [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |

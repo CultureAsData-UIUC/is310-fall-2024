@@ -58,7 +58,82 @@ Discord is a popular platform for both academic and non-academic communities, of
 
 For our collective annotations, we will be using the Hypothesis platform. You can sign up for Hypothesis here [hypothes.is/signup]( hypothes.is/signup) and join our collective group at the link in our syllabus or via Canvas. You will need to install the Hypothesis Browser Extension for your preferred browser as well. You should follow the instructions available in this Quick Start Guide [https://web.hypothes.is/help/quick-start-guide/](https://web.hypothes.is/help/quick-start-guide/).
 
-You are welcome to make your username whatever you choose, but please share your username with the instructor. And please be sure to make your annotations in our hypothes.is group `is310-Fall-2024` and that these annotations are public. For more about using Hypothesis groups, see this guide [https://web.hypothes.is/help/annotating-with-groups/](https://web.hypothes.is/help/annotating-with-groups/).
+You are welcome to make your username whatever you choose. And please be sure to make your annotations in our hypothes.is group `is310-Fall-2024` and that these annotations are public. You can find the link to join the group at the top of our Canvas home page.
+
+### How to Annotate with Hypothesis
+
+In short, once you've created your account and joined our group, you can start making annotations. To do that, you'll need to install the Hypothesis browser extension for your browser of choice.
+
+For Chrome (or other Chromium browsers such as Edge or Brave) can install the Hypothesis extension from the Chrome Web Store.
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/05081258/kb_chrome_web_store-1200x375.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/05081258/kb_chrome_web_store-1200x375.png" alt="Hypothesis Chrome Extension" class="image-popup">
+   </a>
+   <figcaption>Hypothesis Chrome Extension</figcaption>
+</figure>
+
+For Firefox or Safari can install the Hypothesis bookmarklet by visiting the [start page](https://web.hypothes.is/start/) and following the instructions in step 2.
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/30072541/bookmarklet-install.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/30072541/bookmarklet-install.png" alt="Hypothesis Bookmarklet" class="image-popup">
+   </a>
+   <figcaption>Hypothesis Bookmarklet</figcaption>
+</figure>
+
+Once you've done that, you can start annotating by selecting text on a webpage and clicking the "Annotate" button that appears. You can find detailed instructions on this guide [https://web.hypothes.is/help/annotation-basics/](https://web.hypothes.is/help/annotation-basics/). But I will share a few key points here. 
+
+#### Viewing & Making Annotations with Hypothesis
+
+To view annotations and activate your hypothesis extension, you should click the hypothesis extension icon if working in Chrome or similar browsers, which looks like the following:
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170325/ActivatingChrome.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170325/ActivatingChrome.png" alt="Hypothesis Chrome Extension" class="image-popup">
+   </a>
+   <figcaption>Hypothesis Chrome Extension</figcaption>
+</figure>
+
+Or if you are in Firefox or Safari, you should activate the bookmarklet by clicking the bookmarklet in your bookmarks bar.
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170513/ActivatingFirefox.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170513/ActivatingFirefox.png" alt="Hypothesis Firefox Extension" class="image-popup">
+   </a>
+   <figcaption>Hypothesis Firefox Extension</figcaption>
+</figure>
+
+Once activated you can view existing annotations by clicking the sidebar icon that appears on the right side of your browser window.
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170615/OpeningSidebar.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170615/OpeningSidebar.png" alt="Hypothesis Sidebar" class="image-popup">
+   </a>
+   <figcaption>Hypothesis Sidebar</figcaption>
+</figure>
+
+You'll want to make sure that you are logged into your account, which you can do in the sidebar:
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170903/SigningIn.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23170903/SigningIn.png" alt="Hypothesis Signing In" class="image-popup">
+   </a>
+   <figcaption>Hypothesis Signing In</figcaption>
+</figure>
+
+Finally, you can start annotating by selecting text on a webpage and clicking the "Annotate" button that appears.
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23190551/AddingAnnotations.jpg">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2019/01/23190551/AddingAnnotations.jpg" alt="Hypothesis Adding Annotations" class="image-popup">
+   </a>
+   <figcaption>Hypothesis Adding Annotations</figcaption>
+</figure>
+
+There's lots of additional features that you can read about in the guide, but the key thing is to **make sure you are logged in and that you are making your annotations in the `is310-Fall-2024` group.**
+
+You can switch your annotations from being public to being part of the group by selecting the group from the dropdown menu in the annotation window.
 
 <figure>
    <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/21135305/scopeselector-groupname-1024x585.png">
@@ -66,6 +141,43 @@ You are welcome to make your username whatever you choose, but please share your
    </a>
    <figcaption>Hypothesis Annotation</figcaption>
 </figure>
+
+You can read more about using Hypothesis groups in this guide [https://web.hypothes.is/help/annotating-with-groups/](https://web.hypothes.is/help/annotating-with-groups/). Feel free to reach out to the instructor if you have any questions or need help with Hypothesis.
+
+#### Using Hypothesis on Local PDFs
+
+While most of the materials for this course are public on the web, we will occasionally have PDFs that are not. You can still annotate these PDFs using Hypothesis by following the instructions in this guide [https://web.hypothes.is/help/annotating-locally-saved-pdfs/](https://web.hypothes.is/help/annotating-locally-saved-pdfs/). The main steps are as follows:
+
+1. **Save the PDF to your computer.** These will be available on Canvas or through the UIUC library.
+2. **If you are using Chrome, you will need to adjust your Hypothesis extension settings to allow for local PDFs**. You can do this by clicking on the Hypothesis extension icon, selecting the gear icon, and then toggling the setting to allow for local PDFs.
+
+- So first, right-click on the Hypothesis extension icon in Chrome and select “Options” from the context menu
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/20121745/Screen-Shot-2020-03-20-at-3.14.12-PM.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/20121745/Screen-Shot-2020-03-20-at-3.14.12-PM.png" alt="Hypothesis Extension Icon" class="image-popup">
+   </a>
+</figure>
+
+- Then, dismiss the pop-up window that appears.
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/20121814/Screen-Shot-2020-03-20-at-3.15.21-PM.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/20121814/Screen-Shot-2020-03-20-at-3.15.21-PM.png" alt="Hypothesis Extension Options" class="image-popup">
+   </a>
+</figure>
+
+- Finally, make sure site access is set to “On all sites” and switch the control on for “Allow access to file URLs”
+
+<figure>
+   <a href="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/20115610/allow-access-file-urls-1024x955-1.png">
+      <img src="https://d242fdlp0qlcia.cloudfront.net/uploads/2018/03/20115610/allow-access-file-urls-1024x955-1.png" alt="Hypothesis Extension Options" class="image-popup">
+   </a>
+</figure>
+
+1. **Open the PDF in your browser and click the Hypothesis extension icon to start annotating**. Specifically, in the menu bar at the top of your screen, click File and select `Open File`. (alternatively, you can use ⌘O on Macs or CTRL O on PCs). Then make sure you have the Hypothesis extension enabled, that you are logged in and posting to `is310-Fall-2024` and you should be able to annotate the PDF.
+
+Please let the instructor know if you have any issues with this process.
 
 ## GitHub
 

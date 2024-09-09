@@ -46,12 +46,12 @@ This overview gives a top level view of the topics for each of our meetings. You
 
 | Assignment | Due Date (Subject to Change) |
 | -----------------: | --------------: |
-| Initial Interest Survey (Link Available on Canvas) | [September 2]({{site.baseurl}}/schedule/03-change-over-time-histories-of-computing/) |
-| [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310) | Now due [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |
-| [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line) | [September 12]({{site.baseurl}}/schedule/06-markup-markdown/) |
+| Initial Interest Survey (Link Available on Canvas) | [Due by Midnight CT on September 1]({{site.baseurl}}/schedule/03-change-over-time-histories-of-computing/) |
+| [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310) | Now due [Due by Midnight CT on September 9]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/). Though if you are joining late or have issues can extend to Midnight CT on September 11 |
+| [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line) | [Due by Midnight CT on September 11]({{site.baseurl}}/schedule/06-markup-markdown/) |
 
 ### Group Assignments
 
 | Assignment | Due Date (Subject to Change) |
 | -----------------: | --------------: |
-| [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) |
+| [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [Due In-Class September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/). There will be time in class to complete the assignment, we will also be covering how to move your work to your group's GitHub repo. **As a reminder, usually group work will be submitted via GitHub and due by Midnight before our class meeting.** |

@@ -7,7 +7,7 @@ class_date: 2024-09-12
 
 ## In-Class Agenda
 
-- [ ] Review Command Line Maze Homework
+- [ ] Review [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line).
 - [ ] Introduction to Markup Languages & Web Styling (To be posted).
 
 ## Assigned Materials

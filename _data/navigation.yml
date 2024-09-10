@@ -22,6 +22,8 @@ assessments:
         url: /assessments/03-semester-project
       - title: "Assigned Project Groups"
         url: /assessments/04-groups
+      - title: "GitHub Style Guide"
+        url: /assessments/05-github-style-guide/
         
 materials:
   - title: Introductions & Installations

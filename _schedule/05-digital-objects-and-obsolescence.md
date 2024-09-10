@@ -8,7 +8,9 @@ class_date: 2024-09-10
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
+- [ ] Introduction to GitHub Style Guide & Project Management via GitHub
 - [ ] First group presentations on [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture).
+- [ ] Time permitting: work on group projects.
 
 ## Assigned Materials
 

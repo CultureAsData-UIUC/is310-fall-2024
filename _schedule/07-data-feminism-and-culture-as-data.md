@@ -8,7 +8,7 @@ class_date: 2024-09-17
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Explore how feminist theories intersect with data studies
+- [ ] Group assignment (to be posted).
 
 ## Assigned Materials
 

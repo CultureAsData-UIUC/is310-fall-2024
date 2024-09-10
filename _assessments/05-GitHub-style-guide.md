@@ -275,4 +275,60 @@ You can also add labels to issues to categorize them.
 
 #### Using GitHub Projects for Project Management
 
-Part of the project management process is to use GitHub Projects to organize and track the progress of your work. You can create a new project by clicking on the `Projects` tab in your repository.
+Part of the project management process is to use GitHub Projects to organize and track the progress of your work. You can create a new project by clicking on the `Projects` tab in your repository. You can read more about Projects here [https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects).
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/empty_project_board.png">
+        <img src="{{site.baseurl}}/assets/images/empty_project_board.png" alt="New GitHub Issue Form" class="image-popup">
+    </a>
+</figure>
+
+In each of your repositories, you should now see a group project board. This board is a place where you can organize and track the progress of your work. It comes pre-populated with columns for different stages of your project, such as `To Do`, `In Progress`, and `Done`, though you can also add custom ones as well. 
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/add_item_project.png">
+        <img src="{{site.baseurl}}/assets/images/add_item_project.png" alt="New GitHub Issue Form" class="image-popup">
+    </a>
+</figure>
+
+You can also start adding items to your project board by clicking on the `+` button at the bottom of the project board. You simply type out the relevant information and press enter to add it to the board.
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/added_item_project.png">
+        <img src="{{site.baseurl}}/assets/images/added_item_project.png" alt="New GitHub Issue Form" class="image-popup">
+    </a>
+</figure>
+
+Once it is created, you can see it will be labeled as `To Do` by default. You can drag and drop it to the appropriate column as you work on it. It also has a status of `draft` by default, which just means it is not actually an issue yet. You can read more about draft items on a project here [https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects#adding-draft-issues-to-your-project](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/quickstart-for-projects#adding-draft-issues-to-your-project).
+
+You can either convert it to an issue by clicking on the `Convert to issue` button, which will create a blank issue for the item or you can just drag and drop it to the `In Progress` column to start working on it.
+
+Another way to add items to your project board is to create an issue and then add it to the project board. You can do this by again typing in the bottom of the project board, but this time you can type in the issue number (so `#1` for issue number 1) OR typing `#` and then the name of the repository which will bring up a list of issues to choose from.
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/example_repos.png">
+        <img src="{{site.baseurl}}/assets/images/example_repos.png" alt="New GitHub Issue Form" class="image-popup">
+    </a>
+</figure>
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/example_sample_issues.png">
+        <img src="{{site.baseurl}}/assets/images/example_sample_issues.png" alt="New GitHub Issue Form" class="image-popup">
+    </a>
+</figure>
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/example_issue.png">
+        <img src="{{site.baseurl}}/assets/images/example_issue.png" alt="New GitHub Issue Form" class="image-popup">
+    </a>
+</figure>
+
+Once you have selected your issue, it should be automatically added to the project board. You can then drag and drop it to the appropriate column as you work on it.
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/completed_board_items.png">
+        <img src="{{site.baseurl}}/assets/images/completed_board_items.png" alt="New GitHub Issue Form" class="image-popup">
+    </a>
+</figure>
+
+GitHub Projects are a great way to organize and track the progress of your work. You can use them to create a visual representation of your project, assign tasks to group members, and track the progress of your work. I would highly recommend reading their documentation for best practices [https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/best-practices-for-projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/best-practices-for-projects) when it comes to project management. I would also take a look at their `Roadmap` view [https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/customizing-the-roadmap-layout](https://docs.github.com/en/issues/planning-and-tracking-with-projects/customizing-views-in-your-project/customizing-the-roadmap-layout) to see how you can track your progress over time which would be very useful for your final project.

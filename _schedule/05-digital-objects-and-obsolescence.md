@@ -7,6 +7,7 @@ class_date: 2024-09-10
 
 ## In-Class Agenda
 
+- [ ] Demo Hypothesis and review [updated instructions]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/#how-to-annotate-with-hypothesis).
 - [ ] Discuss the assigned readings.
 - [ ] First group presentations on [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture).
 - [ ] Time permitting: Introduction to [GitHub Style Guide & Project Management via GitHub Projects]({{site.baseurl}}/assessments/05-github-style-guide/).

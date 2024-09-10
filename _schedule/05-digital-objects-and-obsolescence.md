@@ -22,6 +22,13 @@ class_date: 2024-09-10
 - Onuoha, Mimi. “The Library of Missing Datasets — MIMI ỌNỤỌHA.” MIMI   ỌNỤỌHA. Accessed January 11, 2024. [https://mimionuoha.com/the-library-of-missing-datasets](https://mimionuoha.com/the-library-of-missing-datasets).
 - Onuoha, Mimi. “MimiOnuoha/Missing-Datasets,” January 9, 2024. [https://github.com/MimiOnuoha/missing-datasets](https://github.com/MimiOnuoha/missing-datasets).
 
+
+### Additional Links
+
+- *The Trans-Atlantic Slave Trade Database* [https://www.slavevoyages.org/](https://www.slavevoyages.org/).
+- *Freedom on the Move* [https://freedomonthemove.org/](https://freedomonthemove.org/).
+- *Enslaved: Peoples of the Historical Slave Trade* [https://enslaved.org/](https://enslaved.org/)
+
 ## Assignments
 
 ### Individual

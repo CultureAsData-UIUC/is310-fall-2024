@@ -9,7 +9,7 @@ class_date: 2024-09-10
 
 - [ ] Discuss the assigned readings.
 - [ ] First group presentations on [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture).
-- [ ] Introduction to [GitHub Style Guide & Project Management via GitHub Projects]({{site.baseurl}}/assessments/05-github-style-guide/).
+- [ ] Time permitting: Introduction to [GitHub Style Guide & Project Management via GitHub Projects]({{site.baseurl}}/assessments/05-github-style-guide/).
 - [ ] Time permitting: work on group projects.
 
 ## Assigned Materials

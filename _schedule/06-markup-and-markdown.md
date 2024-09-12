@@ -7,6 +7,7 @@ class_date: 2024-09-12
 
 ## In-Class Agenda
 
+- [ ] Brief demo of Hypothesis and how to use it for annotating web pages.
 - [ ] Review [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line).
 - [ ] [Introduction to Markup Languages & Web Styling]({{site.baseurl}}/materials/introducing-humanities-computing/07-intro-html).
 - [ ] Time Permitting: Working in your project groups on the following activities:

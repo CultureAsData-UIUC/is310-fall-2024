@@ -69,7 +69,6 @@ The groups are as follows:
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-fall-2024-group-6)
    - Members:
         - Francis A.
-        - Diya C.
         - Cindy L.
         - Gloria L.
         - Lucas W.

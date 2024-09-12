@@ -24,7 +24,7 @@ The groups are as follows:
        - Thea K.
        - Ellis L.
        - A.G. S.
-       - Taerin K.
+       - Zifan Z.
 
 2. **Group 2**
    - [GitHub Repository](https://github.com/CultureAsData-UIUC/is310-fall-2024-group-2)

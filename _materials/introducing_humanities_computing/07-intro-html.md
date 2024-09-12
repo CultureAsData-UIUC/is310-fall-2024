@@ -465,7 +465,7 @@ In the case of `whatisdigitalhumanities`, we can even see this effort by explori
 
 The assignments below are intended to help you start to explore both some of the web technologies and markup languages we've discussed, as well as try your hand at using them. Do your best to get through both assignments, and reach out for help from the Instructors if you get stuck.
 
-Once you've completed the assignments you should push up your materials to your GitHub `is310-coding-assignments` repository. These materials should be in a new folder `source-and-style` and share the link to your folder in the GitHub discussion thread [https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/3](https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/3).
+Once you've completed the assignments you should push up your materials to your GitHub `is310-coding-assignments` repository. These materials should be in a new folder `source-and-style` and share the link to your folder in the GitHub discussion thread [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/4](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/4).
 
 ### Assignment 1: Inspecting the Web
 

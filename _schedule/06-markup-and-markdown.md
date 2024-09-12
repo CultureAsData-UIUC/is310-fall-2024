@@ -8,7 +8,11 @@ class_date: 2024-09-12
 ## In-Class Agenda
 
 - [ ] Review [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line).
-- [ ] Introduction to Markup Languages & Web Styling (To be posted).
+- [ ] [Introduction to Markup Languages & Web Styling]({{site.baseurl}}/materials/introducing-humanities-computing/07-intro-html).
+- [ ] Time Permitting: Working in your project groups on the following activities:
+    - [ ] Finalizing your Project Manager Schedule and creating your first project manager weekly report issue, following these guidelines: [Project Manager Weekly Report Issue]({{site.baseurl}}/assessments/05-github-style-guide/#project-manager-weekly-report).
+    - [ ] Relatedly, working on your initial project proposal. Technically this is due today, but I have extended the optional deadline from September 19 to September 24. Please reach out if you have questions or need help.
+    - [ ] Transferring your content from this week's group assignment if it is in a Google Doc to a Markdown file and uploading it to your group's GitHub repository, following the [GitHub Style Guide]({{site.baseurl}}/assessments/05-github-style-guide/).
 
 ## Assigned Materials
 

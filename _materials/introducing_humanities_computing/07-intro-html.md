@@ -1,408 +1,13 @@
 ---
-title: "Introduction to Markup and Styling Documents"
-permalink: /materials/introducing-humanities-computing/06-intro-markup
+title: "Introduction to Markup and Styling Web Documents"
+permalink: /materials/introducing-humanities-computing/07-intro-html
 excerpt: "An introduction to markup languages and web styling of documents."
 toc: true
 ---
 
+Last week we learned about file formats, and specifically plain text and Markdown. You've now had a chance to try out writing some Markdown files and have seen how they can be used to create formatted text documents. This week we're going to take a step further and introduce you to HTML, which is the language of the web. 
 
-So now we are starting to see how we can use the command line to create directories and files, and move them around. It seems like we're doing a lot of work to do something that we could do with a GUI, but the command line is actually much more powerful than a GUI. For example, we can use the command line to do things like search for text in a file, count the number of words in a file, and even delete a file.
-
-Before we try that though, let's learn a bit more about what files are exactly.
-
-## Introducing File Formats
-
-What constitutes a document or a file might seem obvious, but is actually a robust and ongoing scholarly debate in Library and Information Sciences (LIS) and Computer Science (CS). To put it a bit simply, a file is a collection of data stored in a single unit, identified by a filename. It can be a document, an image, a video, a sound, or any other collection of data. The file extension is the part of the file name after the period. The file extension tells the computer what type of file it is and what program to use to open it.
-
-<figure>
-  <a href="https://www.filecenter.com/blog/wp-content/uploads/2022/04/The-Giant-List-of-Document-File-Types-and-Extensions.jpg">
-    <img src="https://www.filecenter.com/blog/wp-content/uploads/2022/04/The-Giant-List-of-Document-File-Types-and-Extensions.jpg" alt="File Formats" class="image-popup">
-  </a>
-</figure>
-
-There are many different file formats and each one has its own purpose. For example, a `.docx` file is a Microsoft Word document, a `.jpg` file is an image, and a `.mp3` file is an audio file. Some file formats are proprietary, meaning they are owned by a company and can only be opened by certain programs. For example, `.docx` files can only be opened by Microsoft Word. So if you try to open up a word document in a PDF Viewer you might see what looks like a bunch of gibberish.
-
-<figure>
-  <a href="https://www.fonelab.com/images/data-retriever/fonelab-data-retriever-how-to-corrupt-a-word-file-doc-text-only.jpg">
-    <img src="https://www.fonelab.com/images/data-retriever/fonelab-data-retriever-how-to-corrupt-a-word-file-doc-text-only.jpg" alt="Corrupted Word Doc" class="image-popup">
-  </a>
-</figure>
-
-This gibberish is actually the code that makes up the file, but since the PDF Viewer doesn't know how to read the code it just shows you the code itself rather than the data stored in the files.
-
-Other file formats are open source, meaning they are not owned by a company and can be opened by many different programs. For example, `.txt` files are plain text files that can be opened by any text editor. When we used the `touch` command, we told the terminal to create a `.txt` file. This is because `.txt` files are the simplest file format and only contain text. They do not contain any formatting like bold, italics, or images.
-
-### What is Plain Text?
-
-Today, we have been talking a lot about *text*, from text commands to text files. But the core concept with both of these is the idea of plain text.
-
-As scholars working with computers, we need to be aware of the ways plain text and formatted text differ. While a Word Document ant .txt file might look the same to us, the Word Document actually contains a lot of hidden formatting that the .txt file does not. In programming, we want to be explicit in our communications with computers and so plain text is preferable, but what is it exactly?
-
-According to the [Unicode Standard](https://unicode.org/versions/Unicode13.0.0/),
-
-> Plain text is a pure sequence of character codes; plain Unicode-encoded text is therefore a sequence of Unicode character codes.
-
-This is a bit technical, but the key concept is that plain text shows if it is formatted or not (we call this markup), and usually contains no formatting. Plain text can be moved between programs more fluidly and can respond to programmatic manipulations. It is often manipulated in something called a *text editor* (like VS Code), which is a program that allows you to edit plain text files.
-
-We can see an example of a plain txt file, via Project Gutenberg - a website that hosts public domain books in plain text format.
-
-<figure>
-  <a href="{{site.baseurl}}/assets/images/pride_prejudice_gutenberg.png">
-    <img src="{{site.baseurl}}/assets/images/pride_prejudice_gutenberg.png" alt="Pride and Prejudice" class="image-popup">
-  </a>
-  <figcaption><i>Pride and Prejudice</i> by Jane Austen <a href="https://www.gutenberg.org/ebooks/1342">https://www.gutenberg.org/ebooks/1342</a></figcaption>
-</figure>
-
-I can download this file directly from my terminal using the command line:
-
-```sh
-curl https://www.gutenberg.org/files/1342/1342-0.txt > pride-and-prejudice.txt
-```
-
-In this example, I'm using the command `curl` to download the file from the internet. The `>` symbol tells the terminal to create a new file, store this data in the file, and save the file as `pride-and-prejudice.txt`. We can see that this file is a `.txt` file, meaning it is a plain text file. `curl` stands for "client URL" and is a command line tool for transferring data and downloading files from the internet. We can also use it to upload files to the internet.
-
-If you are on a Windows computer, you can instead use the command `wget` to download the file from the internet. The syntax is the same, but the command is different.
-
-```sh
-wget https://www.gutenberg.org/files/1342/1342-0.txt > pride-and-prejudice.txt
-```
-
-`wget` stands for "web get" and is a similar command line tool for retrieving and downloading files from the web.
-
-If you are using PowerShell and not WSL (again WSL is recommended!), the command looks slightly different:
-
-```sh
-wget https://www.gutenberg.org/files/1342/1342-0.txt -OutFile pride-and-prejudice.txt 
-```
-
-----
-
-Now that we have downloaded this file, we can use the command line to display some of the text:
-
-```sh
-cat pride-and-prejudice.txt
-```
-
-`cat` stands for concatenate, and is a command line tool for displaying the contents of a file. We can see that this file contains the text of *Pride and Prejudice* by Jane Austen (though you'll likely only see the end of the text since it is so long, without scrolling for ages).
-
-We can start to interact with this file in a number of ways.
-
-First, let's count how many words are in this file. To do this, we can use the command `wc -w`. Let's try it out!
-
-```sh
-wc -w pride-and-prejudice.txt
-```
-
-`wc` stands for word count, and the `-w` flag tells the terminal to count the number of words in the file. You'll often notice that commands have flags like this, which are additional instructions for the command.
-
-We can also use the command `wc` to count the number of lines in a file with the `-l` flag. Let's try it out!
-
-```sh
-wc -l pride-and-prejudice.txt
-```
-
-We should see that there are `14911` lines in this file.
-
-We can also search for a specific word in a file using the command `grep`. Let's try to find out how often the word "pride" appears in this file. To do this, we can use the command `grep pride pride-and-prejudice.txt`. Let's try it out!
-
-```sh
-grep pride pride-and-prejudice.txt
-```
-
-This should give us the following output:
-
-<figure>
-  <a href="{{site.baseurl}}/assets/images/grep_pride.png">
-    <img src="{{site.baseurl}}/assets/images/grep_pride.png" alt="Pride and Prejudice" class="image-popup">
-  </a>
-</figure>
-
-How could we count the number of times the word "pride" appears in this file? We could use the command `wc -w` to count the number of words, but that would include the word "pride" in the title of the book. We could also use the command `wc -l` to count the number of lines, but that would include the line numbers. Instead, we can use the command `grep -c pride pride-and-prejudice.txt`.
-
-We can see that the word "pride" appears 43 times in this file. How many times does the word "prejudice" appear?
-
-## Homework Exercises
-
-<figure>
-  <a href="https://media.giphy.com/media/Xbn2CXq5u2Wc0/giphy.gif">
-    <img src="https://media.giphy.com/media/Xbn2CXq5u2Wc0/giphy.gif" alt="maze" class="image-popup">
-  </a>
-</figure>
-
-### Assignment 1: Find Your Way: Solve A Command-Line ~~Corn~~ Maze
-
-Your first assignment, which you are welcome to work in pairs, is to solve an existing command line maze. You can find the maze here: as a [zip file]({{site.baseurl}}/assets/files/cli_exercises/zipped_gutenberg_maze.zip) or via our [GitHub repo](https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/blob/gh-pages/assets/files/cli_exercises/gutenberg_maze.zip) All links should be working, but if you have trouble please try reloading the website and contacting the instructor! You should download the zip file, and use the command line to unzip the file and then solve the maze.
-
-To unzip the file, you can use the command `unzip path/to/your/zip/file -d path/to/your/desired/directory` if you are running Unix/Linux (so Macs, Linux, and the Window Subsystems for Linux -- all of which are recommended). If you are using PowerShell, you will need to use the command `Expand-Archive -Path "path\to\your\zip\file" -DestinationPath "path\to\your\desired\directory`. Be sure to replace these dummy file paths with your actual desired ones (or ask AI for help!). Your goal with this maze is to use both the command line cheatsheet and your preferred AI chatbot to solve the maze. You should be able to solve the maze in ~30 minutes, but if you are struggling, please reach out to the instructors via Slack for help.
-
-### Assignment 2: Time To Get Lost: Create A Command-Line ~~Corn~~ Maze
-
-For our ~~Tuesday class next week~~ Thursday class, your goal is to create your own command line maze, which we will try to solve in class. You should work individually on this, though you are welcome to brainstorm ideas.
-
-Your maze should have the following components:
-
-- [ ] An entrance and a solution
-- [ ] At least 5 directories (these can be nested)
-- [ ] At least 5 files (these can be nested)
-- [ ] One hidden file or directory
-- [ ] Clues to help us solve the maze
-
-You are welcome to use Project Gutenberg [https://www.gutenberg.org/](https://www.gutenberg.org/) for your files, but you can also use other files if you prefer. You can also use the command line to create your files, but you can also use a text editor if you prefer.
-
-<div class="notice--info">⚡️ You will not be submitting either assignment until we get through the lesson on git and GitHub on Tuesday, so please just bring your <strong>completed</strong> assignments with you to class.</div>
-
-## Additional Resources
-
-In addition to the resources, I linked at the beginning of this lesson, I would recommend the following:
-
-1. Ian Milligan and James Baker, "Introduction to the Bash Command Line," *The Programming Historian* 3 (2014), [https://programminghistorian.org/en/lessons/intro-to-bash](https://programminghistorian.org/en/lessons/intro-to-bash). This is an introduction to the Bash shell, which will serve well enough as an introduction to other shells like Zsh as well.
-2. [Bash Basics Part 1 of 8 Access and Navigation](https://youtu.be/eH8Z9zeywq0?t=885)
-3. [Beginner's Guide to the Bash Terminal](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
-4. [The Most Important Thing You'll Learn in the Command Line](https://www.youtube.com/watch?v=q7-aEspwwEI)
-5. Go through the CodeAcademy [command line course](https://www.codecademy.com/learn/learn-the-command-line).
-6. [Shell Scripting Tutorial](https://www.youtube.com/watch?v=hwrnmQumtPw)
-
-[^1]: If you have serious concerns over GitHub Co-Pilot, I've just learned of Privy, a private and locally run version of a coding assistant [https://github.com/srikanth235/privy](https://github.com/srikanth235/privy). I haven't had a chance to try it yet, but seems like a promising alternative. Another option is [gpt4all](https://gpt4all.io/index.html) which let's you run a number of models locally (though anecdotally some of my previous students struggled to install it on their computers, so ymmv).
-So now we are starting to see how we can use the command line to create directories and files, and move them around. It seems like we're doing a lot of work to do something that we could do with a GUI, but the command line is actually much more powerful than a GUI. For example, we can use the command line to do things like search for text in a file, count the number of words in a file, and even delete a file.
-
-Before we try that though, let's learn a bit more about what files are exactly.
-
-## Introducing File Formats
-
-What constitutes a document or a file might seem obvious, but is actually a robust and ongoing scholarly debate in Library and Information Sciences (LIS) and Computer Science (CS). To put it a bit simply, a file is a collection of data stored in a single unit, identified by a filename. It can be a document, an image, a video, a sound, or any other collection of data. The file extension is the part of the file name after the period. The file extension tells the computer what type of file it is and what program to use to open it.
-
-<figure>
-  <a href="https://www.filecenter.com/blog/wp-content/uploads/2022/04/The-Giant-List-of-Document-File-Types-and-Extensions.jpg">
-    <img src="https://www.filecenter.com/blog/wp-content/uploads/2022/04/The-Giant-List-of-Document-File-Types-and-Extensions.jpg" alt="File Formats" class="image-popup">
-  </a>
-</figure>
-
-There are many different file formats and each one has its own purpose. For example, a `.docx` file is a Microsoft Word document, a `.jpg` file is an image, and a `.mp3` file is an audio file. Some file formats are proprietary, meaning they are owned by a company and can only be opened by certain programs. For example, `.docx` files can only be opened by Microsoft Word. So if you try to open up a word document in a PDF Viewer you might see what looks like a bunch of gibberish.
-
-<figure>
-  <a href="https://www.fonelab.com/images/data-retriever/fonelab-data-retriever-how-to-corrupt-a-word-file-doc-text-only.jpg">
-    <img src="https://www.fonelab.com/images/data-retriever/fonelab-data-retriever-how-to-corrupt-a-word-file-doc-text-only.jpg" alt="Corrupted Word Doc" class="image-popup">
-  </a>
-</figure>
-
-This gibberish is actually the code that makes up the file, but since the PDF Viewer doesn't know how to read the code it just shows you the code itself rather than the data stored in the files.
-
-Other file formats are open source, meaning they are not owned by a company and can be opened by many different programs. For example, `.txt` files are plain text files that can be opened by any text editor. When we used the `touch` command, we told the terminal to create a `.txt` file. This is because `.txt` files are the simplest file format and only contain text. They do not contain any formatting like bold, italics, or images.
-
-### What is Plain Text?
-
-Today, we have been talking a lot about *text*, from text commands to text files. But the core concept with both of these is the idea of plain text.
-
-As scholars working with computers, we need to be aware of the ways plain text and formatted text differ. While a Word Document ant .txt file might look the same to us, the Word Document actually contains a lot of hidden formatting that the .txt file does not. In programming, we want to be explicit in our communications with computers and so plain text is preferable, but what is it exactly?
-
-According to the [Unicode Standard](https://unicode.org/versions/Unicode13.0.0/),
-
-> Plain text is a pure sequence of character codes; plain Unicode-encoded text is therefore a sequence of Unicode character codes.
-
-This is a bit technical, but the key concept is that plain text shows if it is formatted or not (we call this markup), and usually contains no formatting. Plain text can be moved between programs more fluidly and can respond to programmatic manipulations. It is often manipulated in something called a *text editor* (like VS Code), which is a program that allows you to edit plain text files.
-
-We can see an example of a plain txt file, via Project Gutenberg - a website that hosts public domain books in plain text format.
-
-<figure>
-  <a href="{{site.baseurl}}/assets/images/pride_prejudice_gutenberg.png">
-    <img src="{{site.baseurl}}/assets/images/pride_prejudice_gutenberg.png" alt="Pride and Prejudice" class="image-popup">
-  </a>
-  <figcaption><i>Pride and Prejudice</i> by Jane Austen <a href="https://www.gutenberg.org/ebooks/1342">https://www.gutenberg.org/ebooks/1342</a></figcaption>
-</figure>
-
-I can download this file directly from my terminal using the command line:
-
-```sh
-curl https://www.gutenberg.org/files/1342/1342-0.txt > pride-and-prejudice.txt
-```
-
-In this example, I'm using the command `curl` to download the file from the internet. The `>` symbol tells the terminal to create a new file, store this data in the file, and save the file as `pride-and-prejudice.txt`. We can see that this file is a `.txt` file, meaning it is a plain text file. `curl` stands for "client URL" and is a command line tool for transferring data and downloading files from the internet. We can also use it to upload files to the internet.
-
-If you are on a Windows computer, you can instead use the command `wget` to download the file from the internet. The syntax is the same, but the command is different.
-
-```sh
-wget https://www.gutenberg.org/files/1342/1342-0.txt > pride-and-prejudice.txt
-```
-
-`wget` stands for "web get" and is a similar command line tool for retrieving and downloading files from the web.
-
-If you are using PowerShell and not WSL (again WSL is recommended!), the command looks slightly different:
-
-```sh
-wget https://www.gutenberg.org/files/1342/1342-0.txt -OutFile pride-and-prejudice.txt 
-```
-
-----
-
-Now that we have downloaded this file, we can use the command line to display some of the text:
-
-```sh
-cat pride-and-prejudice.txt
-```
-
-`cat` stands for concatenate, and is a command line tool for displaying the contents of a file. We can see that this file contains the text of *Pride and Prejudice* by Jane Austen (though you'll likely only see the end of the text since it is so long, without scrolling for ages).
-
-We can start to interact with this file in a number of ways.
-
-First, let's count how many words are in this file. To do this, we can use the command `wc -w`. Let's try it out!
-
-```sh
-wc -w pride-and-prejudice.txt
-```
-
-`wc` stands for word count, and the `-w` flag tells the terminal to count the number of words in the file. You'll often notice that commands have flags like this, which are additional instructions for the command.
-
-We can also use the command `wc` to count the number of lines in a file with the `-l` flag. Let's try it out!
-
-```sh
-wc -l pride-and-prejudice.txt
-```
-
-We should see that there are `14911` lines in this file.
-
-We can also search for a specific word in a file using the command `grep`. Let's try to find out how often the word "pride" appears in this file. To do this, we can use the command `grep pride pride-and-prejudice.txt`. Let's try it out!
-
-```sh
-grep pride pride-and-prejudice.txt
-```
-
-This should give us the following output:
-
-<figure>
-  <a href="{{site.baseurl}}/assets/images/grep_pride.png">
-    <img src="{{site.baseurl}}/assets/images/grep_pride.png" alt="Pride and Prejudice" class="image-popup">
-  </a>
-</figure>
-
-How could we count the number of times the word "pride" appears in this file? We could use the command `wc -w` to count the number of words, but that would include the word "pride" in the title of the book. We could also use the command `wc -l` to count the number of lines, but that would include the line numbers. Instead, we can use the command `grep -c pride pride-and-prejudice.txt`.
-
-We can see that the word "pride" appears 43 times in this file. How many times does the word "prejudice" appear?
-
-## Homework Exercises
-
-<figure>
-  <a href="https://media.giphy.com/media/Xbn2CXq5u2Wc0/giphy.gif">
-    <img src="https://media.giphy.com/media/Xbn2CXq5u2Wc0/giphy.gif" alt="maze" class="image-popup">
-  </a>
-</figure>
-
-### Assignment 1: Find Your Way: Solve A Command-Line ~~Corn~~ Maze
-
-Your first assignment, which you are welcome to work in pairs, is to solve an existing command line maze. You can find the maze here: as a [zip file]({{site.baseurl}}/assets/files/cli_exercises/zipped_gutenberg_maze.zip) or via our [GitHub repo](https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/blob/gh-pages/assets/files/cli_exercises/gutenberg_maze.zip) All links should be working, but if you have trouble please try reloading the website and contacting the instructor! You should download the zip file, and use the command line to unzip the file and then solve the maze.
-
-To unzip the file, you can use the command `unzip path/to/your/zip/file -d path/to/your/desired/directory` if you are running Unix/Linux (so Macs, Linux, and the Window Subsystems for Linux -- all of which are recommended). If you are using PowerShell, you will need to use the command `Expand-Archive -Path "path\to\your\zip\file" -DestinationPath "path\to\your\desired\directory`. Be sure to replace these dummy file paths with your actual desired ones (or ask AI for help!). Your goal with this maze is to use both the command line cheatsheet and your preferred AI chatbot to solve the maze. You should be able to solve the maze in ~30 minutes, but if you are struggling, please reach out to the instructors via Slack for help.
-
-### Assignment 2: Time To Get Lost: Create A Command-Line ~~Corn~~ Maze
-
-For our ~~Tuesday class next week~~ Thursday class, your goal is to create your own command line maze, which we will try to solve in class. You should work individually on this, though you are welcome to brainstorm ideas.
-
-Your maze should have the following components:
-
-- [ ] An entrance and a solution
-- [ ] At least 5 directories (these can be nested)
-- [ ] At least 5 files (these can be nested)
-- [ ] One hidden file or directory
-- [ ] Clues to help us solve the maze
-
-You are welcome to use Project Gutenberg [https://www.gutenberg.org/](https://www.gutenberg.org/) for your files, but you can also use other files if you prefer. You can also use the command line to create your files, but you can also use a text editor if you prefer.
-
-<div class="notice--info">⚡️ You will not be submitting either assignment until we get through the lesson on git and GitHub on Tuesday, so please just bring your <strong>completed</strong> assignments with you to class.</div>
-
-## Additional Resources
-
-In addition to the resources, I linked at the beginning of this lesson, I would recommend the following:
-
-1. Ian Milligan and James Baker, "Introduction to the Bash Command Line," *The Programming Historian* 3 (2014), [https://programminghistorian.org/en/lessons/intro-to-bash](https://programminghistorian.org/en/lessons/intro-to-bash). This is an introduction to the Bash shell, which will serve well enough as an introduction to other shells like Zsh as well.
-2. [Bash Basics Part 1 of 8 Access and Navigation](https://youtu.be/eH8Z9zeywq0?t=885)
-3. [Beginner's Guide to the Bash Terminal](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
-4. [The Most Important Thing You'll Learn in the Command Line](https://www.youtube.com/watch?v=q7-aEspwwEI)
-5. Go through the CodeAcademy [command line course](https://www.codecademy.com/learn/learn-the-command-line).
-6. [Shell Scripting Tutorial](https://www.youtube.com/watch?v=hwrnmQumtPw)
-
-[^1]: If you have serious concerns over GitHub Co-Pilot, I've just learned of Privy, a private and locally run version of a coding assistant [https://github.com/srikanth235/privy](https://github.com/srikanth235/privy). I haven't had a chance to try it yet, but seems like a promising alternative. Another option is [gpt4all](https://gpt4all.io/index.html) which let's you run a number of models locally (though anecdotally some of my previous students struggled to install it on their computers, so ymmv).
-
-## Introducing Markdown
-
-While `.txt` files are useful, in digital humanities we often use a file format called Markdown. Like txt, Markdown is a plain text file format that uses symbols to add formatting to the text, and has the file extension `.md`. You have already seen an example of this with the `README.md` files on GitHub.
-
-Let's try creating a Markdown file in our folder. We can do this by using the `touch` command and adding `.md` to the end of the file name.
-
-```sh
-touch is310-computing-humanities.md
-```
-
-Now we can open this file in VS Code and add some text to it.
-
-```sh
-Computing in the Humanities is defined as the application of computational methods and tools to the study of humanistic questions.
-```
-
-Now if we wanted too, we could add some formatting to this text using Markdown.
-
-Maybe we want to highlight the word "Computing in the Humanities" in bold. To do this we would put two asterisks on either side of the word.
-
-```md
-**Computing in the Humanities** is defined as ...
-```
-
-We could also put `defined` into italics by putting one asterisk on either side of the word.
-
-```md
-**Computing in the Humanities** is *defined* as ...
-```
-
-Finally, we could add a heading to this text by putting a hashtag in front of the heading.
-
-```md
-# Welcome to Computing in the Humanities
-```
-
-We can see what this looks like in VS Code by using the Markdown Preview extension. To do this, click on the icon in the top right corner of VS Code that looks like a magnifying glass. This will open a preview of the Markdown file in a new tab.
-
-You should see something like this, where our Markdown file is on the left and the preview is on the right:
-
-<figure>
-  <a href="https://code.visualstudio.com/assets/docs/languages/Markdown/preview-scroll-sync.gif">
-    <img src="https://code.visualstudio.com/assets/docs/languages/Markdown/preview-scroll-sync.gif" alt="Markdown Preview" class="image-popup">
-  </a>
-</figure>
-
-Now you can see that our formatting has been applied to the text. This type of formatting is called Markdown syntax and it is a way of adding formatting to plain text files. What we did was exactly the same as what you do when you use the buttons in Word or Google Docs to add headers or styling to your text. The difference is that we are using symbols to add this formatting instead of buttons.
-
-This may seem like a lot of extra work, but the advantages of Markdown are numerous.
-
-1. It is much more sustainable than Word or Google Docs. This is because the text is saved as plain text and not in a format that is optimized for editing. This makes it future-proof so that you don't require a license or access to an application to see your files.
-2. It can also be rendered by any text editor. This is because Markdown is a plain text format and not a rich text format. This makes it platform agnostic.
-3. Finally, Markdown plays nicely with Github, which renders it directly in your browser. This makes it easy to push up your files into your repositories.
-
-Markdown was created by John Gruber with help from Aaron Swartz in 2004. The goal was to create a file format that was easy to read and write, could be converted into web documents, and could be used by anyone. You can read more about the history of Markdown, in Bednarski, Dawid. “The History of Markdown: A Prelude to the No-Code Movement.” *Taskade Blog*, March 25, 2022. [https://www.taskade.com/blog/markdown-history/](https://www.taskade.com/blog/markdown-history/).
-
-It's important to understand that Markdown has this history because many flavors of Markdown exist, and standardization of Markdown has been an ongoing project. For example, GitHub Flavored Markdown (GFM) is a flavor of Markdown that was created by GitHub in 2009. It is a superset of Markdown, meaning it adds additional features to Markdown. For example, GFM allows you to create tables in Markdown, which is not possible in regular Markdown. You can read more about GFM in “GitHub Flavored Markdown Spec.” GitHub, 2022. [https://github.github.com/gfm/](https://github.github.com/gfm/).
-
-<figure>
-  <a href="https://d11a6trkgmumsb.cloudfront.net/original/3X/c/b/cb7374a606a66c5b8e489afed76d93ed49dc7836.png">
-    <img src="https://d11a6trkgmumsb.cloudfront.net/original/3X/c/b/cb7374a606a66c5b8e489afed76d93ed49dc7836.png" alt="Markdown Flavors" class="image-popup">
-  </a>
-</figure>
-
-This figure shows some examples of how Markdown is written depending on the platform and standards. You can also see some of the discussions that go on to help shape these standards through the various repositories on GitHub that host the standards. For example, CommonMark is another popular Markdown style and improvements to it are discussed in this repository [https://github.com/commonmark/commonmark-spec/issues](https://github.com/commonmark/commonmark-spec/issues).
-
-### First Exercise
-
-Now that you have a basic understanding of Markdown, let's try improving the `README.md` file in our `is310-coding-assignments` repository. To do this, we are going to use the Markdown Preview extension in VS Code.
-
-Try adding the following elements:
-
-- [ ] A heading
-- [ ] A subheading
-- [ ] A bulleted list
-
-*Bonus option*:
-- [ ] A **Link** to our course website
-
-You can use both AI tools and this [GitHub Markdown Cheatsheet](https://github.com/lifeparticle/Markdown-Cheatsheet) to help you. Once you've completed the exercise, push up your changes to GitHub.
-
-## Introducing HTML
+## Introducing Markup Languages
 
 While Markdown is very cool and useful, it technically is not a programming language, but a markup language.
 
@@ -414,7 +19,7 @@ From [handy Wikipedia](https://en.wikipedia.org/wiki/Markup_language):
 
 So in the case of Markdown, this annotating is our use of symbols like `#` to add formatting to our text. This is different from a programming language like Python or JavaScript, which is used to create programs that can be executed by a computer.
 
-Another example of a Markup language that has a long history in Computing in the Humanities is TEI, which stands for Text Encoding Initiative. TEI is a markup language that is used to encode texts in a way that makes them machine-readable. This is useful for creating digital editions of texts, which is a common project in the humanities. You can read more about TEI in “What Is TEI?” Text Encoding Initiative, 2022. [https://tei-c.org/what-is-tei/](https://tei-c.org/what-is-tei/).
+Another example of a Markup language that has a long history in Computing in the Humanities is TEI, which stands for Text Encoding Initiative. TEI is a markup language that is used to encode texts in a way that makes them machine-readable. You can read more about TEI in “What Is TEI?” Text Encoding Initiative, 2022. [https://tei-c.org/what-is-tei/](https://tei-c.org/what-is-tei/).
 
 <figure>
   <a href="https://image.slidesharecdn.com/2015-08-15-datamanagementsrs-150817155314-lva1-app6891/95/research-data-management-in-the-humanities-and-social-sciences-15-638.jpg" class="image-popup">
@@ -422,9 +27,27 @@ Another example of a Markup language that has a long history in Computing in the
   </a>
 </figure>
 
-### What is HTML?
+Today we are used to having OCR and other tools that can help us digitize texts, and then programming languages like Python and R that let us manipulate text into data (a topic we'll cover later in the semester). But in the early days of the web, this was not the case, which made it difficult for machines to know what was in a text. This is where TEI comes in, as it allows us to encode texts in a way that makes them useable to machines. For example, TEI often involves marking what a date is, or what a person's name is, or what a place is. This allows us to search and analyze texts in ways that would be impossible without TEI.
 
-But the most popular of all markup languages is HTML, which stands for HyperText Markup Language. HTML is the language of the web and is used to create web pages. This might be surprising to learn but when you go to a website, it is just showing you a document (just like our `.txt` or `.md` files). The difference is that this document is written and marked-up in HTML and is rendered by your browser.
+TEI and HTML both were created in the same historical moment, the early days of the web. HTML was created by Tim Berners-Lee in 1991, while TEI was created in 1987.
+
+<figure>
+  <a href="https://www.dhi.ac.uk/blogs/old-bailey/wp-content/uploads/sites/35/2022/09/Robert-Marshall-7-Dec-1692-1-894x1024.jpg" class="image-popup">
+    <img src="https://www.dhi.ac.uk/blogs/old-bailey/wp-content/uploads/sites/35/2022/09/Robert-Marshall-7-Dec-1692-1-894x1024.jpg" alt="TEI" />
+  </a>
+</figure>
+
+We can see a more detailed example of what this looks like from *The Proceedings of the Old Bailey*, which is one of the older Digital Humanities projects that is still in operation. The project started in 1999 and has been digitizing the records of the Old Bailey, which is the central criminal court of England and Wales. The project uses TEI to encode the text of the records, which allows them to be searched and analyzed in a variety of ways. You can read more about the project here [https://www.oldbaileyonline.org/](https://www.oldbaileyonline.org/).
+
+What is so unique about the *Old Bailey*, as it is often called, is not just that it uses TEI and XML but also that all this markup was done by hand. Specifically, as the authors write in [the history of the project](https://www.oldbaileyonline.org/about/a-narrative-history-of-the-project#design):
+
+> adopt a “double rekeying” strategy for the creation of the transcript  – having the text transcribed twice and then automatically compared to identify errors.  In 1998, and following extensive testing, it was clear that Optical Character Recognition (OCR) software was just not good enough to automatically produce meaningful transcriptions of eighteenth-century print, particularly when applied to images from microfilm. And in the preceding decades a world-wide network of “rekeying” agencies had developed, focused on the digitisation of business records. By 1998 these agencies were keen to develop a role in the emerging field of humanities digitisation. Within just a few years OCR would take over (at least for texts with consistent print quality which were photographed to a high standard), but for the Proceedings double entry rekeying was the obvious choice, and it ensured that the transcriptions we would be working with would be 99.9 percent accurate. XML markup would not have worked with the kind of error-ridden text produced by OCR methodologies, so applying complex markup was dependant on adopting rekeying. Not only did this facilitate accurate searching, but it meant that the text could be reused in subsequent digital projects.
+
+Such type of work is extremely laborious, but it does lead to very high-quality data. Understanding this longer history helps us now consider how and why we write HTML, but first we need to actually learn what HTML is.
+
+## What is HTML?
+
+While TEI is still in use today, by far the most popular of all markup languages is HTML, which stands for **HyperText Markup Language**. HTML is the language of the web and is used to create web pages. This might be surprising to learn but when you go to a website, it is just showing you a document (just like our `.txt` or `.md` files). The difference is that this document is written and marked-up in HTML and is rendered by your browser.
 
 <figure>
   <a href="https://media.giphy.com/media/bF2M6el0vi2qc/giphy.gif" class="image-popup">
@@ -436,8 +59,7 @@ According to the [Mozilla website](https://developer.mozilla.org/en-US/docs/Lear
 
 > "HTML (Hypertext Markup Language) is not a programming language; it is a markup language used to tell your browser how to structure the web pages you visit. It can be as complicated or as simple as the web developer wishes it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of the content to make it appear or act a certain way. The enclosing tags can make a bit of content into a hyperlink to link to another page on the web, italicize words, and so on."
 
-
-So while in Google Docs, you can use the GUI to format your text or in Markdown we use symbol, in HTML we use a series of **tags**. Tags have a name, a series of key/value pairs called **attributes**, and some textual content. Attributes are optional.
+So while in Google Docs, you can use the GUI to format your text or in Markdown we use `#` symbol, in HTML we use a series of **tags**. Tags have a name, a series of key/value pairs called **attributes**, and some textual content. Attributes are optional.
 
 Let's try an example.
 
@@ -455,7 +77,7 @@ Now, I'm going to open the file in a text editor and add some text, just like we
 My first page!
 ```
 
-I can then save this file and open it in my browser. To do this, I can either right click on the file and select `open with` and then select my browser, or simply go to my preferred browser and select `Open File`. We'll talk more about web browsers next week, but some popular ones include Chrome, Firefox, Safari, and Edge.
+I can then save this file and open it in a browser. To do this, I can either right click on the file and select `open with` and then select my browser, or simply go to my preferred browser and select `Open File`. We'll talk more about web browsers in the next lesson, but some popular ones include Chrome, Firefox, Safari, and Edge.
 
 We should see our text in the browser, just like we did with our Markdown file. So everything is working so far!
 
@@ -549,36 +171,25 @@ In this example, the tag's name is div. The tag has two attributes: class, with 
 
 Tags can contain other tags, in a hierarchical relationship. For example, here's some HTML to make a bulleted list:
 
+```html
 <ul>
   <li>Likes Coding and History</li>
   <li>Likes "What We Do in the Shadows" TV show</li>
   <li>Dislikes Mint Chocolate</li>
 </ul>
+```
 
 The `<ul>` tag (ul stands for **unordered list**) in this example has three other `<li>` tags inside of it (li stands for **list item**). The `<ul>` tag is said to be the **parent** of the `<li>` tags, and the `<li>` tags are the **children** of the `<ul>` tag. All tags grouped under a particular parent tag are called **siblings.**
 
-HTML is a very powerful language and there are many more tags that we can use to create HTML elements. You can find a list of all the HTML tags here [https://www.w3schools.com/tags/ref_byfunc.asp](https://www.w3schools.com/tags/ref_byfunc.asp). But HTML also has some limitations. Take a look at this helpful overview of [*HTML's shortcomings by Alison Parrish*](https://github.com/aparrish/dmep-python-intro/blob/master/scraping-html.ipynb):
+HTML is a very powerful language and there are many more tags that we can use to create HTML elements. You can find a list of all the HTML tags here [https://www.w3schools.com/tags/ref_byfunc.asp](https://www.w3schools.com/tags/ref_byfunc.asp). But HTML also has some limitations. Take a look at this helpful overview of [*HTML's shortcomings by Alison Parrish*](https://github.com/aparrish/dmep-python-intro/blob/master/scraping-html.ipynb) (bold added for emphasis):
 
 > HTML documents are intended to add **markup** to text to add information that allows browsers to display the text in different ways---e.g., HTML markup might tell the browser to make the font of the text a particular size, or to position it in a particular place on the screen.
 
-> Because the primary purpose of HTML is to change the appearance of text, HTML markup usually does not tell us anything useful about what the text means, or what kind of data it contains. When you look at a web page in the browser, it might appear to contain a list of newspaper articles, or a table with birth rates, or a series of names with associated biographies, or whatever. But that's information that we get, as humans, from reading the page. There's (usually) no easy way to extract this information with a computer program.
+> **Because the primary purpose of HTML is to change the appearance of text, HTML markup usually does not tell us anything useful about what the text means, or what kind of data it contains.** When you look at a web page in the browser, it might appear to contain a list of newspaper articles, or a table with birth rates, or a series of names with associated biographies, or whatever. But that's information that we get, as humans, from reading the page. There's (usually) no easy way to extract this information with a computer program.
 
-> HTML is also notoriously messy---web browsers are very forgiving of syntax errors and other irregularities in HTML (like mismatched or unclosed tags). For this reason, we need special libraries to parse HTML into data structures that our Python programs can use, libraries that can make a "good guess" about what the structure of an HTML document is, even when that structure is written incorrectly or inconsistently.
+> **HTML is also notoriously messy---web browsers are very forgiving of syntax errors and other irregularities in HTML (like mismatched or unclosed tags).** For this reason, we need special libraries to parse HTML into data structures that our Python programs can use, libraries that can make a "good guess" about what the structure of an HTML document is, even when that structure is written incorrectly or inconsistently.
 
-For more information, read through this [introduction from Mozilla on HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#What_is_HTML).
-
-### Second Exercise
-
-Now that you have a basic understanding of HTML, let's try implementing this understanding by creating a new HTML file, called `is310_website.html` in our `is310-coding-assignments` repository in a new folder called `week_02`.
-
-This HTML file should include the following elements:
-
-- [ ] A heading
-- [ ] A subheading
-- [ ] A bulleted list
-- [ ] A link to our course website
-
-You're welcome to add any other elements you want, but these are the minimum requirements. Once you've created your file you should open it in your browser and inspect it to make sure it looks the way you want it to. And then you should push it up to GitHub.
+Understanding these limitations is important as we start to work with HTML and other web technologies. For more detailed information, I recommend reading through this [introduction from Mozilla on HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#What_is_HTML).
 
 ## Web Styling and Interaction
 
@@ -637,7 +248,7 @@ And then the styles that are applied to that class:
 }
 ```
 
-This code is something called CSS, which stands for Cascading Style Sheets. CSS is a `style sheet` language that essentially tells the computer how to style and display a document, whether that's an HTML or Markdown document. We have already used it when we added the `style` attribute to our `<div>` element. One way to think about it is that HTML is the structure of the document, while CSS is the style of the document (similar to styling fonts or positioning images in a Word Document for example).
+This code is something called CSS, which stands for **Cascading Style Sheets**. CSS is a `style sheet` language that essentially tells the computer how to style and display a document, whether that's an HTML or Markdown document. We have already used it when we added the `style` attribute to our `<div>` element. One way to think about it is that HTML is the structure of the document, while CSS is the style of the document (similar to styling fonts or positioning images in a Word Document for example).
 
 Much like HTML, CSS has a defined structure that is comprises a **selector** (in our case the `.title`) and a **declaration block** (the curly brackets), where you write your style rules. The selector specifies which HTML elements the rules apply to, and the declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon.
 
@@ -737,7 +348,7 @@ The main other tag that we should pay attention to is the `script` element is th
   </a>
 </figure>
 
-This code is in a language called JavaScript. This code is using a JavaScript library called jQuery, which is a library that makes it easier to write JavaScript. Unlike HTML or CSS, JavaScript is a `programming language` (the distinction is not crucial to know but can be helpful when learning about different DH methods). At this point, most of the web is powered by JavaScript, so it is incredible powerful and ubiquitous.
+This code is in a language called JavaScript. This code is using a JavaScript library called jQuery, which is a library that makes it easier to write JavaScript. Unlike HTML or CSS, JavaScript is a `programming language` (the distinction is not crucial to know but can be helpful when learning about different Digital Humanities methods). At this point, most of the web is powered by JavaScript, so it is incredible powerful and ubiquitous.
 
 If you want to learn more about what exactly this code is doing, toggle the following section. Full disclosure some of this language and concepts are fairly advanced, so feel free to use Co-Pilot or ask the Instructors for help:
 
@@ -803,7 +414,7 @@ The purpose of this script is to:
 
 - Dynamically load and display content from a data file (in this case, quotes).
 - Provide interactivity to the website, allowing users to see a new random quote every time they click the "update_quote" button.
-- Use D3.js to bind data to the DOM, which is a common pattern for creating data-driven documents. This is especially useful for visualizations, as it allows the data to directly drive the presentation.
+- Use D3.js library to bind data to the web page, which is a common pattern for creating data-driven documents. This is especially useful for visualizations, as it allows the data to directly drive the presentation.
 - Enhance the user experience by providing fresh and interesting content each time the user interacts with the quote section.
 
 This script is a good example of how modern web technologies can be used to create interactive and dynamic web pages that engage users with content.
@@ -811,7 +422,7 @@ This script is a good example of how modern web technologies can be used to crea
 {% endcapture %}
 {% include toggle.html content=advanced_toggle_content %}
 
-To put this more simply, imagine a website as a tree with many branches. Each branch and leaf could be a piece of text, a picture, or a button. This tree is what we call the `DOM`, which stands for `Document Object Model`. It's a way of describing the structure and contents of a webpage in a way that programming languages like JavaScript can understand and manipulate.
+To put this more simply, imagine a webpage as a tree with many branches. Each branch and leaf could be a piece of text, a picture, or a button. This tree is what we call the `DOM`, which stands for `Document Object Model`. It's a way of describing the structure and contents of a webpage in a way that programming languages like JavaScript can understand and manipulate.
 
 Now, let's break down what the script does step by step:
 
@@ -850,11 +461,11 @@ In the case of `whatisdigitalhumanities`, we can even see this effort by explori
   <figcaption> Available at <a href="https://github.com/hepplerj/whatisdigitalhumanities/graphs/contributors">https://github.com/hepplerj/whatisdigitalhumanities/graphs/contributors</a></figcaption>
 </figure>
 
-## Web Technologies & Markup Homework Assignments
+## Homework: Source and Style
 
 The assignments below are intended to help you start to explore both some of the web technologies and markup languages we've discussed, as well as try your hand at using them. Do your best to get through both assignments, and reach out for help from the Instructors if you get stuck.
 
-Once you've completed the assignments you should push up your materials to your GitHub `is310-coding-assignments` repository. These materials should be in a new folder `week_02` and share the link to your folder in the GitHub discussion thread [https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/2](https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/2).
+Once you've completed the assignments you should push up your materials to your GitHub `is310-coding-assignments` repository. These materials should be in a new folder `source-and-style` and share the link to your folder in the GitHub discussion thread [https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/3](https://github.com/cultureasdata-uiuc/is310-fall-2024/discussions/3).
 
 ### Assignment 1: Inspecting the Web
 
@@ -863,28 +474,30 @@ For this assignment, the goal is to find either a digital library, archive, or p
 - What web technologies (that is HTML, CSS, or JavaScript) were used to build the tool? Are there files that end in `.html`, `.css`, or `.js`? What about files you don't recognize?
 - Who built this website? How many people were involved? How can you tell?
 
-You can use screenshots to support your assessment, but you should also include a link to the website and the GitHub repository (if you can find it). You are also welcome to use AI tools to help you assess and investigate the web technologies. You should write your assessments as a Markdown file, entitled `web_technologies.md` and place it in the `week_02` folder of your `is310-coding-assignments` repository. 
+You can use screenshots to support your assessment, but you should also include a link to the website and the GitHub repository (if you can find it). You are also welcome to use AI tools to help you assess and investigate the web technologies. You should write your assessments in the `README.md` file in the `source-and-style` folder of your `is310-coding-assignments` repository, and remember to place any screenshots in an `images` folder (you will need to create a new one for this folder if you decide to include screenshots).
 
 ### Assignment 2: Styling the Web
 
-For this assignment, the goal is to try improve your existing HTML page. You can build from the example we created in class, or can start from scratch. In your HTML page, you should try and include the following:
+For this assignment, the goal is to try creating an HTML page from scratch. You should create a file called `index.html` in the `source-and-style` folder of your `is310-coding-assignments` repository. You can use the terminal to create the file or your text editor, but the file should be created in the `source-and-style` folder.
 
-- The standard structure of an HTML page (so the `<!DOCTYPE html>` declaration, `<html>` tag, `<head>` tag, and `<body>` tag)
-- At least one heading (so `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, or `<h6>`), one div,one paragraph (so `<p>`), and one link (so `<a>`)
-- Try to include either some styling (so a `<style>` tag) or some interactivity (so a `<script>` tag).
+This HTML file should include the following elements:
 
-You are welcome to use AI tools to help you generate the HTML code, but you should try to make sure you understand what the code is doing. You should save your HTML page as a file entitled `styling_the_web.html` and place it in the `week_02` folder of your `is310-coding-assignments` repository.
+- [ ] The standard structure of an HTML page (so the `<!DOCTYPE html>` declaration, `<html>` tag, `<head>` tag, and `<body>` tag)
+- [ ] At least one heading (so `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, or `<h6>`)
+- [ ] At least one div  
+- [ ] At least one paragraph (so `<p>`) 
+- [ ] At least one link (so `<a>`)
+- [ ] At least one list (so `<ul>` or `<ol>`)
+- [ ] Try to include either some styling (so a `<style>` tag) or some interactivity (so a `<script>` tag).
 
-## Resources
+You're welcome to add any other elements you want, but these are the minimum requirements. Once you've created your file you should open it in your browser and inspect it to make sure it looks the way you want it to. And then you should push it up to GitHub.
 
-1. Sarah Simpkin, "Getting Started with Markdown," *Programming Historian* 4 (2015), <https://doi.org/10.46430/phen0046>.
-2. Then for more depth, you could also check out the Markdown Guide's Getting Started page <https://www.markdownguide.org/getting-started/>
-3. The Markdown Guide also has a series of helpful cheatsheets if you are looking for a quick reference:
-    - Cheatsheet for Markdown Basics <https://www.markdownguide.org/cheat-sheet/>
-    - Basic Syntax <https://www.markdownguide.org/basic-syntax/>
-    - Extended Syntax <https://www.markdownguide.org/extended-syntax/>
-4. And finally for Github-flavored Markdown (that is Markdown that is compatible with Github's Markdown syntax), you can check out <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>.
-5. “What Is the Difference Between HTML and Markdown?” Stack Overflow, 2022. [https://stackoverflow.com/questions/24038/what-is-the-difference-between-html-and-markdown](https://stackoverflow.com/questions/24038/what-is-the-difference-between-html-and-markdown).
-6. Jonathan Blaney, "Introduction to the Principles of Linked Open Data," *Programming Historian* 6 (2017), [https://doi.org/10.46430/phen0068](https://doi.org/10.46430/phen0068).
-7. William J. Turkel and Adam Crymble, "Understanding Web Pages and HTML," *Programming Historian* 1 (2012), [https://doi.org/10.46430/phen0018](https://doi.org/10.46430/phen0018).
-8. Dennis Tenen and Grant Wythoff, "Sustainable Authorship in Plain Text using Pandoc and Markdown," Programming Historian 3 (2014), [https://doi.org/10.46430/phen0041](https://doi.org/10.46430/phen0041).
+As a reminder our standard git workflow is:
+
+```sh
+git add .
+git commit -m "Completed Source and Style Assignment"
+git push origin main
+```
+
+If you have any questions or need help, please don't hesitate to use Co-Pilot or reach out to the Instructors for help.

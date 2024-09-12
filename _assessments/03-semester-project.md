@@ -46,7 +46,7 @@ We will be discussing these requirements throughout the semester but to help you
 
 ## Initial Project & Semester Planning Proposal 5%
 
-**DUE SEPTEMBER 12, 2024 (Optional Extension to September 19, 2024)**
+**DUE SEPTEMBER 12, 2024 (Optional Extension to ~~September 19, 2024~~ September 24, 2024)**
 
 After being sorted into groups, your first task will be to collaboratively draft an Initial Project & Semester Planning Proposal. This proposal will outline your group’s research focus, the cultural practice(s) or object(s) you plan to study, and the initial ideas for the dataset(s) you will create. The proposal should include the following components:
 

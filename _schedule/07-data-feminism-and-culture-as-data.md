@@ -9,6 +9,7 @@ class_date: 2024-09-17
 
 - [ ] Discuss the assigned readings
 - [ ] Group assignment (to be posted).
+- [ ] Assign Project Manager for the week and start working on Group GitHub Repository.
 
 ## Assigned Materials
 

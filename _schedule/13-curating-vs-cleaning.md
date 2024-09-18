@@ -8,7 +8,7 @@ class_date: 2024-10-08
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Debate the ethics and practices of curating versus cleaning data
+- [ ] Start introduction to APIs (To be posted).
 
 ## Assigned Materials
 

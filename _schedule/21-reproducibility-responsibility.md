@@ -8,7 +8,7 @@ class_date: 2024-11-05
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Explore the challenges and importance of reproducibility in digital humanities research
+- [ ] Group presentations on computational methods.
 
 ## Assigned Materials
 

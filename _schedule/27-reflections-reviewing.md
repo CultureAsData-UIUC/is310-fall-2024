@@ -10,6 +10,4 @@ class_date: 2024-12-03
 - [ ] Work on your group projects in class
 - [ ] Reflect on the course content and prepare for final presentations
 
-## Assigned Materials
-
-- TBA
+## Additional Materials

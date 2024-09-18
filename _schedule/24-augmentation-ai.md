@@ -1,15 +1,13 @@
 ---
 title: "Augmentation & AI"
-permalink: /schedule/22-augmentation-ai/
+permalink: /schedule/24-augmentation-ai/
 toc: true
-class_date: 2024-11-07
+class_date: 2024-11-14
 ---
 
 ## In-Class Agenda
 
-- [ ] Discuss the assigned readings
-- [ ] Explore the use of AI to augment cultural datasets
+- [ ] Review computational methods and answer advanced questions.
+- [ ] Introduction to LLMs (To be posted).
 
-## Assigned Materials
-
-- TBA
+## Additional Materials

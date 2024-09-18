@@ -11,6 +11,4 @@ class_date: 2024-12-10
 - [ ] Presentation of group projects
 - [ ] Discuss future directions and reflections
 
-## Assigned Materials
-
-- TBA
+## Additional Materials

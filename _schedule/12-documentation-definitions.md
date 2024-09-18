@@ -1,14 +1,14 @@
 ---
 title: "Documentation & Definitions"
-permalink: /schedule/11-documentation-definitions/
+permalink: /schedule/12-documentation-definitions/
 toc: true
-class_date: 2024-10-01
+class_date: 2024-10-03
 ---
 
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Explore how documentation and definitions shape data practices
+- [ ] Group assignment on data creation (To be posted).
 
 ## Assigned Materials
 

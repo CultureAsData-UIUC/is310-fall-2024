@@ -10,6 +10,4 @@ class_date: 2024-12-05
 - [ ] Work on your group projects in class
 - [ ] Finalize your project for submission and prepare for Demo Day
 
-## Assigned Materials
-
-- TBA
+## Additional Materials

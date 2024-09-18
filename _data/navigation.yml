@@ -76,42 +76,42 @@ schedule:
         url: /schedule/07-data-feminism-and-culture-as-data/
       - title: "<b>September 19</b><br> Servers & Web Standards"
         url: /schedule/08-servers-web-standards/
-      - title: "<b>September 24</b><br> Documentation & Definitions"
-        url: /schedule/09-documentation-definitions/
-      - title: "<b>September 26</b><br> Scrapes & Structures"
-        url: /schedule/10-scrapes-structures/
+      - title: "<b>September 24</b><br> Standardizing Culture & Data Archeology"
+        url: /schedule/09-standardizing-culture-data-archeology/
+      - title: "<b>September 26</b><br> Scripts & Classes"
+        url: /schedule/10-scripts-classes/
   - title: October Detailed Activities
     children:
-      - title: "<b>October 1</b><br> Standardizing Culture & Data Archeology"
-        url: /schedule/11-standardizing-culture-data-archeology/
-      - title: "<b>October 3</b><br> GETting Culture"
-        url: /schedule/12-getting-culture/
+      - title: "<b>October 1</b><br> Scrapes & Structures"
+        url: /schedule/11-scrapes-structures/
+      - title: "<b>October 3</b><br> Documentation & Definitions"
+        url: /schedule/12-documentation-definitions/
       - title: "<b>October 8</b><br> Curating vs. Cleaning"
         url: /schedule/13-curating-vs-cleaning/
-      - title: "<b>October 10</b><br> Notes & Points"
-        url: /schedule/14-notes-points/
+      - title: "<b>October 10</b><br> GETting Culture"
+        url: /schedule/14-getting-culture/
       - title: "<b>October 15</b><br> Arguments & Plots"
         url: /schedule/15-arguments-plots/
-      - title: "<b>October 17</b><br> Making A Point"
-        url: /schedule/16-making-a-point/
+      - title: "<b>October 17</b><br> Notes & Points"
+        url: /schedule/16-notes-points/
       - title: "<b>October 22</b><br> Patterns & Outliers"
         url: /schedule/17-patterns-outliers/
-      - title: "<b>October 24</b><br> Structuring Data"
-        url: /schedule/18-structuring-data/
+      - title: "<b>October 24</b><br> Making A Point"
+        url: /schedule/18-making-a-point/
       - title: "<b>October 29</b><br> Modeling Culture"
         url: /schedule/19-modeling-culture/
-      - title: "<b>October 31</b><br> Algorithmic Failures"
-        url: /schedule/20-algorithmic-failures/
+      - title: "<b>October 31</b><br> Structuring Data"
+        url: /schedule/20-structuring-data/
   - title: November Detailed Activities
     children:
       - title: "<b>November 5</b><br> Reproducibility & Responsibility"
         url: /schedule/21-reproducibility-responsibility/
-      - title: "<b>November 7</b><br> Augmentation & AI"
-        url: /schedule/22-augmentation-ai/
+      - title: "<b>November 7</b><br> Algorithmic Failures"
+        url: /schedule/22-algorithmic-failures/
       - title: "<b>November 12</b><br> Preservation & Publics"
         url: /schedule/23-preservation-publics/
-      - title: "<b>November 14</b><br> Serving Looks"
-        url: /schedule/24-serving-looks/
+      - title: "<b>November 14</b><br> Augmentation & AI"
+        url: /schedule/24-augmentation-ai/
       - title: "<b>November 19</b><br> I Dream of Data"
         url: /schedule/25-i-dream-of-data/
       - title: "<b>November 21</b><br> Hauntings & Ghosts"

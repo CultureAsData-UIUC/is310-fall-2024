@@ -8,7 +8,7 @@ class_date: 2024-10-22
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Explore how to identify and analyze patterns and outliers in data
+- [ ] Group presentations on DH projects
 
 ## Assigned Materials
 

@@ -8,7 +8,7 @@ class_date: 2024-11-19
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Explore futuristic and speculative approaches to data in the humanities
+- [ ] Work on final projects.
 
 ## Assigned Materials
 

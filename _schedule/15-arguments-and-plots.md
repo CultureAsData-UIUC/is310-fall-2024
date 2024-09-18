@@ -8,7 +8,7 @@ class_date: 2024-10-15
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Explore how to craft data-driven arguments and visualizations
+- [ ] Group assignment on DH projects & visualization (To be posted).
 
 ## Assigned Materials
 

@@ -1,8 +1,8 @@
 ---
 title: "Documentation & Definitions"
-permalink: /schedule/09-documentation-definitions/
+permalink: /schedule/11-documentation-definitions/
 toc: true
-class_date: 2024-09-24
+class_date: 2024-10-01
 ---
 
 ## In-Class Agenda

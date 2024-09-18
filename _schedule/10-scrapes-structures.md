@@ -1,8 +1,8 @@
 ---
 title: "Scrapes & Structures"
-permalink: /schedule/10-scrapes-structures/
+permalink: /schedule/12-scrapes-structures/
 toc: true
-class_date: 2024-09-26
+class_date: 2024-10-03
 ---
 
 ## In-Class Agenda

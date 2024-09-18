@@ -1,8 +1,8 @@
 ---
 title: "Standardizing Culture & Data Archeology"
-permalink: /schedule/11-standardizing-culture-data-archeology/
+permalink: /schedule/09-standardizing-culture-data-archeology/
 toc: true
-class_date: 2024-10-01
+class_date: 2024-09-24
 ---
 
 ## In-Class Agenda

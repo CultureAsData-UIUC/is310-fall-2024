@@ -1,8 +1,8 @@
 ---
 title: "Algorithmic Failures"
-permalink: /schedule/20-algorithmic-failures/
+permalink: /schedule/22-algorithmic-failures/
 toc: true
-class_date: 2024-10-31
+class_date: 2024-11-07
 ---
 
 ## In-Class Agenda

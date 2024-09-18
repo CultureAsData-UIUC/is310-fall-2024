@@ -1,5 +1,5 @@
 ---
-title: "Introduction to The Web"
+title: "Introduction to The Web & Servers"
 permalink: /materials/introducing-humanities-computing/08-intro-web
 excerpt: "An introduction to what the web is and how it works."
 toc: true
@@ -21,7 +21,7 @@ Turning to our reliable source of information, Wikipedia, we find the following 
 
 While this is technically a definition, there's a lot to unpack here.
 
-It is also helpful to return a bit to our HTML lesson and dive into the history of these web technologies. The core idea of Hypertext and the web is the idea of making it possible to link information across machines. One of the origins for this idea comes from Vannevar Bush's *Memex* that we talked about last week, which envisioned using microfilm to store and link information. While there are some earlier antecedents to this idea, it started to really take off in the 1960s. 
+It is also helpful to return a bit to our HTML lesson and dive into the history of these web technologies. The core idea of Hypertext and the web is the idea of making it possible to link information across machines. One of the origins for this idea comes from Vannevar Bush's *Memex* that we talked about previously, which envisioned using microfilm to store and link information. While there are some earlier antecedents to this idea, it started to really take off in the 1950s and 60s. 
 
 One famous example is *Project Xanadu*, which was developed by Ted Nelson in the 1960s and 1970s. Nelson's idea was to create a system where you could link any piece of information to any other piece of information.[^1] This idea was very influential, but it was never fully realized. You can read more about it here [https://en.wikipedia.org/wiki/Project_Xanadu](https://en.wikipedia.org/wiki/Project_Xanadu).
 
@@ -31,7 +31,7 @@ One famous example is *Project Xanadu*, which was developed by Ted Nelson in the
     </a>
 </figure>
 
-Other important figures include Douglas Engelbart, who developed the first computer mouse and the first hypertext system. However, it was really Tim Berners-Lee, who developed the World Wide Web in the 1980s and 1990s that we have to thank for the web as we know it today. 
+Other important figures include Douglas Engelbart, who developed the first computer mouse and the first hypertext system. However, it was really Tim Berners-Lee, who developed the World Wide Web in the 1980s and 1990s that we have to thank for the web as we know it today.
 
 In his vision of the web, Tim Berners-Lee imagined a space where all information stored on computers could be interconnected. To achieve this, he developed key components: 
 
@@ -212,7 +212,7 @@ When you create your repository, you need to make sure it is `Public` and you ca
   </a>
 </figure>
 
-Once you have your repository, the next step is to add some web files. The most basic file you can add is an `index.html` file.
+Once you have your repository, the next step is to add some HTML files. The most basic file you can add is an `index.html` file.
 
 <figure>
   <a href="{{site.baseurl}}/assets/images/create_index_html.png" class="image-popup">
@@ -220,9 +220,7 @@ Once you have your repository, the next step is to add some web files. The most 
   </a>
 </figure>
 
-Once you've created your `index.html` file, you can either leave it blank or add some HTML code. Now the key thing is to remember to **commit** your HTML page. Remember committing is how we save things on GitHub. So you can either commit via the command line with your VS Code Terminal or via the GitHub website.
-
-Now, GitHub should start automatically hosting your website at `https://yourusername.github.io`. 
+Once you've created your `index.html` file, you can either leave it blank or add some HTML code. Then once you do our standard git workflow of `add`, `commit`, and `push`, your website will be live as GitHub should start automatically hosting your website at `https://yourusername.github.io`. 
 
 <figure>
   <a href="{{site.baseurl}}/assets/images/github_pages_settings_html.png">
@@ -230,7 +228,7 @@ Now, GitHub should start automatically hosting your website at `https://youruser
   </a>
 </figure>
 
-You'll notice you don't need to configure any Actions (though you can for HTML), and that's because this is a special type of repository on GitHub, so any HTML files you add will automatically be hosted but that will **not** happen in other repos.
+You'll notice you don't need to configure anything, and that's because this is a special type of repository on GitHub, so any HTML files you add will automatically be hosted but that will **not** happen in other repos.
 
 You can still see how GitHub is deploying your site by clicking on the tab called `Actions`:
 

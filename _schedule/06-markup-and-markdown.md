@@ -15,7 +15,7 @@ class_date: 2024-09-12
     - [ ] Relatedly, working on your initial project proposal. Technically this is due today, but I have extended the optional deadline from September 19 to September 24. Please reach out if you have questions or need help.
     - [ ] Transferring your content from this week's group assignment if it is in a Google Doc to a Markdown file and uploading it to your group's GitHub repository, following the [GitHub Style Guide]({{site.baseurl}}/assessments/05-github-style-guide/).
 
-## Assigned Materials
+## Additional Materials
 
 - Veen, Jeffrey. “A Brief History of HTML.” *Wired*, April 28, 1997. [https://www.wired.com/1997/04/a-brief-history-of-html/](https://www.wired.com/1997/04/a-brief-history-of-html/).
 - Ford, Paul. “What Is Code? If You Don’t Know, You Need to Read This.” *Business Week*, June 11, 2015. Sections 1-2. [http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/](http://www.bloomberg.com/graphics/2015-paul-ford-what-is-code/).

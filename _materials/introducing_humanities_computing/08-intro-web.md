@@ -248,17 +248,24 @@ You should see some green lines and checks, all of which indicates your site is 
 
 You can find see this live here [https://testzoe.github.io/](https://testzoe.github.io/).
 
-## Homework
+## Homework: Doing It Live
 
-### Doing It Live: Hosting Your HTML Page Assignment
+Now that you understand how the web works, how to write HTML, and how to create a website on GitHub Pages, it is time to put your knowledge to the test. Your assignment is to follow the steps above to create a repository with your GitHub username, upload your HTML file from the previous [Source & Style Assignment]({{site.baseurl}}/materials/introducing-humanities-computing/07-intro-html#assignment-2-styling-the-web), and then have it correctly host via GitHub Pages.
 
-Now that you understand how the web works, how to write HTML, and how to create a website on GitHub Pages, it is time to put your knowledge to the test. Your assignment is to follow the steps above to create a repository with your GitHub username, upload your HTML file from the Intro to HTML assignment, and then have it correctly host via GitHub Pages. 
+You are welcome to customize your HTML file, but it should include at least:
 
-Once you're site is live, post the link to your HTML page via `github.io` to our next GitHub Discussion thread [https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/3](https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/3).
+- Your name
+- A brief introduction about yourself
+- A link to your GitHub profile
+
+Once you're site is live, post the link to your HTML page via `github.io` to our next GitHub Discussion thread [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/5](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/5).
 
 *Already hosting a website via GitHub Pages?*
 
-Then feel free to skip this assignment, and just post the link to your existing website, as well as your GitHub repository so we can see your HTML code.
+Then feel free to skip this assignment, you have two options:
+
+1. You can simply update your existing website, either through adding some sort of additional content or styling.
+2. OR you can create a website for your group project and host it via GitHub Pages.
 
 ----
 [^1]: Interestingly, the Product Management/Note Taking app *Notion* has a great interview with Nelson for those that are interested in his work [https://www.notion.so/blog/ted-nelson](https://www.notion.so/blog/ted-nelson).

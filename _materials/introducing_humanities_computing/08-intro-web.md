@@ -262,10 +262,7 @@ Once you're site is live, post the link to your HTML page via `github.io` to our
 
 *Already hosting a website via GitHub Pages?*
 
-Then feel free to skip this assignment, you have two options:
-
-1. You can simply update your existing website, either through adding some sort of additional content or styling.
-2. OR you can create a website for your group project and host it via GitHub Pages.
+You should instead update your existing website, either through adding either some sort of additional content (maybe a link to your group's GitHub?) or styling (maybe more interactivity?). You should then post a link to the updated site in the GitHub Discussion thread and share some details about when you initially created the site and what you updated.
 
 ----
 [^1]: Interestingly, the Product Management/Note Taking app *Notion* has a great interview with Nelson for those that are interested in his work [https://www.notion.so/blog/ted-nelson](https://www.notion.so/blog/ted-nelson).

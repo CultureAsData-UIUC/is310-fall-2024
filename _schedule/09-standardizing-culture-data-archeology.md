@@ -12,7 +12,7 @@ class_date: 2024-09-24
 
 ## Assigned Materials
 
-- Lee, Benjamin. “Compounded Mediation: A Data Archaeology of the Newspaper Navigator Dataset.” *Digital Humanities Quarterly* 015, no. 4 (December 7, 2021).
+- Lee, Benjamin. “Compounded Mediation: A Data Archaeology of the Newspaper Navigator Dataset.” *Digital Humanities Quarterly* 015, no. 4 (December 7, 2021). [https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html](https://www.digitalhumanities.org/dhq/vol/15/4/000578/000578.html).
 - Explore the Newspaper Navigator [https://news-navigator.labs.loc.gov/](https://news-navigator.labs.loc.gov/).
 
 ## Additional Materials

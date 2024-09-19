@@ -50,6 +50,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Init IS310 Homework]({{site.baseurl}}/materials/introducing-humanities-computing/03-intro-versioning-git/#homework-init-is310) | Now due [Due by Midnight CT on September 9]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/). Though if you are joining late or have issues can extend to Midnight CT on September 11 |
 | [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line) | [Due by Midnight CT on September 11]({{site.baseurl}}/schedule/06-markup-markdown/) |
 | [Source & Style]({{site.baseurl}}/materials/introducing-humanities-computing/07-intro-html#homework-source-and-style) | [Due by Midnight CT on September 18]({{site.baseurl}}/schedule/08-servers-web-standards/) |
+| [Doing it Live]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web#homework-doing-it-live) | [Due by Midnight CT on September 25]({{site.baseurl}}/schedule/10-scripts-classes/) |
 
 ### Group Assignments
 

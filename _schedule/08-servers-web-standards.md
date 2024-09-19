@@ -9,7 +9,7 @@ class_date: 2024-09-19
 
 - [ ] Review the [Source & Style homework]({{site.baseurl}}/materials/introducing-humanities-computing/07-intro-html#homework-source-and-style).
 - [ ] [Introduction to the Web & Servers]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web).
-- [ ] Time Permitting: Start [the Python Refresher lesson]({{site.baseurl}}/materials/creating-curating-humanities-data/01-python-refresher-foundations)
+- [ ] Time Permitting: Start [the Python Refresher lesson]({{site.baseurl}}/materials/creating-curating-humanities-data/01-python-refresher-foundations).
 
 ## Additional Materials
 

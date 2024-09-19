@@ -714,6 +714,10 @@ git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com"
 ```
 
+**Replace "Your Name" with your exact GitHub Username handle**. So for example, in my case it would be `git config --global user.name "Zoe LeBlanc"`.
+
+**Replace "your.email@example.com" with the email address you used to sign up for GitHub**. So in my case it would be `git config --global user.email "zleblanc@illinois.edu"`.
+
 Be sure to get both of these exactly right, as they are used to connect your GitHub account and git activity.
 
 You can also check your git configuration by typing:

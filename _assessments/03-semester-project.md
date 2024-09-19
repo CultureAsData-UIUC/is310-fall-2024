@@ -72,6 +72,8 @@ Ultimately, this proposal should lay the groundwork for your project and serve a
 
 In our first few weeks, we will be discussing what makes a good topic, and you are also welcome to schedule a meeting or contact the Instructor to brainstorm possible topics.
 
+<div class="notice--info">⚡️ This proposal should be submitted in your group's GitHub repository prior to class on September 24, 2024. You can ping the instructors on Discord if you submit early, but we will be looking from that time onwards for your materials.</div>
+
 ## Mid-Semester Dataset and Documentation Update 15% 
 
 **DUE OCTOBER 10, 2024 (Optional Extension October 17, 2024)**

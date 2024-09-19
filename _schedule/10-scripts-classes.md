@@ -10,6 +10,10 @@ class_date: 2024-09-26
 - [ ] Review the web hosting homework
 - [ ] Start advanced Python Refresher & Introduction to Classes (To be posted).
 
+## Assigned Materials
+
+- Read through [the Python Refresher lesson]({{site.baseurl}}/materials/creating-curating-humanities-data/01-python-refresher-foundations) and bring any questions to class.
+
 ## Additional Materials
 
 ## Assignments

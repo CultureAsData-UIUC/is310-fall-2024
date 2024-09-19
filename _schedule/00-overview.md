@@ -57,4 +57,4 @@ This overview gives a top level view of the topics for each of our meetings. You
 | Assignment | Due Date (Subject to Change) |
 | -----------------: | --------------: |
 | [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [Due In-Class September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/). There will be time in class to complete the assignment, we will also be covering how to move your work to your group's GitHub repo. **As a reminder, usually group work will be submitted via GitHub and due by Midnight before our class meeting.** |
-| [Critical Cultural Data Explorations]({{site.baseurl}}/critical-cultural-data-explorations/) | [Due In-Class September 24]({{site.baseurl}}/schedule/09-documentation-definitions/).|
+| [Critical Cultural Data Explorations]({{site.baseurl}}/critical-cultural-data-explorations/) | [Due In-Class September 24]({{site.baseurl}}/schedule/09-standardizing-culture-data-archeology/).|

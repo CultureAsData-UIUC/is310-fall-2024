@@ -39,6 +39,15 @@
           <i class="fas fa-search"></i>
         </button>
         {% endif %}
+		{% if site.toggle_target_blank == true %}
+			<button class="toggle__link-behavior" type="button" id="toggleLinkBehavior">
+				<span class="visually-hidden">{{ site.data.ui-text[site.locale].toggle_links_label | default: "Toggle open in new tab" }}</span>
+				<i id="linkBehaviorIcon" class="fas fa-external-link-alt"></i>
+				<span class="tooltip-text" id="tooltipText">
+					<i class="fas fa-external-link-alt"></i> Open in new tab
+				</span>
+			</button>
+		{% endif %}
         <button class="greedy-nav__toggle hidden" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>

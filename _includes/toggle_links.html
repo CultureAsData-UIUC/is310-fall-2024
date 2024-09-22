@@ -1,0 +1,52 @@
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const openInNewTab = localStorage.getItem('openInNewTab') === 'true';
+    const linkBehaviorIcon = document.getElementById('linkBehaviorIcon');
+    const tooltipText = document.getElementById('tooltipText');
+    const toggleButton = document.getElementById('toggleLinkBehavior');
+
+    // Set initial icon and link behavior based on preference
+    updateLinkBehavior(openInNewTab);
+    updateIconAndTooltip(openInNewTab);
+
+    // Add event listener to the toggle button
+    toggleButton.addEventListener('click', function() {
+      const newTabEnabled = localStorage.getItem('openInNewTab') === 'true';
+      const toggleState = !newTabEnabled; // Toggle the state
+
+      // Store the new preference
+      localStorage.setItem('openInNewTab', toggleState);
+
+      // Update the link behavior and icon
+      updateLinkBehavior(toggleState);
+      updateIconAndTooltip(toggleState);
+    });
+  });
+
+  // Function to update all anchor tags based on toggle state
+  function updateLinkBehavior(openInNewTab) {
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      if (openInNewTab) {
+        link.setAttribute('target', '_blank');
+      } else {
+        link.removeAttribute('target');
+      }
+    });
+  }
+
+  // Function to update the icon and the tooltip content based on the toggle state
+  function updateIconAndTooltip(openInNewTab) {
+    const linkBehaviorIcon = document.getElementById('linkBehaviorIcon');
+    const tooltipText = document.getElementById('tooltipText');
+    if (openInNewTab) {
+      linkBehaviorIcon.classList.remove('fa-link');
+      linkBehaviorIcon.classList.add('fa-external-link-alt');
+      tooltipText.innerHTML = '<i class="fas fa-external-link-alt"></i> Open in new tab';
+    } else {
+      linkBehaviorIcon.classList.remove('fa-external-link-alt');
+      linkBehaviorIcon.classList.add('fa-link');
+      tooltipText.innerHTML = '<i class="fas fa-link"></i> Open in same tab';
+    }
+  }
+</script>

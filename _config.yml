@@ -77,7 +77,8 @@ bing_site_verification   :
 naver_site_verification  :
 yandex_site_verification :
 baidu_site_verification  :
-
+# Link toggling
+toggle_target_blank      : true # true, false (default)
 # Social Sharing
 twitter:
   username               :

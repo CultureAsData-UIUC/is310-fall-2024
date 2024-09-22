@@ -94,8 +94,8 @@
 
 /* Style for the link behavior toggle button and tooltip container */
 .toggle__link-behavior {
-	margin-left: 1rem;
-	margin-right: 1rem;
+	// margin-left: 1rem;
+	// margin-right: 1rem;
 	height: $nav-toggle-height;
 	/* Use your height variable here */
 	border: 0;
@@ -120,7 +120,7 @@
 
 /* Ensure the icon inherits the color */
 .toggle__link-behavior i {
-	font-size: 1.5rem;
+	// font-size: 1.5rem;
 	color: inherit;
 	/* Inherit the color from the button */
 	transition: color 0.2s;
@@ -161,10 +161,10 @@
 	background-color: mix(#000, $primary-color, 25%);
 }
 
-/* Mobile: Show tooltip on tap */
+/* Hide the tooltip on mobile (devices with no hover) */
 @media (hover: none) {
 	.tooltip-text {
-		visibility: visible;
-		opacity: 1;
+		display: none;
+		/* Tooltip will be hidden on mobile */
 	}
 }

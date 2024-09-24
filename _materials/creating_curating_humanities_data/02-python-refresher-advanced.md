@@ -17,13 +17,21 @@ Rather than having to start from scratch every time, we can write our code in a 
 
 ### Writing and Running Scripts
 
-Open your `is310-coding-assignments` folder in VS Code, and create a new file:
+Open your `is310-coding-assignments` folder in VS Code, and create a new folder `python-refresher`. This is where we will store all our scripts for this lesson. Inside the `python-refresher` folder, create a new file called `first_script.py`. You can do this in the terminal by typing:
+
+For Mac:
 
 ```sh
 touch first_script.py
 ```
 
-You should see this file in Visual Studio Code. We're going to copy our code from the interpreter into this file.
+For Windows PowerShell:
+
+```sh
+ni first_script.py
+```
+
+We're going to copy our code from the interpreter into this file:
 
 ```python
 favorite_movies =[

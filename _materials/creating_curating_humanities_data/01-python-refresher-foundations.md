@@ -11,7 +11,7 @@ So far in this course, we have either been using the command line or markup lang
 
 ## Python Foundations
 
-The easiest way to work with Python is through the command line. Let's start by first checking our Python version. Open the command line and type `python --version` or `python3 --version`. You should see something like the following:
+The easiest way to work with Python is through the command line. Let's start by first checking our Python version. Open your terminal (whether in VS Code or your preferred terminal app) and type `python --version` or `python3 --version`. You should see something like the following:
 
 <figure>
     <a href="{{site.baseurl}}/assets/images/python_version.png">
@@ -92,7 +92,7 @@ two = 2
 
 Once we do this though, you'll notice that our strings that were stored in these variables will be **erased!** This is because in Python if you assign a new value to a variable, it will overwrite the old value of the variable.
 
-If you're curious, this is due to the fact that Python is a *dynamically typed* language, which means that the data type of a variable can change. This is different from *statically typed* languages, like Java, where the data type of a variable cannot change. But it's not crucial to understand this now.
+If you're curious, this is due to the fact that Python is a *dynamically typed* language, which means that the data type of a variable can change. This is different from *statically typed* languages, like Java, where the data type of a variable cannot change. This is a key difference between Python and other programming languages, but don't worry if this is confusing. You'll get used to it as you work with Python more and eventually learn other programming languages, as well!
 
 What happens if you try and use a number for your variable rather than typing the word `one`?
 
@@ -158,7 +158,7 @@ All data in a computer is represented as binary (base 2) numbers, comprising onl
 
 Integers are easy enough to represent in binary: 0 is 0, 1 is 1, 2 is 10, 3 is 11, 4 is 100, and so on.
 
-But floats are trickier and require a special system to represent. Don't worry about it for now, but consider for a moment that it's impossible to represent exactly 1/3 in finite decimal notation (0.3333...). It's similarly impossible to represent some simple decimal numbers in a binary notation. Which is why you get the weird results above.
+But floats are trickier and require a special system to represent. This background is primarily just to provide context, but it is helpful to know that it's impossible to represent exactly 1/3 in finite decimal notation (0.3333...). It's similarly impossible to represent some simple decimal numbers in a binary notation. Which is why you get the weird results above.
 
 For more information check out [Float to Binary Converter](https://www.h-schmidt.net/FloatConverter/IEEE754.html) and [IEEE 754 Standard](https://en.wikipedia.org/wiki/IEEE_754-1985).
 
@@ -221,7 +221,7 @@ For division, we use the `/` operator symbol.
 
 ```python
 one / two
-``` 
+```
 
 Now say we created a variable called `three` that contained the string `"three"`. What would happen if we added variables `one` and `three` together?
 
@@ -229,7 +229,7 @@ Now say we created a variable called `three` that contained the string `"three"`
 one + three
 ```
 
-You should see `TypeError: unsupported operand type(s) for +: 'int' and 'str'`. This is because Python can't add an integer to a string. This is because Python can't add an integer to a string. 
+You should see `TypeError: unsupported operand type(s) for +: 'int' and 'str'`. This is because Python can't add an integer to a string. This is because Python can't add an integer to a string.
 
 If we instead tried joining our `var` and `three` variables together, we would get a new string.
 
@@ -270,7 +270,6 @@ You can find more information about operators here [https://www.w3schools.com/py
 
 In your Python interpreter, complete the following prompts:
 
-
 1. Create the following variables and assign them the correct information:
 
 - Your favorite film
@@ -278,9 +277,9 @@ In your Python interpreter, complete the following prompts:
 - The release year of your favorite film
 - The release year of your favorite book
 
-1. Try testing if your favorite film and book are equal.
-2. Try joining their names together.
-3. Try finding the difference between the release years of your favorite film and book.
+2. Try testing if your favorite film and book are equal.
+3. Try joining their names together.
+4. Try finding the difference between the release years of your favorite film and book.
 
 ### Data Structures
 

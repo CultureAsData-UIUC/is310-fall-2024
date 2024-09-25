@@ -76,7 +76,7 @@ In our first few weeks, we will be discussing what makes a good topic, and you a
 
 ## Mid-Semester Dataset and Documentation Update 15% 
 
-**DUE OCTOBER 10, 2024 (Optional Extension October 17, 2024)**
+**DUE OCTOBER 22, 2024 (Optional Extension October 29, 2024)**
 
 After completing your initial project proposal, your next task is to create and submit the first version of your dataset along with detailed documentation. This submission marks your first attempt at gathering and organizing your data, and it is crucial to approach it as a draft that you will refine and revise based on feedback and further analysis. Here are some general guidelines, though we will be discussing this more in-depth in class.
 

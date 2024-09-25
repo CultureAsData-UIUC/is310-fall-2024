@@ -7,8 +7,9 @@ class_date: 2024-09-26
 
 ## In-Class Agenda
 
-- [ ] Review the web hosting homework
-- [ ] Start advanced Python Refresher & Introduction to Classes (To be posted).
+- [ ] Review the [Doing it Live Homework]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web#homework-doing-it-live).
+- [ ] Complete remaining [Python Refresher]({{site.baseurl}}/materials/creating-curating-humanities-data/02-python-refresher-advanced).
+- [ ] Start [Introduction to Complex Python]({{site.baseurl}}/materials/creating-curating-humanities-data/03-complex-python) & [Introduction to Virtual Environments ]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments).
 
 ## Assigned Materials
 

@@ -1,0 +1,363 @@
+---
+title: "Python Virtual Environments & Packages"
+permalink: /materials/creating-curating-humanities-data/04-virtual-environments
+toc: true
+---
+
+<div class="notice--info">⚡️ If you already have experience with virtual environments and have a preferred setup, feel free to keep using what you have already</div>
+
+## What is virtual environment?
+
+We have started exploring Python libraries that come pre-installed with Python when you set it up on your computer, but that still need to be imported so that we can use it (remember `Pathlib`!). Now we're going to start installing additional libraries that don't come pre-installed with Python. However, before we install these libraries, we need to create a virtual environment. A virtual environment is necessary to keep the libraries we install contained to each project.
+
+The Python documentation explains that: 
+
+> "Python applications will often use packages and modules that don’t come as part of the standard library. Applications will sometimes need a specific version of a library, because the application may require that a particular bug has been fixed or the application may be written using an obsolete version of the library’s interface.
+
+> This means it may not be possible for one Python installation to meet the requirements of every application. If application A needs version 1.0 of a particular module but application B needs version 2.0, then the requirements are in conflict and installing either version 1.0 or 2.0 will leave one application unable to run.
+
+>The solution for this problem is to create a virtual environment, a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages." 
+
+You can read more here about [virtual environments](https://docs.python.org/3/library/venv.html#venv-def).
+
+Prior to installing our virtual environment, let's make sure that you have the latest version of `pip`, which stands for "Python Installs Packages." Pip comes built-in to Python, but run this code to ensure you have the right version.
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/install_pip.png">
+        <img src="{{site.baseurl}}/assets/images/install_pip.png" alt="install pip" class="image-popup">
+    </a>
+</figure>
+
+
+If you get any errors, you can check if you have pip installed by running the following command in your terminal:
+
+```sh
+pip3 --version
+```
+
+You can also follow the steps here to check if you have pip installed [https://stackoverflow.com/questions/40868345/checking-whether-the-pip-is-installed](https://stackoverflow.com/questions/40868345/checking-whether-the-pip-is-installed).
+
+If you don't have pip installed, you can install it by following the instructions here [https://pip.pypa.io/en/stable/installation/](https://pip.pypa.io/en/stable/installation/).
+
+Now we'll use the built-in Python virtual environment, called `venv`, which you can read more about here [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html). One thing to note is that there are LOTS of different ways to setup your virtual environment (which lots of people have *very* strong feelings about). I like this answer from Stack Overflow for giving an overview of the differing options [https://stackoverflow.com/a/65854168/7437781](https://stackoverflow.com/a/65854168/7437781).
+
+## Virtual Environments in the Terminal
+
+To create our virtual environment, we'll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project director, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:
+
+```sh
+cd ~  # This will take you to your home directory
+mkdir .virtualenvs # This will create a directory called .virtualenvs
+cd .virtualenvs # This will take you into the .virtualenvs directory
+```
+
+Now that we are in the directory where we want to create our virtual environment (whether that's `is310-coding-assignments` or `.virtualenvs`), we can create it by running the following command:
+
+```sh
+python3 -m venv is310-env
+```
+
+This doesn't seem to do much, but if you look in your directory you should see a new folder called `is310-env`. This is your virtual environment. This command is telling Python to run the `venv` module and create a virtual environment called `is310-env`. You can name your virtual environment whatever you want, but I would recommend naming it something that is descriptive of the project you are working on. **You should only create one virtual environment for this course.** And generally, I would recommend creating a new virtual environment for each project you work on (so think personal projects, group projects, or other courses, etc.).
+
+Now you need to activate our virtual environments. We can either do this with the command line and our terminal or via VS Code. Activating the virtual environment just tells your computer to run Python and installed libraries from the virtual environment rather than the global environment. This might seem like unnecessary work, but as we saw in that xkcd comic, a lot of software can create conflicts over time (often called "dependency hell"). This is a way to avoid that.
+
+### Activating Virtual Environments in the Terminal
+
+To activate our virtual environment in the terminal, we need to use a command called called `source` and after that we need to specify the path to the `activate` file in our virtual environment. The path to the `activate` file is `[LOCATION - OPTIONAL]/[NAME OF VIRTUAL ENVIRONMENT]/bin/activate`. If you aren't in the same directory as your virtual environment, you'll have to specify the exact location of the virtual environment. If you are in the same directory as your virtual environment, you can just run the following command if you're on a Linux/Unix/MacOS system:
+
+```sh
+source is310-env/bin/activate
+```
+
+Or if you are using a Windows system, you can run the following command for Command Prompt:
+
+```sh
+is310-env\Scripts\activate
+```
+
+Or for PowerShell:
+
+```sh
+.\is310-env\Scripts\Activate.ps1
+```
+
+If you are getting errors in PowerShell, you may need to change your execution policy. You can do this by running the following command:
+
+```sh
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+```
+
+In this example, `is310-env` is the name of the virtual environment and we are giving it the command to run the `activate` file. This will change the prompt in your terminal to show the name of your virtual environment. This is how you know that your virtual environment is activated.
+
+### Activating Virtual Environments in VS Code
+
+<div class="notice--info">⚡️ This information has been adapted from <a href="https://code.visualstudio.com/docs/python/environments">https://code.visualstudio.com/docs/python/environments</a></div>
+
+If you're using VS Code, you can create a virtual environment by opening the Command Palette (⇧⌘P), searching for the Python: Create Environment command, and selecting it. You'll see two options: `Venv` or `Conda`. You can choose either, but I would recommend using `Venv`.
+
+<figure>
+    <a href="https://code.visualstudio.com/assets/docs/python/environments/create_environment_dropdown.png">
+        <img src="https://code.visualstudio.com/assets/docs/python/environments/create_environment_dropdown.png" alt="Create Environment Dropdown" class="image-popup">
+    </a>
+</figure>
+
+Once you select `Venv`, you'll be prompted to select the Python interpreter you want to use. You can choose the one that comes with Python, or you can select a different one if you have multiple versions of Python installed on your computer.
+
+<figure>
+    <a href="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png">
+        <img src="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png" alt="Create Environment Name" class="image-popup">
+    </a>
+</figure>
+
+These instructions also include information on how to create a virtual environment using `Conda`, but we won't be covering that in this course. Personally, I would recommend using `Venv` for now.
+
+Once you've created your virtual environment, you can activate it by selecting the Python interpreter in the bottom left corner of your VS Code window. You can also do this by opening the Command Palette (⇧⌘P), searching for the Python: Select Interpreter command, and selecting it.
+
+<figure>
+	<a href="https://code.visualstudio.com/assets/docs/python/environments/select-interpreters-command.png">
+		<img src="https://code.visualstudio.com/assets/docs/python/environments/select-interpreters-command.png" alt="Select Interpreter" class="image-popup">
+	</a>
+</figure>
+
+Now you should see all the Python interpreters available on your computer. You can select the one you want to use for your project.
+
+<figure>
+	<a href="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png">
+		<img src="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png" alt="Select Interpreter List" class="image-popup">
+	</a>
+</figure>
+
+After you've selected the Python interpreter, it will automatically create in your project directory and name it `.venv`. You can right click on the `.venv` folder to rename it to something more descriptive.  For example, if you're working on a project called `is310-coding-assignments`, you could name your virtual environment `is310-env`.
+
+Now to activate your virtual environment, you simply select `New Terminal` under the `Terminal` menu and it will automatically activate your virtual environment. You can tell that it's activated because the name of your virtual environment will appear in the terminal prompt.
+
+### Deactivating Virtual Environments
+
+While usually you'll want to keep your virtual environment activated while you're working on a project, you can deactivate it by running the following command in your terminal:
+
+```sh
+deactivate
+```
+
+This will deactivate your virtual environment and you'll see that the name of your virtual environment is no longer in your terminal prompt. You can also deactivate your virtual environment in VS Code by selecting `New Terminal` under the `Terminal` menu.
+
+### Adding Virtual Environments to `.gitignore`
+
+Since we are using `git` to track our work, we don't want to include our virtual environment in our repository. This is because the virtual environment is specific to your computer and the libraries you have installed. If someone else were to clone your repository, they wouldn't have the same virtual environment as you. This is why we add the virtual environment to our `.gitignore` file. This file tells `git` to ignore certain files or directories when tracking changes. You can add the following line to your `.gitignore` file to ignore your virtual environment:
+
+```sh
+is310-env/
+```
+
+Now when we run `git status`, we shouldn't see our virtual environment in the list of files that have been changed. If you accidentally added your virtual environment to your repository, you can remove it by running the following command:
+
+```sh
+git rm -r --cached is310-env
+```
+
+Or if you have further issues, you can request assistance from the instructors. 
+
+## Installing Libraries in Virtual Environments
+
+Now that we have our virtual environment created and activated in VS Code, we can start to try installing external Python libraries. 
+
+Today, we will try installing the Python package `Rich` by running the following command:
+
+```sh
+pip3 install rich
+```
+
+This command tells `pip` to install the `Rich` library. **Remember you should only run this command once your virtual environment is activated!**
+
+Unlike `Pathlib`, `rich` isn't built into Python, which is why we need to install it. `pip` is a package manager for Python that allows you to install and manage Python packages. You can read more about it here [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/). 
+
+You can test if it worked by starting your python interpreter with the `python3` command and running the following code:
+
+```shell
+import rich
+rich.__version__
+```
+
+Which should show the version of `Rich` you have installed. **Going forward, you should try and install all Python libraries in your virtual environment.**
+
+You can see our full workflow in this image, from creating a virtual environment to installing a library:
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/full_virtual_environment_workflow.png">
+		<img src="{{site.baseurl}}/assets/images/full_virtual_environment_workflow.png" alt="Activate Virtual Environment" class="image-popup">
+	</a>
+</figure>
+
+### Rich Python Library
+
+Rich is Python Library built originally by [Will McGugan](https://www.willmcgugan.com/) to add rich text and beautiful formatting in the terminal. We can see from the GitHub repository [https://github.com/Textualize/rich](https://github.com/Textualize/rich) that it is a very popular library with almost 50,000 stars and used by almost 300,000 repositories on GitHub.
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/rich_history.png">
+		<img src="{{site.baseurl}}/assets/images/rich_history.png" alt="Rich History" class="image-popup">
+	</a>
+</figure>
+
+We can see that there is currently 256 contributors and that the project started in 2019.
+
+<figure>
+	<a href="https://github.com/textualize/rich/raw/master/imgs/features.png">
+		<img src="https://github.com/textualize/rich/raw/master/imgs/features.png" alt="Rich Features" class="image-popup">
+	</a>
+</figure>
+
+We can start to get a sense of what the library can do by looking at the features listed on the GitHub repository but we can also read the documentation for the library to get a better sense of what it can do [https://rich.readthedocs.io/en/stable/introduction.html](https://rich.readthedocs.io/en/stable/introduction.html).
+
+This documentation is **very** detailed, but we can start with the Quickstart guidelines [https://rich.readthedocs.io/en/stable/introduction.html#quick-start](https://rich.readthedocs.io/en/stable/introduction.html#quick-start) to get a sense of how to use the library.
+
+From the guidelines we can see how to import the library into our Python script. In your `is310-coding-assignments` directory, create a new folder called `python-libraries` and create a new file called `rich_example.py`. In this file, add the following code:
+
+```python
+from rich import print
+
+print("Hello, [bold magenta]World[/bold magenta]!", ":vampire:")
+```
+
+Now you can run the script by running the following command in your terminal:
+
+```sh
+python3 rich_example.py # or python3 python-libraries/rich_example.py if you are in the is310-coding-assignments directory
+```
+
+You should see the following output in your terminal:
+
+```shell
+Hello, World! 🧛
+```
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/rich_example.png">
+		<img src="{{site.baseurl}}/assets/images/rich_example.png" alt="Rich Example" class="image-popup">
+	</a>
+</figure>
+
+Notice that the word `world` is in bold and magenta and that there is a vampire emoji at the end of the sentence. This is the power of the `Rich` library. 
+
+We can also start to format our text in different ways. For example, we can add a table to our script by adding the following code:
+
+```python
+from rich.console import Console
+from rich.table import Table
+
+console = Console()
+
+table = Table(title="Star Wars Movies")
+table.add_column("Released", style="cyan", no_wrap=True)
+table.add_column("Title", style="magenta")
+table.add_column("Box Office", justify="right")
+table.add_row("Dec 20, 2019", "Star Wars: The Rise of Skywalker", "$952,110,690")
+table.add_row("May 25, 2018", "Solo: A Star Wars Story", "$393,151,347")
+table.add_row("Dec 15, 2017", "Star Wars Ep. VIII: The Last Jedi", "$1,332,539,889")
+table.add_row("Dec 16, 2016", "Rogue One: A Star Wars Story", "$1,332,439,889")
+
+console.print(table)
+```
+
+Now you can run the script by running the following command in your terminal:
+
+```sh
+python3 rich_example.py # or python3 python-libraries/rich_example.py if you are in the is310-coding-assignments directory
+```
+
+And you should see the following output in your terminal:
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/rich_table.png">
+		<img src="{{site.baseurl}}/assets/images/rich_table.png" alt="Rich Table" class="image-popup">
+	</a>
+</figure>
+
+As you can likely tell, both `Console` and `Table` are classes built into the `Rich` library that allow us to format our text in different ways. We can see that we are able to add a title to our table, add columns, and add rows to our table. We can also see that we are able to format our text in different ways, such as changing the color of the text, justifying the text, and wrapping the text. You can read more about the `Console` class [https://rich.readthedocs.io/en/stable/reference/console.html#rich.console.Console](https://rich.readthedocs.io/en/stable/reference/console.html#rich.console.Console) in the documentation.
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/rich_console.png">
+		<img src="{{site.baseurl}}/assets/images/rich_console.png" alt="Rich Console" class="image-popup">
+	</a>
+</figure>
+
+You'll notice this documentation is somewhat difficult to read, but it does show us the different methods and attributes that are available to us in the `Console` class. We can also click the small green `source` button to see the source code for the class [https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console](https://rich.readthedocs.io/en/stable/_modules/rich/console.html#Console). While you won't usually need to go so deep into a Python library's code, it is helpful to know how to read it if you are getting errors or are unsure how to use a library.
+
+We can also use `Rich` with some of the more advanced data structures we have been working with.In your `rich_example.py` file, add the following code:
+
+```python
+from rich.console import Console
+from rich.table import Table
+
+# Create a Console instance to print formatted text
+console = Console()
+
+# Initial movie data stored in a list of dictionaries
+movies = [
+    {
+        "Released": "Dec 20, 2019",
+        "Title": "Star Wars: The Rise of Skywalker",
+        "Box Office": "$952,110,690"
+    },
+    {
+        "Released": "May 25, 2018",
+        "Title": "Solo: A Star Wars Story",
+        "Box Office": "$393,151,347"
+    },
+    {
+        "Released": "Dec 15, 2017",
+        "Title": "Star Wars Ep. VIII: The Last Jedi",
+        "Box Office": "$1,332,539,889"
+    },
+    {
+        "Released": "Dec 16, 2016",
+        "Title": "Rogue One: A Star Wars Story",
+        "Box Office": "$1,332,439,889"
+    }
+]
+
+# Loop through the list of movies
+for movie in movies:
+    console.print("\n[bold cyan]Reviewing movie information:[/bold cyan]")
+    for field, value in movie.items():
+        console.print(f"[magenta]{field}[/magenta]: {value}")
+```
+
+Now we should see the following output in our terminal:
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/rich_movies.png">
+		<img src="{{site.baseurl}}/assets/images/rich_movies.png" alt="Rich Movies" class="image-popup">
+	</a>
+</figure>
+
+As you can see, we are able to loop through the list of movies and print the information for each movie in a formatted way. This is a great way to start to see how we can use the `Rich` library to format our text in different ways. 
+
+## Homework: Command Line Data Curation
+
+Now that we have completed:
+
+- [ ] the Python refresher lessons on data types and structures
+- [ ] the Complex Python lesson on scripting and classes
+- [ ] and finally, this lesson on virtual environments and packages
+
+it is time to start putting this all together.
+
+For your homework, you will be creating a Python script that will allow you to manually enter data in the terminal and then saves that data to your preferred file format.
+
+In your `python-libraries` folder, you should create a new file called `cli_data_entry.py`. In this file, you should create a Python script that does the following:
+
+1. Imports the `Rich` library and creates a `Console` instance, so that you can print formatted text to the terminal.
+2. The script should then show the user some pre-created data using `Rich`. This data could be related to our movie example, such as the title of a movie, the release date, and the box office earnings. Or you can also ask the user to enter data that is related to your own interests or hobbies. Or really anything you want! You can use the `Table` class to do this, or you can use the `print` function to format the text in a different way.
+3. Now the goal is to get the user to **correct any missing or incorrect data**. 
+
+To do this, you will need to use the `input` function to ask the user to enter the data for each field. For example, if the user is entering data for a movie, the script should ask the user if the title of the movie is correct. If the user says the title is incorrect, the script should ask the user to re-enter the title of the movie. The script should then print the data that the user entered to the terminal.
+
+Here's an example of what this could look like:
+
+
+   
+1. The script should ask the user to enter the data for each field. For example, if the user is entering data for a movie, the script should ask the user to enter the title of the movie, the release date, and the box office earnings. The script should then print the data that the user entered to the terminal.
+2. Asks the user to confirm that the data they entered is correct. If the user confirms that the data is correct, the script should save the data to a file. If the user says the data is incorrect, the script should ask the user to re-enter the data.
+3. Finally, the script should print a message to the user that the data has been saved to a file
+
+

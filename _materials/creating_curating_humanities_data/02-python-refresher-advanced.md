@@ -17,7 +17,7 @@ Rather than having to start from scratch every time, we can write our code in a 
 
 ### Writing and Running Scripts
 
-Open your `is310-coding-assignments` folder in VS Code, and create a new folder `python-refresher`. This is where we will store all our scripts for this lesson. Inside the `python-refresher` folder, create a new file called `first_script.py`. You can do this in the terminal by typing:
+Open your `is310-coding-assignments` folder in VS Code, and create a new folder `python-scripting`. This is where we will store all our scripts for this lesson. Inside the `python-scripting` folder, create a new file called `first_script.py`. You can do this in the terminal by typing:
 
 For Mac:
 
@@ -111,9 +111,10 @@ print(type(favorite_movies), type(favorite_movies[0]))
 
 Once you save and run the script you should see that we have both a `list` and a `dictionary`. With print statements you can add multiple items as long as they are separated by commas, and you can use built-in methods inside the print statement, instead of assigning them to a variable first.
 
-1. `Input()`
+2. `Input()`
 
-Now we have been writing all our data in our script, but what if we wanted to get input from the user? This is where the **input** method comes in. 
+Now we have been writing all our data in our script, but what if we wanted to get input from the user? This is where the **input** method comes in.
+
 In `first_script.py`, type the following at the bottom of the script:
 
 ```python
@@ -180,7 +181,7 @@ favorite_movies[0]['short_description'] = ' '.join(split_description[:10])
 print(favorite_movies[0]['short_description'])
 ```
 
-1. `Join()`
+2. `Join()`
 
 You'll notice that we use a new method in the example above called **join**. This method lets us take a list and join all the values together.
 
@@ -190,7 +191,7 @@ print(' '.join(split_description))
 
 Like `split()`, join requires a delimiter, which in this case is a space. This means that every item in the list will be joined together with a space in between. You can use any character as a delimiter, and often you'll see people use a comma to join lists together into a string.
 
-1. `Replace()`
+3. `Replace()`
 
 Now currently our description names the directors as `the Wachowskis`. But what if we wanted to change that to `Lana and Lilly Wachowski`? We can use the **replace** method to do this.
 
@@ -206,7 +207,7 @@ edited_description = favorite_movies[0]['long_description'].replace('the Wachows
 print(edited_description)
 ```
 
-1. `Lower()`, `Upper()`, `Title()`, `Strip()`
+4. `Lower()`, `Upper()`, `Title()`, `Strip()`
 
 Some additional methods that can be helpful include **lower**, **upper**, **title**, and **strip**. These methods let you change the case of a string, remove white space from the beginning and end of a string, and capitalize the first letter of each word in a string.
 
@@ -231,13 +232,12 @@ print(favorite_movies[0]['long_description'].strip())
 You can find more information about string methods here
 [https://www.w3schools.com/python/python_ref_string.asp](https://www.w3schools.com/python/python_ref_string.asp)
 
-#### Quick Exercise
+#### Quick Exercise For Practice (Optional But Recommended)
 
-1. If you haven't yet, create a new file called `first_script.py` in your `is310-coding-assignments` folder.
-2. Create two variables in your script, one for your favorite movie and one for your favorite book. You can use any data structure you want.
-3. The variables should include the title, the year it was released, and any sequels or prequels or series.
-4. The script should then ask for input from the user for a description of their favorite movie and book. These should be assigned to new keys in the dictionary.
-5. The script should print out the length of the list of your favorite movies and books, should create a short description of your favorite movie and book, and should print out the length of the long description of your favorite movie and book.
+1. Create two variables in your script, one for your favorite movie and one for your favorite book. You can use any data structure you want.
+2. The variables should include the title, the year it was released, and any sequels or prequels or series.
+3. The script should then ask for input from the user for a description of their favorite movie and book. These should be assigned to new keys in the dictionary.
+4. The script should print out the length of the list of your favorite movies and books, should create a short description of your favorite movie and book, and should print out the length of the long description of your favorite movie and book.
 
 ### Control Flow
 
@@ -268,7 +268,7 @@ favorite_movies =[
 
 We've hit a problem. Let's break down what happened here. If the print statement was at the bottom of the script it worked, but if it was at the top it didn't.
 
-That's because the print statement within it's parentheses references the variable `favorite_movies`, but we haven't defined that variable yet. This is an example of a **NameError**. But it's also helping us understand that Python reads code from top to bottom, line by line. This is called **sequential execution** and we can manipulate this with **control flow structures**.
+That's because the print statement within it's parentheses references the variable `favorite_movies`, but we haven't **defined** that variable yet. This is an example of a **NameError**. But it's also helping us understand that Python reads code from top to bottom, line by line. This is called **sequential execution** and we can manipulate this with **control flow structures**.
 
 Understanding control flow structures is essential to writing more complex code. These structures let us control the flow of our code, and they include **loops**, **functions**, and **conditional statements**.
 
@@ -533,7 +533,6 @@ else:
 
 You'll notice we're using a new keyword `None`. This is a special Python object that represents the absence of a value. It's similar to `null` in other programming languages. We can use `is` and `is not` to check if a variable is `None` or not.
 
-
 For more about conditional statements in Python, check out the [Python documentation](https://docs.python.org/3/tutorial/controlflow.html#if-statements) and the [W3Schools tutorial](https://www.w3schools.com/python/python_conditions.asp).
 
 | Conditional keyword | Explanation | Example |
@@ -549,7 +548,7 @@ For more about conditional statements in Python, check out the [Python documenta
 | `is not` | Used to test if a variable is not None | `if favorite_movies[0]['sequels'] is not None:` |
 | `None` | A special Python object that represents the absence of a value | `None` |
 
-#### Quick Exercise
+#### Quick Exercise For Practice (Optional But Recommended)
 
 Now it's time to put this all together. In your `first_script.py`, try to complete the following tasks:
 

@@ -8,7 +8,7 @@ class_date: 2024-10-03
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Group assignment on data creation (To be posted).
+- [ ] Start group assignment on data creation (To be posted).
 
 ## Assigned Materials
 

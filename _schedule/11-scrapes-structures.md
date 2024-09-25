@@ -7,7 +7,7 @@ class_date: 2024-10-01
 
 ## In-Class Agenda
 
-- [ ] Answer questions from scripting homework
+- [ ] Continue any remaining materials from Introduction to [Python Virtual Environments]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments).
 - [ ] Introduction to web scraping (To be posted).
 
 ## Assigned Materials

@@ -48,8 +48,12 @@ materials:
     children:
       - title: "Python Refresher: Foundations (Optional If Experienced in Python)"
         url: /materials/creating-curating-humanities-data/01-python-refresher-foundations
-      # - title: "Python Refresher II: Advanced Python"
-      #   url: /materials/creating-curating-humanities-data/02-python-refresher-advanced
+      - title: "Python Refresher II: Advanced Python"
+        url: /materials/creating-curating-humanities-data/02-python-refresher-advanced
+      - title: "Complex Python: Classes & Comments"
+        url: /materials/creating-curating-humanities-data/03-complex-python
+      - title: "Python Virtual Environments & Packages"
+        url: /materials/creating-curating-humanities-data/04-virtual-environments
 
 schedule:
   - title: Overview

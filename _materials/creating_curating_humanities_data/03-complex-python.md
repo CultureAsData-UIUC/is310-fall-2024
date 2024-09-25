@@ -1,11 +1,11 @@
 ---
-title: "Complex Python"
-permalink: /materials/creating-curating-humanities-data/04-complex-python
+title: "Complex Python: Classes & Comments"
+permalink: /materials/creating-curating-humanities-data/03-complex-python
 excerpt: "An introduction to complex Python data structures and functionality."
 toc: true
 ---
 
-Now that we have refreshed our knowledge of Python and learned how to create virtual environments, it's time to start getting more advanced in how we use Python, especially to work with data.
+Now that we have refreshed our knowledge of Python, it's time to start getting more advanced in how we use Python, especially to work with data.
 
 ## Classes
 
@@ -339,9 +339,9 @@ This is a more complex version of our `Movie` class. We've added two new methods
 
 This type of programming is called **object-oriented programming** and it's a very powerful way to organize your code. It's also a very common way to organize code in Python, and you'll see it often, even if you don't write it yourself.
 
-#### Quick Assignment
+#### Quick Exercise for Practice (Optional But Recommended)
 
-1. Try copying the `Movie` class into your script and then creating a new instance of the class. Then try adding a sequel and prequel to the movie and then printing out the movie's information. Remember that if you're creating a new movie, you'll need to create a new variable to save the new instance of the `Movie` class and then add the directors and release year to the movie.
+1. Try copying the `Movie` class into your `first_script.py` and then create a new instance of the class. Then try adding a sequel and prequel to the movie and then printing out the movie's information. Remember that if you're creating a new movie, you'll need to create a new variable to save the new instance of the `Movie` class and then add the directors and release year to the movie.
 2. Try adding a function to the `Movie` class that saves their rating. Then try adding a rating to the movie and printing out the movie's information.
 
 #### Additional Reading
@@ -349,7 +349,6 @@ This type of programming is called **object-oriented programming** and it's a ve
 1. [An Introduction to Python Classes and Inheritance](http://www.jesshamrick.com/2011/05/18/an-introduction-to-classes-and-inheritance-in-python/)
 2. [Here is a very helpful video series on class inheritance](https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)
 3. [Python Documentation on Classes](https://docs.python.org/3/tutorial/classes.html)
-
 
 ## Commenting and Documentation
 
@@ -428,7 +427,7 @@ Let's dig into the Python documentation to understand more!
     </a>
 </figure>
 
-Now click on the link to the `pathlib` module. 
+Now click on the link to the `pathlib` module.
 
 <figure>
     <a href="{{site.baseurl}}/assets/images/pathlib_source_link.png">
@@ -487,61 +486,35 @@ But `pathlib` is useful not just for printing out working directories, it can al
 
 Up to know you've had to hand enter data but in Python you can use various libraries to manipulate and read in data.
 
-Let's try it out with Pathlib by passing in a file from our readings this week. In Anderson, Hanah, and Matt Daniels. “The Largest Analysis of Film Dialogue by Gender, Ever.” *The Pudding*, April 2016. [https://pudding.cool/2017/03/film-dialogue/index.html](https://pudding.cool/2017/03/film-dialogue/index.html), the authors at the end of the article link to their data.
+Let's try it out with Pathlib by passing in one of the datasets from the *Responsible Datasets in Context* Project that we have been reviewing each week. You can use any of the datasets, but I'm selecting the one by Os Keyes and Melanie Walsh. “U.S. National Park Visit Data (1979-2023) – Responsible Datasets in Context.” *Responsible Datasets in Context*, June 1, 2024. [https://www.responsible-datasets-in-context.com/posts/np-data/](https://www.responsible-datasets-in-context.com/posts/np-data/).
 
-<figure>
-    <a href="{{site.baseurl}}/assets/images/pudding_data.png">
-    <img src="{{site.baseurl}}/assets/images/pudding_data.png" alt="Pudding Data" class="image_popup">
-    </a>
-</figure>
-
-Let's go to the first link, the Google sheet one, and download the data. 
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/pudding_google_sheet.png">
-    <img src="{{site.baseurl}}/assets/images/pudding_google_sheet.png" alt="Pudding Data Download" class="image_popup">
-    </a>
-</figure>
-
-You can download the data as a csv file by clicking on the `File` menu and then `Download` and then `Comma-separated values`.
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/pudding_download.png">
-    <img src="{{site.baseurl}}/assets/images/pudding_download.png" alt="Pudding Data Download" class="image_popup">
-    </a>
-</figure>
-
-Once you've downloaded the data, you should have a file called `Public Script Sources - public_scripts.csv`. You can leave the filename as is, but I'm going to rename it to `pudding_data.csv` so that it's easier to work with. Now let's try using `pathlib` to read in the data.
+Once you've downloaded the data, you should have a file called `US-National-Parks_RecreationVisits_1979-2023.csv`. Now let's try using `pathlib` to read in the data.
 
 ```python
 from pathlib import Path
 
-file = Path('pudding_data.csv')
+file = Path('US-National-Parks_RecreationVisits_1979-2023.csv')
 print(file, type(file))
 ```
 
-Now depending on where you file is located, you might need to change the path (often files are in your Downloads folder, in which case you might write `Users/user_name/Downloads/pudding_data.csv`). Remember computers need the **exact path**, so if you're not sure where your file is located, you can use the `cwd` method to print out the current working directory and then add the file name to the end of the path.
+Now depending on where you file is located, you might need to change the path (often files are in your Downloads folder, in which case you might write `Users/user_name/Downloads/US-National-Parks_RecreationVisits_1979-2023.csv`). Remember computers need the **exact path**, so if you're not sure where your file is located, you can use the `cwd` method to print out the current working directory and then add the file name to the end of the path.
 
-Now if this code worked, it should show you the exact file path of your spreadsheet and then the type of the object, either `<class 'pathlib.PosixPath'>` or `<class 'pathlib.WindowsPath'>`. Not to get too complicated but this is because the `Path` class is a subclass of the `PosixPath` class (not really going to get into subclassing but think of it as building classes on top of one another - like lego or jenga).
+Now if this code worked, it should show you the exact file path of your spreadsheet and then the type of the object, either `<class 'pathlib.PosixPath'>` or `<class 'pathlib.WindowsPath'>`. Not to get too complicated but this is because the `Path` class is a subclass of the `PosixPath` class (not really going to get into subclassing but think of it as building classes on top of one another - like Lego or Jenga).
 
 We can also look at the methods built-in to the `Path` class. One in particular is useful for us `read_text` which reads in the contents of a file and returns it as a string. Read more about it here [https://docs.python.org/3/library/pathlib.html#pathlib.Path.read_text](https://docs.python.org/3/library/pathlib.html#pathlib.Path.read_text) and test it out in your script.
 
 ```python
 from pathlib import Path
 
-file = Path('pudding_data.csv')
+file = Path('US-National-Parks_RecreationVisits_1979-2023.csv')
 print(file, type(file))
 
 print(file.read_text())
 ```
 
-You should now see the entirety of our csv file in your terminal. If you try saving that to a variable and checking the type you should see that it's a string.
+Now when you save you script and rerun your code in the terminal, you should now see the entirety of our csv file in your terminal. If you try saving that to a variable and checking the type you should see that it's a string.
 
 So now we can simply manipulate that string so that we don't have to hand enter the data.
-
-### Quick Assignment
-
-If you haven't yet, try downloading the pudding data, and se if you can use the `read_text` method to read in the contents of the csv file and store it in a variable. Then try printing out the first 1000 characters of the variable.
 
 ----
 
@@ -552,20 +525,28 @@ For example we could use the [`open` built-in function in Python](https://docs.p
 To open a file for reading (input), we just do:
 
 ```python
-input_file = open("pudding_data.csv","r")
+input_file = open("US-National-Parks_RecreationVisits_1979-2023.csv","r")
 text = input_file.read()
 print(text)
 input_file.close()
 ```
 
-Here, we use the `open` function to open a file in mode "r" (read). `open` returns a [File Object](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) that provides methods for reading and writing. In this case, the `read` method reads in data from the `input_file` file object and stores it as a string in `text`.
+Here, we use the `open` function to open a file in mode "r" (read). `open` returns a [File Object](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) that provides methods for reading and writing. In this case, the `read` method reads in data from the `input_file` file object and stores it as a string in `text`. We could even just pass in our Path object to the `open` function.
+
+```python
+file = Path('US-National-Parks_RecreationVisits_1979-2023.csv')
+input_file = open(file,"r")
+text = input_file.read()
+print(text)
+input_file.close()
+```
 
 At the end, we can close the file to save some memory, but even if we don't do it explicitly, Python will eventually catch on to the fact that it isn't being used anymore and do it for us. This isn't a huge concern unless you're opening thousands of files or the files you're opening are very, very large.
 
 Often, you'll see file handling used with the `with` keyword (reserved word again!):
 
 ```python
-with open("pudding_data.csv","r") as input_file:
+with open("US-National-Parks_RecreationVisits_1979-2023.csv","r") as input_file:
     print(input_file.read())
 ```
 
@@ -600,25 +581,77 @@ To get around this, we can convert from int to string using the built-in `str` c
 
 For the same reason that we can't do `f.write(4)`, we also can't do `"4"+4` (or, for that matter, `4+"4"`). We have to explicitly tell python whether we want it to treat each value as an integer or a string. `"4"+str(4)` produces "44" while `int("4")+4` returns 8.
 
-The second new thing here is the newline character "\n", which is technically called a LF or Line Feed. This inserts a line break between characters in a string.
+The second new thing here is the newline character "\n", which is technically called a LF or Line Feed. This inserts a line break between characters in a string. If you don't include it, all the numbers will be on the same line.
 
-### Reading CSVs
+### Quick Exercise for Practice (Optional But Recommended)
 
-While we can use the `open` method or Pathlib for working with text files, but usually for CSVs (aka spreadsheets), we need a Python library with a little more functionality. One of the most common ones is the [`csv` module](https://docs.python.org/3/library/csv.html). Just like with Pathlib, we first to import `csv` and then we can still use `open` to open our spreadsheet.
+1. Try writing adding a function to your `Movie` class that saves the movie's information to a file. Then try writing the information to a file using the `open` function.
+2. Try adding a function to your `Movie` class that reads in a file and sets the movie's information based on the file. Then try reading in the information from a file using the `open` function.
 
-But now we use the built-in methods of `csv` library to manipulate our file.
+If you're getting stuck here's a possible solution, if you click on the toggle below it will show you the solution.
+
+{% capture toggle_content %}
+
+Here's a function to save the movie's information to a file:
 
 ```python
-import csv
+def save_movie_info(self, file_name):
+	"""Saves the movie's information to a file
 
-with open("pudding_data.csv","r") as input_file:
-    csv_reader = csv.reader(input_file)
-    for row in csv_reader:
-        print(row)
+	Method argument:
+	-----------------
+	file_name(string) -- The name of the file to save the movie's information to
+	"""
+	with open(file_name, "w") as f:
+		f.write(f"Movie Name: {self.movie_name}\n")
+		f.write(f"Directors: {', '.join(self.directors)}\n")
+		f.write(f"Release Year: {self.release_year}\n")
+		f.write(f"Age: {self.age}\n")
+		f.write(f"Sequels: {', '.join([sequel.movie_name for sequel in self.sequels])}\n")
+		f.write(f"Prequels: {', '.join([prequel.movie_name for prequel in self.prequels])}\n")
 ```
 
-Try out this code and see what the difference is between the `csv.reader` and `read_text` methods we've tried out.
+Now you can call this function on your `a_movie` object and pass in the name of the file you want to save the information to.
 
-### Quick Assignment
+```python
+a_movie = Movie("The Matrix I")
+a_movie.add_directors(["Lana Wachowski", "Lilly Wachowski"])
+a_movie.add_release_year(1999)
+a_movie.add_sequel("The Matrix II", 2003)
+a_movie.add_sequel("The Matrix III", 2003)
+a_movie.add_sequel("The Matrix IV", 2021)
+a_movie.add_prequel("The Matrix 0", 1998)
+a_movie.calculate_movie_age()
+a_movie.save_movie_info("movie_info.txt")
+```
 
-Going back to the pudding article, they also include a link to their GitHub repository which includes additional spreadsheets. Try downloading another csv file and then use the `csv` module to read in the contents of the file. Then try taking the first row and saving it to a variable. Finally, try writing that variable to a new text file.
+Here's a function to read in a file and set the movie's information based on the file:
+
+```python
+def read_movie_info(self, file_name):
+	"""Reads in a file and sets the movie's information based on the file
+
+	Method argument:
+	-----------------
+	file_name(string) -- The name of the file to read the movie's information from
+	"""
+	with open(file_name, "r") as f:
+		lines = f.readlines()
+		self.movie_name = lines[0].split(": ")[1].strip()
+		self.directors = lines[1].split(": ")[1].strip().split(", ")
+		self.release_year = int(lines[2].split(": ")[1].strip())
+		self.age = int(lines[3].split(": ")[1].strip())
+		self.sequels = [Movie(sequel.strip()) for sequel in lines[4].split(": ")[1].strip().split(", ")]
+		self.prequels = [Movie(prequel.strip()) for prequel in lines[5].split(": ")[1].strip().split(", ")]
+```
+
+Now you can call this function on your `a_movie` object and pass in the name of the file you want to read the information from.
+
+```python
+a_movie = Movie("The Matrix I")
+a_movie.read_movie_info("movie_info.txt")
+a_movie.get_movie_info()
+```
+
+{% endcapture %}
+{% include toggle.html content=toggle_content %}

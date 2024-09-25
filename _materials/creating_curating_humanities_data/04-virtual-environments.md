@@ -342,22 +342,53 @@ Now that we have completed:
 
 it is time to start putting this all together.
 
-For your homework, you will be creating a Python script that will allow you to manually enter data in the terminal and then saves that data to your preferred file format.
+## Part 1: Building a CLI Application
+
+For your homework, you will be creating a Python script that will allow you to manually enter data in the terminal and then saves that data to your preferred file format (whether that's `.txt`, `.csv`, `.json`, etc.).
 
 In your `python-libraries` folder, you should create a new file called `cli_data_entry.py`. In this file, you should create a Python script that does the following:
 
 1. Imports the `Rich` library and creates a `Console` instance, so that you can print formatted text to the terminal.
-2. The script should then show the user some pre-created data using `Rich`. This data could be related to our movie example, such as the title of a movie, the release date, and the box office earnings. Or you can also ask the user to enter data that is related to your own interests or hobbies. Or really anything you want! You can use the `Table` class to do this, or you can use the `print` function to format the text in a different way.
-3. Now the goal is to get the user to **correct any missing or incorrect data**. 
+2. The script should then show the user some pre-created example data using `Rich`. This data could be related to our movie example, such as the title of a movie, the release date, and the box office earnings. Or you can also ask the user to enter data that is related to your own interests or hobbies. Or really anything you want! You can use the `Table` class to do this, or you can use the `console.print` function to format the text in a different way.
+3. Now the goal is to get the user to add some **additional data**
 
-To do this, you will need to use the `input` function to ask the user to enter the data for each field. For example, if the user is entering data for a movie, the script should ask the user if the title of the movie is correct. If the user says the title is incorrect, the script should ask the user to re-enter the title of the movie. The script should then print the data that the user entered to the terminal.
+To do this, you will need to use the `input` function to ask the user to enter the data for each field. We say in the last lesson that `input()` is a built-in Python method. However, rich also has an `input` method, which you can see in this documentation [https://rich.readthedocs.io/en/stable/console.html#input](https://rich.readthedocs.io/en/stable/console.html#input). You can use either, but the idea is to have your user enter some data relevant to the topic. 
 
-Here's an example of what this could look like:
+Here's an example of what this *could* look like:
 
+```python
+from rich.console import Console
+from rich.table import Table
 
-   
-1. The script should ask the user to enter the data for each field. For example, if the user is entering data for a movie, the script should ask the user to enter the title of the movie, the release date, and the box office earnings. The script should then print the data that the user entered to the terminal.
-2. Asks the user to confirm that the data they entered is correct. If the user confirms that the data is correct, the script should save the data to a file. If the user says the data is incorrect, the script should ask the user to re-enter the data.
-3. Finally, the script should print a message to the user that the data has been saved to a file
+console = Console()
+console.print("Here is some initial data:", style="bold cyan")
 
+table = Table(title="Star Wars Movies")
+table.add_column("Released", style="cyan", no_wrap=True)
+table.add_column("Title", style="magenta")
+table.add_column("Box Office", justify="right")
+table.add_row("Dec 20, 2019", "Star Wars: The Rise of Skywalker", "$952,110,690")
+table.add_row("May 25, 2018", "Solo: A Star Wars Story", "$393,151,347")
+table.add_row("Dec 15, 2017", "Star Wars Ep. VIII: The Last Jedi", "$1,332,539,889")
+table.add_row("Dec 16, 2016", "Rogue One: A Star Wars Story", "$1,332,439,889")
 
+console.print(table)
+console.print("\n[bold cyan]Now I want you to enter your preferred movies:[/bold cyan]")
+
+movie_title = input("Enter the title of the movie: ")
+release_date = input("Enter the release date of the movie: ")
+box_office = input("Enter the box office earnings of the movie: ")
+```
+
+However, you'll notice that this script doesn't allow for multiple entries or writes the data to a file. This is where you come in! You should expand on this script to allow for multiple entries (maybe creating a `for-loop` or a `function`, though you can use whatever you think is best) and then save the data to a file.
+
+4. Once the user has entered the data, the script should print out their entry and ask the the user to confirm that the data they entered is correct. If the user confirms that the data is correct, the script should save the data to a file. If the user says the data is incorrect, the script should ask the user to re-enter the data. It is up to you to decide when to write data to a file, but you should only write the data to a file once the user has confirmed that the data is correct.
+5. Finally, the script should print a message to the user that the data has been saved to a file and the full path to the file, so they can locate it.
+
+## Part 2: Data Entry in the Wild
+
+Once your script is working, it is time to post it to GitHub to our next discussion thread [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/6](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/6). I would highly encourage you to include a `README.md` file that explains how to use your script and what it does. You can also include any additional information you think is relevant.
+
+Next, test a classmate’s script by entering new data (you should add **at least two data points**) and share the file that you generated back with them by replying to their post. Provide any feedback if the script doesn’t work or if there are improvements to be made. But please remember to be constructive and respectful in your feedback!
+
+If you have any questions or need help, please don't hesitate to ask in the discussion thread or reach out to the instructors via Discord. Also remember you are able to use GitHub Co-Pilot to help you with your coding assignments.

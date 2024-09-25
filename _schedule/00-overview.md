@@ -51,6 +51,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line) | [Due by Midnight CT on September 11]({{site.baseurl}}/schedule/06-markup-markdown/) |
 | [Source & Style]({{site.baseurl}}/materials/introducing-humanities-computing/07-intro-html#homework-source-and-style) | [Due by Midnight CT on September 18]({{site.baseurl}}/schedule/08-servers-web-standards/) |
 | [Doing it Live]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web#homework-doing-it-live) | [Due by Midnight CT on September 25]({{site.baseurl}}/schedule/10-scripts-classes/) |
+| [Command Line Data Curation]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments#homework-command-line-data-curation) | [Due by Midnight CT on October 7]({{site.baseurl}}/schedule/13-curating-vs-cleaning/) |
 
 ### Group Assignments
 

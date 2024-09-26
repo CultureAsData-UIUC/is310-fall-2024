@@ -29,9 +29,8 @@ This method has also been used by scholars to do community-driven data preservat
 
 Technically, most publicly available internet data is considered legal to collect, even if it's not explicitly licensed. In 2019, "the Ninth Circuit Court of Appeals ruled that automated scraping of publicly accessible data likely does not violate the Computer Fraud and Abuse Act (CFAA)."[^1] However, there are some important caveats to this. For example, this ruling only applies to US based websites and the laws in other countries might be different. One of the more recent and important European developments was the passing of the General Data Protection Regulation (GDPR) in 2018, which has implications for web scraping. In particular, the GDPR bans the scraping of emails and personal names from websites. More recently, a consortium of regulators from multiple countries released a joint statement warning social media companies that they must protect user data from scraping.[^2]
 
-In terms of ethics, web scraping can be a bit of a grey area. It's generally considered ethical to scrape publicly available data, but it's not ethical to scrape data from a website that has a terms of service that prohibits scraping (though it can be difficult to find that out if you remember the art installation from last week's class on terms of service [https://www.designboom.com/readers/dima-yarovinsky-visualizes-facebook-instagram-snapchat-terms-of-service-05-07-2018/](https://www.designboom.com/readers/dima-yarovinsky-visualizes-facebook-instagram-snapchat-terms-of-service-05-07-2018/)). 
+In terms of ethics, web scraping can be a bit of a grey area. It's generally considered ethical to scrape publicly available data, but it's not ethical to scrape data from a website that has a terms of service that prohibits scraping. It can be difficult to find those terms of service, but one more obvious example of a website banning scraping is if it prohibits scraping in its `robots.txt` file. A robots.txt file is a file that websites use to tell web crawlers which pages they are allowed to scrape.
 
-A more obvious example of a website banning scraping is if it prohibits scraping in its `robots.txt` file. A robots.txt file is a file that websites use to tell web crawlers which pages they are allowed to scrape.
 
 <figure>
     <a href="{{site.baseurl}}/assets/images/robots.png">
@@ -65,16 +64,18 @@ Now that we have a sense of web scraping generally, it's time to try it out in P
 
 ### Installing Required Packages
 
-The first step is to install our required packages. We'll be using the `requests` package to get the web page and the `beautifulsoup4` package to parse the web page. We will be installing these into a virtual environment. If you have yet to set up a virtual environment, you can follow the instructions in the [previous lesson]({{site.baseurl}}/materials/creating-curating-humanities-data/03-virtual-environments).
+The first step is to install our required packages. We'll be using the `requests` package to get the web page and the `beautifulsoup4` package to parse the web page. We will be installing these into a virtual environment. If you have yet to set up a virtual environment, you can follow the instructions in the [previous lesson]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments).
 
 ```sh
 source is310-env/bin/activate
 pip3 install requests beautifulsoup4
 ```
 
+Notice here we are installing two packages: `requests` and `beautifulsoup4`. The `requests` package is a library that allows us to send HTTP requests to web pages. The `beautifulsoup4` package is a library that allows us to parse HTML and XML documents. We will be using `requests` to get the web page and `beautifulsoup4` to parse the web page. **You can install as many packages as you want in a single `pip3 install` command, just separate them with a space.**
+
 ---
 
-We previously discussed Python libraries when we talked about classes and file input and outputs, but let's dig in a bit deeper.
+We previously discussed Python libraries when we talked about classes and virtual environments, but let's dig in a bit deeper.
 
 **Library**
 
@@ -90,7 +91,7 @@ This is very detailed, but just remember that while these terms are often used i
 
 --- 
 
-Here, confusingly, the name of the package on PyPI (beautifulsoup4) doesn't match the actual Python code package (bs4). Which is why we always read the documentation, which is available here [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)!
+Here, confusingly, the name of the package on PyPI (`beautifulsoup4`) doesn't match the actual Python code package (`bs4`). Which is why we always read the documentation, which is available here [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)!
 
 So let's try using this library. First, we need to import it into our Python file. If you don't have a file yet, would highly recommend making a new folder in your `is310-coding-assignments` called `web_scraping` and then creating a new file called `web_scraping.py`. Then you can add the following code to your file:
 

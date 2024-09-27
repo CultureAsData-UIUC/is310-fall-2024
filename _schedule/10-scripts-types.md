@@ -1,6 +1,6 @@
 ---
-title: "Scripts & Classes"
-permalink: /schedule/10-scripts-classes/
+title: "Scripts & Types"
+permalink: /schedule/10-scripts-types/
 toc: true
 class_date: 2024-09-26
 ---
@@ -10,7 +10,6 @@ class_date: 2024-09-26
 - [ ] Group 6 presents their [Critical Cultural Data Explorations]({{site.baseurl}}/critical-cultural-data-explorations/) assignment.
 - [ ] Briefly review the [Doing it Live Homework]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web#homework-doing-it-live).
 - [ ] Complete remaining [Python Refresher]({{site.baseurl}}/materials/creating-curating-humanities-data/02-python-refresher-advanced).
-- [ ] Start [Introduction to Complex Python]({{site.baseurl}}/materials/creating-curating-humanities-data/03-complex-python) & [Introduction to Virtual Environments ]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments).
 
 ## Assigned Materials
 

@@ -1,8 +1,8 @@
 ---
 title: "I Dream of Data"
-permalink: /schedule/25-i-dream-of-data/
+permalink: /schedule/27-i-dream-of-data/
 toc: true
-class_date: 2024-11-19
+class_date: 2024-12-03
 ---
 
 ## In-Class Agenda

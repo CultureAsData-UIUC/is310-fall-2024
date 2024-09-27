@@ -1,8 +1,8 @@
 ---
 title: "Preservation & Publics"
-permalink: /schedule/23-preservation-publics/
+permalink: /schedule/25-preservation-publics/
 toc: true
-class_date: 2024-11-12
+class_date: 2024-11-19
 ---
 
 ## In-Class Agenda

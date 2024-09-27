@@ -1,15 +1,14 @@
 ---
 title: "Curating vs. Cleaning"
-permalink: /schedule/13-curating-vs-cleaning/
+permalink: /schedule/15-curating-vs-cleaning/
 toc: true
-class_date: 2024-10-08
+class_date: 2024-10-15
 ---
 
 ## In-Class Agenda
 
-- [ ] Review the [Command Line Data Curation Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments#homework-command-line-data-curation).
 - [ ] Discuss the assigned readings
-- [ ] Start introduction to APIs (To be posted).
+- [ ] Group presentations on data creation assignment.
 
 ## Assigned Materials
 

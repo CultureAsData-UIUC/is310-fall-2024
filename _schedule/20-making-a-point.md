@@ -1,8 +1,8 @@
 ---
 title: "Making A Point"
-permalink: /schedule/18-making-a-point/
+permalink: /schedule/20-making-a-point/
 toc: true
-class_date: 2024-10-24
+class_date: 2024-10-31
 ---
 
 ## In-Class Agenda

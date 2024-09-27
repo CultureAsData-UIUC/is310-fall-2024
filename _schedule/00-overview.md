@@ -25,18 +25,18 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [September 3 - Histories of Culture & Computing]({{site.baseurl}}/schedule/03-histories-of-culture-and-computing/) | [September 5 - Version & File Histories]({{site.baseurl}}/schedule/04-version-file-histories/) |
 | [September 10 - Digital Objects & Obsolescence]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/) | [September 12 - Markup & Markdown]({{site.baseurl}}/schedule/06-markup-and-markdown/) |
 | [September 17 - Data Feminism & Culture As Data]({{site.baseurl}}/schedule/07-data-feminism-and-culture-as-data/) | [September 19 - Servers & Web Standards]({{site.baseurl}}/schedule/08-servers-web-standards/) |
-| [September 24 - Standardizing Culture & Data Archeology]({{site.baseurl}}/schedule/09-standardizing-culture-data-archeology/) | [September 26 - Scripts & Classes]({{site.baseurl}}/schedule/10-scripts-classes/) |
-| [October 1 - Scrapes & Structures (Note Experimentations)]({{site.baseurl}}/schedule/11-scrapes-structures/) | [October 3 - Documentation & Definitions (Note Explorations)]({{site.baseurl}}/schedule/12-documentation-definitions/) |
-| [October 8 - Curating vs. Cleaning]({{site.baseurl}}/schedule/13-curating-vs-cleaning/) | [October 10 - GETting Culture]({{site.baseurl}}/schedule/14-getting-culture/) |
-| [October 15 - Arguments & Plots]({{site.baseurl}}/schedule/15-arguments-plots/) | [October 17 - Notes & Points]({{site.baseurl}}/schedule/16-notes-points/) |
-| [October 22 - Patterns & Outliers]({{site.baseurl}}/schedule/17-patterns-outliers/) | [October 24 - Making A Point]({{site.baseurl}}/schedule/18-making-a-point/) |
-| [October 29 - Modeling Culture]({{site.baseurl}}/schedule/19-modeling-culture/) | [October 31 - Structuring Data]({{site.baseurl}}/schedule/20-structuring-data/) |
-| [November 5 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/21-reproducibility-responsibility/) | [November 7 - Algorithmic Failures]({{site.baseurl}}/schedule/22-algorithmic-failures/) |
-| [November 12 - Preservation & Publics]({{site.baseurl}}/schedule/23-preservation-publics/) | [November 14 - Augmentation & AI]({{site.baseurl}}/schedule/24-augmentation-ai/) |
-|{::nomarkdown}<td colspan="2">November 19 & 21 - Fall Break</td>{:/}|
-| [December 3 - Reflections & Reviewing (In-Class Project Working Session)]({{site.baseurl}}/schedule/27-reflections-reviewing/) | [December 5 - Next Steps & Final Notes (In-Class Project Working Session)]({{site.baseurl}}/schedule/28-next-steps-final-notes/) |
+| [September 24 - Standardizing Culture & Data Archeology]({{site.baseurl}}/schedule/09-standardizing-culture-data-archeology/) | [September 26 - Scripts & Types]({{site.baseurl}}/schedule/10-scripts-types/) |
+| [October 1 - Classes & Comments]({{site.baseurl}}/schedule/11-classes-comments/) | [October 3 - Projects & Proposals]({{site.baseurl}}/schedule/12-project-proposals/) |
+| [October 8 - Definitions & Documentation]({{site.baseurl}}/schedule/13-definitions-documentation/) | [October 10 - Scrape On & Off]({{site.baseurl}}/schedule/14-scrape-on-off/) |
+| [October 15 - Curating vs. Cleaning]({{site.baseurl}}/schedule/15-curating-vs-cleaning/) | [October 17 - GETting Culture]({{site.baseurl}}/schedule/16-getting-culture/) |
+| [October 22 - Arguments & Plots]({{site.baseurl}}/schedule/17-arugments-plots/) | [October 24 - Notes & Points]({{site.baseurl}}/schedule/18-notes-points/) |
+| [October 29 - Patterns & Outliers]({{site.baseurl}}/schedule/19-patterns-outliers/) | [October 31 - Making A Point]({{site.baseurl}}/schedule/20-making-a-point/) |
+| [November 5 - Modeling Culture]({{site.baseurl}}/schedule/21-modeling-culture/) | [November 7 - Structuring Data]({{site.baseurl}}/schedule/22-structuring-data/) |
+| [November 12 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/23-reproducibility-responsibility/) | [November 14 - Algorithmic Failures]({{site.baseurl}}/schedule/24-algorithmic-failures/) |
+| [November 19 - Preservation & Publics]({{site.baseurl}}/schedule/25-preservation-publics/) | [November 21 - Augmentation & AI]({{site.baseurl}}/schedule/26-augmentation-ai/) |
+|{::nomarkdown}<td colspan="2">November 26 & 28 - Fall Break</td>{:/}|
+| [December 3 - I Dream of Data]({{site.baseurl}}/schedule/27-i-dream-of-data/) | [December 5 - Hauntings & Ghosts]({{site.baseurl}}/schedule/28-hauntings-ghosts/) |
 | [December 10 - Future Horizons & Final Projects]({{site.baseurl}}/schedule/29-future-horizons-final-projects/) | |
-
 
 ## Assignment Schedule
 
@@ -51,7 +51,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Lost & Found in the Command Line]({{site.baseurl}}/materials/introducing-humanities-computing/06-intro-file-formats#homework-lost--found-in-the-command-line) | [Due by Midnight CT on September 11]({{site.baseurl}}/schedule/06-markup-markdown/) |
 | [Source & Style]({{site.baseurl}}/materials/introducing-humanities-computing/07-intro-html#homework-source-and-style) | [Due by Midnight CT on September 18]({{site.baseurl}}/schedule/08-servers-web-standards/) |
 | [Doing it Live]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web#homework-doing-it-live) | [Due by Midnight CT on September 25]({{site.baseurl}}/schedule/10-scripts-classes/) |
-| [Command Line Data Curation]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments#homework-command-line-data-curation) | [Due by Midnight CT on October 7]({{site.baseurl}}/schedule/13-curating-vs-cleaning/) |
+| [Scripting Python Foundations Homework (Optional But Recommended)]({{site.baseurl}}/materials/creating-curating-humanities-data/02-python-refresher-advanced#homework-scripting-python-foundations-optional-but-recommended) | [Due Prior to Class on October 1]({{site.baseurl}}/schedule/11-classes-comments/) |
 
 ### Group Assignments
 

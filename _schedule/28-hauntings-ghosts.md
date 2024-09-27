@@ -1,8 +1,8 @@
 ---
 title: "Hauntings & Ghosts"
-permalink: /schedule/26-hauntings-ghosts/
+permalink: /schedule/28-hauntings-ghosts/
 toc: true
-class_date: 2024-11-21
+class_date: 2024-12-05
 ---
 
 ## In-Class Agenda

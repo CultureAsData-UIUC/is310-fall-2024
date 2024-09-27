@@ -548,11 +548,29 @@ For more about conditional statements in Python, check out the [Python documenta
 | `is not` | Used to test if a variable is not None | `if favorite_movies[0]['sequels'] is not None:` |
 | `None` | A special Python object that represents the absence of a value | `None` |
 
-#### Quick Exercise For Practice (Optional But Recommended)
+### Homework: Scripting Python Foundations (Optional But Recommended)
 
-Now it's time to put this all together. In your `first_script.py`, try to complete the following tasks:
+This homework assignment is **optional but highly recommended** for those that do not have experience with writing Python scripts. If you decide to complete the homework, it will be **added to your grade as extra credit but if you do not complete it, it will not be counted against you.**
+
+In the first quick exercise, you created a script that asked for input from the user and then printed out the length of the list of your favorite movies and books, created a short description of your favorite movie and book, and printed out the length of the long description of your favorite movie and book.
+
+Now we will augment this script to include loops, functions, and conditional statements.
+
+In your `first_script.py`, try to complete the following tasks:
 
 1. Create a function that takes a movie as an argument. Inside the function, it should check if the movie was released before 2000. If it was, it should print a string that says "This movie was released before 2000". If it wasn't, it should print a string that says "This movie was released after 2000". The function should only return the movie name if it was released after 2000.
 2. Below the function create an empty list called `recent_movies`.
 3. Outside and below the function and `recent_movies`, use a for loop to loop through all the movies in your list of favorite movies. For each movie, call the function and pass in the movie as an argument. If the function returns a value, append the movie to the `recent_movies` list. You can check if the function returns a value by using the `if` keyword and checking if the result is `None` or not.
 4. Finally, outside of the loop, print out the `recent_movies` list.
+
+Once you have completed this script, save it and run it in the terminal. You should see a list of all the movies that were released after 2000. If you prefer, you can use books or another cultural object instead of movies.
+
+After confirming that the script works, you should push it up to your GitHub repository. You can do this by using the following commands in the terminal:
+
+```sh
+git add .
+git commit -m "Completed homework for Python Foundations"
+git push origin main # or master if you haven't changed the default branch name
+```
+
+You should then put a link to our GitHub discussion [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/7](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/7).

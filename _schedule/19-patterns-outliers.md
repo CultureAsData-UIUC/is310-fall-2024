@@ -1,8 +1,8 @@
 ---
 title: "Patterns & Outliers"
-permalink: /schedule/17-patterns-outliers/
+permalink: /schedule/19-patterns-outliers/
 toc: true
-class_date: 2024-10-22
+class_date: 2024-10-29
 ---
 
 ## In-Class Agenda

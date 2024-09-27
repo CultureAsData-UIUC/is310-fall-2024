@@ -1,8 +1,8 @@
 ---
 title: "Arguments & Plots"
-permalink: /schedule/15-arguments-and-plots/
+permalink: /schedule/17-arguments-and-plots/
 toc: true
-class_date: 2024-10-15
+class_date: 2024-10-22
 ---
 
 ## In-Class Agenda

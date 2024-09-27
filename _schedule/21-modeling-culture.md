@@ -1,8 +1,8 @@
 ---
 title: "Modeling Culture"
-permalink: /schedule/19-modeling-culture/
+permalink: /schedule/21-modeling-culture/
 toc: true
-class_date: 2024-10-29
+class_date: 2024-11-05
 ---
 
 ## In-Class Agenda

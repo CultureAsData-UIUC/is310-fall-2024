@@ -1,8 +1,8 @@
 ---
 title: "Augmentation & AI"
-permalink: /schedule/24-augmentation-ai/
+permalink: /schedule/26-augmentation-ai/
 toc: true
-class_date: 2024-11-14
+class_date: 2024-11-21
 ---
 
 ## In-Class Agenda

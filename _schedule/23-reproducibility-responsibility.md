@@ -1,8 +1,8 @@
 ---
 title: "Reproducibility & Responsibility"
-permalink: /schedule/21-reproducibility-responsibility/
+permalink: /schedule/23-reproducibility-responsibility/
 toc: true
-class_date: 2024-11-05
+class_date: 2024-11-12
 ---
 
 ## In-Class Agenda

@@ -1,8 +1,8 @@
 ---
 title: "Notes & Points"
-permalink: /schedule/16-notes-and-points/
+permalink: /schedule/18-notes-and-points/
 toc: true
-class_date: 2024-10-17
+class_date: 2024-10-24
 ---
 
 ## In-Class Agenda

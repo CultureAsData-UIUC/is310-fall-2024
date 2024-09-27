@@ -1,13 +1,13 @@
 ---
 title: "Algorithmic Failures"
-permalink: /schedule/22-algorithmic-failures/
+permalink: /schedule/24-algorithmic-failures/
 toc: true
-class_date: 2024-11-07
+class_date: 2024-11-14
 ---
 
 ## In-Class Agenda
 
-- [ ] Review questions from computational methods. 
+- [ ] Review questions from computational methods.
 - [ ] Introduction to classification and predication (To be posted).
 
 ## Additional Materials

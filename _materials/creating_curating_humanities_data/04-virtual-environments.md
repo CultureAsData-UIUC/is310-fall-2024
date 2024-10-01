@@ -387,7 +387,7 @@ However, you'll notice that this script doesn't allow for multiple entries or wr
 
 ## Part 2: Data Entry in the Wild
 
-Once your script is working, it is time to post it to GitHub to our next discussion thread [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/6](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/6). I would highly encourage you to include a `README.md` file that explains how to use your script and what it does. You can also include any additional information you think is relevant.
+Once your script is working, it is time to post it to GitHub to our next discussion thread [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/8](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/8). I would highly encourage you to include a `README.md` file that explains how to use your script and what it does. You can also include any additional information you think is relevant.
 
 Next, test a classmate’s script by entering new data (you should add **at least two data points**) and share the file that you generated back with them by replying to their post. Provide any feedback if the script doesn’t work or if there are improvements to be made. But please remember to be constructive and respectful in your feedback!
 

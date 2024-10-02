@@ -4,7 +4,7 @@ permalink: /materials/creating-curating-humanities-data/04-virtual-environments
 toc: true
 ---
 
-<div class="notice--info">⚡️ If you already have experience with virtual environments and have a preferred setup, feel free to keep using what you have already</div>
+<div class="notice--info">⚡️ If you already have experience with virtual environments and have a preferred setup, feel free to keep using what you have already though do reach out if you start having any errors or strange messages in your terminal.</div>
 
 ## What is virtual environment?
 
@@ -28,7 +28,6 @@ Prior to installing our virtual environment, let's make sure that you have the l
     </a>
 </figure>
 
-
 If you get any errors, you can check if you have pip installed by running the following command in your terminal:
 
 ```sh
@@ -41,9 +40,79 @@ If you don't have pip installed, you can install it by following the instruction
 
 Now we'll use the built-in Python virtual environment, called `venv`, which you can read more about here [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html). One thing to note is that there are LOTS of different ways to setup your virtual environment (which lots of people have *very* strong feelings about). I like this answer from Stack Overflow for giving an overview of the differing options [https://stackoverflow.com/a/65854168/7437781](https://stackoverflow.com/a/65854168/7437781).
 
-## Virtual Environments in the Terminal
+## Creating Virtual Environments
 
-To create our virtual environment, we'll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project director, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:
+Now that we have a sense of what a virtual environment is, let's start creating one. We'll start by creating a virtual environment in VS Code and then we'll move to the terminal.
+
+### Creating Virtual Environments in VS Code
+
+<div class="notice--info">⚡️ This information has been adapted from <a href="https://code.visualstudio.com/docs/python/environments">https://code.visualstudio.com/docs/python/environments</a>. I've also updated the lesson to focus on VS Code, though still recommend taking a look at the terminal version as well.</div>
+
+In VS Code, you can create a virtual environment by opening any VS Code Window and then opening the Command Palette. To access the Command Pilot on a Mac you type `⇧⌘P` and on Windows you type `Ctrl+Shift+P`. You can also access the Command Palette by clicking on the `View` menu and selecting `Command Palette`.
+
+Once it is open, you should type `Python: Create Environment` and selecting it in the menu. You'll see two options: `Venv` or `Conda`. You can choose either, but I would recommend using `Venv` since it is built into Python and is the most common way to create a virtual environment.
+
+<figure>
+    <a href="https://code.visualstudio.com/assets/docs/python/environments/create_environment_dropdown.png">
+        <img src="https://code.visualstudio.com/assets/docs/python/environments/create_environment_dropdown.png" alt="Create Environment Dropdown" class="image-popup">
+    </a>
+</figure>
+
+Once you select `Venv`, you'll be prompted to select the Python interpreter you want to use. You can choose the one that comes with Python, or you can select a different one if you have multiple versions of Python installed on your computer. Please make sure to **not select a Python 2 interpreter, as Python 2 is no longer supported**.
+
+<figure>
+    <a href="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png">
+        <img src="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png" alt="Create Environment Name" class="image-popup">
+    </a>
+</figure>
+
+Once you've created your virtual environment, you should see it in whatever folder you've opened in VS Code. If you do not open a folder and try to create a virtual environment, you will get an error saying that you need a "workspace" to create a virtual environment. You can create a workspace by opening a folder in VS Code.
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/new_venv.png">
+		<img src="{{site.baseurl}}/assets/images/new_venv.png" alt="Created Environment" class="image-popup">
+	</a>
+</figure>
+
+If you've successfully created your virtual environment, you should see a `.venv` folder in your project directory. This is where your virtual environment is stored. You'll notice in the image above I renamed my virtual environment to `is310-env`. You can do this by right-clicking on the `.venv` folder and selecting `Rename Folder`. You may need to reopen your VS Code window to see the changes.
+
+Once you do that you should see the following in your VS Code window, once you re-open your folder and also re-open the Command Palette to select the Python interpreter:
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/example_interpreters.png">
+		<img src="{{site.baseurl}}/assets/images/example_interpreters.png" alt="Virtual Environment Activated" class="image-popup">
+	</a>
+</figure>
+
+You'll notice that VS Code organizes the virtual environments by the type of environment and also if they are globally installed. Once you select the virtual environment you want to use, you should see that it is activated in the bottom left corner of your VS Code window.
+
+<figure>
+	<a href="https://code.visualstudio.com/assets/docs/python/shared/environment-in-status-bar.png">
+		<img src="https://code.visualstudio.com/assets/docs/python/shared/environment-in-status-bar.png" alt="Virtual Environment Activated" class="image-popup">
+	</a>
+</figure>
+
+You can see that it is activated by looking at the bottom left corner of your VS Code window. If you have not activated your virtual environment, you'll notice that the status bar will say `Select Python Interpreter` and if you click it you'll be able to select the virtual environment you want to use.
+
+<figure>
+	<a href="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png">
+		<img src="https://code.visualstudio.com/assets/docs/python/environments/no-interpreter-selected-statusbar.png" alt="Select Python Interpreter" class="image-popup">
+	</a>
+</figure>
+
+Now when you go to open a new terminal in VS Code, you should see that your virtual environment is activated by the `(.venv)` in your terminal. You can also see that the name of your virtual environment is in the terminal prompt so in our case it would be `(is310-env)`.
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/activated_venv.png">
+		<img src="{{site.baseurl}}/assets/images/activated_venv.png" alt="Activate Virtual Environment" class="image-popup">
+	</a>
+</figure>
+
+## OPTIONAL Creating Virtual Environments in the Terminal
+
+To be honest, VS Code has gotten very good at creating virtual environments and I would recommend using that method. However, if you are interested in creating a virtual environment in the terminal, you can follow the instructions below. I'm mostly including this because I still work this way, so you'll see me doing this in class.
+
+To create a virtual environment in the terminal, we'll start by opening our terminal and then navigating to the directory where we want to create our virtual environment. I would recommend making the virtual environment in your project director, though another popular choice is to make a directory in your home directory to store all your virtual environments. You can do that with the commands below:
 
 ```sh
 cd ~  # This will take you to your home directory
@@ -54,31 +123,29 @@ cd .virtualenvs # This will take you into the .virtualenvs directory
 Now that we are in the directory where we want to create our virtual environment (whether that's `is310-coding-assignments` or `.virtualenvs`), we can create it by running the following command:
 
 ```sh
-python3 -m venv is310-env
+python3 -m venv is310-new-env
 ```
 
-This doesn't seem to do much, but if you look in your directory you should see a new folder called `is310-env`. This is your virtual environment. This command is telling Python to run the `venv` module and create a virtual environment called `is310-env`. You can name your virtual environment whatever you want, but I would recommend naming it something that is descriptive of the project you are working on. **You should only create one virtual environment for this course.** And generally, I would recommend creating a new virtual environment for each project you work on (so think personal projects, group projects, or other courses, etc.).
+This doesn't seem to do much, but if you look in your new `.virtualenvs` directory (or wherever you created your environment) you should see a new folder called `is310-new-env`. This is again a virtual environment. This command is telling Python to run the `venv` module and create a virtual environment called `is310-env`. You can name your virtual environment whatever you want, but I would recommend naming it something that is descriptive of the project you are working on. **You should only create one virtual environment for this course.** And generally, I would recommend creating a new virtual environment for each project you work on (so think personal projects, group projects, or other courses, etc.).
 
-Now you need to activate our virtual environments. We can either do this with the command line and our terminal or via VS Code. Activating the virtual environment just tells your computer to run Python and installed libraries from the virtual environment rather than the global environment. This might seem like unnecessary work, but as we saw in that xkcd comic, a lot of software can create conflicts over time (often called "dependency hell"). This is a way to avoid that.
+Now you need to activate our virtual environments. Activating the virtual environment just tells your computer to run Python and installed libraries from the virtual environment rather than the global environment. This might seem like unnecessary work, but as we saw in that xkcd comic, a lot of software can create conflicts over time (often called "dependency hell"). This is a way to avoid that.
 
-### Activating Virtual Environments in the Terminal
-
-To activate our virtual environment in the terminal, we need to use a command called called `source` and after that we need to specify the path to the `activate` file in our virtual environment. The path to the `activate` file is `[LOCATION - OPTIONAL]/[NAME OF VIRTUAL ENVIRONMENT]/bin/activate`. If you aren't in the same directory as your virtual environment, you'll have to specify the exact location of the virtual environment. If you are in the same directory as your virtual environment, you can just run the following command if you're on a Linux/Unix/MacOS system:
+To activate our virtual environment in the terminal, we need to use a command called called `source` and after that we need to specify the path to the `activate` file in our virtual environment. The path to the `activate` file is `[LOCATION - OPTIONAL]/[NAME OF VIRTUAL ENVIRONMENT]/bin/activate`. If you aren't in the same directory as your virtual environment, you'll have to specify the exact location of the virtual environment. If you are in the same directory as your virtual environment (so likely `.virtualenvs`), you can just run the following command if you're on a Linux/Unix/MacOS system:
 
 ```sh
-source is310-env/bin/activate
+source is310-new-env/bin/activate
 ```
 
 Or if you are using a Windows system, you can run the following command for Command Prompt:
 
 ```sh
-is310-env\Scripts\activate
+is310-new-env\Scripts\activate
 ```
 
 Or for PowerShell:
 
 ```sh
-.\is310-env\Scripts\Activate.ps1
+.\is310-new-env\Scripts\Activate.ps1
 ```
 
 If you are getting errors in PowerShell, you may need to change your execution policy. You can do this by running the following command:
@@ -87,51 +154,9 @@ If you are getting errors in PowerShell, you may need to change your execution p
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 ```
 
-In this example, `is310-env` is the name of the virtual environment and we are giving it the command to run the `activate` file. This will change the prompt in your terminal to show the name of your virtual environment. This is how you know that your virtual environment is activated.
+In this example, `is310-new-env` is the name of the virtual environment and we are giving it the command to run the `activate` file. This will again change the prompt in your terminal to show the name of your virtual environment. This is how you know that your virtual environment is activated. If you are curious, you can explore the `activate` file in your virtual environment to see what it is doing. You can find it in the `bin` directory of your virtual environment.
 
-### Activating Virtual Environments in VS Code
-
-<div class="notice--info">⚡️ This information has been adapted from <a href="https://code.visualstudio.com/docs/python/environments">https://code.visualstudio.com/docs/python/environments</a></div>
-
-If you're using VS Code, you can create a virtual environment by opening the Command Palette (⇧⌘P), searching for the Python: Create Environment command, and selecting it. You'll see two options: `Venv` or `Conda`. You can choose either, but I would recommend using `Venv`.
-
-<figure>
-    <a href="https://code.visualstudio.com/assets/docs/python/environments/create_environment_dropdown.png">
-        <img src="https://code.visualstudio.com/assets/docs/python/environments/create_environment_dropdown.png" alt="Create Environment Dropdown" class="image-popup">
-    </a>
-</figure>
-
-Once you select `Venv`, you'll be prompted to select the Python interpreter you want to use. You can choose the one that comes with Python, or you can select a different one if you have multiple versions of Python installed on your computer.
-
-<figure>
-    <a href="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png">
-        <img src="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png" alt="Create Environment Name" class="image-popup">
-    </a>
-</figure>
-
-These instructions also include information on how to create a virtual environment using `Conda`, but we won't be covering that in this course. Personally, I would recommend using `Venv` for now.
-
-Once you've created your virtual environment, you can activate it by selecting the Python interpreter in the bottom left corner of your VS Code window. You can also do this by opening the Command Palette (⇧⌘P), searching for the Python: Select Interpreter command, and selecting it.
-
-<figure>
-	<a href="https://code.visualstudio.com/assets/docs/python/environments/select-interpreters-command.png">
-		<img src="https://code.visualstudio.com/assets/docs/python/environments/select-interpreters-command.png" alt="Select Interpreter" class="image-popup">
-	</a>
-</figure>
-
-Now you should see all the Python interpreters available on your computer. You can select the one you want to use for your project.
-
-<figure>
-	<a href="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png">
-		<img src="https://code.visualstudio.com/assets/docs/python/environments/interpreters-list.png" alt="Select Interpreter List" class="image-popup">
-	</a>
-</figure>
-
-After you've selected the Python interpreter, it will automatically create in your project directory and name it `.venv`. You can right click on the `.venv` folder to rename it to something more descriptive.  For example, if you're working on a project called `is310-coding-assignments`, you could name your virtual environment `is310-env`.
-
-Now to activate your virtual environment, you simply select `New Terminal` under the `Terminal` menu and it will automatically activate your virtual environment. You can tell that it's activated because the name of your virtual environment will appear in the terminal prompt.
-
-### Deactivating Virtual Environments
+### Deactivating Virtual Environments from the Terminal
 
 While usually you'll want to keep your virtual environment activated while you're working on a project, you can deactivate it by running the following command in your terminal:
 
@@ -141,7 +166,7 @@ deactivate
 
 This will deactivate your virtual environment and you'll see that the name of your virtual environment is no longer in your terminal prompt. You can also deactivate your virtual environment in VS Code by selecting `New Terminal` under the `Terminal` menu.
 
-### Adding Virtual Environments to `.gitignore`
+## Adding Virtual Environments to `.gitignore`
 
 Since we are using `git` to track our work, we don't want to include our virtual environment in our repository. This is because the virtual environment is specific to your computer and the libraries you have installed. If someone else were to clone your repository, they wouldn't have the same virtual environment as you. This is why we add the virtual environment to our `.gitignore` file. This file tells `git` to ignore certain files or directories when tracking changes. You can add the following line to your `.gitignore` file to ignore your virtual environment:
 
@@ -155,7 +180,7 @@ Now when we run `git status`, we shouldn't see our virtual environment in the li
 git rm -r --cached is310-env
 ```
 
-Or if you have further issues, you can request assistance from the instructors. 
+Or if you have further issues, you can request assistance from the instructors.
 
 ## Installing Libraries in Virtual Environments
 
@@ -178,15 +203,15 @@ import rich
 rich.__version__
 ```
 
-Which should show the version of `Rich` you have installed. **Going forward, you should try and install all Python libraries in your virtual environment.**
-
-You can see our full workflow in this image, from creating a virtual environment to installing a library:
+You can also look in your virtual environment directory and see if there is a `site-packages` directory. This is where all the libraries you install with `pip` are stored. You can see that the `Rich` library is installed in the `site-packages` directory.
 
 <figure>
-	<a href="{{site.baseurl}}/assets/images/full_virtual_environment_workflow.png">
-		<img src="{{site.baseurl}}/assets/images/full_virtual_environment_workflow.png" alt="Activate Virtual Environment" class="image-popup">
+	<a href="{{site.baseurl}}/assets/images/rich_installed.png">
+		<img src="{{site.baseurl}}/assets/images/rich_installed.png" alt="Rich Installed" class="image-popup">
 	</a>
 </figure>
+
+Either of these options should show whether you have install `Rich` and the version you have installed. **Going forward, you should try and install all Python libraries in your virtual environment.**
 
 ### Rich Python Library
 

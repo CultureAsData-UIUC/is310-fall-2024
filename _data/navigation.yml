@@ -90,8 +90,8 @@ schedule:
         url: /schedule/11-classes-comments/
       - title: "<b>October 3</b><br> Projects & Proposals"
         url: /schedule/12-project-proposals/
-      - title: "<b>October 8</b><br> Definitions & Documentation"
-        url: /schedule/13-definitions-documentation/
+      - title: "<b>October 8</b><br> Documentation & Definitions"
+        url: /schedule/13-documentation-definitions/
       - title: "<b>October 10</b><br> Scrape On & Off"
         url: /schedule/14-scrape-on-off/
       - title: "<b>October 15</b><br> Curating vs. Cleaning"

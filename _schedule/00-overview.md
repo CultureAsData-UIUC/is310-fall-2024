@@ -27,7 +27,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [September 17 - Data Feminism & Culture As Data]({{site.baseurl}}/schedule/07-data-feminism-and-culture-as-data/) | [September 19 - Servers & Web Standards]({{site.baseurl}}/schedule/08-servers-web-standards/) |
 | [September 24 - Standardizing Culture & Data Archeology]({{site.baseurl}}/schedule/09-standardizing-culture-data-archeology/) | [September 26 - Scripts & Types]({{site.baseurl}}/schedule/10-scripts-types/) |
 | [October 1 - Classes & Comments]({{site.baseurl}}/schedule/11-classes-comments/) | [October 3 - Projects & Proposals]({{site.baseurl}}/schedule/12-project-proposals/) |
-| [October 8 - Definitions & Documentation]({{site.baseurl}}/schedule/13-definitions-documentation/) | [October 10 - Scrape On & Off]({{site.baseurl}}/schedule/14-scrape-on-off/) |
+| [October 8 - Documentation & Definitions]({{site.baseurl}}/schedule/13-documentation-definitions/) | [October 10 - Scrape On & Off]({{site.baseurl}}/schedule/14-scrape-on-off/) |
 | [October 15 - Curating vs. Cleaning]({{site.baseurl}}/schedule/15-curating-vs-cleaning/) | [October 17 - GETting Culture]({{site.baseurl}}/schedule/16-getting-culture/) |
 | [October 22 - Arguments & Plots]({{site.baseurl}}/schedule/17-arugments-plots/) | [October 24 - Notes & Points]({{site.baseurl}}/schedule/18-notes-points/) |
 | [October 29 - Patterns & Outliers]({{site.baseurl}}/schedule/19-patterns-outliers/) | [October 31 - Making A Point]({{site.baseurl}}/schedule/20-making-a-point/) |

@@ -12,7 +12,7 @@ class_date: 2024-10-15
 
 ## Assigned Materials
 
-- Rawson, Katie, and Trevor Muñoz. “Against Cleaning.” In *Debates in the Digital Humanities 2019*, edited by Matthew K. Gold and Lauren F. Klein, 279–92. University of Minnesota Press, 2019. [https://doi.org/10.5749/j.ctvg251hk.26](https://doi.org/10.5749/j.ctvg251hk.26).
+- Rawson, Katie, and Trevor Muñoz. “Against Cleaning.” In *Debates in the Digital Humanities 2019*, edited by Matthew K. Gold and Lauren F. Klein, 279–92. University of Minnesota Press, 2019. [https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23](https://dhdebates.gc.cuny.edu/read/untitled-f2acf72c-a469-49d8-be35-67f9ac1e3a60/section/07154de9-4903-428e-9c61-7a92a6f22e51#ch23).
 - Posner, Miriam. “Humanities Data: A Necessary Contradiction – Miriam Posner’s Blog,” June 25, 2015. [https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/](https://miriamposner.com/blog/humanities-data-a-necessary-contradiction/).
 - Cegłowski, Maciej. “Deep-Fried Data.” *Idle Words*, September 27, 2016. [https://idlewords.com/talks/deep_fried_data.htm](https://idlewords.com/talks/deep_fried_data.htm).
 

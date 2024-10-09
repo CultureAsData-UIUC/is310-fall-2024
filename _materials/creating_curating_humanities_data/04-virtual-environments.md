@@ -194,14 +194,30 @@ pip3 install rich
 
 This command tells `pip` to install the `Rich` library. **Remember you should only run this command once your virtual environment is activated!**
 
-Unlike `Pathlib`, `rich` isn't built into Python, which is why we need to install it. `pip` is a package manager for Python that allows you to install and manage Python packages. You can read more about it here [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/). 
+Return to `rich`, unlike `Pathlib`, `rich` isn't built into Python, which is why we need to install it. `pip` is a package manager for Python that allows you to install and manage Python packages. You can read more about it here [https://pip.pypa.io/en/stable/](https://pip.pypa.io/en/stable/).
 
-You can test if it worked by starting your python interpreter with the `python3` command and running the following code:
+You'll notice that I'm using `pip3` to install the package. That is because I have multiple versions of Python installed on my computer. Usually if you have multiple versions of Python (specifically Python 2 and 3 versions) then you might need to use `pip3` to install libraries. If you only have Python 3 installed on your computer, you can just use `pip`. You can check which version of Python you have installed by running the following command:
+
+```sh
+python --version
+```
+
+However, you'll want to make sure that you're running this **with your virtual environment activated**.
+
+Similarly, you can test if the installation worked by starting your python interpreter with the `python` command and running the following code:
 
 ```shell
 import rich
 rich.__version__
 ```
+
+If you have multiple versions of python, you might need to do `python3` instead of `python`. If you get an error, you can try running the following command to see if the library is installed:
+
+```sh
+pip list
+```
+
+Which will show you all the libraries that are installed in your virtual environment. You should see `Rich` in the list of installed libraries.
 
 You can also look in your virtual environment directory and see if there is a `site-packages` directory. This is where all the libraries you install with `pip` are stored. You can see that the `Rich` library is installed in the `site-packages` directory.
 

@@ -615,6 +615,17 @@ If you are getting an error, you might need to add the `timeout` parameter to th
 response = requests.get("https://lotr.fandom.com/wiki/Main_Page", timeout=5)
 ```
 
+You can also do a speed test like we read about in "The Website Obesity Crisis" article to see how long it takes to get a response from the website.
+
+```python
+import time
+
+start = time.time()
+response = requests.get("https://lotr.fandom.com/wiki/Main_Page")
+end = time.time()
+print(end - start)
+```
+
 Now since this wiki is huge, we need to narrow our focus to a particular goal or question. While there are literally thousands of pages on this wiki, we could start by scraping the character pages. In particular, there's been a new adaption of *The Lord of the Rings* by Amazon called *Rings of Power*, so we could start by scraping the character pages for the characters in the new adaption.
 
 <figure>

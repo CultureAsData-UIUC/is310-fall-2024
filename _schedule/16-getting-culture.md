@@ -7,7 +7,7 @@ class_date: 2024-10-17
 
 ## In-Class Agenda
 
-- [ ] Review the [Fandom Wikis and Web Scraping Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping#fandom-wikis-and-web-scraping-homework).
+- [ ] Complete remaining group presentations for the [Proprietary & Perspectival Data Creation Assignment]({{site.baseurl}}/proprietary-perspectival-dataset-creation).
 - [ ] Start introduction to APIs and cultural data (To be posted).
 
 ## Additional Materials

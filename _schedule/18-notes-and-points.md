@@ -7,7 +7,7 @@ class_date: 2024-10-24
 
 ## In-Class Agenda
 
-- [ ] Review the API homework
+- [ ] Review the API homework (To be posted).
 - [ ] Introduction to Notebooks, Pandas, and EDA (To be posted).
 
 ## Additional Materials

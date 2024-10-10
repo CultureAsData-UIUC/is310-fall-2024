@@ -8,7 +8,7 @@ class_date: 2024-10-10
 ## In-Class Agenda
 
 - [ ] Review [Command Line Data Curation Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments#homework-command-line-data-curation).
-- [ ] Start the Introduction to Web Scraping(To be posted).
+- [ ] Start the [Introduction to Web Scraping]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping) lesson.
 
 ## Assigned Materials
 

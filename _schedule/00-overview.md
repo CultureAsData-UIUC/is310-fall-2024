@@ -53,6 +53,8 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Doing it Live]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web#homework-doing-it-live) | [Due by Midnight CT on September 25]({{site.baseurl}}/schedule/10-scripts-classes/) |
 | [Scripting Python Foundations Homework (Optional But Recommended)]({{site.baseurl}}/materials/creating-curating-humanities-data/02-python-refresher-advanced#homework-scripting-python-foundations-optional-but-recommended) | [Due Prior to Class on October 1]({{site.baseurl}}/schedule/11-classes-comments/) |
 | [Command Line Data Curation Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments#homework-command-line-data-curation) | [Due by Midnight CT on October 9]({{site.baseurl}}/schedule/14-scrape-on-off/) |
+| [Fandom Wikis and Web Scraping Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping#fandom-wikis-and-web-scraping-homework) | [Due by Midnight CT on October 16]({{site.baseurl}}/schedule/16-getting-culture/) |
+
 
 ### Group Assignments
 

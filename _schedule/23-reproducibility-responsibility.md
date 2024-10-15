@@ -14,6 +14,7 @@ class_date: 2024-11-12
 
 - Underwood, Ted. “Can Language Models Predict the next Twist in a Story?” *The Stone and the Shell* (blog), January 5, 2024. [https://tedunderwood.com/2024/01/05/can-language-models-predict-the-next-twist-in-a-story/](https://tedunderwood.com/2024/01/05/can-language-models-predict-the-next-twist-in-a-story/).
 - Underwood, Ted. “Why an Age of Machine Learning Needs the Humanities.” *Public Books*, December 5, 2018. [https://www.publicbooks.org/why-an-age-of-machine-learning-needs-the-humanities/](https://www.publicbooks.org/why-an-age-of-machine-learning-needs-the-humanities/).
+- Klein, Lauren F., and Sandeep Soni. “How Words Lead to Justice.” *Public Books*, August 17, 2021. [https://www.publicbooks.org/how-words-lead-to-justice/](https://www.publicbooks.org/how-words-lead-to-justice/).
 
 ## Additional Materials
 

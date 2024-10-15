@@ -100,8 +100,8 @@ schedule:
         url: /schedule/15-curating-vs-cleaning/
       - title: "<b>October 17</b><br> GETting Culture"
         url: /schedule/16-getting-culture/
-      - title: "<b>October 22</b><br> Arguments & Plots"
-        url: /schedule/17-arugments-plots/
+      - title: "<b>October 22</b><br> Arguments & Algorithms"
+        url: /schedule/17-arguments-algorithms/
       - title: "<b>October 24</b><br> Notes & Points"
         url: /schedule/18-notes-points/
       - title: "<b>October 29</b><br> Patterns & Outliers"
@@ -110,7 +110,7 @@ schedule:
         url: /schedule/20-making-a-point/
   - title: November Detailed Activities
     children:
-      - title: "<b>November 5</b><br> Modeling Culture"
+      - title: "<b>November 5</b><br> Modeling Culture: No Class for Election Day"
         url: /schedule/21-modeling-culture/
       - title: "<b>November 7</b><br> Structuring Data"
         url: /schedule/22-structuring-data/

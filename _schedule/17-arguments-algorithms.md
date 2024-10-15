@@ -1,6 +1,6 @@
 ---
-title: "Arguments & Plots"
-permalink: /schedule/17-arguments-and-plots/
+title: "Arguments & Algorithms"
+permalink: /schedule/17-arguments-algorithms/
 toc: true
 class_date: 2024-10-22
 ---
@@ -15,11 +15,10 @@ class_date: 2024-10-22
 
 - Mullen, Lincoln. “Isn’t it obvious?” *lincolnmullen.com*, January 10, 2018. [https://lincolnmullen.com/blog/isnt-it-obvious/](https://lincolnmullen.com/blog/isnt-it-obvious/).
 - Lincoln, Matthew. “Confabulation in the humanities.” *matthewlincoln.net*, March 21, 2015. [https://matthewlincoln.net/2015/03/21/confabulation-in-the-humanities.html](https://matthewlincoln.net/2015/03/21/confabulation-in-the-humanities.html).
-- D’Ignazio, Catherine, and Lauren F. Klein. “Show Your Work.” In *Data Feminism*. The MIT Press, 2020. [https://doi.org/10.7551/mitpress/11805.001.0001](https://doi.org/10.7551/mitpress/11805.001.0001).
+- Schmidt, Benjamin M. “Do Digital Humanists Need to Understand Algorithms?” In *Debates in the Digital Humanities 2016*, edited by Matthew K. Gold and Lauren F. Klein, 546–55. University of Minnesota Press, 2016. Use the JSTOR link for PDF & Hypothesis [https://doi.org/10.5749/j.ctt1cn6thb.51](https://doi.org/10.5749/j.ctt1cn6thb.51) or use the Manifold Platform link [https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd](https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd).
 
 ## Additional Materials
 
-- Davis, Erin. “What physical traits are most tied to gender in literature? Eye roll: Women are all soft thighs and red lips.” *The Pudding*, July 2020. [https://pudding.cool/2020/07/gendered-descriptions/](https://pudding.cool/2020/07/gendered-descriptions/).
-- Wu, Shirley. “An Interactive Visualization of Every Line in Hamilton.” *The Pudding*, March 2017. [https://pudding.cool/2017/03/hamilton/index.html](https://pudding.cool/2017/03/hamilton/index.html).
+- Koeser, Rebecca Sutton. “Trusting Others to ‘Do the Math.’” *Interdisciplinary Science Reviews* 40, no. 4 (2015): 376-392. [https://doi.org/10.1080/03080188.2016.1165454](https://doi.org/10.1080/03080188.2016.1165454).
 - Weingart, Scott B. “Argument Clinic.” *scottbot.net*, July 26, 2017. [https://scottbot.net/argument-clinic/](https://scottbot.net/argument-clinic/).
 - Thomas, Amber. *Shaping Ideas into Data Stories* [Speaker Series w/ Amber Thomas from The Pudding], 2020. [https://www.youtube.com/watch?v=J3Awc4HxDK0](https://www.youtube.com/watch?v=J3Awc4HxDK0).

@@ -29,9 +29,9 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [October 1 - Classes & Comments]({{site.baseurl}}/schedule/11-classes-comments/) | [October 3 - Projects & Proposals]({{site.baseurl}}/schedule/12-project-proposals/) |
 | [October 8 - Documentation & Definitions]({{site.baseurl}}/schedule/13-documentation-definitions/) | [October 10 - Scrape On & Off]({{site.baseurl}}/schedule/14-scrape-on-off/) |
 | [October 15 - Curating vs. Cleaning]({{site.baseurl}}/schedule/15-curating-vs-cleaning/) | [October 17 - GETting Culture]({{site.baseurl}}/schedule/16-getting-culture/) |
-| [October 22 - Arguments & Plots]({{site.baseurl}}/schedule/17-arugments-plots/) | [October 24 - Notes & Points]({{site.baseurl}}/schedule/18-notes-points/) |
+| [October 22 - Arguments & Algorithms]({{site.baseurl}}/schedule/17-arguments-algorithms/) | [October 24 - Notes & Points]({{site.baseurl}}/schedule/18-notes-points/) |
 | [October 29 - Patterns & Outliers]({{site.baseurl}}/schedule/19-patterns-outliers/) | [October 31 - Making A Point]({{site.baseurl}}/schedule/20-making-a-point/) |
-| [November 5 - Modeling Culture]({{site.baseurl}}/schedule/21-modeling-culture/) | [November 7 - Structuring Data]({{site.baseurl}}/schedule/22-structuring-data/) |
+| [November 5 - Modeling Culture **No Class for Election Day**]({{site.baseurl}}/schedule/21-modeling-culture/) | [November 7 - Structuring Data]({{site.baseurl}}/schedule/22-structuring-data/) |
 | [November 12 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/23-reproducibility-responsibility/) | [November 14 - Algorithmic Failures]({{site.baseurl}}/schedule/24-algorithmic-failures/) |
 | [November 19 - Preservation & Publics]({{site.baseurl}}/schedule/25-preservation-publics/) | [November 21 - Augmentation & AI]({{site.baseurl}}/schedule/26-augmentation-ai/) |
 |{::nomarkdown}<td colspan="2">November 26 & 28 - Fall Break</td>{:/}|
@@ -53,7 +53,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Doing it Live]({{site.baseurl}}/materials/introducing-humanities-computing/08-intro-web#homework-doing-it-live) | [Due by Midnight CT on September 25]({{site.baseurl}}/schedule/10-scripts-classes/) |
 | [Scripting Python Foundations Homework (Optional But Recommended)]({{site.baseurl}}/materials/creating-curating-humanities-data/02-python-refresher-advanced#homework-scripting-python-foundations-optional-but-recommended) | [Due Prior to Class on October 1]({{site.baseurl}}/schedule/11-classes-comments/) |
 | [Command Line Data Curation Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments#homework-command-line-data-curation) | [Due by Midnight CT on October 9]({{site.baseurl}}/schedule/14-scrape-on-off/) |
-| [Fandom Wikis and Web Scraping Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping#fandom-wikis-and-web-scraping-homework) | [Due by Midnight CT on October 21]({{site.baseurl}}/schedule/17-arguments-and-plots/) |
+| [Fandom Wikis and Web Scraping Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping#fandom-wikis-and-web-scraping-homework) | [Due by Midnight CT on October 21]({{site.baseurl}}//schedule/17-arugments-algorithms/) |
 
 
 ### Group Assignments

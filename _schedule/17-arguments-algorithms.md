@@ -8,8 +8,8 @@ class_date: 2024-10-22
 ## In-Class Agenda
 
 - [ ] Review the [Fandom Wikis and Web Scraping Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping#fandom-wikis-and-web-scraping-homework).
+- [ ] Finish the remainder of [introduction to APIs and cultural data]({{site.baseurl}}/materials/creating-curating-humanities-data/06-getting-data-apis).
 - [ ] Discuss the assigned readings
-- [ ] Start group assignment on DH projects & visualization (To be posted).
 
 ## Assigned Materials
 

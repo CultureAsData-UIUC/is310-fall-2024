@@ -1,5 +1,5 @@
 ---
-title: "Getting Data From APIs"
+title: "Getting Cultural Data From APIs"
 permalink: /materials/creating-curating-humanities-data/06-getting-data-apis
 excerpt: "An introduction to using APIs to get data from the web."
 toc: true

@@ -7,7 +7,7 @@ class_date: 2024-10-17
 
 ## In-Class Agenda
 
-- [ ] Complete remaining group presentations for the [Proprietary & Perspectival Data Creation Assignment]({{site.baseurl}}/proprietary-perspectival-dataset-creation).
-- [ ] Start introduction to APIs and cultural data (To be posted).
+- [ ] Complete group presentations for the [Proprietary & Perspectival Data Creation Assignment]({{site.baseurl}}/proprietary-perspectival-dataset-creation).
+- [ ] Start [introduction to APIs and cultural data]({{site.baseurl}}/materials/creating_curating_humanities_data/06-getting-data-apis/).
 
 ## Additional Materials

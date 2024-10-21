@@ -22,3 +22,11 @@ class_date: 2024-10-22
 - Koeser, Rebecca Sutton. “Trusting Others to ‘Do the Math.’” *Interdisciplinary Science Reviews* 40, no. 4 (2015): 376-392. [https://doi.org/10.1080/03080188.2016.1165454](https://doi.org/10.1080/03080188.2016.1165454).
 - Weingart, Scott B. “Argument Clinic.” *scottbot.net*, July 26, 2017. [https://scottbot.net/argument-clinic/](https://scottbot.net/argument-clinic/).
 - Thomas, Amber. *Shaping Ideas into Data Stories* [Speaker Series w/ Amber Thomas from The Pudding], 2020. [https://www.youtube.com/watch?v=J3Awc4HxDK0](https://www.youtube.com/watch?v=J3Awc4HxDK0).
+
+## Assignments
+
+### Individual
+
+- [ ] [Fandom Wikis and Web Scraping Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping#fandom-wikis-and-web-scraping-homework)
+
+### Group

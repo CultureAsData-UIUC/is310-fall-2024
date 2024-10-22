@@ -23,6 +23,14 @@ class_date: 2024-10-22
 - Weingart, Scott B. “Argument Clinic.” *scottbot.net*, July 26, 2017. [https://scottbot.net/argument-clinic/](https://scottbot.net/argument-clinic/).
 - Thomas, Amber. *Shaping Ideas into Data Stories* [Speaker Series w/ Amber Thomas from The Pudding], 2020. [https://www.youtube.com/watch?v=J3Awc4HxDK0](https://www.youtube.com/watch?v=J3Awc4HxDK0).
 
+### Additional Links
+
+- *The Syuzhet Package* by Matthew Jockers [https://cran.r-project.org/web/packages/syuzhet/vignettes/syuzhet-vignette.html](https://cran.r-project.org/web/packages/syuzhet/vignettes/syuzhet-vignette.html).
+- Annie Swafford “Problems with the Syuzhet Package.” *Anglophile in Academia:  Annie Swafford’s Blog (blog)*, March 2, 2015. [https://annieswafford.wordpress.com/2015/03/02/syuzhet/](https://annieswafford.wordpress.com/2015/03/02/syuzhet/).
+- Da, Nan Z. “The Computational Case against Computational Literary Studies.” *Critical Inquiry* 45, no. 3 (March 2019): 601–39. [https://doi.org/10.1086/702594](https://doi.org/10.1086/702594).
+- Robertson, Stephen, and Lincoln Mullen. “Arguing with Digital History: Patterns of Historical Interpretation (Annotated Version).” *Journal of Social History* 54, no. 4 (2021): 1005–22. [https://doi.org/10.31835/ma.2021.01](https://doi.org/10.31835/ma.2021.01).
+- “Arguing with Digital History Working Group.” Roy Rosenzweig Center for History and New Media, November 13, 2017. [https://doi.org/10.18665/sr.22532](https://doi.org/10.18665/sr.22532).
+
 ## Assignments
 
 ### Individual

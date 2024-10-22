@@ -587,7 +587,43 @@ europeana_api_key = apikey.load("EUROPEANA_API_KEY")
 os.environ['EUROPEANA_API_KEY'] = europeana_api_key
 ```
 
-**Remember to remove any api keys before you push to GitHub!**
+----
+<div class="notice--info">⚡️ If you are seeing errors in the terminal when running this code, please follow these steps.</div>
+
+If you try using the `pyeuropeana` library with the api key stored as an environment variable, you may see the following error:
+
+```bash
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
+```
+
+That is an issue with the `numpy` python library. To fix this, you can run the following command in your terminal:
+
+```bash
+pip uninstall numpy
+```
+
+It will ask you if you want to uninstall `numpy`, to which you should say `y`. Then you can reinstall `numpy` with the following command:
+
+```bash
+pip install "numpy==1.26.4"
+```
+
+You may also see the following error:
+
+```bash
+from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+```
+
+This is because the `pyeuropeana` library uses the `Pillow` library, which is a fork of the `PIL` library. To fix this, you can install the `Pillow` library with the following command:
+
+```bash
+pip install Pillow
+```
+
+If you have any additional errors, please reach out to the instructors for help.
+
+----
 
 Now we can start exploring how to access data from the Europeana API using the `pyeuropeana` library. In particular, we are going to try out the `search` method, which allows us to search the Europeana collection for items that match a specific query.
 

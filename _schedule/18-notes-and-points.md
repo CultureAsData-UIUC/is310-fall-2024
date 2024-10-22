@@ -1,6 +1,6 @@
 ---
 title: "Notes & Points"
-permalink: /schedule/18-notes-and-points/
+permalink: /schedule/18-notes-points/
 toc: true
 class_date: 2024-10-24
 ---

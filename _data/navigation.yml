@@ -62,6 +62,8 @@ materials:
     children:
       - title: "(Re)Introduction to Jupyter Notebooks & Pandas"
         url: /materials/interpreting-communicating-humanities-data/01-intro-notebooks/
+      - title: "EDA & Data Visualization (In Progress)"
+        url: /materials/interpreting-communicating-humanities-data/02-eda-data-viz
         
 schedule:
   - title: Overview

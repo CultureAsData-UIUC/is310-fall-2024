@@ -562,7 +562,7 @@ This graph outlines the main types of data you might encounter, which largely br
 
 For example, we have `genre` and `author` as categorical variables, while `top_500_rank` and `pub_year` are numerical variables.
 
-## Data Visualization With Altair
+## Data Visualization With Altair (In Progress)
 
 Up to now we've been using Pandas built in `plot` methods to display our data. While this is helpful for quick analyses, you'll likely want more options for both how you visualize the data and interact with it.
 
@@ -701,20 +701,7 @@ You should see the following graph:
 
 What are some of the problems with this graph? Notice that unlike Pandas plot, Altair is not rendering our year as a time series. This is because Altair is not recognizing our `year` column as a temporal field. We can fix this by specifying the data types for Altair [https://altair-viz.github.io/user_guide/encoding.html#encoding-data-types](https://altair-viz.github.io/user_guide/encoding.html#encoding-data-types).
 
-```python
-alt.Chart(grouped_dialogue_df).mark_line().encode(
-    x='year:T',
-    y='words',
-)
-```
 
-This should give us the following graph:
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/altair_dialogue_temporal.png" >
-    <img src="{{site.baseurl}}/assets/images/altair_dialogue_temporal.png" class="image-popup">
-    </a>
-</figure>
 
 But now we have an even weirder looking graph. That's because even though we told Altair that year is temporal, our data type doesn't reflect that. We can fix this by using the `pd.to_datetime()` method to convert our `year` column to a datetime object.
 
@@ -727,67 +714,13 @@ Here I am telling Pandas to convert the `year` column to a string and then addin
 
 Now let's try rerunning our graph but using `date`.
 
-```python
-alt.Chart(grouped_dialogue_df).mark_line().encode(
-    x='date:T',
-    y='words',
-)
-```
-
-This should give us the following graph:
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/altair_dialogue_temporal_date.png" >
-    <img src="{{site.baseurl}}/assets/images/altair_dialogue_temporal_date.png" class="image-popup">
-    </a>
-</figure>
 
 Now we have officially recreated what we did with `plot()` but this takes far more work, so why should we bother? The biggest reason is that Altair is more flexible and powerful than Pandas `plot()` and can create more complex visualizations. For example, we can add a `color` encoding to our graph to see how dialogue is split between genders.
 
-```python
-grouped_dialogue_df = dialogue_df.groupby(['year', 'gender'])['words'].sum().reset_index()
-grouped_dialogue_df['date'] = grouped_dialogue_df['year'].astype(str) + '-01-01'
-grouped_dialogue_df['date'] = pd.to_datetime(grouped_dialogue_df['date'])
-alt.Chart(grouped_dialogue_df).mark_line().encode(
-    x='date:T',
-    y='words',
-    color='gender'
-)
-```
-
-This should give us the following graph:
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/altair_dialogue_temporal_gender.png">
-    <img src="{{site.baseurl}}/assets/images/altair_dialogue_temporal_gender.png" class="image-popup">
-    </a>
-</figure>
-
 This is a much more complex graph than we could have created with Pandas `plot()` and it's also more flexible. We can also add a `tooltip` encoding to our graph to see the exact values of the data.
 
-```python
-alt.Chart(grouped_dialogue_df).mark_line().encode(
-    x='date:T',
-    y='words
-    color='gender',
-    tooltip=['date', 'words']
-)
-```
-
-We can also add a `title` to our graph to make it more readable.
-
-```python
-alt.Chart(grouped_dialogue_df).mark_line().encode(
-    x='date:T',
-    y='words
-    color='gender',
-    tooltip=['date', 'words']
-).properties(
-    title='Dialogue Over Time Colored By Gender'
-)
-```
 
 As we are starting to see Altair is a very powerful library. We will continue to explore its functionality in the coming weeks, but would highly encourage you to take a look at the example visualizations on the Altair website [https://altair-viz.github.io/gallery/index.html](https://altair-viz.github.io/gallery/index.html) and the documentation [https://altair-viz.github.io/index.html](https://altair-viz.github.io/index.html).
 
-## Visualizing the Data Homework
+## Exploring and Visualizing Culture Homework (To Be Posted)
 

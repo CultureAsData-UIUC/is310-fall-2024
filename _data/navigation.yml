@@ -58,6 +58,10 @@ materials:
         url: /materials/creating-curating-humanities-data/05-web-scraping
       - title: "Getting Cultural Data From APIs"
         url: /materials/creating-curating-humanities-data/06-getting-data-apis
+  - title: Interpretations & Communications
+    children:
+      - title: "(Re)Introduction to Jupyter Notebooks & Pandas"
+        url: /materials/interpreting-communicating-humanities-data/01-intro-notebooks/
         
 schedule:
   - title: Overview

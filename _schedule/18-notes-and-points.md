@@ -8,8 +8,8 @@ class_date: 2024-10-24
 ## In-Class Agenda
 
 - [ ] Discuss readings from Tuesday's class
-- [ ] Start refresher to [Notebooks and Pandas]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/01-intro-notebooks/)
-- [ ] Remaining time work on Mid-Semester Dataset Update
+- [ ] Complete refresher to [Notebooks and Pandas]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/01-intro-notebooks/)
+- [ ] Remaining time work on Mid-Semester Dataset Update or start EDA Lesson
 
 
 ## Assigned Materials (From Tuesday)

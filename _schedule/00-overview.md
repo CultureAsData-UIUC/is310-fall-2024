@@ -30,7 +30,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [October 8 - Documentation & Definitions]({{site.baseurl}}/schedule/13-documentation-definitions/) | [October 10 - Scrape On & Off]({{site.baseurl}}/schedule/14-scrape-on-off/) |
 | [October 15 - Curating vs. Cleaning]({{site.baseurl}}/schedule/15-curating-vs-cleaning/) | [October 17 - GETting Culture]({{site.baseurl}}/schedule/16-getting-culture/) |
 | [October 22 - Arguments & Algorithms]({{site.baseurl}}/schedule/17-arguments-algorithms/) | [October 24 - Notes & Points]({{site.baseurl}}/schedule/18-notes-points/) |
-| [October 29 - Patterns & Outliers]({{site.baseurl}}/schedule/19-patterns-outliers/) | [October 31 - Making A Point]({{site.baseurl}}/schedule/20-making-a-point/) |
+| [October 29 - Making A Point]({{site.baseurl}}/schedule/19-making-a-point/) | [October 31 - Patterns & Outliers]({{site.baseurl}}/schedule/20-patterns-outliers/) |
 | [November 5 - Modeling Culture **No Class for Election Day**]({{site.baseurl}}/schedule/21-modeling-culture/) | [November 7 - Structuring Data]({{site.baseurl}}/schedule/22-structuring-data/) |
 | [November 12 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/23-reproducibility-responsibility/) | [November 14 - Algorithmic Failures]({{site.baseurl}}/schedule/24-algorithmic-failures/) |
 | [November 19 - Preservation & Publics]({{site.baseurl}}/schedule/25-preservation-publics/) | [November 21 - Augmentation & AI]({{site.baseurl}}/schedule/26-augmentation-ai/) |

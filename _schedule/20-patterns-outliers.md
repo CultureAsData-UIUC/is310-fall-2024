@@ -1,13 +1,12 @@
 ---
 title: "Patterns & Outliers"
-permalink: /schedule/19-patterns-outliers/
+permalink: /schedule/20-patterns-outliers/
 toc: true
-class_date: 2024-10-29
+class_date: 2024-10-31
 ---
 
 ## In-Class Agenda
 
-- [ ] Review the [GETing Culture Across APIs Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/06-getting-data-apis#getting-culture-across-apis-homework).
 - [ ] Discuss the assigned readings
 - [ ] Start group assignment on DH projects (To be posted).
 
@@ -23,10 +22,3 @@ class_date: 2024-10-29
 - Walsh, Melanie, and Maria Antoniak. “The Goodreads ‘Classics’: A Computational Study of Readers, Amazon, and Crowdsourced Amateur Criticism.” *Journal of Cultural Analytics* 6, no. 2 (April 20, 2021). [https://doi.org/10.22148/001c.22221](https://doi.org/10.22148/001c.22221).
 - Schmidt, Ben. “Sapping Attention: When You Have a MALLET, Everything Looks like a Nail.” *Sapping Attention* (blog), November 2, 2012. [http://sappingattention.blogspot.com/2012/11/when-you-have-mallet-everything-looks.html](http://sappingattention.blogspot.com/2012/11/when-you-have-mallet-everything-looks.html).
 
-## Assignments
-
-### Individual
-
-- [ ] Complete the [GETing Culture Across APIs Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/06-getting-data-apis#getting-culture-across-apis-homework) by the next class.
-
-### Group

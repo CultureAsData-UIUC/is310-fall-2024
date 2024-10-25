@@ -112,10 +112,10 @@ schedule:
         url: /schedule/17-arguments-algorithms/
       - title: "<b>October 24</b><br> Notes & Points"
         url: /schedule/18-notes-points/
-      - title: "<b>October 29</b><br> Patterns & Outliers"
-        url: /schedule/19-patterns-outliers/
-      - title: "<b>October 31</b><br> Making A Point"
-        url: /schedule/20-making-a-point/
+      - title: "<b>October 29</b><br> Making A Point"
+        url: /schedule/19-making-a-point/
+      - title: "<b>October 31</b><br> Patterns & Outliers"
+        url: /schedule/20-patterns-outliers/
   - title: November Detailed Activities
     children:
       - title: "<b>November 5</b><br> Modeling Culture: No Class for Election Day"

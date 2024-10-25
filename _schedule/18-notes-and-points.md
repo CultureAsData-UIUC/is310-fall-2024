@@ -11,7 +11,6 @@ class_date: 2024-10-24
 - [ ] Complete refresher to [Notebooks and Pandas]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/01-intro-notebooks/)
 - [ ] Remaining time work on Mid-Semester Dataset Update or start EDA Lesson
 
-
 ## Assigned Materials (From Tuesday)
 
 - Schmidt, Benjamin M. “Do Digital Humanists Need to Understand Algorithms?” In *Debates in the Digital Humanities 2016*, edited by Matthew K. Gold and Lauren F. Klein, 546–55. University of Minnesota Press, 2016. Use the JSTOR link for PDF & Hypothesis [https://doi.org/10.5749/j.ctt1cn6thb.51](https://doi.org/10.5749/j.ctt1cn6thb.51) or use the Manifold Platform link [https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd](https://dhdebates.gc.cuny.edu/read/untitled/section/557c453b-4abb-48ce-8c38-a77e24d3f0bd).

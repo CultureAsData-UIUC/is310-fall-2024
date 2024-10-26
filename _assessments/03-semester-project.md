@@ -74,28 +74,32 @@ In our first few weeks, we will be discussing what makes a good topic, and you a
 
 <div class="notice--info">⚡️ This proposal should be submitted in your group's GitHub repository prior to class on September 24, 2024. You can ping the instructors on Discord if you submit early, but we will be looking from that time onwards for your materials.</div>
 
-## Mid-Semester Dataset and Documentation Update 15% 
+## Mid-Semester Dataset and Documentation Update 15%
 
 **DUE OCTOBER 22, 2024 (Optional Extension October 29, 2024)**
 
-After completing your initial project proposal, your next task is to create and submit the first version of your dataset along with detailed documentation. This submission marks your first attempt at gathering and organizing your data, and it is crucial to approach it as a draft that you will refine and revise based on feedback and further analysis. Here are some general guidelines, though we will be discussing this more in-depth in class.
+After completing your initial project proposal, your next task is to create and submit the first version of your dataset along with detailed documentation. This submission marks your first attempt at gathering and organizing your data, and it is crucial to approach it as a draft that you will refine and revise based on feedback and further analysis. Here are the overall guidelines, but you are welcome to adapt them to your project’s specific needs and go beyond them:
 
-1. Dataset Creation
+1. The Group's Initial Dataset
 
-- **First Attempt**: This submission should represent your group’s first efforts at creating a dataset related to your chosen cultural practice or object. While there is no required number of rows or entries for this initial submission, the dataset should be substantial enough to reflect meaningful engagement with your research question and to allow for preliminary analysis.
-- **Flexibility in Scope**: The exact size and scope of the dataset will vary depending on your project’s focus, and the instructors will provide feedback on your initial project proposal to help you determine what is both feasible and sufficient. Your goal at this stage is to create a dataset that is large enough to be useful, but not so large that it becomes unmanageable.
+The core part of this assignment is sharing the first version of your dataset. This dataset should be a substantial representation of your work so far and should reflect your group's engagement with the requirements of the semester project, as well as the feedback from the instructors. There are no firm guidelines, but please consider the following:
 
-2. Documentation
+- **First Attempt**: This submission should represent your group’s initial efforts at creating a dataset related to your chosen cultural practice or object. While there is no required number of rows or entries for this initial submission, the dataset should be substantial enough to reflect meaningful engagement with your group's focus and to allow for preliminary analysis.
+- **Flexibility in Scope**: The exact size and scope of the dataset will vary depending on your project’s focus. The instructors will provide feedback on your initial project proposal to help you determine what is both feasible and sufficient. Your goal at this stage is to create a dataset that is large enough to be useful, but not so large that it becomes unmanageable.
 
-- **Process and Choices**: Alongside your dataset, you must submit documentation that details the process of data collection and the choices your group made along the way. This should include explanations of how you gathered the data, any challenges you encountered, and the criteria you used to include or exclude certain data points. You are encouraged to cite readings and materials from class to support your rationale.
-- **Content Description**: Your documentation should also provide a clear description of what the dataset contains. This includes an overview of the data fields, the type of information represented, and any relevant context. If your dataset is compiled from multiple sources, be sure to explain how these sources were combined and reconciled.
-- **Responsibility and Contributions**: It is important to clearly outline who was responsible for each part of the dataset creation and documentation process. This not only ensures transparency but also helps the group reflect on the division of labor and make adjustments for future work.
+2. Initial Dataset Documentation
 
-3. Submission and Feedback:
+Alongside your dataset, you must submit documentation that details the process of data collection and the choices your group made along the way. This should be included in your group's GitHub repository and should cover the following aspects:
+
+- **Process and Choices**: Explain how you gathered the data, any challenges you encountered, and the criteria you used to include or exclude certain data points. You are encouraged to cite readings and materials from class to support your rationale.
+- **Content Description**: Provide a clear description of what the dataset contains. This includes an overview of the data fields, the type of information represented, and any relevant context. If your dataset is compiled from multiple sources, explain how these sources were combined and reconciled.
+- **Responsibility and Contributions**: Clearly outline who was responsible for each part of the dataset creation and documentation process. This ensures transparency and helps the group reflect on the division of labor and make adjustments for future work.
+
+3. Submission and Feedback
 
 The initial dataset and its documentation must be submitted to your group’s GitHub repository by the deadline. This submission will form the basis for your group’s ongoing work, and you will have the opportunity to revise and improve the dataset and documentation in later stages of the project.
 
-After this submission, the instructors will provide detailed feedback on both the dataset and the documentation. This feedback will help guide your revisions and ensure that your project stays on track. It will address the scope of your dataset, the effectiveness of your data collection methods, and the clarity of your documentation.
+After this submission, the instructors will provide detailed feedback on both the dataset and the documentation. This feedback will help guide your revisions and ensure that your project stays on track. It will address the scope of your dataset, the effectiveness of your data collection methods, and the clarity of your documentation. Finally, you will be sent a group assessment survey once you submit your work, which will allow you to reflect on your contributions and the group dynamics up to this point in the semester. As a reminder, grades are based on the quality of your submission, individual contributions, and the group’s overall collaboration and processes. This is a chance to showcase your progress, reflect on your processes, and receive constructive feedback to enhance your project.
 
 ## Experimenting With Datasets Update 5% 
 

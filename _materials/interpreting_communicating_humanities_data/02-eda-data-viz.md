@@ -3,6 +3,7 @@ title: "EDA & Data Visualization"
 permalink: /materials/interpreting-communicating-humanities-data/02-eda-data-viz
 excerpt: "An overview of the basics of Exploratory Data Analysis (EDA) and Data Visualization for Humanities Data."
 toc: true
+altair: true
 ---
 
 In our last lesson, we tried to answer the following questions:
@@ -34,7 +35,7 @@ First we need to create a new Jupyter notebook in our `pandas-eda` folder called
 	</a>
 </figure>
 
-While this cat is adorable, we can also use the `pd.read_csv()` method to read in our data. 
+While this cat is adorable, we can also use the `pd.read_csv()` method to read in our data.
 
 ```python
 import pandas as pd
@@ -317,7 +318,7 @@ This gives us the following output:
 {'author', 'title'}
 ```
 
-`intersection()` is a method that returns the common elements between two sets. `set()` is a built-in Python function that creates a set object, which is an unordered collection of unique elements. Sets can be very useful when you want to find the **unique** elements in a list. In this case, we are using `set()` to convert the column names of both DataFrames into sets, and then using `intersection()` to find the common columns.
+`intersection()` is a built-in Python method that returns the common elements between two sets. `set()` is another built-in Python method that creates a `set object`, which is an unordered collection of unique elements (somewhat similar to `tuples`). Sets can be very useful when you want to find the **unique** elements in a list. In this case, we are using `set()` to convert the column names of both DataFrames into sets, and then using `intersection()` to find the common columns.
 
 Now that we know we have two columns we can use to merge the DataFrames, we can start to do that. Let's say we want to do a left join, which will return all the rows from the `novels_df` DataFrame and the matching rows from the `nyt_bestsellers_df` DataFrame.
 
@@ -414,26 +415,52 @@ Stephen King's NYT bestsellers: ['THE SHINING' 'THE STAND' 'THE DEAD ZONE' 'FIRE
  'THE OUTSIDER' 'ELEVATION' 'THE INSTITUTE' 'IF IT BLEEDS']
 ```
 
-We can see that while King has had many bestsellers, there is overlap in the titles, but they are not the same. The titles in the `nyt_bestsellers_df` DataFrame are all in uppercase, while the titles in the `novels_df` DataFrame are in title case. This is likely the reason why there are no shared titles in the two DataFrames.
+We can see that King has had many bestsellers and that there is overlap in the titles. However, the titles in the `nyt_bestsellers_df` DataFrame are all uppercase, while the titles in the `novels_df` DataFrame are capitalized. This is likely the reason why there are no shared titles in the two DataFrames.
 
-We could fix this a number of ways, but let's just convert the titles in the `nyt_bestsellers_df` DataFrame to title case.
+We could fix this a number of ways, but let's just convert the titles in the `nyt_bestsellers_df` DataFrame to capitalize the first letter of each word.
 
 ```python
 nyt_bestsellers_df = nyt_bestsellers_df.rename(columns={'title': 'nyt_title'})
 nyt_bestsellers_df['title'] = nyt_bestsellers_df['nyt_title'].str.capitalize()
 ```
 
-Now we can try merging the two DataFrames again.
+Notice rather than modifying the original column, we renamed the original column from `title` to `nyt_title` and then created a new column called `title` that has the capitalized titles. This way we can still reference the original column if we need to and we haven't lost any data, but we can also now merge the two DataFrames.
+
+First, if we rerun our shared titles check, we should see that there are now some shared titles.
 
 ```python
-merged_df = novels_df.merge(nyt_bestsellers_df, how='left', left_on=['author', 'title'], right_on=['author', 'title'])
+shared_titles = novels_df[novels_df['title'].isin(nyt_bestsellers_df['title'])]['title'].nunique()
+print(f"Number of shared titles: {shared_titles}")
 ```
 
-This time we should see that there are some matches! Now we can start to explore this data and consider what questions we want to ask.
+We now should see that there are `12` shared titles. Now we can try merging the two DataFrames again. One of the things we need to decide is how we want to merge the two DataFrames. Since we want to keep all the novels in the `novels_df` DataFrame, we will do a left join. However, we could also experiment with an inner and outer joins to see how many rows we would get back.
+
+```python
+inner_merged_df = novels_df.merge(nyt_bestsellers_df, how='inner', on=['author', 'title'])
+outer_merged_df = novels_df.merge(nyt_bestsellers_df, how='outer', on=['author', 'title'])
+left_merged_df = novels_df.merge(nyt_bestsellers_df, how='left', on=['author', 'title'])
+print(f"Inner merge length: {len(inner_merged_df)}")
+print(f"Outer merge length: {len(outer_merged_df)}")
+print(f"Left merge length: {len(left_merged_df)}")
+```
+
+This should give us the following output:
+
+```bash
+Inner merge length: 231
+Outer merge length: 60876
+Left merge length: 721
+```
+
+We can see that how we merge the DataFrames can have a significant impact on the number of rows we get back. In this case, we can see that the left merge gives us 721 rows, which is the number of novels we had in the original `novels_df` DataFrame plus the 12 shared titles. The inner merge gives us 231 rows, which is the number of novels that are in both DataFrames, and the outer merge gives us 60876 rows, which is the total number of rows in both DataFrames. Depending on our research questions, we might want the outer merge to see all the data and rankings between the datasets, or the inner merge to focus on the novels that are in both datasets. For the remainder of this lesson, we'll use the left merge since we want the full dataset of novels, and then the additional information from the bestsellers to augment our analysis.
+
+```python
+combined_novels_nyt_df = novels_df.merge(nyt_bestsellers_df, how='left', on=['author', 'title'])
+```
 
 ## EDA With Pandas
 
-So far, we have been focused on combining our datasets but now that we have started we also want to start inspecting them: this process is often called *Exploratory Data Analysis*.
+Since we are working with datasets with significant documentation, we have a fairly good sense of what is in these datasets. However, often you will be working with datasets that are less documented, and so it is important to understand how to explore them. This process is often called *Exploratory Data Analysis*.
 
 <figure>
     <a href="{{site.baseurl}}/assets/images/eda.png">
@@ -442,17 +469,45 @@ So far, we have been focused on combining our datasets but now that we have star
     <figcaption>From Zoë Wilkinson Saldaña "Sentiment Analysis for Exploratory Data Analysis" <a href="https://programminghistorian.org/en/lessons/sentiment-analysis">https://programminghistorian.org/en/lessons/sentiment-analysis</a></figcaption>
 </figure>
 
-You've likely heard this term before, but to give a bit of history In his 1977 book *Exploratory Data Analysis*, John W. Tukey argued that EDA could help suggest hypotheses that could be then tested statistically.
+You've likely heard this term before, but let's historically contextualize this idea. The term *Exploratory Data Analysis* (EDA) was popularized by John W. Tukey, one of the most famous statisticians and mathematicians of the 20th century. Tukey was one of the first to formally define the concept of data analysis in 1962 paper titled "The Future of Data Analysis."
 
 <figure>
-    <a href="https://m.media-amazon.com/images/I/71aiG2h5WjL._AC_UF1000,1000_QL80_.jpg">
-    <img src="https://m.media-amazon.com/images/I/71aiG2h5WjL._AC_UF1000,1000_QL80_.jpg" class="image-popup">
+	<a href="{{site.baseurl}}/assets/images/tukey_future_data_analysis.png">
+	<img src="{{site.baseurl}}/assets/images/tukey_future_data_analysis.png" class="image-popup">
+	</a>
+</figure>
+
+In the paper, Tukey starts the paper, writing:
+
+> For a long time I have thought I was a statistician, interested in inferences from the particular to the general. But as I have watched mathematical statistics evolve, I have had cause to wonder and to doubt. [...] All in all, I have come to feel that my central interest is in *data analysis*, which I take to include, among other things: procedures for analyzing data, techniques for interpreting the results of such procedures, ways of planning the gathering of data to make its analysis easier, more precise or more accurate, and all the machinery and results of (mathematical) statistics which apply to analyzing data.
+
+Such a framing might seem straightforward today in the age of Data Science, but at the time it was a radical shift for how we thought about working with data. You'll notice in that image from the paper, which you can download [here](https://projecteuclid.org/download/pdf_1/euclid.aoms/1177704711) if you're curious, that Tukey was affiliated with Princeton University and Bell Telephone Laboratories when he published the paper. Both of these were key institutions in the development of modern computing and statistics. For example, if you've heard of Alan Turing or Claude Shannon, they were also affiliated with Bell Labs, and Tukey worked with both of them, especially during World War II.
+
+<figure>
+	<a href="https://memorial.bellsystem.com/images/history-%20bell_labs_large.png">
+	<img src="https://memorial.bellsystem.com/images/history-%20bell_labs_large.png" class="image-popup">
+	</a>
+</figure>
+
+This infographic gives a sense of some of the inventions and discoveries that happened at Bell Labs, which was one of the most important research and development organizations in the 20th century. In the case of Tukey, he's credited not just with exploratory data analysis but also coining both the terms `bit`, a portmanteau of binary digit, and `software` in 1958, and he was also crucial in popularizing the fourier transform for digital signal processing, which we learned about with the Syuzhet package.
+
+Tukey was a very eclectic scholar, and worked on everything from developing better sampling methods after reviewing the [Kinsey report](https://en.wikipedia.org/wiki/Kinsey_Reports), which was a landmark study of human sexuality released in two books in 1948 and 1953, to developing better methods for election polling. He collected and published his central thoughts on EDA in his 1977 book *Exploratory Data Analysis*, where he argued that EDA could help suggest hypotheses that could be then tested statistically.
+
+<figure>
+    <a href="https://devopedia.org/images/article/75/3879.1525341742.jpg">
+    <img src="https://devopedia.org/images/article/75/3879.1525341742.jpg" class="image-popup">
     </a>
 </figure>
 
-EDA emphasizes understanding the data’s underlying structure and extracting important variables, detecting outliers and anomalies, and testing underlying assumptions through visualizations, statistics, and other methods, without initially focusing on formal modeling or hypothesis testing. This approach differs with traditional hypothesis-driven analyses, promoting a more flexible and intuitive investigation into the data.
+Such a shift might again seem obvious today, but at the time most statisticians focused on "confirmatory data analysis", that is testing a hypothesis statistically rather than exploring the data first to see what might be possible. Tukey's innovation helped set the groundwork for a lot of modern data science, where we tend to be closer to detectives trying to look for clues rather than approaching data with firm assumptions about what it represents.
 
-With Pandas we can perform all of the necessary steps for EDA.
+While there are not firm principles for EDA, Tukey argued that it should cover the following concepts:
+
+- understanding the data’s underlying structure and extracting important variables
+- detecting outliers and anomalies
+- and testing underlying assumptions through visualizations, statistics, and other methods, without initially focusing on formal modeling or hypothesis testing. This approach differs with traditional hypothesis-driven analyses, promoting a more flexible and intuitive investigation into the data.
+
+With Pandas we can start to implement these with code:
 
 1. We want to explore the data, so we could use `head()`, `tail()`, or `sample()` methods to display a subset of the dataset. We could also use `.shape` or `.dtypes` to see shaped of the DataFrame and the data types of each column.
 
@@ -464,38 +519,66 @@ With Pandas we can perform all of the necessary steps for EDA.
 
 5. Finally we would use the `plot()` method to do some initial graphing of the trends in our data to fully help explore its distribution and potential correlations.
 
-So in our case, we might first use `.dtypes` on our `merged_df` to see what types of data we have.
+So in our case, we might first use `.dtypes` on our `combined_novels_nyt_df` to see what types of data we have.
 
 ```python
-merged_df.dtypes
+combined_novels_nyt_df.dtypes
 ```
 
 Then we might use the `describe()` method to output a summary of our dataset.
 
 ```python
-merged_df.describe()
+combined_novels_nyt_df.describe()
 ```
 
 We could also use the `sort_values()` method to organize the dataset by the `year` or `pub_year` column.
 
 ```python
-merged_df.sort_values('year')
+combined_novels_nyt_df.sort_values('year')
 ```
 
 We could also use the `isna()` method to see what values might be missing in the dataset.
 
 ```python
-merged_df.isna().any()
+combined_novels_nyt_df.isna().any()
 ```
 
 Now that we have a sense of the distribution of our data, we can start to visualize it to see if we can answer our questions.
 
-Like many of the methods above, `plot` is built into Pandas and is a wrapper around the `matplotlib` library. This means that we can use the `plot()` method to create a variety of different plots. You can read more about the `plot()` method in the Pandas documentation here [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html) and more generally about visualization with Pandas here [https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html).
+Like many of the methods above, `plot` is built into Pandas and is a wrapper around the `matplotlib` library [https://matplotlib.org/](https://matplotlib.org/), one of the most popular Python libraries for data visualization. This means that we can use the `plot()` method to create a variety of different plots. We can read more about the `plot()` method in the Pandas documentation here [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.plot.html), where it lists the kinds of plots we can create:
 
-For the `plot` syntax, we usually need to specify the type of graph we want to create, and then what we want on the x and y axis. For example, if we wanted to create a scatter plot looking at the relationship between the `pub_year` and `top_500_rank` columns, we could do the following:
+- ‘line’ : line plot (default)
+- ‘bar’ : vertical bar plot
+- ‘barh’ : horizontal bar plot
+- ‘hist’ : histogram
+- ‘box’ : boxplot
+- ‘kde’ : Kernel Density Estimation plot
+- ‘density’ : same as ‘kde’
+- ‘area’ : area plot
+- ‘pie’ : pie plot
+- ‘scatter’ : scatter plot (DataFrame only)
+- ‘hexbin’ : hexbin plot (DataFrame only)
+
+Pandas also has a robust User Guide on how to plot here [https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html](https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html).
+
+From these examples we can see that the `plot` syntax requires specifying the type of graph we want to create, and then what we want on the x and y axis. Currently, we have the following columns in our DataFrame:
+
+```bash
+'top_500_rank', 'title', 'author', 'pub_year', 'orig_lang', 'genre',
+ 'author_birth', 'author_death', 'author_gender', 'author_primary_lang',
+ 'author_nationality', 'author_field_of_activity', 'author_occupation',
+ 'oclc_holdings', 'oclc_eholdings', 'oclc_total_editions',
+ 'oclc_holdings_rank', 'oclc_editions_rank', 'gr_avg_rating',
+ 'gr_num_ratings', 'gr_num_reviews', 'gr_avg_rating_rank',
+ 'gr_num_ratings_rank', 'oclc_owi', 'author_viaf', 'gr_url', 'wiki_url',
+ 'pg_eng_url', 'pg_orig_url', 'year', 'week', 'rank', 'title_id',
+ 'nyt_title'
+```
+
+So we have a number of potential comparisons and explorations we could undertake. For example, if we wanted to create a scatter plot looking at the relationship between the `pub_year` and `top_500_rank` columns, we could do the following:
 
 ```python
-merged_df.plot(kind='scatter', x='pub_year', y='top_500_rank')
+combined_novels_nyt_df.plot(kind='scatter', x='pub_year', y='top_500_rank')
 ```
 
 We should see the following graph:
@@ -506,10 +589,10 @@ We should see the following graph:
     </a>
 </figure>
 
-While this gives us some sense of our data, we actually have a lot of different columns we could visualize, in which case it might be helpful to group or filter our data by a certain column. For example, we could group by `genre` and then plot the average `top_500_rank` for each genre.
+We could also use a `groupby()` to explore the relationship between `genre` and the average `top_500_rank` for each genre, and then plot that directly:
 
 ```python
-merged_df.groupby('genre')['top_500_rank'].mean().plot(kind='bar')
+combined_novels_nyt_df.groupby('genre')['top_500_rank'].mean().plot(kind='bar')
 ```
 
 Which gives us the following output:
@@ -520,12 +603,14 @@ Which gives us the following output:
 	</a>
 </figure>
 
+Now that we are starting to see how we can visualize our data, we need to start thinking more deeply about what questions might be of interest to us and how the shape of this data influences how we can answer these questions.
+
 ### "Cleaning" Data With Pandas
 
-In our current example, we've already started to clean our data by merging the DataFrames together and transforming the data to make it more amenable to analysis. We might also want to subset the data:
+As we've discussed previously, `cleaning` data is core part of working with data but also one that tends to get overlooked or rarely foregrounded, even though it is extremely important for any interpretation. In our current example, we've already started to clean our data by merging the DataFrames together and transforming the data to make it more amenable to analysis. We might also want to subset the data, since as we can see above not every book has a genre:
 
 ```python
-subset_merged_df = merged_df[merged_df.nyt_title.notna()]
+subset_combined_novels_nyt_df = combined_novels_nyt_df[combined_novels_nyt_df.genre.notna()]
 ```
 
 As we discussed in class, a lot of what motivates this "cleaning", whether that means normalizing distributions, removing null values, and even transforming some of the data to standardize it, is the concept of **GIGO**.
@@ -536,7 +621,9 @@ As we discussed in class, a lot of what motivates this "cleaning", whether that 
     </a>
 </figure>
 
-GIGO stands for "Garbage In, Garbage Out" (to read more about the origins of GIGO, read this article [https://www.atlasobscura.com/articles/is-this-the-first-time-anyone-printed-garbage-in-garbage-out](https://www.atlasobscura.com/articles/is-this-the-first-time-anyone-printed-garbage-in-garbage-out)). GIGO is important because it essentially means that the quality of your data analysis is always dependent on the quality of your data.
+GIGO stands for "Garbage In, Garbage Out" and the term has been used for decades in computing to refer to when data entry errors would produce faulty results. Rob Stenson has a great  post exploring the history of the term all the way back to Charles Babbage, one of the first inventors of the computer, [https://www.atlasobscura.com/articles/is-this-the-first-time-anyone-printed-garbage-in-garbage-out](https://www.atlasobscura.com/articles/is-this-the-first-time-anyone-printed-garbage-in-garbage-out).
+
+GIGO is important because it essentially means that the quality of your data analysis is always dependent on the quality of your data.
 
 However, for as much as we want to prioritize quality, what are some of the downsides or tradeoffs of cleaning data? Some potential considerations include:
 
@@ -546,7 +633,7 @@ However, for as much as we want to prioritize quality, what are some of the down
 
 This list is by no means exhaustive! But number one thing to remember with datasets is that **the act of collecting data is in of itself an interpretation**. And so cleaning data adds another layer of interpretation (sometimes many layers) to the dataset, which is why its crucial to keep a record of how you transform your data.
 
-It is also important to realize that even with cleaning you will never have a *perfect* dataset and to remember that this is often an *iterative process* and not a one time thing. You will likely need to re-transform your data many times depending on your methods. We've only barely scratched the surface of data cleaning here (for some more examples you can check out [https://towardsdatascience.com/the-ultimate-guide-to-data-cleaning-3969843991d4](https://towardsdatascience.com/the-ultimate-guide-to-data-cleaning-3969843991d4)).
+It is also important to realize that even with cleaning you will never have a *perfect* dataset and to remember that this is often an *iterative process* and not a one time thing. You will likely need to re-transform your data many times depending on your methods.
 
 One best practice is to save multiple versions of your dataset as `csv` files, so that you don't either overwrite your original data or have to rerun previous transformations. Remember that with Pandas we can read and write `csv` files using `pd.read_csv()` and `{name of your dataframe}.to_csv()`.
 
@@ -558,11 +645,9 @@ In addition to thinking about our choices, it is also important to think about t
     </a>
 </figure>
 
-This graph outlines the main types of data you might encounter, which largely breaks down between qualitative (categorical) or quantitative (numerical).
+This graph outlines the main types of data you might encounter, which largely breaks down between qualitative (categorical) or quantitative (numerical). Now these data types somewhat overlap with our `.dtypes` in Pandas, but they also go beyond. For example, what in our dataset might be `Nominal` versus `Ordinal`, or `Discrete` versus `Continuous`? To help answer this question, we are going to explore data visualization more in depth with the Python library `Altair`.
 
-For example, we have `genre` and `author` as categorical variables, while `top_500_rank` and `pub_year` are numerical variables.
-
-## Data Visualization With Altair (In Progress)
+## Data Visualization With Altair
 
 Up to now we've been using Pandas built in `plot` methods to display our data. While this is helpful for quick analyses, you'll likely want more options for both how you visualize the data and interact with it.
 
@@ -578,7 +663,7 @@ Up to now we've been using Pandas built in `plot` methods to display our data. W
     </a>
 </figure>
 
-In Python, there are a number of visualization libraries, including `Matplotlib`, `Seaborn`, and `Plotly` that have extensive communities and documentation. 
+As you can see in these graphics, in Python, there are a number of visualization libraries, including `Matplotlib`, `Seaborn`, and `Plotly` that have extensive communities and documentation. 
 
 <figure>
 	<a href="https://cdn.cssauthor.com/wp-content/uploads/2023/04/Altair.jpg?strip=all&lossy=1&ssl=1">
@@ -595,6 +680,8 @@ Remember to activate your virtual environment!
 ```sh
 pip install "altair[all]"
 ```
+
+Notice that this time when installing we have a slightly new syntax: `[all]`. This syntax just means that we will be installing all of Altair's dependencies **and** optional dependencies, which includes things like the `vega_datasets` package.
 
 *Now let's try it out in our Jupyter Notebook*
 
@@ -679,48 +766,194 @@ Finally we are calling encoding to specify what variable we want to represent on
     <img src="{{site.baseurl}}/assets/images/encoding_data_types.png" class="image-popup">
     </a>
 </figure>
----
 
-*So let's try recreating our graph charting the rank of genres over time*
+Now that we understand a bit of Altair's syntax, let's try to recreated our `genre` by average `top_500_rank` plot that we made previously. To do this, we don't have to do `groupby`, instead Altair can handle most of the logic for us:
 
 ```python
-alt.Chart(merged_df).mark_line().encode(
-	x='pub_year',
-	y='top_500_rank',
-	color='genre'
+alt.Chart(combined_novels_nyt_df).mark_bar().encode(
+	x="genre:N",
+	y="mean(top_500_rank):Q",
 )
 ```
 
-You should see the following graph:
+Which gives us the following output:
 
 <figure>
-    <a href="{{site.baseurl}}/assets/images/altair_dialogue.png" >
-    <img src="{{site.baseurl}}/assets/images/altair_dialogue.png" class="image-popup">
+	<a href="{{site.baseurl}}/assets/images/altair_genre_top500.png">
+	<img src="{{site.baseurl}}/assets/images/altair_genre_top500.png" class="image-popup">
     </a>
 </figure>
 
-What are some of the problems with this graph? Notice that unlike Pandas plot, Altair is not rendering our year as a time series. This is because Altair is not recognizing our `year` column as a temporal field. We can fix this by specifying the data types for Altair [https://altair-viz.github.io/user_guide/encoding.html#encoding-data-types](https://altair-viz.github.io/user_guide/encoding.html#encoding-data-types).
+We can see that some of the syntax is similar to the initial example. We are passing in our DataFrame to the `Chart` class, calling the `mark_bar` method, and then encoding the `x` and `y` axis. But some of this syntax is also new.
 
+For instance, we are specifying the `encodings` using the `N` for nominal and `Q` for quantitative. We are also using an `aggregate` function to calculate the `mean`. You can read more about aggregation here [https://altair-viz.github.io/user_guide/transform/aggregate.html](https://altair-viz.github.io/user_guide/transform/aggregate.html), but generally Altair has the following aggregations built-in:
 
+| Aggregation Operation | Description | Syntax |
+|-----------------------|-------------|--------|
+| `count`               | The total count of data objects in the group. Note: ‘count’ operates directly on the input objects and returns the same value regardless of the provided field. | `count()` |
+| `valid`               | The count of field values that are not null, undefined, or NaN. | `valid(column_name)` |
+| `values`              | A list of data objects in the group. | `values(column_name)` |
+| `missing`             | The count of null or undefined field values. | `missing(column_name)` |
+| `distinct`            | The count of distinct field values. | `distinct(column_name)` |
+| `sum`                 | The sum of field values. | `sum(column_name)` |
+| `product`             | The product of field values. | `product(column_name)` |
+| `mean`                | The mean (average) field value. | `mean(column_name)` |
+| `average`             | The mean (average) field value. Identical to mean. | `average(column_name)` |
+| `variance`            | The sample variance of field values. | `variance(column_name)` |
+| `variancep`           | The population variance of field values. | `variancep(column_name)` |
+| `stdev`               | The sample standard deviation of field values. | `stdev(column_name)` |
+| `stdevp`              | The population standard deviation of field values. | `stdevp(column_name)` |
+| `stderr`              | The standard error of field values. | `stderr(column_name)` |
+| `median`              | The median field value. | `median(column_name)` |
+| `q1`                  | The lower quartile boundary of field values. | `q1(column_name)` |
+| `q3`                  | The upper quartile boundary of field values. | `q3(column_name)` |
+| `ci0`                 | The lower boundary of the bootstrapped 95% confidence interval of the mean field value. | `ci0(column_name)` |
+| `ci1`                 | The upper boundary of the bootstrapped 95% confidence interval of the mean field value. | `ci1(column_name)` |
+| `min`                 | The minimum field value. | `min(column_name)` |
+| `max`                 | The maximum field value. | `max(column_name)` |
+| `argmin`              | An input data object containing the minimum field value. Note: When used inside encoding, argmin must be specified as an object. | `argmin(column_name)` |
+| `argmax`              | An input data object containing the maximum field value. Note: When used inside encoding, argmax must be specified as an object. | `argmax(column_name)` |
 
-But now we have an even weirder looking graph. That's because even though we told Altair that year is temporal, our data type doesn't reflect that. We can fix this by using the `pd.to_datetime()` method to convert our `year` column to a datetime object.
+You can also see links to examples using these aggregations here [https://altair-viz.github.io/user_guide/encodings/index.html#aggregation-functions](https://altair-viz.github.io/user_guide/encodings/index.html#aggregation-functions).
+
+While it's great we can recreate this plot, what's the point exactly? After all we can do this in `plot` without having to use another library. 
+
+The value of using a library like Altair is that it is built to implement the idea of a `Grammar of Graphics`. 
+
+<figure>
+	<a href="https://www.stat20.org/2-summarizing-data/03-a-grammar-of-graphics/images/grammar-of-graphics.png">
+	<img src="https://www.stat20.org/2-summarizing-data/03-a-grammar-of-graphics/images/grammar-of-graphics.png" class="image-popup">
+    </a>
+</figure>
+
+*The Grammar of Graphics* is both a concept and book published in 1999 by Leland Wilkinson, a statistician and computer scientist Wilkinson developed this idea from his experience in developing SYSTAT, a statistical software package he founded in 1983, where he saw the need for a more structured and flexible framework for data visualization.
+
+Wilkinson’s grammar aimed to define a set of rules or components that could describe any kind of statistical graphic, from simple bar charts to complex scatter plots and heatmaps. By breaking down graphics into fundamental elements (like data, geometries, and scales), his grammar provides a way to think of visualizations as composable and modular—allowing users to understand and generate diverse charts based on clear principles. Wilkinson’s ideas have influenced many modern visualization tools and libraries like `ggplot2` in R, as well as Altair.
+
+In the Grammar of Graphics, every visualization is built using the following core components:
+
+1. Data: The dataset that you want to visualize.
+2. Mappings: How the data variables map to visual properties like axes, colors, or sizes.
+3. Geometries (Marks): The basic shapes used to represent the data, such as points, lines, bars, etc.
+4. Statistical transformations: Aggregations or transformations applied to the data, such as grouping, counting, or averaging.
+5. Scales: How data values are translated into visual values, like positioning on the x- or y-axis.
+6. Coordinates: The coordinate system used, such as Cartesian or polar coordinates.
+7. Faceting: How the data is split into different panels or sections to show comparisons.
+
+Altair is built around these principles, making it easier to create clear and interpretable visualizations by specifying each component in your code. This approach is not only flexible but also emphasizes transparency, helping you understand how your data is represented visually. It’s also more extensible, allowing for more complex and interactive visualizations, such as linked plots or selections, which would be difficult to achieve with simpler plotting libraries.
+
+By embracing the Grammar of Graphics, Altair enables you to think more abstractly about the relationship between data and visualization, offering a consistent, rule-based system to produce a wide variety of visual outputs.
+
+---
+
+Let's try out some of Altair's more advanced functionality to see how it implements this Grammar of Graphics.
+
+For example, we could rather than looking at the relationship between `genre` and average `top 500 rank`, instead look at the relationship between book titles, genre, and that rank with the following code:
 
 ```python
-grouped_dialogue_df['date'] = grouped_dialogue_df['year'].astype(str) + '-01-01'
-grouped_dialogue_df['date'] = pd.to_datetime(grouped_dialogue_df['date'])
+alt.Chart(combined_novels_nyt_df).mark_bar().encode(
+	x="genre:N",
+	y="count():Q",
+	color="top_500_rank:Q",
+	tooltip=["genre:N", "count():Q", "top_500_rank:Q", "title"]
+)
 ```
 
-Here I am telling Pandas to convert the `year` column to a string and then adding `-01-01` to the end of it to make it a datetime object. Then I am using the `pd.to_datetime()` method to convert it to a datetime object and saving it to a new column called `date`. The choice to save it to a new column is because we might want to keep the original `year` column for other analyses.
+Which gives us the following chart:
 
-Now let's try rerunning our graph but using `date`.
+<figure>
+	<a href="{{site.baseurl}}/assets/images/interactive_genre.png">
+	<img src="{{site.baseurl}}/assets/images/interactive_genre.png" class="image-popup">
+    </a>
+</figure>
 
+Here we are using two new encodings: `color` and `tooltip`. We could also add a title and even change the color scheme:
 
-Now we have officially recreated what we did with `plot()` but this takes far more work, so why should we bother? The biggest reason is that Altair is more flexible and powerful than Pandas `plot()` and can create more complex visualizations. For example, we can add a `color` encoding to our graph to see how dialogue is split between genders.
+```python
+alt.Chart(combined_novels_nyt_df).mark_bar().encode(
+	x="genre:N",
+	y="count():Q",
+	color=alt.Color("top_500_rank:Q", scale=alt.Scale(scheme="viridis")),
+	tooltip=["genre:N", "count():Q", "top_500_rank:Q", "title"]
+).properties(
+	title="Top 500 Novels by Genre",
+	width=600,
+	height=400
+)
+```
 
-This is a much more complex graph than we could have created with Pandas `plot()` and it's also more flexible. We can also add a `tooltip` encoding to our graph to see the exact values of the data.
+Which produces the following chart:
 
+<figure>
+	<a href="{{site.baseurl}}/assets/images/proper_altair.png">
+	<img src="{{site.baseurl}}/assets/images/proper_altair.png" class="image-popup">
+    </a>
+</figure>
+
+We could also see these patterns over time. Altair is great at visualizing dates, however, you'll notice our primary date column, `pub_year` only has the year in it. If we try to use it in Altair as is, we get the following graph:
+
+```python
+alt.Chart(combined_novels_nyt_df).mark_bar().encode(
+	x="pub_year:T",
+	y="count():Q",
+	color="genre:N"
+)
+```
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/date_broken_altair.png">
+	<img src="{{site.baseurl}}/assets/images/date_broken_altair.png" class="image-popup">
+    </a>
+</figure>
+
+To get this graph working correctly, we need a column that is formatted as `datetime` in Pandas. To do this, there's a number of solutions but one of the easiest is to just create a new column called `pub_date` and use the Pandas `to_datetime()` functionality to cast `pub_year` into a `datetime` format.
+
+```python
+combined_novels_nyt_df['pub_date'] = pd.to_datetime(combined_novels_nyt_df['pub_year'].astype(str) + '-01-01', errors='coerce')
+```
+
+Now we can recreate our graph:
+
+```python
+selection = alt.selection_point(fields=['genre'], bind='legend')
+
+alt.Chart(merged_df).mark_bar().encode(
+	x="pub_date:T",
+	y="count():Q",
+	color="genre:N",
+	tooltip=["genre:N", "count():Q"],
+	opacity=alt.condition(selection, alt.value(1), alt.value(0.2))
+).add_params(selection).properties(
+	title="Top 500 Novels by Genre Over Time",
+	width=800,
+	height=400
+)
+```
+
+And here is a live version of it:
+
+<div id="top_novels"></div>
+
+You'll notice our syntax is again a bit more complex. You can read about how Altair enables interactivity in the documentation here [https://altair-viz.github.io/user_guide/interactions.html](https://altair-viz.github.io/user_guide/interactions.html), but to summarize, we've now added the ability not just to have a tooltip but also to visually select our categories in the legend.
 
 As we are starting to see Altair is a very powerful library. We will continue to explore its functionality in the coming weeks, but would highly encourage you to take a look at the example visualizations on the Altair website [https://altair-viz.github.io/gallery/index.html](https://altair-viz.github.io/gallery/index.html) and the documentation [https://altair-viz.github.io/index.html](https://altair-viz.github.io/index.html).
 
-## Exploring and Visualizing Culture Homework (To Be Posted)
+## Exploring and Visualizing Culture Homework
 
+Now that you have begun to grasp the fundamentals of Exploratory Data Analysis (EDA) using Pandas and Altair, this assignment will guide you through a deeper exploration of the Goodreads Top Ranked Novels and *New York Times* Bestseller datasets. Your task is not only to create visualizations but also to engage critically with the data, identifying patterns, gaps, and potential biases that can inform future research.
+
+In the documentation for the Top Novels dataset, there is a section on `Discussion & Activities` [https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html?tab=discussion-%26-activities](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html?tab=discussion-%26-activities) and specifically a link to a `Google Colab` notebook exploring bias in the metadata of this dataset, available [here](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing). For this assignment, I want you to build from both our in-class explorations and this existing Colab notebook. You can reuse code from both, but the overall goal is to start implementing your knowledge of EDA to consider potential future research directions with these datasets.
+
+Begin by creating a new Jupyter Notebook within your `is310-coding-assignments` repository, specifically in the `pandas-eda` folder. As you start this analysis, think carefully about the title of your notebook. The title should reflect the main themes you identify through your EDA, and it should be written in CamelCase (e.g., `GenderTrendsInTopNovels` or `RatingBiasAcrossGenres`). Crafting a meaningful title is an opportunity to synthesize the focus of your work from the start.
+
+You can organize your notebook in any way that makes sense to you, but you should have a rationale and **clearly** label sections using Markdown headers. You should also use `Altair` for all your EDA visualizations. There is no set number of graphs that you must create, but part of it is imagine that you are creating this notebook for someone new to these datasets, so you should consider what would be helpful to explain or include. You also need to consider what you will not analyze, since too much data analysis can be confusing and unhelpful. You should be sure to also include text interpreting your graphs and findings for your reader.
+
+Finally, there are no right or wrong answers for this assignment. Only your sense of what is likely of interest based on your EDA. You could focus on comparisons between the datasets or the intersection of the datasets, and you can explore a number of correlations and relationships, or just a few. So consider this notebook your first attempt at undertaking exploratory data analysis as John Tukey first proposed. 
+
+Once you have completed your assignment, push up your code to GitHub and post a link in this GitHub discussion [https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/11](https://github.com/CultureAsData-UIUC/is310-fall-2024/discussions/11). Remember to include either remote or local access to the datasets, to avoid pushing up your virtual environment, and to document your folder with a `README.md`. And finally, as always, you are welcome to use AI tools to help you complete this assignment, but again remember you need to understand what the code is doing and you need to be able to explain the overall goals and focus of the notebook.
+
+
+<script>
+    var json_file = "{{site.baseurl}}/assets/files/top_novels.json";
+    vegaEmbed('#top_novels', json_file);
+</script>

@@ -9,7 +9,7 @@ class_date: 2024-10-29
 
 - [ ] Review the [GETing Culture Across APIs Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/06-getting-data-apis#getting-culture-across-apis-homework).
 - [ ] Continue refresher to [Notebooks and Pandas]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/01-intro-notebooks/).
-- [ ] Start introduction to EDA and Data Visualization.
+- [ ] Start introduction to [EDA and Data Visualization]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/02-eda-data-viz).
 
 ## Additional Materials
 

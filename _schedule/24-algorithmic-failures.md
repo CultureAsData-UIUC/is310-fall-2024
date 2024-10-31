@@ -7,8 +7,8 @@ class_date: 2024-11-14
 
 ## In-Class Agenda
 
-- [ ] Review questions from computational methods.
-- [ ] Introduction to classification and predication (To be posted).
+- [ ] Review EDA homework.
+- [ ] Start introduction to classification and predication (To be posted).
 
 ## Additional Materials
 

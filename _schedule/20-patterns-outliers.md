@@ -8,7 +8,7 @@ class_date: 2024-10-31
 ## In-Class Agenda
 
 - [ ] Discuss the assigned readings
-- [ ] Start group assignment on DH projects (To be posted).
+- [ ] Start group assignment on [Computing Cultural Data]({{site.baseurl}}/computing-cultural-data/).
 
 ## Assigned Materials
 
@@ -22,3 +22,13 @@ class_date: 2024-10-31
 - Walsh, Melanie, and Maria Antoniak. “The Goodreads ‘Classics’: A Computational Study of Readers, Amazon, and Crowdsourced Amateur Criticism.” *Journal of Cultural Analytics* 6, no. 2 (April 20, 2021). [https://doi.org/10.22148/001c.22221](https://doi.org/10.22148/001c.22221).
 - Schmidt, Ben. “Sapping Attention: When You Have a MALLET, Everything Looks like a Nail.” *Sapping Attention* (blog), November 2, 2012. [http://sappingattention.blogspot.com/2012/11/when-you-have-mallet-everything-looks.html](http://sappingattention.blogspot.com/2012/11/when-you-have-mallet-everything-looks.html).
 
+### Additional Links
+
+<figure>
+    <a href="https://tedunderwood.files.wordpress.com/2015/05/casualmap1.jpg">
+    <img src="https://tedunderwood.files.wordpress.com/2015/05/casualmap1.jpg" class="image-popup">
+    </a>
+</figure>
+
+- *jsLDA* by David Mimno [https://mimno.infosci.cornell.edu/jsLDA/](https://mimno.infosci.cornell.edu/jsLDA/)
+- *Voyant Tools* [https://voyant-tools.org/](https://voyant-tools.org/)

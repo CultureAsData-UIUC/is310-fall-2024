@@ -55,12 +55,14 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Command Line Data Curation Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/04-virtual-environments#homework-command-line-data-curation) | [Due by Midnight CT on October 9]({{site.baseurl}}/schedule/14-scrape-on-off/) |
 | [Fandom Wikis and Web Scraping Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/05-web-scraping#fandom-wikis-and-web-scraping-homework) | [Due by Midnight CT on October 21]({{site.baseurl}}//schedule/17-arugments-algorithms/) |
 | [GETing Culture Across APIs Homework]({{site.baseurl}}/materials/creating-curating-humanities-data/06-getting-data-apis#getting-culture-across-apis-homework) | [Due by Midnight CT on October 28]({{site.baseurl}}/schedule/19-patterns-outliers/) |
+| [Exploring and Visualizing Culture Homework]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/02-eda-data-viz#exploring-and-visualizing-culture-homework) | [Due by Midnight CT on November 6]({{site.baseurl}}//schedule/22-structuring-data/) |
 
 
 ### Group Assignments
 
 | Assignment | Due Date (Subject to Change) |
 | -----------------: | --------------: |
-| [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [Due In-Class September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/). There will be time in class to complete the assignment, we will also be covering how to move your work to your group's GitHub repo. **As a reminder, usually group work will be submitted via GitHub and due by Midnight before our class meeting.** |
+| [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [Due In-Class September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/).|
 | [Critical Cultural Data Explorations]({{site.baseurl}}/critical-cultural-data-explorations/) | [Due In-Class September 24]({{site.baseurl}}/schedule/09-standardizing-culture-data-archeology/).|
 | [Proprietary & Perspectival Dataset Creation]({{site.baseurl}}/proprietary-perspectival-dataset-creation) | [Due In-Class October 15]({{site.baseurl}}/schedule/15-curating-vs-cleaning/).|
+| [Computing Cultural Data]({{site.baseurl}}/computing-cultural-data/) | [Due In-Class November 12]({{site.baseurl}}/schedule/23-reproducibility-responsibility/).|

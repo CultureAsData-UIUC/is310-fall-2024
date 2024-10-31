@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Unstructured Text Data"
-permalink: /materials/interpreting-communicating-humanities-data/02-intro-text
+permalink: /materials/interpreting-communicating-humanities-data/03-intro-text
 toc: true
 altair: true
 ---

@@ -30,5 +30,55 @@ class_date: 2024-10-31
     </a>
 </figure>
 
+<figure>
+    <a href="http://intellspot.com/wp-content/uploads/2020/04/Structured-vs-unstructured-data-an-infographic-1024x724.png">
+    <img src="http://intellspot.com/wp-content/uploads/2020/04/Structured-vs-unstructured-data-an-infographic-1024x724.png" class="image-popup">
+    </a>
+</figure>
+
+<figure>
+    <a href="https://miro.medium.com/max/1200/0*ewkxRItArykG27dU.png">
+    <img src="https://miro.medium.com/max/1200/0*ewkxRItArykG27dU.png" class="image-popup">
+    </a>
+</figure>
+
+<figure>
+	<a href="https://sep.com/wp-content/uploads/2020/12/2020-07-bagofwords.jpg">
+	<img src="https://sep.com/wp-content/uploads/2020/12/2020-07-bagofwords.jpg" class="image-popup">
+	</a>
+</figure>
+
+<figure>
+	<a href="https://miro.medium.com/max/1400/1*Uf_qQ0zF8G8y9zUhndA08w.png">
+	<img src="https://miro.medium.com/max/1400/1*Uf_qQ0zF8G8y9zUhndA08w.png" class="image-popup">
+	</a>
+</figure>
+
+<figure>
+	<a href="https://miro.medium.com/max/1400/1*w4449DJGuXlay02gFt8APg.png">
+	<img src="https://miro.medium.com/max/1400/1*w4449DJGuXlay02gFt8APg.png" class="image-popup">
+	</a>
+</figure>
+
+<figure>
+    <a href="https://cdn.sanity.io/images/oaglaatp/production/96c7b82d95f6bf6f626b48fb6f30904e84d7c11a-512x478.png?w=512&h=478&auto=format">
+    <img src="https://cdn.sanity.io/images/oaglaatp/production/96c7b82d95f6bf6f626b48fb6f30904e84d7c11a-512x478.png?w=512&h=478&auto=format" class="image-popup">
+    </a>
+</figure>
+
+<figure>
+	<a href="https://www.researchgate.net/publication/325867536/figure/fig2/AS:639460102397952@1529470577174/Supervised-and-unsupervised-machine-learning.png">
+	<img src="https://www.researchgate.net/publication/325867536/figure/fig2/AS:639460102397952@1529470577174/Supervised-and-unsupervised-machine-learning.png" class="image-popup">
+	</a>
+</figure>
+
+<figure>
+    <a href="https://yosinski.com/mlss12/media/slides/MLSS-2012-Blei-Probabilistic-Topic-Models_020.png">
+    <img src="https://yosinski.com/mlss12/media/slides/MLSS-2012-Blei-Probabilistic-Topic-Models_020.png" class="image-popup">
+    </a>
+</figure>
+
+
+
 - *jsLDA* by David Mimno [https://mimno.infosci.cornell.edu/jsLDA/](https://mimno.infosci.cornell.edu/jsLDA/)
 - *Voyant Tools* [https://voyant-tools.org/](https://voyant-tools.org/)

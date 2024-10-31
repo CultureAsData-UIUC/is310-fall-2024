@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Named Entity Recognition"
-permalink: /materials/exploratory-data-analysis/07-intro-ner
+permalink: /materials/interpreting-communicating-humanities-data/05-derived-features/
 toc: true
 ---
 

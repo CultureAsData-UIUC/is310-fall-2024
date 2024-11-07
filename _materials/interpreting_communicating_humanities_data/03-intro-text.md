@@ -5,11 +5,51 @@ toc: true
 altair: true
 ---
 
+In the last lesson, we learned the foundations of EDA and how to use Pandas and Altair to explore and visualize data. In this lesson, we will be focusing on unstructured text data and how we can structure it for analysis.
 
-While we would likely find some relevant material on this site, we could also start to fill in this dataset through scraping. Specifically, take a look at the columns with `url` in the `novels_df` DataFrame. We have four: `gr_url`, `wiki_url`, `pg_eng_url`, and `pg_orig_url`. We could subset our `novels_df` to only these columns and then use the `.describe()` method to see how many unique values we have.
+In the previous lesson, you might have noticed that we used the following code to manipulate the novel titles:
 
 ```python
-novels_df[['gr_url', 'wiki_url', 'pg_eng_url', 'pg_orig_url']].describe()
+nyt_bestsellers_df = nyt_bestsellers_df.rename(columns={'title': 'nyt_title'})
+nyt_bestsellers_df['title'] = nyt_bestsellers_df['nyt_title'].str.capitalize()
+```
+
+Part of what makes Pandas so powerful is that it has a number of built-in methods for working with `string` data, and you can access them by using the `.str` accessor method. An in-depth discussion of these methods are available on the Pandas documentation website [https://pandas.pydata.org/docs/user_guide/text.html](https://pandas.pydata.org/docs/user_guide/text.html), but I've also summarized many of the more popular methods below in this table:
+
+| Pandas String Method | Explanation |
+|---------------------|-------------|
+| `df[‘column_name’].str.lower()` | lowercase all the values in a column |
+| `df[‘column_name’].str.upper()` | uppercase all the values in a column |
+| `df[‘column_name’].str.replace(‘old_string’, ‘new_string’)` | replace all instances of ‘old_string’ with ‘new_string’ in a column |
+| `df[‘column_name’].str.split(‘delimiter’)` | split a column by ‘delimiter’ like a comma or period, or really anything |
+| `df[‘column_name’].str.strip()` | remove leading and trailing whitespace from a column |
+| `df[‘column_name’].str.len()` | count the number of characters in a column |
+| `df[‘column_name’].str.contains(‘pattern’)` | check if a column contains a particular pattern |
+| `df[‘column_name’].str.startswith(‘pattern’)` | check if a column starts with a particular pattern |
+| `df[‘column_name’].str.endswith(‘pattern’)` | check if a column ends with a particular pattern |
+| `df[‘column_name’].str.find(‘pattern’)` | find the first occurrence of a particular pattern in a column |
+| `df[‘column_name’].str.findall(‘pattern’)` | find all occurrences of a particular pattern in a column |
+| `df[‘column_name’].str.count(‘pattern’)` | count the number of occurrences of a particular pattern in a column |
+| `df[‘column_name’].str.extract(‘pattern’)` | extract the first occurrence of a particular pattern in a column |
+| `df[‘column_name’].str.extractall(‘pattern’)` | extract all occurrences of a particular pattern in a column |
+| `df[‘column_name’].str.join(list)` |  join a list of strings with a delimiter |
+
+In our case, we used the `str.capitalize()` method to capitalize the first letter of each word in the `title` column. This is a simple example, but it shows how powerful Pandas can be for working with text data.
+
+Today we will be exploring more advanced methods for working with text data, and how we can structure it for analysis. But first, we need some text.
+
+First, let's create a new folder in our `is310-coding-directory` called `text-analysis`, and in it create a new Jupyter Notebook called `IntroTextAnalysis.ipynb`.
+
+In that notebook, you should load in both the `nyt_bestsellers_df` and `novels_df` DataFrames that we created in the last lesson, and then once again merge them together.
+
+```python
+combined_novels_nyt_df = novels_df.merge(nyt_bestsellers_df, how='left', on=['author', 'title'])
+```
+
+Now that we have our DataFrame, we can start to look more closely at some of the columns. Specifically, we could take a look at the columns with `url` in the DataFrame. We have four: `gr_url`, `wiki_url`, `pg_eng_url`, and `pg_orig_url`. We could subset our `novels_df` to only these columns and then use the `.describe()` method to see how many unique values we have.
+
+```python
+combined_novels_nyt_df[['gr_url', 'wiki_url', 'pg_eng_url', 'pg_orig_url']].describe()
 ```
 
 Which gives us the following output:
@@ -20,10 +60,10 @@ Which gives us the following output:
 	</a>
 </figure>
 
-This gives us a sense of the distribution of the URLs in our dataset. For example, we can see that the `pg_orig_url` column has only 64 non-null values, which means that there are 436 missing values. We could also just explore one row to get a better sense of what these URLs look like.
+This gives us a sense of the distribution of the URLs in our dataset. For example, we can see that the `pg_orig_url` column has only 64 non-null values, which means that there are 657 missing values. We could also just explore one row to get a better sense of what these URLs look like.
 
 ```python
-novels_df[['gr_url', 'wiki_url', 'pg_eng_url', 'pg_orig_url']][0:1].to_dict()
+combined_novels_nyt_df[['gr_url', 'wiki_url', 'pg_eng_url', 'pg_orig_url']][0:1].to_dict()
 ```
 
 Which gives us the following output:
@@ -35,11 +75,11 @@ Which gives us the following output:
  'pg_orig_url': {0: 'https://www.gutenberg.org/cache/epub/2000/pg2000.txt'}}
 ```
 
-Here I'm using a few different methods to get a sense of the data. First, I'm using the two square brackets to subset the DataFrame to only the columns I want. Then I'm using square brackets again to select the first row of the DataFrame. Finally, I'm using the `to_dict()` method to convert the DataFrame to a dictionary, which makes it easier to read.
+This detail is helpful but let's first breakdown the different methods I'm using to get a sense of the data. First, I'm using the two square brackets to subset the DataFrame to only the columns I want, using the exact column names. Then I'm using square brackets again to select the index of the first row of the DataFrame. Finally, I'm using the `to_dict()` method to convert the DataFrame to a dictionary, which makes it easier to read the full values in the output.
 
 If we copy the `pg` urls into our browser we can see that `pg_orig_url` is the original Spanish text of the novel, while `pg_eng_url` is the English translation. We could use either of these urls to scrape the text of the novels and then analyze them further.
 
-Let's test that out with the `pg_eng_url` column. We can use the `requests` library to get the text of the novel. We are not using `BeautifulSoup` here since we are just trying to essentially download the text file and there is no HTML to parse.
+Let's test that out with the `pg_eng_url` column. We can use the `requests` library to get the text of the novel. We are not using `BeautifulSoup` here since we are just essentially downloading the text file and there is no HTML to parse.
 
 ```python
 import requests
@@ -69,28 +109,149 @@ before using this eBook.
 
 Now we can see that we have successfully scraped the text of the novel! Our next step is to do this for all the novels in our dataset. We could create a new DataFrame to store the text of each novel, but we also want to be careful about how we handle missing values.
 
-To do this we should loop through the `novels_df` DataFrame and check if the `pg_eng_url` column is not null. If it is not null, we can scrape the text and store it in a new DataFrame. Here's how we could do that:
+To do this we should loop through the `combined_novels_nyt_df` DataFrame and check if the `pg_eng_url` column is not null. If it is not null, we can scrape the text and store it in a new DataFrame. Here's how we could do that:
 
 ```python
-novels_text_dfs = pd.DataFrame(columns=['title', 'text'])
+import requests
 
+def get_text(url):
+	# Check if the url is not null
+	if pd.notna(url):
+		# Try getting the text from the url
+		try:
+			response = requests.get(url)
+			# Check if the response is successful and return the text. Else return None
+			if response.status_code == 200:
+				return response.text
+		except Exception as e:
+			return None	
+	return None
 ```
+
+Now to run this function we could loop through our DataFrame, similar to how we have in the past but we cannot simply just loop through a DataFrame like we would a list:
+
+```python
+for row in combined_novels_nyt_df:
+	print(row)
+```
+
+If you run this code, you will see that it prints out the column names of the DataFrame, not the rows. This is because a DataFrame is a more complex data structure than a list, and you need to use the `iterrows()` method to loop through the rows of a DataFrame.
+
+```python
+for index, row in combined_novels_nyt_df.iterrows():
+	print(row)
+```
+
+Now we can access each row and therefore each column in the DataFrame. We can use this to apply our `get_text()` function to the `pg_eng_url` column.
+
+```python
+texts = []
+for index, row in combined_novels_nyt_df.iterrows():
+	text = get_text(row['pg_eng_url'])
+	texts.append(text)
+
+# Create a new DataFrame with the text of each novel
+novel_texts_df = pd.DataFrame({'text': texts})
+# Merge the new DataFrame with the original DataFrame
+combined_novels_nyt_df = pd.concat([combined_novels_nyt_df, novel_texts_df], axis=1)
+```
+
+You'll notice here that I'm creating an empty list called `texts` and then appending the text of each novel to this list. This is a common pattern in Python, and it's a good way to store the results of a loop. Once we have all the texts, we can create a new DataFrame called `novel_texts_df` and then merge this DataFrame with the original DataFrame.
+
+However, there's an even more efficient way to do this using the `apply()` method, documentation available here [https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html). This method applies a function to each row of a DataFrame, which is exactly what we want to do in this case.
+
+```python
+combined_novels_nyt_df['eng_text'] = combined_novels_nyt_df['pg_eng_url'].apply(get_text)
+```
+
+<figure>
+	<a href="https://i.sstatic.net/b4J3f.png">
+	<img src="https://i.sstatic.net/b4J3f.png" class="image-popup">
+	</a>
+</figure>
+
+You'll notice in this graphic that this `apply()` method is similar to the `groupby` method we learned in the last lesson. It also indicates that apply is a method that can take arguments, specifically the `axis` argument which can be set to `0` or `1` to apply the function to the rows or columns of the DataFrame. In our case we are selecting one column, so we are using `apply` on a Series, which is why we don't need to specify the `axis` argument.
+
+However, we could also do the following. Say we only wanted to get texts that existed in both English and the Original language. We could update our `get_text` function to take two urls and then apply it to the DataFrame like this:
+
+```python
+def get_text(row):
+	eng_url = row.pg_eng_url
+	orig_url = row.pg_orig_url
+	# Check if the url is not null
+	if pd.notna(eng_url) and pd.notna(orig_url):
+		# Try getting the text from the url
+		try:
+			eng_text_response = requests.get(eng_url)
+			# Check if the response is successful and return the text. Else return None
+			if eng_text_response.status_code == 200:
+				return eng_text_response.text
+		except Exception as e:
+			return None
+	return None
+
+combined_novels_nyt_df['pg_eng_text'] = combined_novels_nyt_df.apply(get_text, axis=1)
+```
+
+Here we are passing in the entire row to the function, which is useful if we need to use data from multiple columns to do our transformations. You might see a warning though when you run this code:
+
+```bash
+SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+```
+
+This is telling us that we are trying to set a value on a copy of the DataFrame, which is not recommended. To avoid this warning, we can use the `loc` method to set the value on the original DataFrame.
+
+```python
+combined_novels_nyt_df.loc[:, 'pg_eng_text'] = combined_novels_nyt_df.apply(get_text, axis=1)
+```
+
+Now we are telling Pandas to select the entire DataFrame and then set the value of the `pg_eng_text` column to the result of the `get_text` function, but specifically using the `loc` method and `:` to select the entire DataFrame.
+
+We could even updated our code to check for the status code of the `orig_url` as well, and then return both texts if they are successful.
+
+```python
+def get_text(row):
+	eng_url = row.pg_eng_url
+	orig_url = row.pg_orig_url
+	# Check if the url is not null
+	if pd.notna(eng_url) and pd.notna(orig_url):
+		# Try getting the text from the url
+		try:
+			eng_text_response = requests.get(eng_url)
+			orig_text_response = requests.get(orig_url)
+			# Check if the response is successful and return the text. Else return None
+			if eng_text_response.status_code == 200 and orig_text_response.status_code == 200:
+				return eng_text_response.text, orig_text_response.text
+		except Exception as e:
+			return None, None	
+	return None, None
+
+combined_novels_nyt_df[['pg_eng_text', 'pg_orig_text']] = combined_novels_nyt_df.apply(get_text, axis=1, result_type='expand')
+```
+
+Now we are returning both the English and Original texts if they are successful. We are also using the `result_type='expand'` argument to expand the result of the function into separate columns.
+
+While looping is still useful, it is highly recommended to use the `apply()` method when working with DataFrames in Pandas. It is more efficient and easier to read, and it is a good way to get started with more advanced data manipulation in Pandas. You can see the time comparison between different methods for looping and applying functions to DataFrames in this graphic below:
+
+<figure>
+	<a href="https://www.ml4devs.com/images/illustrations/pandas-dataframe-apply-performace-comparision.webp">
+	<img src="https://www.ml4devs.com/images/illustrations/pandas-dataframe-apply-performace-comparision.webp" class="image-popup">
+	</a>
+</figure>
+
+## Unstructured Data
 
 So far we have primarily been focused on either collecting and curating data, or exploring it using data visualization and descriptive statistics. But a huge part of working with cultural data is actually analyzing it.
 
-To do that though requires understanding how computational methods can help us find patterns and outliers in cultural data.
+To do that though requires understanding how computational methods can help us find patterns and outliers in cultural data. Here's the graph from Ted Underwood that gives us some idea of the range of computational methods available to humanists (and remember this was published in 2015, so there are even more options now):
 
 <figure>
     <a href="https://tedunderwood.files.wordpress.com/2015/05/casualmap1.jpg">
     <img src="https://tedunderwood.files.wordpress.com/2015/05/casualmap1.jpg" class="image-popup">
     </a>
 </figure>
-
-We will be discussing the graph above more in class, but this is from one of our readings by Ted Underwood that discusses how humanists are using computers to understand text, which helps us get a sense that there is a wide array of options (and remember this was published in 2015, so there are even more options now).
-
-Part of being able to analyze cultural data is understanding the different types of data that we might encounter. In this lesson we will be focusing on unstructured text data and how we can structure it for analysis.
-
-## Unstructured Data
 
 When working with data, you'll often come across the terms "structured" and "unstructured" data. There are lots of definitions online, like this graph below:
 
@@ -102,135 +263,11 @@ When working with data, you'll often come across the terms "structured" and "uns
 
 This graph is technically correct, but it is also a bit confusing when you think about it (even highly organized data can be difficult to analyze for example and why can't things like email be analyzed in spreadsheets?).
 
-Let's compare our two datasets that we have been working with so far: the [Film Dialogue](https://pudding.cool/2017/03/film-dialogue/) dataset and the Humanist Listserv dataset.
+In our last lesson, we explored how some of the values in these spreadsheets are **categorical** values and how some are **numerical** values. And finally how some are a bit in between, like `year` which is technically represented as a number and we could treat it as either a **continuous** or **discrete** value (so for example, if it is a date that is continuous, but if it is a year it is discrete), or we could treat it as a categorical value that is **ordinal** (i.e. is a category with an implied order).
 
-In our Film Dialogue datasets, we have technically four separate spreadsheets with the following columns:
+The big thing though is that all these values are structured. We do not need to do any processes to turn these values into data to analyze. We might group them, we might filter them, we might fill in missing values, and we can plot them -- but essentially this is a dataset ready to be analyzed.
 
-- `Public Script Sources - public_scripts.csv` with `film_scripts_df`:
-  
-|`imdb_id` | `script_id` | `title` | `year` | `gross_ia` | `link` |
-|---------|-------------|---------|-------|----------|-------|
-| tt0019777 |        4031 | The Cocoanuts |   1929 |        nan | <http://www.pages.drexel.edu/~ina22/splaylib/Screenplay-Cocoanuts,_The.pdf>|
-
-- `character_list5.csv` with `character_list_df` :
-
-|`script_id` | `imdb_character_name` | `words` | `gender` | `age` | 
-|---------|-------------|---------|-------|----------|
-|   280 | betty |     311 | f        |    35 |
-
-- `character_mapping.csv` with `character_mapping_df`:
-   
-|`script_id` | `imdb_id` | `character_from_script` | `closest_character_name_from_imdb_match` | `closest_imdb_character_id` |
-|---------|-------------|---------|-------|----------|
-|   1 | tt0147800 | bianca | bianca stratford | nm0646351 |
-
-- `meta_data7.csv` with `metadata_df`:
-
-|`script_id` | `imdb_id` | `title` | `year` | `gross` | `lines_data` |
-|---------|-------------|---------|-------|----------|-------|
-|   1534 | tt1022603 | (500) Days of Summer |   2009 |      37 | 743544525677477444334257777565774443444456445674543367553452777734237544553444343334444444467441433777777777777776634344344434244343433435535624644435776576434333377775756764434344466346764533566544444777533356445543543343334444535476332345777777777777776 |
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/data_types.png">
-    <img src="{{site.baseurl}}/assets/images/data_types.png" class="image-popup">
-    </a>
-</figure>
-
-In our last lesson, we explored how some of the values in these spreadsheets are **categorical** values (like `gender` as a **nominal** category -- that is a discrete unordered categories) and how some are **numerical** values (like `gross` or `lines_data`). And finally how some are a bit in between, like `year` which is technically represented as a number and we could treat it as either a **continuous** or **discrete** value (so for example, if it is a date that is continuous, but if it is a year it is discrete), or we could treat it as a categorical value that is **ordinal** (i.e. is a category with an implied order).
-
-The big thing to takeaway from looking at these datasets though is that all these values are structured. We do not need to do any processes to turn these values into data to analyze. We might group them, we might filter them, we might fill in missing values, and we can plot them -- but essentially this is a dataset ready to be analyzed.
-
-Let's compare that to our Humanist listserv dataset that you created from our [Curating the Humanist Dataset Assignment]({{site.baseurl}}/materials/creating-curating-humanities-data/07-intro-notebooks/#curating-the-humanist-dataset-assignment).
-
-Here's my code in this toggle:
-
-{% capture toggle_code %}
-
-```python
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-import numpy as np
-# subset to relevant urls
-humanist_urls = ["https://humanist.kdl.kcl.ac.uk/Archives/Converted_Text/", "https://humanist.kdl.kcl.ac.uk/Archives/Current/"]
-volume_dfs = []
-# loop through each url
-for url in humanist_urls:
-    print(f"Getting volumes from {url}")
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, "html.parser")
-    links = soup.find_all('a')
-    # loop through each volume link
-    for link in links:
-        if link['href'].endswith('.txt'):
-            print(f"Getting volume from {url + link['href']}")
-            page_soup = BeautifulSoup(requests.get(url + link['href']).text, "html.parser")
-            text = page_soup.get_text()
-            volume_link = url + link['href']
-            dates = link['href'].split('.')[1]
-            data_dict = {'volume_text': text, 'volume_link': volume_link, 'volume_dates': dates}
-            volume_dfs.append(data_dict)
-
-scraped_humanist_df = pd.DataFrame(volume_dfs)
-# Extract the volume number from the dates
-scraped_humanist_df['volume_number'] = scraped_humanist_df['volume_dates'].str.extract(r'(\d+)')
-# Remove numbers with more than 2 digits
-scraped_humanist_df['volume_number'] = scraped_humanist_df['volume_number'].apply(lambda x: np.nan if len(str(x)) > 2 else x)
-
-# Replace nulls with a sequential of volume numbers
-scraped_humanist_df['volume_number'] = scraped_humanist_df['volume_number'].fillna(pd.Series(np.arange(1, len(scraped_humanist_df) + 1)))
-
-# Extract the start and end years
-scraped_humanist_df[['inferred_start_year', 'inferred_end_year']] = scraped_humanist_df['volume_dates'].str.split('-', expand=True)
-
-# Remove years that are not 4 digits
-scraped_humanist_df.inferred_start_year = scraped_humanist_df.inferred_start_year.apply(lambda x: np.nan if len(str(x)) != 4 else x)
-scraped_humanist_df.inferred_end_year = scraped_humanist_df.inferred_end_year.apply(lambda x: np.nan if len(str(x)) != 4 else x)
-
-# Ensure the years are numeric
-scraped_humanist_df.loc[scraped_humanist_df.inferred_end_year.isnull(), 'inferred_end_year'] = np.nan
-
-# Create an empty dummy variable for the years
-start_year_before = None
-end_year_before = None
-
-# Loop through dataframe row by row
-for index, row in scraped_humanist_df.iterrows():
-    # Check that both start and end years are not null
-    if (not pd.isnull(row.inferred_start_year)) and (not pd.isnull(row.inferred_end_year)):
-        # assign the years to the dummy variables
-        start_year_before = row.inferred_start_year
-        end_year_before = row.inferred_end_year
-        # print the years
-        print(start_year_before, end_year_before)
-    # Check that if years are null and the dummy variables are not, then update the years in the dataframe
-    elif (pd.isnull(row.inferred_start_year) and start_year_before is not None) and (pd.isnull(row.inferred_end_year) and end_year_before is not None):
-        # increment the years by 1
-        start_year_before = int(start_year_before) + 1
-        end_year_before = int(end_year_before) + 1
-        # assign the years to the dataframe using the row index to update the original dataframe
-        scraped_humanist_df.at[index, 'inferred_start_year'] = start_year_before
-        scraped_humanist_df.at[index, 'inferred_end_year'] = end_year_before
-        print(start_year_before, end_year_before)
-
-# Save the dataframe to a csv
-scraped_humanist_df.to_csv("web_scraped_humanist_listserv_volumes.csv", index=False)
-```
-
-This is fairly advanced code, though it is mostly just complex because I am trying to clean up the metadata associated with the later volumes, something we could do manually since we only have a handful of volumes without specified dates.
-
-{% endcapture %}
-{% include toggle.html content=toggle_code %}
-
-With `web_scraped_humanist_listserv_volumes.csv` we have:
-
-| `volume_dates` | `volume_text` | `volume_link` | `volume_number` | `inferred_start_year` | `inferred_end_year` |
-|---------|--------|-------| -------| -------| -------|
-| 1987-1988 | From: MCCARTY@UTOREPAS\nSubject: \nDate: 12 Ma... | <https://humanist.kdl.kcl.ac.uk/Archives/Converted_Text/humanist.1987-1988.txt>| 1 | 1987 | 1988 |
-
-I've truncated the text file column for visual clarity, but overall even though the code to create this is slightly advanced, the result is still a relatively straightforward dataset, especially compared to some of the data in the Film Dialogue datasets (like gender for example). We could leave the dataset as is, and treat it as structured or semi-structured data but our analysis would likely be very limited since we have only limited numeric data and one column of very long textual data.
-
-Instead to make our Humanist Listserv dataset into something like the Film Dialogue datasets, we need to go through a process of curating and cleaning the data **from unstructured to structured data**, similar to this graph below:
+Now that we have the texts of novels in our dataset, we have unstructured data. This is data that is not easily searchable or analyzed. It is often in the form of text, images, or audio, and it requires additional processing to make it useful. This is where text analysis comes in and specifically we need to go through a process of curating and cleaning the data **from unstructured to structured data**, similar to this graph below:
 
 <figure>
     <a href="https://i.pinimg.com/736x/b0/04/b5/b004b543748ba1350c5d66c16c678607.jpg">
@@ -238,127 +275,13 @@ Instead to make our Humanist Listserv dataset into something like the Film Dialo
     </a>
 </figure>
 
-### Structuring our Textual Data
+## Structuring Cultural Data
 
-First, let's talk about what we mean by structured and unstructured data. Structured data is data that is organized in a way that is easily searchable and can be analyzed. This is the type of data that we have been working with so far in our datasets. Unstructured data is data that is not easily searchable or analyzed. This is the type of data that we have in our Humanist Listserv dataset.
+First, let's talk about what we mean by structured and unstructured data. Structured data is data that is already organized in a way that is easily searchable and can be analyzed (think most tabular data or metadata). This is the type of data that we have been working with so far in our datasets. Conversely, while we store unstructured data in tables, it is not easy to process it or find patterns in it. This is the type of data that we have in our novel texts.
 
 To structure this data, we need to think about how we can break it down into smaller, more manageable pieces. This is where text analysis comes in. Now it's worth noting that there is no one way to structure data, and it often depends on your goals and the data you have. But in general it can involve things like cleaning the data, removing unnecessary information, and organizing the data in a way that makes it easier to analyze.
 
-So let's try adding some (more) structure to our Humanist Listserv dataset. Let's start a new notebook called `HumanistListservEDA.ipynb` and import our libraries and data.
-
-Now we need to start thinking about the types of data that we have and exploratory data analysis we might want to undertake.
-
-First we can check our data types:
-
-```python
-import pandas as pd
-humanist_vols = pd.read_csv('web_scraped_humanist_listserv_volumes.csv')
-# Check the data types of our columns
-humanist_vols.dtypes
-```
-
-We should see the following output:
-
-```shell
-volume_text            object
-volume_link            object
-volume_dates           object
-volume_number          object
-inferred_start_year    object
-inferred_end_year      object
-dtype: object
-```
-
-In [Intro to Notebooks]({{site.baseurl}}/materials/creating-curating-humanities-data/07-intro-notebooks/), we learned that Pandas treats `string` data as `object` data (also all mixed numeric or non-numeric values are treated as objects).
-
-Part of what makes Pandas so powerful is that it has a number of built-in methods for working with `string` data. An in-depth discussion of these methods are available on the Pandas documentation website <https://pandas.pydata.org/docs/user_guide/text.html>, but I've also summarized many of the more popular methods below in this table:
-
-| Pandas String Method | Explanation |
-|---------------------|-------------|
-| `df[‘column_name’].str.lower()` | lowercase all the values in a column |
-| `df[‘column_name’].str.upper()` | uppercase all the values in a column |
-| `df[‘column_name’].str.replace(‘old_string’, ‘new_string’)` | replace all instances of ‘old_string’ with ‘new_string’ in a column |
-| `df[‘column_name’].str.split(‘delimiter’)` | split a column by ‘delimiter’ like a comma or period, or really anything |
-| `df[‘column_name’].str.strip()` | remove leading and trailing whitespace from a column |
-| `df[‘column_name’].str.len()` | count the number of characters in a column |
-| `df[‘column_name’].str.contains(‘pattern’)` | check if a column contains a particular pattern |
-| `df[‘column_name’].str.startswith(‘pattern’)` | check if a column starts with a particular pattern |
-| `df[‘column_name’].str.endswith(‘pattern’)` | check if a column ends with a particular pattern |
-| `df[‘column_name’].str.find(‘pattern’)` | find the first occurrence of a particular pattern in a column |
-| `df[‘column_name’].str.findall(‘pattern’)` | find all occurrences of a particular pattern in a column |
-| `df[‘column_name’].str.count(‘pattern’)` | count the number of occurrences of a particular pattern in a column |
-| `df[‘column_name’].str.extract(‘pattern’)` | extract the first occurrence of a particular pattern in a column |
-| `df[‘column_name’].str.extractall(‘pattern’)` | extract all occurrences of a particular pattern in a column |
-| `df[‘column_name’].str.join(list)` |  join a list of strings with a delimiter |
-
-This list is not exhaustive, but it's a good starting  point and helps explain some of the code above. For example to create this dataset, I used both the `str.extract()` and `str.split()` methods.
-
-The first `str.extract` used in this code:
-
-```python
-# Extract the volume number from the dates
-df['volume_number'] = df['volume_dates'].str.extract(r'(\d+)')
-```
-
-This code uses a regular expression to extract the volume number from the `volume_dates` column. The regular expression `r'(\d+)'` is looking for one or more digits in the string. The parentheses `()` are used to capture the digits and the `+` is used to indicate that there should be one or more digits. The `r` before the string is used to indicate that this is a raw string and that the backslashes should be treated as literal backslashes.
-
-The second `str.split()` used in this code:
-
-```python
-# Extract the start and end years
-df[['inferred_start_year', 'inferred_end_year']] = df['volume_dates'].str.split('-', expand=True)
-```
-
-This code uses the `str.split()` method to split the `volume_dates` column by the `-` character. The `expand=True` argument is used to return a DataFrame with each split value in a separate column. This is useful when you want to split a column into multiple columns.
-
-Now that we have our years, we need to get the size of each volume. We can do this by using the `count` method and thinking of a pattern that would represent size of the volume (maybe the frequency of new lines `\n` or `FROM` ?).
-
-```python
-# Count the number of characters in each volume
-humanist_vols['volume_size'] = humanist_vols['volume_text'].str.count('\n')
-```
-
-Final step is to plot our data to explore the pattern we are interested in! 
-
-We could either use the built-in Pandas plotting methods:
-
-```python
-# Plot the data
-humanist_vols.plot(x='inferred_year_start', y='volume_size', kind='bar')
-```
-
-That gives us this plot:
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/humanist_size_plot.png">
-    <img src="{{site.baseurl}}/assets/images/humanist_size_plot.png" class="image-popup">
-    </a>
-</figure>
-
-Or use Altair to plot the data:
-
-```python
-import altair as alt
-# Convert the inferred start year to a datetime object
-humanist_vols['inferred_start_year'] = humanist_vols['inferred_start_year'].astype(str) + '-01-01'
-humanist_vols['inferred_start_year'] = pd.to_datetime(humanist_vols['inferred_start_year'])
-# Subset the data to only include the volume size and inferred start year so that our chart is not huge
-chart = alt.Chart(humanist_vols[['volume_size', 'inferred_start_year']]).mark_bar().encode(
-    x='inferred_start_year:T',
-    y='volume_size',
-    tooltip=['inferred_start_year', 'volume_size']
-)
-```
-
-We should produce a graph that looks like this:
-
-<div id="humanist_size_altair"></div>
-
-Now we both structured our data and completed our exploratory analysis. But one remaining issue is how could we start to ask questions about the content of our text data from the listserv? What patterns and themes are there in the text? That's where text analysis comes in!
-
-## Text Analysis of Cultural Data
-
-One of the main ways we can structure our Humanist listserv data is by undertaking something called *text analysis*. This is a very broad term for a whole set of practices and overlapping disciplines and fields, some of which are shown in this figure below:
+*Text analysis* is a very broad term for a whole set of practices and overlapping disciplines and fields, some of which are shown in this figure below:
 
 <figure>
     <a href="https://miro.medium.com/max/1200/0*ewkxRItArykG27dU.png">
@@ -368,11 +291,21 @@ One of the main ways we can structure our Humanist listserv data is by undertaki
 
 But again this figure has its limits. For example, data mining is something that Library & Information Sciences undertakes, and databases are used across these domains.
 
-Rather than trying to define text analysis as a whole, I find a more helpful distinction is talking about Information Extraction vs Information Retrieval. 
+Rather than trying to define text analysis as a whole, I find a more helpful distinction is talking about Information Extraction vs Information Retrieval. These are two of the most common ways to structure text data, and they are often used in combination.
 
 **Information Retrieval (IR):**
 
-![information retrieval](https://i.stack.imgur.com/0GsKI.gif)
+<figure>
+	<a href="{{site.baseurl}}/assets/images/IR_figure.png">
+	<img src="{{site.baseurl}}/assets/images/IR_figure.png" class="image-popup">
+	</a>
+</figure>
+
+Information retrieval first developed in the 1950s and 1960s (remember Vannevar Bush and the Memex!) and its goal is to find relevant documents for a user’s needs or queries, which is why it is most often associated with search engines. It requires parsing textual information and finding patterns in the text.
+
+The key thing to remember about IR is that it is about finding relevant documents, not necessarily understanding the content of those documents. This is why it is often used for text classification of documents, and it can be done without understanding syntax and treating documents as a "bag of words."
+
+TLDR:
 
 - Goal of finding relevant documents for user’s needs/queries (eg. Google)
 - Often used for text classification of documents
@@ -380,71 +313,64 @@ Rather than trying to define text analysis as a whole, I find a more helpful dis
 
 **Information Extraction (IE)**
 
-![information extraction](https://i.stack.imgur.com/0GsKI.gif)
+Information Extraction (or IE) is a bit different than IR. It is about extracting structured information from unstructured text. This is a bit more complex than IR, and it often involves things like Named Entity Recognition (or NER) and Sentiment Analysis.
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/IE_figure.png">
+	<img src="{{site.baseurl}}/assets/images/IE_figure.png" class="image-popup">
+	</a>
+</figure>
+
+It first developed in the 1990s and is focused on extracting specific features from documents. It requires both syntactic and semantic analysis, and it is often used in fields like Natural Language Processing (NLP) and Computational Linguistics.
+
+TLDR:
 
 - Goal of extracting specific features from documents
 - Focused on linguistic analysis of textual features
 - Requires both syntactic and semantic analysis
 
-Today we will be focusing on the first category of these two categories, Information Retrieval, and next week we will dig into Information Extraction.
+### Text Analysis with Pandas
 
-### What is Information Retrieval?
-
-According to[Wikipedia](https://en.wikipedia.org/wiki/Information_retrieval), Information Retrieval (or IR) was first theorized in the 1940s:
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/origins_ir.png">
-    <img src="{{site.baseurl}}/assets/images/origins_ir.png" class="image-popup">
-    </a>
-</figure>
-
-Information retrieval is strongly tied to the historical development of search engines and the basic goal is to find relevant documents for a user’s query. To do that though requires parsing textual information and finding patterns in the text.
-
-One way we can do that is with simple counting of words and the frequency they appear across a text.
-
-In our example, we could start counting words that appear in our email logs. Going back to our earlier readings (remember Louis Milic!), we could try and compare the rate that `humanities computing` appears compared to `digital humanities` that we first explored in the Google Ngram Viewer, demonstrated below.
-
-<figure>
-    <a href="{{site.baseurl}}/assets/images/hc_dh.png">
-    <img src="{{site.baseurl}}/assets/images/hc_dh.png" class="image-popup">
-    </a>
-</figure>
-
-We can do a similar experiment in this listserv dataset. First we need to figure out how we can count strings in Pandas. We can do this by using the `count` method.
+Now that we have a sense of the different potential methods and approaches to text analysis, let's start with a simple example using Pandas. We can start by counting the number of words in each novel in our dataset.
 
 ```python
-# Count the number of occurrences of each word
-humanist_vols['humanities_computing_counts'] = humanist_vols['text'].str.count('humanities computing')
-humanist_vols['digital_humanities_counts'] = humanist_vols['text'].str.count('digital humanities')
+combined_novels_nyt_df['novel_length'] = combined_novels_nyt_df['eng_text'].str.len()
+```
+
+This code is using the `str.len()` method to count the number of characters in each row of the `eng_text` column. This is a simple way to get a sense of the length of each novel, but it is not a perfect measure of the number of words. To get a more accurate count, we could split the text into words and then count the number of words.
+
+```python
+combined_novels_nyt_df['novel_numb_words'] = combined_novels_nyt_df['eng_text'].str.split().apply(len)
+```
+
+This code is doing a few things. First, it is using the `str.split()` method to split the text on spaces. Then it is using the `apply()` method to apply the `len` function to each row of the DataFrame. This is a common pattern in Pandas, and it is a good way to apply functions to each row of a DataFrame.
+
+We could also look at the frequency of terms. For example, we could count the number of times the words `they`, `she`, and `he` appear in each novel.
+
+```python
+combined_novels_nyt_df['they_counts'] = combined_novels_nyt_df['eng_text'].str.count('they')
+combined_novels_nyt_df['she_counts'] = combined_novels_nyt_df['eng_text'].str.count('she')
+combined_novels_nyt_df['he_counts'] = combined_novels_nyt_df['eng_text'].str.count('he')
 ```
 
 Now we can plot the data.
 
 ```python
 # Plot the data
-humanist_vols[['humanities_computing_counts', 'digital_humanities_counts']].plot()
+combined_novels_nyt_df[['they_counts', 'she_counts', 'he_counts']].plot()
 ```
 
 Which produces the following graph:
 
 <figure>
-    <a href="{{site.baseurl}}/assets/images/hc_dh_counts.png">
-    <img src="{{site.baseurl}}/assets/images/hc_dh_counts.png" class="image-popup">
+    <a href="{{site.baseurl}}/assets/images/pronoun_counts.png">
+    <img src="{{site.baseurl}}/assets/images/pronoun_counts.png" class="image-popup">
     </a>
 </figure>
 
-#### In Class Exercise
-
-Our graph above technically shows us the frequency of the words `humanities computing` and `digital humanities` across the Humanist listserv dataset. But it doesn't format dates correctly or have interactivity. So how could we recreate this graph using Altair?
-
-As a hint, think about the fact that Altair requires you to specify your x and y axis and then you can add a tooltip to show the data or color to distinguish categories.
-
-Also in data analysis, you will often need to transform your dataset from `wide to long` and `long to wide` (that is adding more rows vs more columns). Pandas has a number of ways to do that, and you can read more about it here [https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt](https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt).
-
+You'll notice that `he` is much more frequent than the other two pronouns. Now this might because of the novels we have in our dataset, but it could also be because of the way we are counting the words. To understand more let's dig into text analysis with Python more generally.
 
 ### Text Analysis with Python
-
-Now we've officially done our first foray into text analysis 🥳!
 
 So far we've just been working with Pandas, but in Python, there exists a few libraries specifically designed to work with text data.
 
@@ -464,7 +390,7 @@ Each of these libraries has its own history, and some of what they provide overl
 
 Ultimately, which library you choose to use depends on what you want to do with your data, but there's some general principles for text analysis that you should consider regardless of method.
 
-### Word Counts and Zipf's Law
+#### Word Counts and Zipf's Law
 
 Today we are going to start with the basics of text analysis: word counts and one of the older libraries, NLTK.
 
@@ -486,7 +412,7 @@ Let's try it out with a subset of our data. (Remember to install `nltk`).
 from nltk import word_tokenize
 from nltk import FreqDist
 
-tokens = FreqDist(sum(humanist_vols[0:2]['volume_text'].map(word_tokenize), []))
+tokens = FreqDist(sum(combined_novels_nyt_df[0:2]['pg_eng_text'].map(word_tokenize), []))
 tokens.plot(30)
 ```
 
@@ -506,7 +432,7 @@ In this graph, if we had used all the words we would see this trend continue, li
     </a>
 </figure>
 
-This is “Zipf’s law:” the phenomenon means that the most common word is twice as common as the second most common word, three times as common as the third most common word, four times as common as the fourth most common word, and so forth.
+This is **Zipf’s law** a phenomenon where the most common word is twice as common as the second most common word, three times as common as the third most common word, four times as common as the fourth most common word, and so forth.
 
 It is named after the linguist George Zipf, who first found the phenomenon while laboriously counting occurrences of individual words in Joyce’s Ulysses in 1935 (one of the earliest computing in the humanities projects!).
 
@@ -516,7 +442,7 @@ One of the key things to takeaway from understanding the distribution of words i
 
 While we will discuss more of this topic and genre identification of texts, we won't be covering authorship attribution so if you want to learn more I would highly recommend taking a look at François Dominic Laramée, "Introduction to stylometry with Python," *Programming Historian* 7 (2018), [https://doi.org/10.46430/phen0078](https://doi.org/10.46430/phen0078). Stylometry is the formal name for this type of analysis and it is a both a popular method for working with cultural data and one with a longer history. For example, in the 1960s the authorship of the Federalist Papers was determined using stylometry.
 
-### Tokenization
+#### Tokenization
 
 To start getting into text analysis, we need to start thinking about how we can break up our text into words. In the field of corpus linguistics, the term “word” is generally dispensed with as too abstract in favor of the idea of a “token” or “type.” Breaking a piece of text into words is thus called “tokenization.”
 
@@ -532,23 +458,83 @@ There are, in fact, at least 7 different choices you can make in a typical token
 
 Any of these can be combined: there at least a hundred common ways to tokenize even the simplest dataset.
 
-We can try these out with our `humanist_vols` dataset. For example, would we get a different number of counts if we lowercased our words?
+We can try these out with our dataset. For example, would we get a different number of counts if we tokenized our pronouns?
 
 ```python
-# Count the number of occurrences of each word lowercased
-humanist_vols['lowercase_humanities_computing_counts'] = humanist_vols['volume_text'].str.lower().str.count('humanities computing')
-humanist_vols['lowercase_digital_humanities_counts'] = humanist_vols['volume_text'].str.lower().str.count('digital humanities')
-# Plot the data
-humanist_vols[['lowercase_humanities_computing_counts', 'lowercase_digital_humanities_counts', 'humanities_computing_counts', 'digital_humanities_counts']].plot()
+def tokenize_text(text):
+	if pd.notna(text):
+		return word_tokenize(text)
+	else:
+		return []
+
+combined_novels_nyt_df['tokenized_text'] = combined_novels_nyt_df['eng_text'].apply(tokenize_text)
 ```
 
+Now we can do the same pronoun analysis as before, but with our tokenized text.
+
+```python
+from collections import Counter
+
+
+combined_novels_nyt_df['they_counts'] = combined_novels_nyt_df['pg_eng_tokens'].apply(lambda tokens: Counter(tokens)['they'])
+combined_novels_nyt_df['she_counts'] = combined_novels_nyt_df['pg_eng_tokens'].apply(lambda tokens: Counter(tokens)['she'])
+combined_novels_nyt_df['he_counts'] = combined_novels_nyt_df['pg_eng_tokens'].apply(lambda tokens: Counter(tokens)['he'])
+
+# Plot the counts
+combined_novels_nyt_df[['they_counts', 'she_counts', 'he_counts']].plot()
+```
+
+This will give us a similar graph to before, but now we are counting words instead of just string matching, which is more accurate since the letters `he` could be part of another word (in this case `they` and `she` even!).
+
 <figure>
-    <a href="{{site.baseurl}}/assets/images/lowercase_hc_dh.png">
-    <img src="{{site.baseurl}}/assets/images/lowercase_hc_dh.png" class="image-popup">
-    </a>
+	<a href="{{site.baseurl}}/assets/images/tokenized_pronouns.png">
+	<img src="{{site.baseurl}}/assets/images/tokenized_pronouns.png" class="image-popup">
+	</a>
 </figure>
 
-We can see that actually lowercasing words leads to many more matches since all we are doing is trying to match exact patterns and upper and lower case represent differing patterns. While we could use the `replace()` method for removing punctuation, some of the other approaches listed above require more attention. Let's dig in!
+This graph is a bit hard to read, but you can start to see that `he` is no closer to the range of the other pronouns. We could also use Altair to inspect a bit closer. However, to replicate the `plot` graph, requires **reshaping** our data and specifically something called a **melt** operation.
+
+```python
+melted_df = pd.melt(combined_novels_nyt_df, id_vars=['title', 'author', 'pub_year', 'genre'], value_vars=['they_counts', 'she_counts', 'he_counts'], var_name='pronoun', value_name='pronoun_counts')
+
+alt.Chart(melted_df).mark_line().encode(
+	x='title:N',
+	y='pronoun_counts:Q',
+	color='pronoun:N',
+	tooltip=['title', 'author', 'pub_year', 'genre', 'pronoun_counts']
+)
+```
+
+In this code we are using the `melt()` method to  so that the `they_counts`, `she_counts`, and `he_counts` columns are now in two columns: one for the pronoun and one for the counts. This is a common operation in data analysis, and it is often used to make it easier to plot data. You can see an example of what the melt operation does in the figure below:
+
+<figure>
+	<a href="https://pandas.pydata.org/pandas-docs/version/0.25.1/_images/reshaping_melt.png">
+	<img src="https://pandas.pydata.org/pandas-docs/version/0.25.1/_images/reshaping_melt.png" class="image-popup">
+	</a>
+</figure>
+
+Melting in Pandas is a way to reshape your data from wide to long, since sometimes you want to look at the relationship between multiple columns. In this case, we are melting the `they_counts`, `she_counts`, and `he_counts` columns into with the name of the column in the `var_name` column and the value of the column in the `value_name` column, respectively (in this case `pronoun` and `pronoun_counts`). You can read more about melting here here [https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt](https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt). 
+
+Now our current graph is a bit detailed, but we could group by genre and then plot the pronoun counts to see if there are any differences between genres.
+
+```python
+alt.Chart(melted_df[melted_df.genre != "na"]).mark_bar().encode(
+	x='genre:N',
+	y='sum(count):Q',
+	color='pronoun:N',
+	tooltip=['title', 'author', 'pub_year', 'genre', 'count']
+)
+```
+
+And now we should see the follow chart:
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/genre_pronoun_chart.png">
+	<img src="{{site.baseurl}}/assets/images/genre_pronoun_chart.png" class="image-popup">
+	</a>
+</figure>
+
+Next if we were doing EDA we might try to normalize these counts by both the number of words in a novel and the number of novels in a genre. This would give us a better sense of the relative frequency of these pronouns in each genre. But let's move on to some more advanced text analysis techniques.
 
 #### Lemmatizing/Stemming
 
@@ -568,124 +554,164 @@ from nltk.stem import PorterStemmer
 porter = PorterStemmer()
 ```
 
-Now to use these we need to apply them to each of the rows in our DataFrame. We could do this with a for loop, but it's more efficient to use the `apply()` method. To try this out, let's work on a subset of our humanist_vols dataset.
+Now to use these we need to apply them to each of the rows in our DataFrame. We could do this with a for loop, but it's more efficient to use the `apply()` method. 
 
 ```python
-
-subset_humanist_vols = humanist_vols[0:2]
-
 def stem_words(row):
-    stemmed_words = ''
-    for token in row.split(' '):
-        stemmed_words += porter.stem(token) + ' '
-    return stemmed_words
-subset_humanist_vols['stemmed_text'] = subset_humanist_vols.volume_text.apply(stem_words)
+	stemmed_words = ''
+	for token in row.split(' '):
+		stemmed_words += porter.stem(token) + ' '
+	return stemmed_words
 
-print(subset_humanist_vols[0:1]['stemmed_text'].values)
+test_df = combined_novels_nyt_df[0:10]
+test_df['pg_eng_text'] = test_df['pg_eng_text'].fillna('')
+test_df['stemmed_text'] = test_df['pg_eng_text'].apply(stem_words)
 ```
 
-This will print out a large text string with the stemmed words. We can see what the first email looks like when it is stemmed:
+You'll notice I'm only doing this for the first 10 rows of the DataFrame, since this can be a time consuming process. 
 
+Now we can inspect the stemmed words. We can see what the first email looks like when it is stemmed:
+
+```python
+print(test_df['stemmed_text'][0][0:500])
+```
+
+This should give us the following output:
 ```shell
-from: mccarty@utorepas
-subject:
-date: 12 may 1987, 23:50:02 edt
-x-humanist: vol. 1 num. 1 (1)
+the project gutenberg ebook of don quixote
+    
+thi ebook is for the use of anyon anywher in the unit state and
+most other part of the world at no cost and with almost no restrictions
+whatsoever. you may copi it, give it away or re-us it under the terms
+of the project gutenberg licens includ with thi ebook or online
+at www.gutenberg.org. if you are not locat in the unit states,
+y will have to check the law of the countri where you are located
+befor use thi ebook.
 
-thi is test number 1. pleas acknowledge.
+title: don quixote
 ```
 
 And compare it to the original:
 
 ```shell
-From: MCCARTY@UTOREPAS
-Subject: 
-Date: 12 May 1987, 23:50:02 EDT
-X-Humanist: Vol. 1 Num. 1 (1)
-
-This is test number 1. Please acknowledge.
+The Project Gutenberg eBook of Don Quixote
+    
+This ebook is for the use of anyone anywhere in the United States and
+most other parts of the world at no cost and with almost no restrictions
+whatsoever. You may copy it, give it away or re-use it under the terms
+of the Project Gutenberg License included with this ebook or online
+at www.gutenberg.org. If you are not located in the United States,
+you will have to check the laws of the country where you are located
+before using this eBook.
 ```
 
-We notice that stemming lowercased the words, but did not remove the punctuation. It also stemmed the words so that there is less variation in the words.
+We notice that stemming lowercased the words, but it did not remove the punctuation. It also did not remove the stop words. We can tell it stemmed the words because `united` became `unite`, and `states` became `state`. If we had lemmatized instead of stemmed, we would have gotten the same result, since lemmatizing is a more complex process that requires a dictionary of words to reduce them to their base form. Eventually though we might have seen examples like `are` becoming `be` and `located` becoming `locate`.
 
-But let's talk about the code above, and explain how we are doing this. To help make sense of everything, I'll show the same code written as a for loop below:
+### Advanced Text Analysis Exploration
+
+Now that you are starting to learn the basics of text analysis, you can start to explore more advanced techniques that you might want to use in your final project. Today I will be sharing code to help you get started with some information extraction using Named Entity Recognition and information retrieval using TF-IDF. Your goal is to get the code running and to see if you can start to understand how these techniques can be used to analyze text data.
+
+Before you start though, one issue we haven't addressed is the fact that each Project Gutenberg book has a header and footer that we might want to remove before we start our analysis. This is a common issue with text data, and it is often called "noise" in the data. We could use regular expressions to remove this data, but there's also existing Python libraries for working with Project Gutenberg data. In particular, I've used the `gutenbergpy` library in the to clean our novels. You can find information about the library here [https://github.com/raduangelescu/gutenbergpy](https://github.com/raduangelescu/gutenbergpy) and install it with the following command:
+
+```bash
+pip install gutenbergpy
+```
+
+In particular, this library has a set of text markers that it uses to remove the headers and footers that you can see here [https://github.com/raduangelescu/gutenbergpy/blob/master/gutenbergpy/textget.py#L23](https://github.com/raduangelescu/gutenbergpy/blob/master/gutenbergpy/textget.py#L23) and in this figure:
+
+<figure>
+	<a href="{{site.baseurl}}/assets/images/gutenbergpy_markers.png">
+	<img src="{{site.baseurl}}/assets/images/gutenbergpy_markers.png" class="image-popup">
+	</a>
+</figure>
+
+To use the library, you can use the following code:
 
 ```python
+import gutenbergpy.textget
 
-stemmed_column = []
-for index, row, in subset_humanist_vols.iterrows():
-    stemmed_words = ''
-    for token in row.volume_text.split(' '):
-        stemmed_words += porter.stem(token) + ' '
-    stemmed_column.append(stemmed_words)
+def clean_book(row):
+	# This gets a book by its gutenberg id number
+	if pd.notna(row['pg_eng_url']):
+		pg_id = row['pg_eng_url'].split('/pg')[-1].split('.')[0]
+		try:
+			raw_book = gutenbergpy.textget.get_text_by_id(pg_id) # with headers
+			clean_book = gutenbergpy.textget.strip_headers(raw_book) # without headers
+			return clean_book
+		except Exception as e:
+			print(f"Error getting book: {e} with id: {pg_id} and url: {row['pg_eng_url']}")
+			return None
 
-subset_humanist_vols['stemmed_text'] = stemmed_column
+combined_novels_nyt_df['cleaned_pg_eng_text'] = combined_novels_nyt_df.progress_apply(clean_book, axis=1)
 ```
 
-So rather than having a function that takes a row as an argument, we are using a for loop to iterate over the rows. We are first creating an empty variable called `stemmed_words` and then we are splitting the text column into tokens and then iterating over each token. To do stemming or lemmatizing or many other text analysis methods, you need your words as tokens rather than a giant string. In this example, we are simply splitting on spaces, but there are many other approaches to this problem.
+This code will get the text of the book by its Project Gutenberg ID, which we are deriving from the Gutenberg URL, and then remove the headers and footers. Such a step is necessary since otherwise the headers and footers would be included in our text analysis, which would skew our results.
 
-Once we have our tokens we then pass them to the `porter.stem()` method to stem them. We then append the stemmed words to our `stemmed_words` variable. Finally we append the all the stemmed words to the `stemmed_column` variable and then add that back into our DataFrame outside of the for loop.
+You can download the notebook with the full code for this lesson <a href="{{site.baseurl}}/assets/files/is310IntroTextAnalysis.ipynb" download>here</a>.
 
-So let's compare this to our `apply` method:
+#### Named Entity Recognition (NER)
 
-```python
-def stem_words(row):
-    stemmed_words = ''
-    for token in row.split(' '):
-        stemmed_words += porter.stem(token) + ' '
-    return stemmed_words
-subset_humanist_vols['stemmed_text'] = subset_humanist_vols.volume_text.apply(stem_words)
-```
+What is Named Entity Recognition?
 
-Here we have a function called `stem_words` that takes a `row` of our DataFrame, and then does the similar split to tokens and then stem and adding to `stemmed_words`. Instead of appending to a list though we are returning `stemmed_words` on each iteration and assigning it directly to our DataFrame in a new column.
+From the [Wikipedia article](https://en.wikipedia.org/wiki/Named-entity_recognition):
 
-You'll notice that unlike in our for loop we write `row.split()` instead of `row.text.split()`. This is because we are doing the `apply` directly on the `text` column. We could also use apply to access all the columns in our DataFrame with the following change:
+> “Named-entity recognition (NER) (also known as (named) entity identification, entity chunking, and entity extraction) is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined categories such as person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc.”
 
-```python
-def stem_words(row):
-    stemmed_words = ''
-    for token in row.volume_text.split(' '):
-        stemmed_words += porter.stem(token) + ' '
-    return stemmed_words
-subset_humanist_vols['stemmed_text'] = subset_humanist_vols.apply(stem_words, axis=1)
-```
+What does this look like in practice? Let's look at a few examples.
 
-In changing `subset_humanist_vols.text.apply(stem_words)` to `subset_humanist_vols.apply(stem_words, axis=1)` we are now performing apply on all the columns of the DataFrame, row by row. The biggest thing to remember with `apply` is that you need to pass in the name of the function you want to run into the `apply` method. You can read more about the `apply` method [https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.apply.html).
+<figure>
+	<a href="https://miro.medium.com/max/1400/0*zDbB-LV-Dlm_F_PX">
+	<img src="https://miro.medium.com/max/1400/0*zDbB-LV-Dlm_F_PX" class="image-popup">
+	</a>
+</figure>
 
-Finally you might get an error when you run this code,
+<figure>
+	<a href="https://miro.medium.com/max/1400/1*w4449DJGuXlay02gFt8APg.png">
+	<img src="https://miro.medium.com/max/1400/1*w4449DJGuXlay02gFt8APg.png" class="image-popup">
+	</a>
+</figure>
 
-```shell
-SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
+We can see that in these images, parts of the text are being highlighted and classified as different categories (or **entities** if you will). Many of these examples might seem straightforward, but how do we decide what is an entity exactly? And how did NER become a defined field instead of just being part of text mining?
 
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  subset_humanist_vols['stemmed_text'] = subset_humanist_vols.text.apply(stem_words)
-```
+<figure>
+	<a href="https://miro.medium.com/max/1400/1*Uf_qQ0zF8G8y9zUhndA08w.png">
+	<img src="https://miro.medium.com/max/1400/1*Uf_qQ0zF8G8y9zUhndA08w.png" class="image-popup">
+	</a>
+</figure>
 
-That's a common Pandas error that has to do with how we're adding new data to our DataFrame. There's a few different solutions listed here <https://stackoverflow.com/questions/20625582/how-to-deal-with-settingwithcopywarning-in-pandas> but for ease, I normally just suppress this warning with the following code:
+This graph represents a common typology of NLP tasks, comparing it to Natural Language Understanding and Automatic Speech Recognition.
 
-```python
-import pandas as pd
-pd.options.mode.chained_assignment = None  # default='warn'
-```
+While technically correct, I find this graph confusing 🤔. The exact definition of NER’s boundaries relative to other nlp/nlu tasks is very porous. For example, in addition to recognizing entities, NER can also include parts of text classification, entity disambiguation, relationship extraction all parts of NER (though they are separated in this chart).
 
-#### In Class Exercise
+*So if this is so porous how did NER first develop?*
 
-How might we try and rework our stemming code to work with lemmatizing?
+<figure>
+	<a href="https://en.wikipedia.org/wiki/Information_extraction#History">
+	<img src="{{site.baseurl}}/assets/images/ner_history.png" class="image-popup">
+	</a>
+</figure>
 
-First we'll need to import the right libraries.
+From this Wiki page, we can see that the concept of “named entity” first developed at the Message Understanding Conference-6 in 1995. Here’s an example template given to participants from MUC-3 and you can even read the original MUC manual here <https://www-nlpir.nist.gov/related_projects/muc/muc_sw/muc_sw_manual.html>:
 
-```python
-from nltk.stem import WordNetLemmatizer
-nltk.download('wordnet')
-nltk.download('omw-1.4')
-wordnet_lemmatizer = WordNetLemmatizer()
-```
+<figure>
+	<a href="{{site.baseurl}}/assets/images/muc_example.png">
+	<img src="{{site.baseurl}}/assets/images/muc_example.png" class="image-popup">
+	</a>
+</figure>
 
-Now try and create a function called `lemmatize_words` that takes a row as an argument and returns a string of the lemmatized words.
+The big takeaway is that NER is relatively new. The field really takes off as a field with Text Analysis Conferences beginning in 2009 <https://tac.nist.gov/> and it is also relatively recent in digital humanities.
 
-### TF-IDF
+The first DH conference presentation listing NER as a topic was in 2004:
+
+<figure>
+	<a href="https://dh-abstracts.library.cmu.edu/works?ordering=year&text=%22named+entity+recognition%22&conference=&work_type=">
+	<img src="{{site.baseurl}}/assets/images/dh_ner_conference.png" class="image-popup">
+	</a>
+</figure>
+
+
+
+#### TF-IDF & Stop Words	
 
 So far we have been focused on counting and cleaning our textual data, but we could also try some more complex Information Retrieval techniques. One popular approach is an algorithm called `Term Frequency - Inverse Document Frequency` or TF-IDF. TF-IDF was first proposed in a 1972 paper by Karen Spärck Jones under the name “term specificity” and was later named TF-IDF by Steve Robertson in 1976. The algorithm is used to determine the importance of a word in a document relative to a collection of documents. The algorithm is based on the idea that a word is important if it appears frequently in a document, but infrequently in the rest of the documents in the collection.
 
@@ -710,98 +736,3 @@ inverse_document_frequency = log(total number of documents / number of documents
 
 tf-idf = term_frequency * inverse_document_frequency
 ```
-
-So let's try it out! We could write this with plain Python, but we can also install the `scikit-learn` library with the following code `pip install sklearn`. We can then use the code from the Programming Historian lesson linked above to get the following:
-
-```python
-# Let's try TF-IDF. This code is from the PH Tutorial linked above
-# Import the TfidfVectorizer from sklearn.feature_extraction.text
-from sklearn.feature_extraction.text import TfidfVectorizer
-
-#save our texts to a list
-documents = subset_humanist_vols.volume_text.tolist()
-
-#Create a vectorizer
-vectorizer = TfidfVectorizer(max_df=.7, min_df=1)
-```
-
-The documentation for the `TfidfVectorizer` is available here [https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html) and we can see what all these parameters mean. In particular, take a look at `max_df` and `min_df`. These parameters control how much frequency a word needs to be in a document to be included in the vocabulary. In our case we want to include words that appear in more than 70% of the documents, but also exclude words that appear in fewer than one document.
-
-Now we need to `fit` our emails to the vectorizer. We can do this with the following code:
-
-```python
-# Fit the vectorizer to our documents
-transformed_documents = vectorizer.fit_transform(documents)
-
-# Now get the top features for each document
-transformed_documents_as_array = transformed_documents.toarray()
-
-dates = humanist_vols.inferred_start_year.tolist()
-tfidf_results = []
-for counter, doc in enumerate(transformed_documents_as_array):
-    # construct a dataframe
-    tf_idf_tuples = list(zip(vectorizer.get_feature_names_out(), doc))
-    one_doc_as_df = pd.DataFrame.from_records(tf_idf_tuples, columns=['term', 'score']).sort_values(by='score', ascending=False).reset_index(drop=True)
-    one_doc_as_df['inferred_start_year'] = dates[counter]
-    tfidf_results.append(one_doc_as_df)
-```
-
-Once that is done we can save our results to a new DataFrame and explore the top unique terms
-
-```python
-tfidf_df = pd.concat(tfidf_results)
-tfidf_df = tfidf_df.sort_values(by=['score'], ascending=False)
-tfidf_df.head(10)
-```
-
-You should see a lot of `http`. To get a better sense of let's try taking the 200 rows of this `tfidf_df` but only keeping the unique terms. We can do that with the `unique` method in Pandas.
-
-```python
-print(tfidf_df[0:200].term.unique())
-```
-
-Which should produce this list:
-
-```python
-['2007' 'digitalhumanities' 'ninch' '2004' 'utorepas' 'bitnet' 's16382816'
- 'onlinehome' 'esmtp' 'joyent' 'amico' '1007' 'gopher' 'fqs' 'barracuda'
- '2018' 'doi' 'woodward' 'epas' 'xxx' 'elra' 'ruhc' 'gants' '2012'
- 'outbound' '2015' '2009' '2016' 'mccarty_at_kcl' '3dx' 'messagelabs'
- 'aaisp' '2011' 'ichim99' 'vax' '2017' 'arundel' 'ippe' 'archiver' '2010'
- '2013' 'spam' 'saddam' '005' '5801' 'ccreegan' 'dhhumanist' '2014' 'helo'
- 'wmccarty' 'aes256' 'astra' 'tocs' 'cest' 'hforums' 'lemme' 'wikipedia'
- 'fludd' '8080' 'uottawa' 'ecu' 'wlm' '0558' 'kis' 'google' 'postfix'
- 'prolog' 'kraft' 'bounces' 'spf' 'qs' 'penndrls' 'tambovtsev' 'acadvm1'
- 'mimeole' 'asg' 'hums' 'b7' '2784' 'riao97' 'infobits' 'ceth' 'brownvm'
- 'lachance' '441495' 'ugl' 'dhe' 'emfw4' 'proofpoint' 'hasselmo' '7848'
- 'e9' '2980' 'hussein']
- ```
-
-Some of these terms are pretty meaningless and we might want to clean them out, but some like `prolog` or `google` look promising. This could open up a whole new set of questions for our dataset. For example, we could try and compare the frequency of `prolog` and `google` across the dataset to see if there are any patterns.
-
-
-## Making It Count Homework
-
-Now that we have an understanding of the basics of text analysis, we can try and apply these methods to the Humanist Listserv dataset. The main assignment for this week is to try and discover if there are any discourses that are distinctive of the early internet era versus the later web 2.0 era in the Humanist Listserv dataset. Web 2.0 is a term that was first coined in 1999 by Darcy DiNucci and then popularized by Tim O'Reilly in 2004. It refers to the shift from static web pages to dynamic and user-generated content. The early internet era is a bit more difficult to define, but we could say it starts in the 1980s and ends in the late 1990s.
-
-While this assignment is open ended, there's a few things you'll need to complete it. First, make sure you have the Humanist listserv dataset and that you have dates associated with each volume. Also if you previously save a subset of the dataset, try rerunning the code to use the whole dataset.
-
-Second, would highly recommend using TF-IDF to help identify what is distinctive of these two time periods. You can use the code from the tutorial above to help you get started. You may also chose to use other Python libraries or methods, though I would recommend starting with TF-IDF. Part of this assignment is thinking about what we mean by "distinctive" and "discourse", and how we can use computational methods to help us answer these questions. You could for example experiment with lemmatization or stemming to see if that changes your results, or you could try different hyper-parameters for TF-IDF.
-
-Finally, you'll need to visualize your results, and while you're welcome to use any library, I would recommend either using Pandas plot or Altair. You're welcome to work in either a Python script or Jupyter notebook, though I would recommend starting in a Jupyter notebook.
-
-Because of the size of the dataset, you may want to try and use a subset of the data to start with. You can do this with the `sample` method in Pandas. For example, to get a random sample of 100 rows you could use the following code:
-
-```python
-humanist_vols.sample(100)
-```
-
-You'll also want to make sure that you aren't trying to push up to GitHub any file larger than 50MB. To ignore those files, be sure to add them to your `.gitignore` file. You can read more about how to do that here [https://docs.github.com/en/github/using-git/ignoring-files](https://docs.github.com/en/github/using-git/ignoring-files) and in our [previous lesson]({{site.baseurl}}/materials/introducing-humanities-computing/05-advanced-git-github#gitignore). And you can always ask GitHub Co-Pilot or the instructors for assistance.
-
-Once completed, push up your work to GitHub in a folder called `making_it_count` and share the link in this GitHub discussion [https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/8](https://github.com/ZoeLeBlanc/is310-computing-humanities-2024/discussions/8)
-
-
-<script>
-    var json_file = "{{site.baseurl}}/assets/files/humanist_size_altair.json";
-    vegaEmbed('#humanist_size_altair', json_file);
-</script>

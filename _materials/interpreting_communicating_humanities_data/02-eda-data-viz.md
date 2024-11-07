@@ -917,7 +917,7 @@ Now we can recreate our graph:
 ```python
 selection = alt.selection_point(fields=['genre'], bind='legend')
 
-alt.Chart(merged_df).mark_bar().encode(
+alt.Chart(combined_novels_nyt_df).mark_bar().encode(
 	x="pub_date:T",
 	y="count():Q",
 	color="genre:N",

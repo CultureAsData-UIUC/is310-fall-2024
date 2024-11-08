@@ -126,12 +126,12 @@ schedule:
         url: /schedule/22-structuring-data/
       - title: "<b>November 12</b><br> Algorithmic Failures"
         url: /schedule/23-algorithmic-failures/
-      - title: "<b>November 14</b><br> Reproducibility & Responsibility"
-        url: /schedule/24-reproducibility-responsibility/
-      - title: "<b>November 19</b><br> Preservation & Publics"
-        url: /schedule/25-preservation-publics/
-      - title: "<b>November 21</b><br> Augmentation & AI"
-        url: /schedule/26-augmentation-ai/
+      - title: "<b>November 14</b><br> Augmentation & AI"
+        url: /schedule/24-augmentation-ai/
+      - title: "<b>November 19</b><br> Reproducibility & Responsibility"
+        url: /schedule/25-reproducibility-responsibility/
+      - title: "<b>November 21</b><br> Preservation & Publics"
+        url: /schedule/26-preservation-publics/
   - title: December Detailed Activities
     children:
       - title: "<b>December 3</b><br> I Dream of Data"

@@ -20,3 +20,4 @@ class_date: 2024-12-03
 
 - Bailey, Moya Z. “All the Digital Humanists Are White, All the Nerds Are Men, but Some of Us Are Brave.”
 - Posner, Miriam. "See No Evil." *Logic Magazine*, (TBD) [https://logicmag.io/scale/see-no-evil/](https://logicmag.io/scale/see-no-evil/).
+- Underwood, Ted. “Why an Age of Machine Learning Needs the Humanities.” *Public Books*, December 5, 2018. [https://www.publicbooks.org/why-an-age-of-machine-learning-needs-the-humanities/](https://www.publicbooks.org/why-an-age-of-machine-learning-needs-the-humanities/).

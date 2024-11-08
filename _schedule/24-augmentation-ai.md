@@ -1,20 +1,19 @@
 ---
-title: "Reproducibility & Responsibility"
-permalink: /schedule/24-reproducibility-responsibility/
+title: "Augmentation & AI"
+permalink: /schedule/24-augmentation-ai/
 toc: true
 class_date: 2024-11-14
 ---
 
 ## In-Class Agenda
 
-- [ ] Discuss the assigned readings
-- [ ] Group presentations for [Computing Cultural Data Assignment]({{site.baseurl}}/computing-cultural-data/).
+- [ ] Discuss assigned readings and explore demo of LLMs for data work (To be posted).
+- [ ] Groups present their [Computing Cultural Data Assignment]({{site.baseurl}}/computing-cultural-data/).
 
 ## Assigned Materials
 
 - Underwood, Ted. “Can Language Models Predict the next Twist in a Story?” *The Stone and the Shell* (blog), January 5, 2024. [https://tedunderwood.com/2024/01/05/can-language-models-predict-the-next-twist-in-a-story/](https://tedunderwood.com/2024/01/05/can-language-models-predict-the-next-twist-in-a-story/).
-- Underwood, Ted. “Why an Age of Machine Learning Needs the Humanities.” *Public Books*, December 5, 2018. [https://www.publicbooks.org/why-an-age-of-machine-learning-needs-the-humanities/](https://www.publicbooks.org/why-an-age-of-machine-learning-needs-the-humanities/).
-- Klein, Lauren F., and Sandeep Soni. “How Words Lead to Justice.” *Public Books*, August 17, 2021. [https://www.publicbooks.org/how-words-lead-to-justice/](https://www.publicbooks.org/how-words-lead-to-justice/).
+- Samora, Russell, and Michelle Pera-McGhee. “We Had an AI Attempt to Make a Data-Driven Story like We Do at The Pudding.” *The Pudding*, July 2024. [https://pudding.cool/2024/07/ai](https://pudding.cool/2024/07/ai).
 
 ## Additional Materials
 

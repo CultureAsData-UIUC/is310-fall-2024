@@ -8,6 +8,6 @@ class_date: 2024-12-05
 ## In-Class Agenda
 
 - [ ] Review previous coding assignments.
-- [ ] Share experiments with LLMs and discuss findings.
+- [ ] Work on final projects.
 
 ## Additional Materials

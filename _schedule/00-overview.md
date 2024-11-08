@@ -32,8 +32,8 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [October 22 - Arguments & Algorithms]({{site.baseurl}}/schedule/17-arguments-algorithms/) | [October 24 - Notes & Points]({{site.baseurl}}/schedule/18-notes-points/) |
 | [October 29 - Making A Point]({{site.baseurl}}/schedule/19-making-a-point/) | [October 31 - Patterns & Outliers]({{site.baseurl}}/schedule/20-patterns-outliers/) |
 | [November 5 - Modeling Culture **No Class for Election Day**]({{site.baseurl}}/schedule/21-modeling-culture/) | [November 7 - Structuring Data]({{site.baseurl}}/schedule/22-structuring-data/) |
-| [November 12 - Algorithmic Failures]({{site.baseurl}}/schedule/23-algorithmic-failures/) | [November 14 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/24-reproducibility-responsibility/) |
-| [November 19 - Preservation & Publics]({{site.baseurl}}/schedule/25-preservation-publics/) | [November 21 - Augmentation & AI]({{site.baseurl}}/schedule/26-augmentation-ai/) |
+| [November 12 - Algorithmic Failures]({{site.baseurl}}/schedule/23-algorithmic-failures/) | [November 14 - Augmentation & AI]({{site.baseurl}}/schedule/24-augmentation-ai/) |
+| [November 19 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/25-reproducibility-responsibility/) | [November 21 - Preservation & Publics]({{site.baseurl}}/schedule/26-preservation-publics/) |
 |{::nomarkdown}<td colspan="2">November 26 & 28 - Fall Break</td>{:/}|
 | [December 3 - I Dream of Data]({{site.baseurl}}/schedule/27-i-dream-of-data/) | [December 5 - Hauntings & Ghosts]({{site.baseurl}}/schedule/28-hauntings-ghosts/) |
 | [December 10 - Future Horizons & Final Projects]({{site.baseurl}}/schedule/29-future-horizons-final-projects/) | |

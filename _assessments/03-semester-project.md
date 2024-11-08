@@ -103,7 +103,7 @@ After this submission, the instructors will provide detailed feedback on both th
 
 ## Experimenting With Datasets Update 5% 
 
-**DUE NOVEMBER 14, 2024 (Optional Extension November 21, 2024)**
+**DUE NOVEMBER 19, 2024 (Optional Extension December 3, 2024)**
 
 After creating your dataset, the next crucial step is to experiment with it using various computational methods. This process not only helps you identify any data issues that need correction but also provides valuable insights into how the dataset might be used by others in future research. The goal of this phase is to refine your dataset and inform the documentation that will guide others in understanding and applying your work. This update will also be submitted via GitHub, and should include details on division of labor or issues faced. We will discuss this milestone more in-depth in class but here are some general goals and guidelines:
 

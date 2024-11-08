@@ -124,10 +124,10 @@ schedule:
         url: /schedule/21-modeling-culture/
       - title: "<b>November 7</b><br> Structuring Data"
         url: /schedule/22-structuring-data/
-      - title: "<b>November 12</b><br> Reproducibility & Responsibility"
-        url: /schedule/23-reproducibility-responsibility/
-      - title: "<b>November 14</b><br> Algorithmic Failures"
-        url: /schedule/24-algorithmic-failures/
+      - title: "<b>November 12</b><br> Algorithmic Failures"
+        url: /schedule/23-algorithmic-failures/
+      - title: "<b>November 14</b><br> Reproducibility & Responsibility"
+        url: /schedule/24-reproducibility-responsibility/
       - title: "<b>November 19</b><br> Preservation & Publics"
         url: /schedule/25-preservation-publics/
       - title: "<b>November 21</b><br> Augmentation & AI"

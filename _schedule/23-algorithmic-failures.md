@@ -1,14 +1,14 @@
 ---
 title: "Algorithmic Failures"
-permalink: /schedule/24-algorithmic-failures/
+permalink: /schedule/23-algorithmic-failures/
 toc: true
-class_date: 2024-11-14
+class_date: 2024-11-12
 ---
 
 ## In-Class Agenda
 
-- [ ] Review EDA homework.
-- [ ] Start introduction to classification and predication (To be posted).
+- [ ] Start [Introduction to Unstructured Text]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/03-intro-text).
+- [ ] Work on group presentations for [Computing Cultural Data Assignment]({{site.baseurl}}/computing-cultural-data/).
 
 ## Additional Materials
 

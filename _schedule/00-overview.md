@@ -32,7 +32,7 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [October 22 - Arguments & Algorithms]({{site.baseurl}}/schedule/17-arguments-algorithms/) | [October 24 - Notes & Points]({{site.baseurl}}/schedule/18-notes-points/) |
 | [October 29 - Making A Point]({{site.baseurl}}/schedule/19-making-a-point/) | [October 31 - Patterns & Outliers]({{site.baseurl}}/schedule/20-patterns-outliers/) |
 | [November 5 - Modeling Culture **No Class for Election Day**]({{site.baseurl}}/schedule/21-modeling-culture/) | [November 7 - Structuring Data]({{site.baseurl}}/schedule/22-structuring-data/) |
-| [November 12 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/23-reproducibility-responsibility/) | [November 14 - Algorithmic Failures]({{site.baseurl}}/schedule/24-algorithmic-failures/) |
+| [November 12 - Algorithmic Failures]({{site.baseurl}}/schedule/23-algorithmic-failures/) | [November 14 - Reproducibility & Responsibility]({{site.baseurl}}/schedule/24-reproducibility-responsibility/) |
 | [November 19 - Preservation & Publics]({{site.baseurl}}/schedule/25-preservation-publics/) | [November 21 - Augmentation & AI]({{site.baseurl}}/schedule/26-augmentation-ai/) |
 |{::nomarkdown}<td colspan="2">November 26 & 28 - Fall Break</td>{:/}|
 | [December 3 - I Dream of Data]({{site.baseurl}}/schedule/27-i-dream-of-data/) | [December 5 - Hauntings & Ghosts]({{site.baseurl}}/schedule/28-hauntings-ghosts/) |
@@ -65,4 +65,4 @@ This overview gives a top level view of the topics for each of our meetings. You
 | [Mass Digitization & Digital Libraries]({{site.baseurl}}/collecting-digitizing-culture) | [Due In-Class September 10]({{site.baseurl}}/schedule/05-digital-objects-and-obsolescence/).|
 | [Critical Cultural Data Explorations]({{site.baseurl}}/critical-cultural-data-explorations/) | [Due In-Class September 24]({{site.baseurl}}/schedule/09-standardizing-culture-data-archeology/).|
 | [Proprietary & Perspectival Dataset Creation]({{site.baseurl}}/proprietary-perspectival-dataset-creation) | [Due In-Class October 15]({{site.baseurl}}/schedule/15-curating-vs-cleaning/).|
-| [Computing Cultural Data]({{site.baseurl}}/computing-cultural-data/) | [Due In-Class November 12]({{site.baseurl}}/schedule/23-reproducibility-responsibility/).|
+| [Computing Cultural Data]({{site.baseurl}}/computing-cultural-data/) | [Due In-Class November 14]({{site.baseurl}}/schedule/24-reproducibility-responsibility/).|

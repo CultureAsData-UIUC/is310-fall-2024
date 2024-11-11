@@ -172,7 +172,7 @@ combined_novels_nyt_df['eng_text'] = combined_novels_nyt_df['pg_eng_url'].apply(
 
 You'll notice in this graphic that this `apply()` method is similar to the `groupby` method we learned in the last lesson. It also indicates that apply is a method that can take arguments, specifically the `axis` argument which can be set to `0` or `1` to apply the function to the rows or columns of the DataFrame. In our case we are selecting one column, so we are using `apply` on a Series, which is why we don't need to specify the `axis` argument.
 
-However, we could also do the following. Say we only wanted to get texts that existed in both English and the Original language. We could update our `get_text` function to take two urls and then apply it to the DataFrame like this:
+However, we could also do the following. Say we only wanted to get texts that existed in both English and the original language. We could update our `get_text` function to take two urls and then apply it to the DataFrame like this:
 
 ```python
 def get_text(row):
@@ -231,15 +231,45 @@ def get_text(row):
 combined_novels_nyt_df[['pg_eng_text', 'pg_orig_text']] = combined_novels_nyt_df.apply(get_text, axis=1, result_type='expand')
 ```
 
-Now we are returning both the English and Original texts if they are successful. We are also using the `result_type='expand'` argument to expand the result of the function into separate columns.
+Now we are returning both the English and original texts if they are successful. We are also using the `result_type='expand'` argument to expand the result of the function into separate columns.
 
-While looping is still useful, it is highly recommended to use the `apply()` method when working with DataFrames in Pandas. It is more efficient and easier to read, and it is a good way to get started with more advanced data manipulation in Pandas. You can see the time comparison between different methods for looping and applying functions to DataFrames in this graphic below:
+While looping is still useful, it is highly recommended to use the `apply()` method when working with DataFrames in Pandas. It is more efficient, and a good way to get started with more advanced data manipulation in Pandas. You can see the time comparison between different methods for looping and applying functions to DataFrames in this graphic below:
 
 <figure>
 	<a href="https://www.ml4devs.com/images/illustrations/pandas-dataframe-apply-performace-comparision.webp">
 	<img src="https://www.ml4devs.com/images/illustrations/pandas-dataframe-apply-performace-comparision.webp" class="image-popup">
 	</a>
 </figure>
+
+In terms of our code, there's lots of ways we might end up writing this function. For example, we could use a `try` and `except` block to catch any errors that might occur when we try to get the text. We could also use the `pd.notna()` function to check if the url is not null. Some considerations we want to keep in mind when writing code:
+
+- [ ] **Readability**: Is the code easy to read and understand?
+- [ ] **Efficiency**: Is the code efficient and does it run quickly?
+- [ ] **Robustness**: Does the code handle errors and edge cases gracefully?
+- [ ] **Reusability**: Can the code be reused in other parts of the project?
+
+In our case, that might mean that we rewrite our current code to be a function called `get_book_text` that takes in simply the url and returns the text of the book in a try and except block.
+
+```python
+def get_book_text(url):
+	if pd.notna(url):
+		try:
+			response = requests.get(url)
+			if response.status_code == 200:
+				return response.text
+		except Exception as e:
+			pass
+	return None
+
+from tqdm import tqdm
+
+tqdm.pandas(desc="Getting English Texts")
+combined_novels_nyt_df.loc[:, 'pg_eng_text'] = combined_novels_nyt_df.pg_eng_url.progress_apply(get_text)
+tqdm.pandas(desc="Getting Original Texts")
+combined_novels_nyt_df.loc[:, 'pg_orig_text'] = combined_novels_nyt_df['pg_orig_url'].progress_apply(get_text)
+```
+
+In the code above, I'm also using a new library, the `tqdm` library, to create a progress bar for the `apply()` method. This is a good way to keep track of the progress of the function, especially if it is taking a long time to run, which can happen when web scraping. You can read more about `tqdm` here [https://tqdm.github.io/](https://tqdm.github.io/).
 
 ## Unstructured Data
 
@@ -277,9 +307,9 @@ Now that we have the texts of novels in our dataset, we have unstructured data. 
 
 ## Structuring Cultural Data
 
-First, let's talk about what we mean by structured and unstructured data. Structured data is data that is already organized in a way that is easily searchable and can be analyzed (think most tabular data or metadata). This is the type of data that we have been working with so far in our datasets. Conversely, while we store unstructured data in tables, it is not easy to process it or find patterns in it. This is the type of data that we have in our novel texts.
+Today we will be working with structuring text data, but many of the lessons we learn here can be applied to other types of unstructured data. For example, we could use similar methods to structure images or audio data for analysis.
 
-To structure this data, we need to think about how we can break it down into smaller, more manageable pieces. This is where text analysis comes in. Now it's worth noting that there is no one way to structure data, and it often depends on your goals and the data you have. But in general it can involve things like cleaning the data, removing unnecessary information, and organizing the data in a way that makes it easier to analyze.
+To structure this data, we need to think about how we can break it down into smaller, more manageable pieces. Now it's worth noting that there is no one right way to structure data, and it often depends on your goals and the data you have. A lot of what we are discussing today are common approaches in text analysis, and increasingly form the bedrock of both machine learning and artificial intelligence.
 
 *Text analysis* is a very broad term for a whole set of practices and overlapping disciplines and fields, some of which are shown in this figure below:
 
@@ -289,9 +319,7 @@ To structure this data, we need to think about how we can break it down into sma
     </a>
 </figure>
 
-But again this figure has its limits. For example, data mining is something that Library & Information Sciences undertakes, and databases are used across these domains.
-
-Rather than trying to define text analysis as a whole, I find a more helpful distinction is talking about Information Extraction vs Information Retrieval. These are two of the most common ways to structure text data, and they are often used in combination.
+However, rather than trying to define text analysis as a whole, I find a more helpful distinction is talking about information extraction versus information retrieval. These are two of the most common ways to structure text data, and they are often used in combination.
 
 **Information Retrieval (IR):**
 
@@ -303,13 +331,13 @@ Rather than trying to define text analysis as a whole, I find a more helpful dis
 
 Information retrieval first developed in the 1950s and 1960s (remember Vannevar Bush and the Memex!) and its goal is to find relevant documents for a user’s needs or queries, which is why it is most often associated with search engines. It requires parsing textual information and finding patterns in the text.
 
-The key thing to remember about IR is that it is about finding relevant documents, not necessarily understanding the content of those documents. This is why it is often used for text classification of documents, and it can be done without understanding syntax and treating documents as a "bag of words."
+The key thing to remember about IR is that it is not necessarily understanding the content of those documents but finding relevant ones. This is why it is often used for text classification of documents, and it can be done without understanding syntax and treating documents as a "bag of words."
 
-TLDR:
-
-- Goal of finding relevant documents for user’s needs/queries (eg. Google)
-- Often used for text classification of documents
-- Can be done without “understanding” syntax and treating documents as “bag of words”
+<figure>
+	<a href="https://sep.com/wp-content/uploads/2020/12/2020-07-bagofwords.jpg">
+	<img src="https://sep.com/wp-content/uploads/2020/12/2020-07-bagofwords.jpg" class="image-popup">
+	</a>
+</figure>
 
 **Information Extraction (IE)**
 
@@ -323,76 +351,51 @@ Information Extraction (or IE) is a bit different than IR. It is about extractin
 
 It first developed in the 1990s and is focused on extracting specific features from documents. It requires both syntactic and semantic analysis, and it is often used in fields like Natural Language Processing (NLP) and Computational Linguistics.
 
-TLDR:
-
-- Goal of extracting specific features from documents
-- Focused on linguistic analysis of textual features
-- Requires both syntactic and semantic analysis
+<figure>
+	<a href="https://seonorth.ca/wp-content/uploads/2022/03/Part-of-Speech-POS-Tagging.jpg">
+	<img src="https://seonorth.ca/wp-content/uploads/2022/03/Part-of-Speech-POS-Tagging.jpg" class="image-popup">
+	</a>
+</figure>
 
 ### Text Analysis with Pandas
 
-Now that we have a sense of the different potential methods and approaches to text analysis, let's start with a simple example using Pandas. We can start by counting the number of words in each novel in our dataset.
+Now that we have a sense of the different potential overall goals of text analysis, let's start with a simple example using Pandas. We can start by counting the number of words in each novel in our dataset. Though that of course raises a question of what is a word?
+
+Let's start off with the easiest way we can do that is by counting the number of characters in each row of the `eng_text` column. We can do this using the `str.len()` method in Pandas.
 
 ```python
 combined_novels_nyt_df['novel_length'] = combined_novels_nyt_df['eng_text'].str.len()
 ```
 
-This code is using the `str.len()` method to count the number of characters in each row of the `eng_text` column. This is a simple way to get a sense of the length of each novel, but it is not a perfect measure of the number of words. To get a more accurate count, we could split the text into words and then count the number of words.
+This code gives us a sense of the length of each novel, but it is not a perfect measure of the number of words. Specifically it is counting the length of the **sequence** in each cell in the `eng_text` column, which includes spaces and punctuation. So it is more of a measure of the number of characters in each novel.
+
+To get a more accurate **word count**, we could split the text into words and then count the number of words. The easiest way to do this is to split the text on spaces and then count the number of elements in the resulting list, which we can do with the following code:
 
 ```python
 combined_novels_nyt_df['novel_numb_words'] = combined_novels_nyt_df['eng_text'].str.split().apply(len)
 ```
 
-This code is doing a few things. First, it is using the `str.split()` method to split the text on spaces. Then it is using the `apply()` method to apply the `len` function to each row of the DataFrame. This is a common pattern in Pandas, and it is a good way to apply functions to each row of a DataFrame.
+This code is using the `str.split()` method to split the text on spaces. Then we are again using the `apply()` method, but this time to apply the `len` function to each row of the DataFrame. With `apply` we can both call functions we have created, as well as built-in functions like `len`. We now have a more accurate measure of the number of words in each novel, but our approach is only one way that we can start to structure our text data. Indeed, what we are engaging in is something in Natural Language Processing (NLP) called **tokenization**.
 
-We could also look at the frequency of terms. For example, we could count the number of times the words `they`, `she`, and `he` appear in each novel.
+#### Tokenization
 
-```python
-combined_novels_nyt_df['they_counts'] = combined_novels_nyt_df['eng_text'].str.count('they')
-combined_novels_nyt_df['she_counts'] = combined_novels_nyt_df['eng_text'].str.count('she')
-combined_novels_nyt_df['he_counts'] = combined_novels_nyt_df['eng_text'].str.count('he')
-```
-
-Now we can plot the data.
-
-```python
-# Plot the data
-combined_novels_nyt_df[['they_counts', 'she_counts', 'he_counts']].plot()
-```
-
-Which produces the following graph:
+Tokenization is the process of breaking up text into smaller units, which are often called tokens, which can be words, phrases, or characters, rather than just simply calling them *words*. You can see an example in this figure:
 
 <figure>
-    <a href="{{site.baseurl}}/assets/images/pronoun_counts.png">
-    <img src="{{site.baseurl}}/assets/images/pronoun_counts.png" class="image-popup">
-    </a>
+	<a href="https://miro.medium.com/v2/resize:fit:2000/1*pj8KnjxgCszpDqJSS2741w.jpeg">
+	<img src="https://miro.medium.com/v2/resize:fit:2000/1*pj8KnjxgCszpDqJSS2741w.jpeg" class="image-popup">
+	</a>
 </figure>
 
-You'll notice that `he` is much more frequent than the other two pronouns. Now this might because of the novels we have in our dataset, but it could also be because of the way we are counting the words. To understand more let's dig into text analysis with Python more generally.
+In the field of corpus linguistics, the term “word” is generally seen as too abstract, so they developed the terms of a “token” or “type.” For example, is the word “run” the same as “running” or “ran”? In corpus linguistics, we would say that these are all different tokens, but they are the same type.
 
-### Text Analysis with Python
+##### Origins of Tokenization
 
-So far we've just been working with Pandas, but in Python, there exists a few libraries specifically designed to work with text data.
+The origins of modern tokenization go back to the 1950s and 1960s, with the origins of information retrieval and information extraction. However, the practice has been around for much longer, and it is a key part of the field of corpus linguistics.
 
-- NLTK [https://www.nltk.org/](https://www.nltk.org/)
+One of the most important scholars was George Zipf, who in the 1930s revealed that in any corpus, the most common word appears about twice as often as the second, three times as often as the third, and so on. This distribution pattern is known as **Zipf’s Law** and underscores the importance of tokenization in understanding word frequency.
 
-- SPACY [https://spacy.io/](https://spacy.io/)
-
-- SCIKIT-LEARN [https://scikit-learn.org/stable/](https://scikit-learn.org/stable/)
-
-Each of these libraries has its own history, and some of what they provide overlaps. Here's a helpful chart outlining some of their pros and cons.
-
-<figure>
-    <a href="https://activewizards.com/content/blog/Comparison_of_Python_NLP_libraries/nlp-librares-python-prs-and-cons01.png">
-    <img src="https://activewizards.com/content/blog/Comparison_of_Python_NLP_libraries/nlp-librares-python-prs-and-cons01.png" class="image-popup">
-    </a>
-</figure>
-
-Ultimately, which library you choose to use depends on what you want to do with your data, but there's some general principles for text analysis that you should consider regardless of method.
-
-#### Word Counts and Zipf's Law
-
-Today we are going to start with the basics of text analysis: word counts and one of the older libraries, NLTK.
+To get a sense of this principle, we are going to briefly explore one of the older libraries for text analysis, *NLTK*.
 
 <figure>
     <a href="{{site.baseurl}}/assets/images/nltk_github_history.png">
@@ -401,12 +404,11 @@ Today we are going to start with the basics of text analysis: word counts and on
     <figcaption> NLTK's GitHub History <a href="https://github.com/nltk/nltk">https://github.com/nltk/nltk</a></figcaption>
 </figure>
 
-NLTK was first created in the late 1990s by Steven Bird and Edward Loper at the University of Pennsylvania. It was initially created to further research in corpus linguistics and natural language processing, but has since become a popular tool for text analysis in the humanities. In many ways, it comes out of a similar moment as the history of information retrieval and search engines, and has a similar goal of making text analysis more accessible.
-
+NLTK was first created in the late 1990s by Steven Bird and Edward Loper at the University of Pennsylvania. It was initially created to further research in corpus linguistics and natural language processing, but has since become a popular tool for text analysis in the humanities. 
 
 The library NLTK has a helpful built in Class called `FreqDist` that takes a list of words and outputs their frequency in a corpus [http://www.nltk.org/api/nltk.html?highlight=freqdist](http://www.nltk.org/api/nltk.html?highlight=freqdist)
 
-Let's try it out with a subset of our data. (Remember to install `nltk`).
+Let's try it out with a subset of our data. Remember to do `pip install nltk`.
 
 ```python
 from nltk import word_tokenize
@@ -432,33 +434,29 @@ In this graph, if we had used all the words we would see this trend continue, li
     </a>
 </figure>
 
-This is **Zipf’s law** a phenomenon where the most common word is twice as common as the second most common word, three times as common as the third most common word, four times as common as the fourth most common word, and so forth.
+This is what Zipf’s law looks like in reality, and you might be interested to learn that Zipf discovered this pattern when he was analyzing the frequency of words in James Joyce’s Ulysses in the 1930s (which is considered one of the first computing in the humanities projects!).
 
-It is named after the linguist George Zipf, who first found the phenomenon while laboriously counting occurrences of individual words in Joyce’s Ulysses in 1935 (one of the earliest computing in the humanities projects!).
+Ultimately, understanding this core textual phenomenon is essential: common words dominate text, and their distribution often fits a special type of scale called a logarithmic scale, which is better suited than a linear scale for visualizing data with extreme differences in frequency. A logarithmic scale compresses larger values more than smaller ones, making it easier to see patterns in data where a few items are very frequent, and most are rare. This pattern reflects the ‘rich get richer’ principle, which we also see in other systems, such as citation networks or social media, where a small number of items gain most of the attention.
 
-This is a core textual phenomenon, and one you must constantly keep in mind: common words are very common indeed, and logarithmic scales are more often appropriate for plotting than linear ones. This pattern results from many dynamic systems where the “rich get richer,” which characterizes all sorts of systems in the humanities. You can read more about the power of counting words here [https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/](https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/).
+Knowing about Zipf's law is not only important for ensuring we have accurate analysis but also because the distribution of words in a text can help us answer different types of questions in the humanities. For example, if we use high frequency words we can often identify the authorship or style of a text[^1], and if we use low frequency words we can often identify the ideas of a text, whether's it's a genre of a novel or the themes of a poem or the topic of a news article. You can read more about the power of counting words here in another of Underwood's blog posts [https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/](https://tedunderwood.com/2013/02/20/wordcounts-are-amazing/).
 
-One of the key things to takeaway from understanding the distribution of words in a text is that this can help us answer different types of questions in the humanities. For example, if we use high frequency words we can often identify the authorship or style of a text, and if we use low frequency words we can often identify the topic or genre of a text.
+##### Tokenization & Interpretation
 
-While we will discuss more of this topic and genre identification of texts, we won't be covering authorship attribution so if you want to learn more I would highly recommend taking a look at François Dominic Laramée, "Introduction to stylometry with Python," *Programming Historian* 7 (2018), [https://doi.org/10.46430/phen0078](https://doi.org/10.46430/phen0078). Stylometry is the formal name for this type of analysis and it is a both a popular method for working with cultural data and one with a longer history. For example, in the 1960s the authorship of the Federalist Papers was determined using stylometry.
+Now that we understand the importance of how we count words, we can get into the interpretive choices that we make when we tokenize text.
 
-#### Tokenization
+There are many different ways to tokenize text, and the choice of tokenization method can have a big impact on the results of your analysis. Some common choices include:
 
-To start getting into text analysis, we need to start thinking about how we can break up our text into words. In the field of corpus linguistics, the term “word” is generally dispensed with as too abstract in favor of the idea of a “token” or “type.” Breaking a piece of text into words is thus called “tokenization.”
+- Should words be lowercased? Remember computers are case sensitive.
+- Should punctuation be removed? Many often do this when "cleaning" data but it also removes important information.
+- Should numbers be replaced by some placeholder? This is often done to remove noise from the data, though again it presents tradeoffs.
+- Should words be stemmed (also called lemmatization)? This is a process of reducing words to their base or root form, which can help with analysis but also can remove important information.
+- Should bigrams or other multi-word phrase be used instead of or in addition to single word phrases? This can help with understanding context but also can make analysis more complex and slower.
+- Should stop-words (the most common words) be removed? This is often done to remove noise from the data, but it can also remove important information.
+- Should rare words be removed? This might be helpful but means we might lose what is distinctive about a text.
 
-There are, in fact, at least 7 different choices you can make in a typical tokenization process.
+These choices are just some of the considerations you might make when tokenizing text, and we often combine them in different ways.
 
-- Should words be lowercased?
-- Should punctuation be removed?
-- Should numbers be replaced by some placeholder?
-- Should words be stemmed (also called lemmatization).
-- Should bigrams or other multi-word phrase be used instead of or in addition to single word phrases?
-- Should stop-words (the most common words) be removed?
-- Should rare words be removed?
-
-Any of these can be combined: there at least a hundred common ways to tokenize even the simplest dataset.
-
-We can try these out with our dataset. For example, would we get a different number of counts if we tokenized our pronouns?
+We can try these out with our dataset. For example, would we get a different number of counts if we used NLTK's tokenizer versus simply splitting on spaces?
 
 ```python
 def tokenize_text(text):
@@ -470,15 +468,53 @@ def tokenize_text(text):
 combined_novels_nyt_df['tokenized_text'] = combined_novels_nyt_df['eng_text'].apply(tokenize_text)
 ```
 
-Now we can do the same pronoun analysis as before, but with our tokenized text.
+Now we can compare the number of words in each novel using the `split` method versus the `word_tokenize` method.
+
+```python
+combined_novels_nyt_df['split_numb_words'] = combined_novels_nyt_df['eng_text'].str.split().apply(len)
+combined_novels_nyt_df['tokenized_numb_words'] = combined_novels_nyt_df['tokenized_text'].apply(len)
+```
+
+If we compared across both just doing the `str.len`, the `str.split`, and the `word_tokenize` we would see that the `word_tokenize` method is the most accurate, but also the slowest. This is because it is doing a lot more work than just splitting on spaces, and it is also doing a lot more work than just counting the length of the string.
+
+<div id="word_counting_length"></div>
+
+In this graph, you can select the tokenization methods in the legend but we can start to get a sense of the differences in the number of words in each novel.
+
+We could also look at the frequency of actual terms to get a sense of why tokenization matters so much. For example, we could count the number of times the words `they`, `she`, and `he` appear in each novel, using the `str.count()` method in Pandas, which counts the number of occurrences of a substring in a string.
+
+```python
+combined_novels_nyt_df['they_counts'] = combined_novels_nyt_df['eng_text'].str.count('they')
+combined_novels_nyt_df['she_counts'] = combined_novels_nyt_df['eng_text'].str.count('she')
+combined_novels_nyt_df['he_counts'] = combined_novels_nyt_df['eng_text'].str.count('he')
+```
+
+Now we can plot the data.
+
+```python
+# Plot the data
+combined_novels_nyt_df[['they_counts', 'she_counts', 'he_counts']].plot()
+```
+
+Which produces the following graph:
+
+<figure>
+    <a href="{{site.baseurl}}/assets/images/pronoun_counts.png">
+    <img src="{{site.baseurl}}/assets/images/pronoun_counts.png" class="image-popup">
+    </a>
+</figure>
+
+You'll notice that `he` is much more frequent than the other two pronouns. Now this might because of the novels we have in our dataset, but it could also be because of the way we are counting the words. To understand more let's dig into text analysis with Python more generally.
+
+Now we can do the same pronoun analysis as before, but with our tokenized text. To do that we need to use the `Counter` class from the `collections` module in Python to count the number of times each pronoun appears in the tokenized list of words.
 
 ```python
 from collections import Counter
 
 
-combined_novels_nyt_df['they_counts'] = combined_novels_nyt_df['pg_eng_tokens'].apply(lambda tokens: Counter(tokens)['they'])
-combined_novels_nyt_df['she_counts'] = combined_novels_nyt_df['pg_eng_tokens'].apply(lambda tokens: Counter(tokens)['she'])
-combined_novels_nyt_df['he_counts'] = combined_novels_nyt_df['pg_eng_tokens'].apply(lambda tokens: Counter(tokens)['he'])
+combined_novels_nyt_df['they_counts'] = combined_novels_nyt_df['tokenized_text'].apply(lambda tokens: Counter(tokens)['they'])
+combined_novels_nyt_df['she_counts'] = combined_novels_nyt_df['tokenized_text'].apply(lambda tokens: Counter(tokens)['she'])
+combined_novels_nyt_df['he_counts'] = combined_novels_nyt_df['tokenized_text'].apply(lambda tokens: Counter(tokens)['he'])
 
 # Plot the counts
 combined_novels_nyt_df[['they_counts', 'she_counts', 'he_counts']].plot()
@@ -494,6 +530,14 @@ This will give us a similar graph to before, but now we are counting words inste
 
 This graph is a bit hard to read, but you can start to see that `he` is no closer to the range of the other pronouns. We could also use Altair to inspect a bit closer. However, to replicate the `plot` graph, requires **reshaping** our data and specifically something called a **melt** operation.
 
+<figure>
+	<a href="https://pandas.pydata.org/pandas-docs/version/0.25.1/_images/reshaping_melt.png">
+	<img src="https://pandas.pydata.org/pandas-docs/version/0.25.1/_images/reshaping_melt.png" class="image-popup">
+	</a>
+</figure>
+
+Melting in Pandas is a way to reshape your data from wide to long, since sometimes you want to look at the relationship between multiple columns. In this case, we are melting the `they_counts`, `she_counts`, and `he_counts` columns into with the name of the column in the `var_name` column and the value of the column in the `value_name` column, respectively (in this case `pronoun` and `pronoun_counts`). You can read more about melting here here [https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt](https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt). 
+
 ```python
 melted_df = pd.melt(combined_novels_nyt_df, id_vars=['title', 'author', 'pub_year', 'genre'], value_vars=['they_counts', 'she_counts', 'he_counts'], var_name='pronoun', value_name='pronoun_counts')
 
@@ -505,17 +549,9 @@ alt.Chart(melted_df).mark_line().encode(
 )
 ```
 
-In this code we are using the `melt()` method to  so that the `they_counts`, `she_counts`, and `he_counts` columns are now in two columns: one for the pronoun and one for the counts. This is a common operation in data analysis, and it is often used to make it easier to plot data. You can see an example of what the melt operation does in the figure below:
+In this code we are using the `melt()` method by telling it to combine the `they_counts`, `she_counts`, and `he_counts` columns into two columns: one for the pronoun and one for the counts. Then we are visualizing this new DataFrame by passing into the Altair Chart class, and telling the chart to plot the pronoun counts for each novel.
 
-<figure>
-	<a href="https://pandas.pydata.org/pandas-docs/version/0.25.1/_images/reshaping_melt.png">
-	<img src="https://pandas.pydata.org/pandas-docs/version/0.25.1/_images/reshaping_melt.png" class="image-popup">
-	</a>
-</figure>
-
-Melting in Pandas is a way to reshape your data from wide to long, since sometimes you want to look at the relationship between multiple columns. In this case, we are melting the `they_counts`, `she_counts`, and `he_counts` columns into with the name of the column in the `var_name` column and the value of the column in the `value_name` column, respectively (in this case `pronoun` and `pronoun_counts`). You can read more about melting here here [https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt](https://pandas.pydata.org/docs/user_guide/reshaping.html#reshaping-by-melt). 
-
-Now our current graph is a bit detailed, but we could group by genre and then plot the pronoun counts to see if there are any differences between genres.
+Such analysis is helpful, but we could even start to form research questions. For example, are the patterns we are seeing consistent across genre? To do this we could use `genre` instead of `title` in the `x` axis of the chart.
 
 ```python
 alt.Chart(melted_df[melted_df.genre != "na"]).mark_bar().encode(
@@ -534,11 +570,11 @@ And now we should see the follow chart:
 	</a>
 </figure>
 
-Next if we were doing EDA we might try to normalize these counts by both the number of words in a novel and the number of novels in a genre. This would give us a better sense of the relative frequency of these pronouns in each genre. But let's move on to some more advanced text analysis techniques.
+Next if we were doing EDA we might try to normalize these counts by both the number of words in a novel and the number of novels in a genre. This would give us a better sense of the relative frequency of these pronouns in each genre. But there's still more interpretative tokenization questions we might want to address first.
 
 #### Lemmatizing/Stemming
 
-Lemmatizing and Stemming are both ways of reducing words to their root form to make them more normalized for analysis. Lemmatizing is the process of reducing words to their base form, while stemming is the process of reducing words to their stem, demonstrated in the figure below:
+Mentioned earlier, lemmatizing and Stemming are both ways of reducing words to their root form to make them more normalized for analysis. Lemmatizing is the process of reducing words to their base form, while stemming is the process of reducing words to their stem, demonstrated in the figure below:
 
 <figure>
     <a href="https://devopedia.org/images/article/227/6785.1570815200.png">
@@ -546,7 +582,7 @@ Lemmatizing and Stemming are both ways of reducing words to their root form to m
     </a>
 </figure>
 
-The NLTK library we used for FreqDist also comes with stemmers and lemmatizers. 
+The NLTK library we used for `FreqDist` also comes with code to do stemming and lemmatization. We can use the `PorterStemmer` class to stem words and the `WordNetLemmatizer` class to lemmatize words. You can read more about these classes here [https://www.nltk.org/api/nltk.stem.html](https://www.nltk.org/api/nltk.stem.html).
 
 ```python
 import nltk
@@ -554,7 +590,7 @@ from nltk.stem import PorterStemmer
 porter = PorterStemmer()
 ```
 
-Now to use these we need to apply them to each of the rows in our DataFrame. We could do this with a for loop, but it's more efficient to use the `apply()` method. 
+Now to use these we need to apply them to each of the rows in our DataFrame. We could do this with a for loop, but again it's more efficient to use the `apply()` method. 
 
 ```python
 def stem_words(row):
@@ -606,6 +642,32 @@ before using this eBook.
 ```
 
 We notice that stemming lowercased the words, but it did not remove the punctuation. It also did not remove the stop words. We can tell it stemmed the words because `united` became `unite`, and `states` became `state`. If we had lemmatized instead of stemmed, we would have gotten the same result, since lemmatizing is a more complex process that requires a dictionary of words to reduce them to their base form. Eventually though we might have seen examples like `are` becoming `be` and `located` becoming `locate`.
+
+#### Stop Words
+
+<figure>
+	<a href="https://files.readme.io/8bb80a8-ignore_stop_words_illustration.png">
+	<img src="https://files.readme.io/8bb80a8-ignore_stop_words_illustration.png" class="image-popup">
+	</a>
+</figure>
+
+Stop words are the most common words in a language, and they are often removed from text data because they do not contain much information. For example, the words `the`, `and`, and `of` are common stop words in English. NLTK has a built-in list of stop words for many languages, which you can access using the `nltk.corpus` module. You can read more about the stop words in NLTK here [https://www.nltk.org/book/ch02.html](https://www.nltk.org/book/ch02.html).
+
+```python
+from nltk.corpus import stopwords
+
+stop_words = set(stopwords.words('english'))
+print(stop_words)
+```
+
+This code will print out the list of stop words in English. You can see that there are many common words in this list, like `the`, `and`, and `of`. We can use this list to remove stop words from our text data.
+
+```python
+def remove_stop_words(row):
+	return ' '.join([word for word in row.split(' ') if word not in stop_words])
+
+test_df['stop_words_removed_text'] = test_df['pg_eng_text'].apply(remove_stop_words)
+```
 
 ### Advanced Text Analysis Exploration
 
@@ -736,3 +798,31 @@ inverse_document_frequency = log(total number of documents / number of documents
 
 tf-idf = term_frequency * inverse_document_frequency
 ```
+
+### Text Analysis with Python
+
+So far we've just been working with Pandas, but in Python, there exists a few libraries specifically designed to work with text data.
+
+- NLTK [https://www.nltk.org/](https://www.nltk.org/)
+
+- SPACY [https://spacy.io/](https://spacy.io/)
+
+- SCIKIT-LEARN [https://scikit-learn.org/stable/](https://scikit-learn.org/stable/)
+
+Each of these libraries has its own history, and some of what they provide overlaps. Here's a helpful chart outlining some of their pros and cons.
+
+<figure>
+    <a href="https://activewizards.com/content/blog/Comparison_of_Python_NLP_libraries/nlp-librares-python-prs-and-cons01.png">
+    <img src="https://activewizards.com/content/blog/Comparison_of_Python_NLP_libraries/nlp-librares-python-prs-and-cons01.png" class="image-popup">
+    </a>
+</figure>
+
+Ultimately, which library you choose to use depends on what you want to do with your data, but there's some general principles for text analysis that you should consider regardless of method.
+
+---
+[^1] if you want to learn more I would highly recommend taking a look at François Dominic Laramée, "Introduction to stylometry with Python," *Programming Historian* 7 (2018), [https://doi.org/10.46430/phen0078](https://doi.org/10.46430/phen0078). Stylometry is the formal name for this type of analysis and it is a both a popular method for working with cultural data and one with a longer history. For example, in the 1960s the authorship of the Federalist Papers was determined using stylometry.
+
+<script>
+    var json_file = "{{site.baseurl}}/assets/files/word_counting_length.json";
+    vegaEmbed('#word_counting_length', json_file);
+</script>

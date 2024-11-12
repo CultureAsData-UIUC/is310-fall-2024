@@ -7,7 +7,7 @@ class_date: 2024-11-12
 
 ## In-Class Agenda
 
-- [ ] Start [Introduction to Unstructured Text]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/03-intro-text).
+- [ ] Start [Introduction to Structuring Data]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/03-intro-structuring-data) and [Exploring Computational Methods]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/04-advanced-computational-methods/).
 - [ ] Time permitting: work on group presentations for [Computing Cultural Data Assignment]({{site.baseurl}}/computing-cultural-data/).
 
 ## Additional Materials

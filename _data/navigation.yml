@@ -65,7 +65,9 @@ materials:
       - title: "EDA & Data Visualization"
         url: /materials/interpreting-communicating-humanities-data/02-eda-data-viz
       - title: "Introduction to Structuring Data"
-        url: /materials/interpreting-communicating-humanities-data/03-intro-text
+        url: /materials/interpreting-communicating-humanities-data/03-intro-structuring-data
+      - title: "Exploring Computational Methods for Cultural Data"
+        url: /materials/interpreting-communicating-humanities-data/04-advanced-computational-methods/
         
 schedule:
   - title: Overview

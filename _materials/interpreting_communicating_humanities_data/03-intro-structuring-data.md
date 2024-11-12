@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Unstructured Text Data"
-permalink: /materials/interpreting-communicating-humanities-data/03-intro-text
+title: "Introduction to Structuring Data"
+permalink: /materials/interpreting-communicating-humanities-data/03-intro-structuring-data/
 toc: true
 altair: true
 ---
@@ -651,7 +651,37 @@ We notice that stemming lowercased the words, but it did not remove the punctuat
 	</a>
 </figure>
 
-Stop words are the most common words in a language, and they are often removed from text data because they do not contain much information. For example, the words `the`, `and`, and `of` are common stop words in English. NLTK has a built-in list of stop words for many languages, which you can access using the `nltk.corpus` module. You can read more about the stop words in NLTK here [https://www.nltk.org/book/ch02.html](https://www.nltk.org/book/ch02.html).
+*Stop words* are a term for the most common words in a language, and they are often removed from text data because they do not contain much information. The term was coined by Hans Peter Luhn in 1958, when he was developing the concept of Keywords In Context (KWIC) indexing.
+
+<table>
+  <tr>
+    <td>
+      <figure>
+        <a href="{{site.baseurl}}/assets/images/luhn_paper.png">
+          <img src="{{site.baseurl}}/assets/images/luhn_paper.png" class="image-popup">
+        </a>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <a href="{{site.baseurl}}/assets/images/kwic_example.png">
+          <img src="{{site.baseurl}}/assets/images/kwic_example.png" class="image-popup">
+        </a>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;">
+      Images from Luhn, H. P. “Key Word-in-Context Index for Technical Literature (Kwic Index).” <em>American Documentation</em> 11, no. 4 (1960): 288–95. <a href="https://doi.org/10.1002/asi.5090110403">https://doi.org/10.1002/asi.5090110403</a>.
+    </td>
+  </tr>
+</table>
+
+KWIC is part of information retrieval, and is a way of indexing text data that allows you to quickly find the context of a word in a document. It is a common way of indexing text data, and it is often used in search engines to quickly find the context of a word in a document.
+
+Part of why stop words are so important for KWIC or just text analysis generally is that because we now know that the most common words will have a disproportionately high frequency in a text due to Zipf's law, so if we don't remove them then they overwhelm many methods for information retrieval or modeling.
+
+For example, the words `the`, `and`, and `of` are some of the most common stop words in English. NLTK has a built-in list of stop words for many languages, which you can access using the `nltk.corpus` module. You can read more about the stop words in NLTK here [https://www.nltk.org/book/ch02.html](https://www.nltk.org/book/ch02.html).
 
 ```python
 from nltk.corpus import stopwords
@@ -660,7 +690,13 @@ stop_words = set(stopwords.words('english'))
 print(stop_words)
 ```
 
-This code will print out the list of stop words in English. You can see that there are many common words in this list, like `the`, `and`, and `of`. We can use this list to remove stop words from our text data.
+Which would give us the following output:
+
+```shell
+then, more, so, ain, d, off, which, have, her, few, weren't, where, aren't, has, only, for, didn, was, from, our, further, haven't, in, doesn't, very, before, all, o, is, you, some, not, are, ll, won, through, nor, hadn't, than, again, too, hasn't, most, ours, other, shan't, why, shouldn, isn, wasn't, down, theirs, above, will, what, once, doing, hadn, am, my, hasn, such, herself, s, shan, been, your, if, at, below, that, she's, now, these, as, won't, whom, mightn, to, y, should've, any, ma, yourselves, each, that'll, yourself, being, ve, his, up, mightn't, you'd, did, do, haven, mustn't, wouldn, didn't, but, don't, mustn, you're, them, because, she, by, aren, over, weren, between, having, those, had, until, an, about, themselves, their, can, it's, against, re, how, and, couldn't, during, after, needn, or, doesn, wasn, we, a, just, should, you've, here, shouldn't, while, ourselves, hers, were, there, you'll, into, of, no, m, isn't, out, on, myself, me, with, needn't, him, it, he, same, himself, when, its, under, own, yours, itself, don, couldn, they, both, does, be, this, the, wouldn't, t, who, i
+```
+
+We can use this list to remove stop words from our text data.
 
 ```python
 def remove_stop_words(row):
@@ -669,158 +705,28 @@ def remove_stop_words(row):
 test_df['stop_words_removed_text'] = test_df['pg_eng_text'].apply(remove_stop_words)
 ```
 
-### Advanced Text Analysis Exploration
-
-Now that you are starting to learn the basics of text analysis, you can start to explore more advanced techniques that you might want to use in your final project. Today I will be sharing code to help you get started with some information extraction using Named Entity Recognition and information retrieval using TF-IDF. Your goal is to get the code running and to see if you can start to understand how these techniques can be used to analyze text data.
-
-Before you start though, one issue we haven't addressed is the fact that each Project Gutenberg book has a header and footer that we might want to remove before we start our analysis. This is a common issue with text data, and it is often called "noise" in the data. We could use regular expressions to remove this data, but there's also existing Python libraries for working with Project Gutenberg data. In particular, I've used the `gutenbergpy` library in the to clean our novels. You can find information about the library here [https://github.com/raduangelescu/gutenbergpy](https://github.com/raduangelescu/gutenbergpy) and install it with the following command:
-
-```bash
-pip install gutenbergpy
-```
-
-In particular, this library has a set of text markers that it uses to remove the headers and footers that you can see here [https://github.com/raduangelescu/gutenbergpy/blob/master/gutenbergpy/textget.py#L23](https://github.com/raduangelescu/gutenbergpy/blob/master/gutenbergpy/textget.py#L23) and in this figure:
+However, as much as this is a common step in text analysis, it is again an interpretative one. If you remember to the start of the course, we discussed how AI crawlers filter out content from the web based on the "List of Dirty, Naughty, Obscene, and Otherwise Bad Words" that you can find here [https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words).
 
 <figure>
-	<a href="{{site.baseurl}}/assets/images/gutenbergpy_markers.png">
-	<img src="{{site.baseurl}}/assets/images/gutenbergpy_markers.png" class="image-popup">
+	<a href="{{site.baseurl}}/assets/images/naughty_list.png">
+	<img src="{{site.baseurl}}/assets/images/naughty_list.png" class="image-popup">
 	</a>
 </figure>
 
-To use the library, you can use the following code:
+As we discussed, such a crude method often filters out materials from more marginalized communities, and in many ways stop words can potentially do the same if we are not careful.
+
+One of the ways to avoid unintentionally filtering out this information is to actually inspect the stop words list and see if there are any words that you might want to keep. For example, in the NLTK stop words list, we see that `not` is a stop word, but in many cases it is a very important word for sentiment analysis. So we might want to remove it from the list of stop words.
 
 ```python
-import gutenbergpy.textget
-
-def clean_book(row):
-	# This gets a book by its gutenberg id number
-	if pd.notna(row['pg_eng_url']):
-		pg_id = row['pg_eng_url'].split('/pg')[-1].split('.')[0]
-		try:
-			raw_book = gutenbergpy.textget.get_text_by_id(pg_id) # with headers
-			clean_book = gutenbergpy.textget.strip_headers(raw_book) # without headers
-			return clean_book
-		except Exception as e:
-			print(f"Error getting book: {e} with id: {pg_id} and url: {row['pg_eng_url']}")
-			return None
-
-combined_novels_nyt_df['cleaned_pg_eng_text'] = combined_novels_nyt_df.progress_apply(clean_book, axis=1)
+stop_words.remove('not')
 ```
 
-This code will get the text of the book by its Project Gutenberg ID, which we are deriving from the Gutenberg URL, and then remove the headers and footers. Such a step is necessary since otherwise the headers and footers would be included in our text analysis, which would skew our results.
-
-You can download the notebook with the full code for this lesson <a href="{{site.baseurl}}/assets/files/is310IntroTextAnalysis.ipynb" download>here</a>.
-
-#### Named Entity Recognition (NER)
-
-What is Named Entity Recognition?
-
-From the [Wikipedia article](https://en.wikipedia.org/wiki/Named-entity_recognition):
-
-> “Named-entity recognition (NER) (also known as (named) entity identification, entity chunking, and entity extraction) is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined categories such as person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc.”
-
-What does this look like in practice? Let's look at a few examples.
-
-<figure>
-	<a href="https://miro.medium.com/max/1400/0*zDbB-LV-Dlm_F_PX">
-	<img src="https://miro.medium.com/max/1400/0*zDbB-LV-Dlm_F_PX" class="image-popup">
-	</a>
-</figure>
-
-<figure>
-	<a href="https://miro.medium.com/max/1400/1*w4449DJGuXlay02gFt8APg.png">
-	<img src="https://miro.medium.com/max/1400/1*w4449DJGuXlay02gFt8APg.png" class="image-popup">
-	</a>
-</figure>
-
-We can see that in these images, parts of the text are being highlighted and classified as different categories (or **entities** if you will). Many of these examples might seem straightforward, but how do we decide what is an entity exactly? And how did NER become a defined field instead of just being part of text mining?
-
-<figure>
-	<a href="https://miro.medium.com/max/1400/1*Uf_qQ0zF8G8y9zUhndA08w.png">
-	<img src="https://miro.medium.com/max/1400/1*Uf_qQ0zF8G8y9zUhndA08w.png" class="image-popup">
-	</a>
-</figure>
-
-This graph represents a common typology of NLP tasks, comparing it to Natural Language Understanding and Automatic Speech Recognition.
-
-While technically correct, I find this graph confusing 🤔. The exact definition of NER’s boundaries relative to other nlp/nlu tasks is very porous. For example, in addition to recognizing entities, NER can also include parts of text classification, entity disambiguation, relationship extraction all parts of NER (though they are separated in this chart).
-
-*So if this is so porous how did NER first develop?*
-
-<figure>
-	<a href="https://en.wikipedia.org/wiki/Information_extraction#History">
-	<img src="{{site.baseurl}}/assets/images/ner_history.png" class="image-popup">
-	</a>
-</figure>
-
-From this Wiki page, we can see that the concept of “named entity” first developed at the Message Understanding Conference-6 in 1995. Here’s an example template given to participants from MUC-3 and you can even read the original MUC manual here <https://www-nlpir.nist.gov/related_projects/muc/muc_sw/muc_sw_manual.html>:
-
-<figure>
-	<a href="{{site.baseurl}}/assets/images/muc_example.png">
-	<img src="{{site.baseurl}}/assets/images/muc_example.png" class="image-popup">
-	</a>
-</figure>
-
-The big takeaway is that NER is relatively new. The field really takes off as a field with Text Analysis Conferences beginning in 2009 <https://tac.nist.gov/> and it is also relatively recent in digital humanities.
-
-The first DH conference presentation listing NER as a topic was in 2004:
-
-<figure>
-	<a href="https://dh-abstracts.library.cmu.edu/works?ordering=year&text=%22named+entity+recognition%22&conference=&work_type=">
-	<img src="{{site.baseurl}}/assets/images/dh_ner_conference.png" class="image-popup">
-	</a>
-</figure>
-
-
-
-#### TF-IDF & Stop Words	
-
-So far we have been focused on counting and cleaning our textual data, but we could also try some more complex Information Retrieval techniques. One popular approach is an algorithm called `Term Frequency - Inverse Document Frequency` or TF-IDF. TF-IDF was first proposed in a 1972 paper by Karen Spärck Jones under the name “term specificity” and was later named TF-IDF by Steve Robertson in 1976. The algorithm is used to determine the importance of a word in a document relative to a collection of documents. The algorithm is based on the idea that a word is important if it appears frequently in a document, but infrequently in the rest of the documents in the collection.
-
-<div class="notice--info">⚡️ Great resources for learning more about TF-IDF are: <a href="https://programminghistorian.org/en/lessons/analyzing-documents-with-tfidf"> Matthew J. Lavin, "Analyzing Documents with TF-IDF," <i>Programming Historian</i> 8 (2019)</a> and <a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/05-Text-Analysis/01-TF-IDF.html" >Melanie Walsh's Textbook</a></div>
-
-The reason TF-IDF is so popular is because it is intended to surface terms that are distinctive across as set of documents (or a **corpus**). Often times with word counting you get lots of high frequency words (remember Zipf's law) but these words aren't always helpful if you are trying to understand the concepts within the text. High frequency words are more useful for author attribution.
-
-So the way TF-IDF works is the following operations as visualized in this diagram:
-
-<figure>
-    <a href="https://miro.medium.com/max/1200/1*qQgnyPLDIkUmeZKN2_ZWbQ.png">
-    <img src="https://miro.medium.com/max/1200/1*qQgnyPLDIkUmeZKN2_ZWbQ.png" class="image-popup">
-    </a>
-</figure>
-
-To break this down into code it really looks like the following:
-
-```python
-term_frequency = number of times a given term appears in document
-
-inverse_document_frequency = log(total number of documents / number of documents with term) + 1*****
-
-tf-idf = term_frequency * inverse_document_frequency
-```
-
-### Text Analysis with Python
-
-So far we've just been working with Pandas, but in Python, there exists a few libraries specifically designed to work with text data.
-
-- NLTK [https://www.nltk.org/](https://www.nltk.org/)
-
-- SPACY [https://spacy.io/](https://spacy.io/)
-
-- SCIKIT-LEARN [https://scikit-learn.org/stable/](https://scikit-learn.org/stable/)
-
-Each of these libraries has its own history, and some of what they provide overlaps. Here's a helpful chart outlining some of their pros and cons.
-
-<figure>
-    <a href="https://activewizards.com/content/blog/Comparison_of_Python_NLP_libraries/nlp-librares-python-prs-and-cons01.png">
-    <img src="https://activewizards.com/content/blog/Comparison_of_Python_NLP_libraries/nlp-librares-python-prs-and-cons01.png" class="image-popup">
-    </a>
-</figure>
-
-Ultimately, which library you choose to use depends on what you want to do with your data, but there's some general principles for text analysis that you should consider regardless of method.
+We can also create our own custom stop words list. For example, many digital humanists are working on projects to develop custom stop words lists for historic or under-resourced languages, since most commercially available lists are only for either the most popular languages or even more often only European languages.[^2] Before we go deeper though, we should start to explore some of the more advanced text analysis methods since that can help us determine some of these interpretative choices, which we will do in the next lesson.
 
 ---
-[^1] if you want to learn more I would highly recommend taking a look at François Dominic Laramée, "Introduction to stylometry with Python," *Programming Historian* 7 (2018), [https://doi.org/10.46430/phen0078](https://doi.org/10.46430/phen0078). Stylometry is the formal name for this type of analysis and it is a both a popular method for working with cultural data and one with a longer history. For example, in the 1960s the authorship of the Federalist Papers was determined using stylometry.
+[^1]: If you want to learn more I would highly recommend taking a look at François Dominic Laramée, "Introduction to stylometry with Python," *Programming Historian* 7 (2018), [https://doi.org/10.46430/phen0078](https://doi.org/10.46430/phen0078). Stylometry is the formal name for this type of analysis and it is a both a popular method for working with cultural data and one with a longer history. For example, in the 1960s the authorship of the Federalist Papers was determined using stylometry.
+[^2]: Burns, Patrick J. “Constructing Stoplists for Historical Languages.” *Digital Classics Online*, December 5, 2018, 4–20. [https://doi.org/10.11588/dco.2018.2.52124](https://doi.org/10.11588/dco.2018.2.52124).
+
 
 <script>
     var json_file = "{{site.baseurl}}/assets/files/word_counting_length.json";

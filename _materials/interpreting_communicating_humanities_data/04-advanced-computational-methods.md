@@ -290,12 +290,59 @@ Each of these libraries has its own history, and some of what they provide overl
 
 Ultimately, which library you choose to use depends on what you want to do with your data, but there's some general principles for text analysis that you should consider regardless of method.
 
-**Resources**
+## Resources
 
-We have only briefly touched on the possibilities of text analysis in this lesson. There are many more techniques and algorithms that you can use to explore textual data. Here are some resources to help you learn more about text analysis:
+We have only briefly touched on the possibilities of text analysis in this lesson. There are many more techniques and algorithms that you can use to explore cultural data. Please be sure to take a look at the list of resources in the Computing Cultural Data assignment for more information (available [here]({{site.baseurl}}/computing-cultural-data/#selected-relevant-journals-and-example-projects)).
 
-- Thomas Jurczyk, "Clustering with Scikit-Learn in Python," Programming Historian 10 (2021), https://doi.org/10.46430/phen0094.
-- Matthew J. Lavin, "Regression Analysis with Scikit-Learn (part 1 - Linear)," Programming Historian 11 (2022), https://doi.org/10.46430/phen0099.
-- Matthew J. Lavin, "Regression Analysis with Scikit-Learn (part 2 - Logistic)," Programming Historian 11 (2022), https://doi.org/10.46430/phen0100.
-- John R. Ladd, "Understanding and Using Common Similarity Measures for Text Analysis," Programming Historian 9 (2020), https://doi.org/10.46430/phen0089.
-- Matthew J. Lavin, "Analyzing Documents with TF-IDF," Programming Historian 8 (2019), https://doi.org/10.46430/phen0082.
+**Peer Reviewed Tutorials**
+
+This list is not exhaustive and I would highly recommend taking a look at other resources that have been shared throughout the semester.
+
+- Thomas Jurczyk, "Clustering with Scikit-Learn in Python," *Programming Historian* 10 (2021), [https://doi.org/10.46430/phen0094](https://doi.org/10.46430/phen0094).
+- Matthew J. Lavin, "Regression Analysis with Scikit-Learn (part 1 - Linear)," *Programming Historian* 11 (2022), [https://doi.org/10.46430/phen0099](https://doi.org/10.46430/phen0099).
+- Matthew J. Lavin, "Regression Analysis with Scikit-Learn (part 2 - Logistic)," *Programming Historian* 11 (2022), [https://doi.org/10.46430/phen0100](https://doi.org/10.46430/phen0100).
+- John R. Ladd, "Understanding and Using Common Similarity Measures for Text Analysis," *Programming Historian* 9 (2020), [https://doi.org/10.46430/phen0089](https://doi.org/10.46430/phen0089).
+- Matthew J. Lavin, "Analyzing Documents with TF-IDF," *Programming Historian* 8 (2019), [https://doi.org/10.46430/phen0082](https://doi.org/10.46430/phen0082).
+
+**Peer Reviewed Papers**
+
+This list is not exhaustive and is primarily drawn from my graduate course, *Culture At Scale* (which you can see the syllabi here, [Spring 2024](https://zoeleblanc.com/assets/pdf/IS597SyllabusSpring2024.pdf) and [Spring 2023](https://zoeleblanc.com/courses/3_course/)). I've only included articles that have publicly accessible code and their order is random. Some of these articles are quite dense, so you should ask both the instructors and AI tools for help with the sections you don't understand.
+
+- Kleymann, Rabea, Andreas Niekler, and Manuel Burghardt. “Conceptual Forays: A Corpus-Based Study of ‘Theory’ in Digital Humanities Journals.” *Journal of Cultural Analytics* 7, no. 4 (December 19, 2022). [https://doi.org/10.22148/001c.55507](https://doi.org/10.22148/001c.55507)
+  - Code for Conceptual Forays [https://github.com/theory-in-dh/conceptual_forays](https://github.com/theory-in-dh/conceptual_forays)
+
+- Sinykin, Dan, and Edwin Roland. "Against Conglomeration." *Journal of Cultural Analytics* 6, no. 2 (April 20, 2021). [https://doi.org/10.22148/001c.22331](https://doi.org/10.22148/001c.22331)
+  - Sinykin, Daniel; Edwin Roland, 2021, "Replication Data for: Against Conglomeration", [https://doi.org/10.7910/DVN/EUPMKL](https://doi.org/10.7910/DVN/EUPMKL), Harvard Dataverse, V1
+
+- McNulty, Tess. "Content-Era Ethics." *Journal of Cultural Analytics* 6, no. 2 (April 20, 2021). [https://doi.org/10.22148/001c.22220](https://doi.org/10.22148/001c.22220)
+  - Mcnulty, Tess, 2021, "Replication Data for: Content-Era Ethics", [https://doi.org/10.7910/DVN/S3DFCU](https://doi.org/10.7910/DVN/S3DFCU), Harvard Dataverse, V1
+
+- Mullen, Lincoln A. *America's Public Bible: A Commentary*. Stanford University Press, 2023. [https://americaspublicbible.supdigital.org](https://americaspublicbible.supdigital.org)
+  - Code for America's Public Bible [https://github.com/lmullen/americas-public-bible](https://github.com/lmullen/americas-public-bible)
+
+- Funk, Kellen, and Lincoln A. Mullen. "The Spine of American Law: Digital Text Analysis and U.S. Legal Practice (Annotated Version)," 2021. [https://doi.org/10.31835/ma.2021.07](https://doi.org/10.31835/ma.2021.07)
+  - Code for The Spine of American Law [https://github.com/lmullen/civil-procedure-codes/](https://github.com/lmullen/civil-procedure-codes/)
+
+- Cheng, Jonathan. "Fleshing Out Models of Gender in English-Language Novels (1850 -- 2000)." *Journal of Cultural Analytics* 5, no. 1 (January 29, 2020). [https://doi.org/10.22148/001c.11652](https://doi.org/10.22148/001c.11652)
+  - Cheng, Jonathan, 2020, "Replication Data for: Fleshing Out Models of Gender in English-Language Novels", [https://doi.org/10.7910/DVN/QUGW8V](https://doi.org/10.7910/DVN/QUGW8V), Harvard Dataverse, V1
+
+- Soni, Sandeep, Lauren F. Klein, and Jacob Eisenstein. "Abolitionist Networks: Modeling Language Change in Nineteenth-Century Activist Newspapers." *Journal of Cultural Analytics* 6, no. 1 (January 18, 2021). [https://doi.org/10.22148/001c.18841](https://doi.org/10.22148/001c.18841)
+  - Code for Abolitionist Networks [https://github.com/sandeepsoni/semantic-leadership-network](https://github.com/sandeepsoni/semantic-leadership-network)
+
+- Underwood, Ted, Kevin Kiley, Wenyi Shang, and Stephen Vaisey. "Cohort Succession Explains Most Change in Literary Culture." *Sociological Science* 9 (May 2, 2022): 184--205. [https://doi.org/10.15195/v9.a8](https://doi.org/10.15195/v9.a8)
+  - Code for Cohort Succession [https://github.com/tedunderwood/period-cohort](https://github.com/tedunderwood/period-cohort)
+
+- Vicinanza, Paul, Amir Goldberg, and Sameer B Srivastava. "A Deep-Learning Model of Prescient Ideas Demonstrates That They Emerge from the Periphery." *PNAS* Nexus 2, no. 1 (January 1, 2023): pgac275. [https://doi.org/10.1093/pnasnexus/pgac275](https://doi.org/10.1093/pnasnexus/pgac275)
+  - Code for Prescient Ideas [https://github.com/pvicinanza/prescience](https://github.com/pvicinanza/prescience)
+
+- Arnold, Taylor, and Lauren Tilton. "Distant Viewing: Analyzing Large Visual Corpora." *Digital Scholarship in the Humanities* 34, no. Supplement_1 (December 1, 2019): i3--16. [https://doi.org/10.1093/llc/fqz013](https://doi.org/10.1093/llc/fqz013)
+  - Code for Distant Viewing [https://github.com/distant-viewing/dvt](https://github.com/distant-viewing/dvt)
+
+- Arnold, Taylor, Lauren Tilton, and Annie Berke. "Visual Style in Two Network Era Sitcoms." *Journal of Cultural Analytics* 4, no. 2 (July 19, 2019). [https://doi.org/10.22148/16.043](https://doi.org/10.22148/16.043)
+  - Arnold, Taylor, 2019, "Replication data for: "A Visual Style in Two Network Sitcoms" by Taylor Arnold, Lauren Tilton, and Annie Berke.", [https://doi.org/10.7910/DVN/S84TSX](https://doi.org/10.7910/DVN/S84TSX), Harvard Dataverse, V1
+
+- Koeser, Rebecca Sutton, and Zoe LeBlanc. “Missing Data, Speculative Reading.” *Journal of Cultural Analytics*, vol. 9, no. 2, May 2024, [https://doi.org/10.22148/001c.116926](https://doi.org/10.22148/001c.116926)
+  - Code and data used for this article is accessible on [https://github.com/rlskoeser/shxco-missingdata-specreading](https://github.com/rlskoeser/shxco-missingdata-specreading).
+
+- Henley, Amanda, Lorin Bruckner, Hannah Jacobs, Matthew Jansen, Brianna Nunez, Rolando Rodriguez, and Morgan Wilson. “On the Books: Jim Crow and Algorithms of Resistance, a Collections as Data Case Study.” *ACM J. Comput. Cult. Herit.* 16, no. 4 (January 8, 2024): 85:1-85:20. [https://doi.org/10.1145/3631128](https://doi.org/10.1145/3631128).
+  - Code and data used for this article is accessible on [https://github.com/UNC-Libraries-data/OnTheBooks](https://github.com/UNC-Libraries-data/OnTheBooks0.

@@ -708,8 +708,8 @@ test_df['stop_words_removed_text'] = test_df['pg_eng_text'].apply(remove_stop_wo
 However, as much as this is a common step in text analysis, it is again an interpretative one. If you remember to the start of the course, we discussed how AI crawlers filter out content from the web based on the "List of Dirty, Naughty, Obscene, and Otherwise Bad Words" that you can find here [https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words](https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words).
 
 <figure>
-	<a href="{{site.baseurl}}/assets/images/naughty_list.png">
-	<img src="{{site.baseurl}}/assets/images/naughty_list.png" class="image-popup">
+	<a href="{{site.baseurl}}/assets/images/naughty_words_list.png">
+	<img src="{{site.baseurl}}/assets/images/naughty_words_list.png" class="image-popup">
 	</a>
 </figure>
 

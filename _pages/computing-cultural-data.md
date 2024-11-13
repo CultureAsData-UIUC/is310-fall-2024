@@ -43,6 +43,8 @@ The final piece of this assignment is using this research as a foundation to dec
 
 You should document your research, assessments, and selected methods in your group GitHub repository, as well as how you divided the labor and any issues you encountered. How you organize this documentation is up to you but I would highly encourage you to include links to all relevant scholarship and any screenshots or even code and data that you found useful. As a reminder, selected groups will also be presenting their findings in class on the day this assignment is due.
 
+In addition to the resources below, you might also take a look at the list in our lesson on [Exploring Computational Methods for Cultural Data]({{site.baseurl}}/materials/interpreting-communicating-humanities-data/04-advanced-computational-methods/#resources).
+
 ### Resources for Finding Relevant Scholarship
 
 - Google Scholar [https://scholar.google.com/](https://scholar.google.com/)

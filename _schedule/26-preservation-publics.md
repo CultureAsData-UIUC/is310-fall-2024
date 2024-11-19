@@ -12,7 +12,7 @@ class_date: 2024-11-21
 
 ## Assigned Materials
 
-- D’Ignazio, Catherine, and Lauren F. Klein. “Show Your Work.” In *Data Feminism*. The MIT Press, 2020. [https://doi.org/10.7551/mitpress/11805.001.0001](https://doi.org/10.7551/mitpress/11805.001.0001).
+- D’Ignazio, Catherine, and Lauren F. Klein. “Show Your Work.” In *Data Feminism*. The MIT Press, 2020. [https://direct.mit.edu/books/book/4660/chapter/213292/Show-Your-Work](https://direct.mit.edu/books/book/4660/chapter/213292/Show-Your-Work). This is a PDF reading so if you want to use Hypothesis to annotate, you will need to open your local version of the PDF in your browser. For help, please refer to our [Hypothesis guide]({{site.baseurl}}/materials/introducing-humanities-computing/01-course-tools/#using-hypothesis-on-local-pdfs).
 - Explore this online book from The Turing Way Community. (2022). *The Turing Way: A handbook for reproducible, ethical and collaborative research* (1.0.2). Zenodo. DOI 10.5281/zenodo.3233853. **Come to class with at least one question or idea from the book that you think might be relevant to your final project**. [https://book.the-turing-way.org/](https://book.the-turing-way.org/).
 
 

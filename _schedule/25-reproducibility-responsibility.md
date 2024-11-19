@@ -10,7 +10,7 @@ class_date: 2024-11-19
 - [ ] Continue remaining group presentations for [Computing Cultural Data Assignment]({{site.baseurl}}/computing-cultural-data/).
 - [ ] Discuss the assigned readings
 
-## Assigned Materials
+## Assigned Materials (Now for Thursday November 21)
 
 - Nowviskie, Bethany. “Reconstitute the World.” Bethany Nowviskie, June 12, 2018. [http://nowviskie.org/2018/reconstitute-the-world/](http://nowviskie.org/2018/reconstitute-the-world/).
 - Ding, Jennifer, Jan Diehm, and Michelle McGhee. “Can Data Die? Tracking the Lenna Image.” *The Pudding*, October 2021. [https://pudding.cool/2021/10/lenna/](https://pudding.cool/2021/10/lenna/).

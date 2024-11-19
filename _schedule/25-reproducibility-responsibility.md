@@ -19,6 +19,11 @@ class_date: 2024-11-19
 
 - Klein, Lauren F., and Sandeep Soni. “How Words Lead to Justice.” *Public Books*, August 17, 2021. [https://www.publicbooks.org/how-words-lead-to-justice/](https://www.publicbooks.org/how-words-lead-to-justice/).
 
+### Additional Links
+
+- *Collections As Data* Project [https://collectionsasdata.github.io/](https://collectionsasdata.github.io/)
+- Padilla, Thomas, Scates Kettler, Hannah, Varner, Stewart, & Shorish, Yasmeen.(2023).*Vancouver Statement on Collections as Data*.Zenodo. [https://zenodo.org/records/8342171](https://zenodo.org/records/8342171).
+
 ## Assignments
 
 ### Individual

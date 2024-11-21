@@ -22,3 +22,9 @@ class_date: 2024-11-21
 - Posner, Miriam. “JavaScript Is for Girls.” *Logic(s) Magazine*, March 15, 2017. [https://logicmag.io/intelligence/javascript-is-for-girls/](https://logicmag.io/intelligence/javascript-is-for-girls/).
 - Dombrowski, Quinn. “Minimizing Computing Maximizes Labor.” *Digital Humanities Quarterly* 016, no. 2 (June 25, 2022).
 - Kinnaman, Alex, and Corinne Guimont. “DH as Data: Establishing Greater Access through Sustainability.” *Digital Humanities Quarterly* 017, no. 3 (August 24, 2023). [https://www.digitalhumanities.org/dhq/vol/17/3/000715/000715.html](https://www.digitalhumanities.org/dhq/vol/17/3/000715/000715.html).
+
+### Additional Links
+
+- *Collections As Data* Project [https://collectionsasdata.github.io/](https://collectionsasdata.github.io/)
+- Padilla, Thomas, Scates Kettler, Hannah, Varner, Stewart, & Shorish, Yasmeen.(2023).*Vancouver Statement on Collections as Data*.Zenodo. [https://zenodo.org/records/8342171](https://zenodo.org/records/8342171).
+- Clement, Tanya E., Douglas Reside, Brian Croxall, Julia Flanders, Neil Fraistat, Steve Jones, Matt Kirschenbaum, et al. “Collaborators’ Bill of Rights,” 2021. [https://doi.org/10.17613/mvar-kj35](https://doi.org/10.17613/mvar-kj35).

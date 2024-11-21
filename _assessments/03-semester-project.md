@@ -117,11 +117,23 @@ After creating your dataset, the next crucial step is to experiment with it usin
 - **Choosing Computational Methods**: Your group will select one or more computational methods that are appropriate for your dataset. These might include text analysis, network analysis, topic modeling, or other techniques relevant to your research focus. The methods you choose should align with your research question and be capable of revealing important patterns or trends within your data. You are encouraged to consult with the Instructor about potential methods.
 - **Applying the Methods**: Once you’ve chosen your methods, you will attempt to apply them to your dataset. You are again encouraged to consult the Instructor for assistance with applying these methods, as well as using AI chatbots. You will be primarily assessed on your efforts to apply the method, not on the success of your result. This process allows you to test the data’s validity and robustness. You may find that certain aspects of the data need revision, such as missing variables, inconsistent formatting, or incomplete entries. The results of these experiments will guide your next steps in refining the dataset.
 
+3. Documentation and Reflection
+
+- **Documenting the Process**: As with previous submissions, you must document the process of experimentation, including the methods you used, the results you obtained, and any issues you encountered. This documentation should be detailed and transparent, allowing others to understand your process and replicate your work. It should also include some reflection on how you divided the labor and collaborated on this phase of the project.
+- **Reflecting & Submitting**: You are welcome to submit the update in any format you choose, though it should be in your group's GitHub repository, and should include all code and data used to experiment with the dataset. Finally, you are strongly encouraged to reflect on your experiment and speculate on what you or others might do next with the dataset.
+
 ## Demo Data Day 5% 
 
 **DUE DECEMBER 10, 2024 (Hard Deadline)**
 
-Our final class meeting will be devoted to presenting your projects, with more details forthcoming as logistics are finalized. 
+Our final class meeting will be devoted to presenting your projects, with each group having 10-12 minutes to present their project, followed by a 3-5 minute Q&A session. This will be a chance to showcase your work, reflect on your process, and receive feedback from your peers and the instructors. The presentation should include the following components:
+
+1. **Introduction**: Briefly introduce your group and your project, including the cultural practice or object you are studying and the research question you are exploring. Provide an overview of your dataset and its creation process.
+2. **Dataset Demonstration**: Demonstrate your dataset and its structure, highlighting key data fields and any unique features. Discuss how the dataset was created and any challenges you encountered along the way.
+3. **Experimentation Results**: Share the results of your computational experiments, including any insights you gained from applying different methods to your dataset. Discuss how these experiments informed your understanding of the data and its potential uses.
+4. **Reflection and Future Directions**: Reflect on your project as a whole, considering what you learned from the process and how you might continue to develop the dataset in the future. You are also welcome to connect your reflections to readings from the course or beyond. You should discuss any limitations or challenges you faced and how you addressed them, whether that is barriers to accessing the data or difficulties in collaborating with your group.
+
+You are welcome to use slides or other visual aids to support your presentation, but you can also simply present your GitHub repository or other materials directly. The goal is to communicate your work clearly and effectively, highlighting the key aspects of your project and how it engages with the broader themes of the course.
 
 ## Final Project Submission 25% 
 

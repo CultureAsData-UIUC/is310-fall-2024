@@ -7,8 +7,7 @@ class_date: 2024-12-03
 
 ## In-Class Agenda
 
-- [ ] Revisit the *Responsible Datasets in Context* Project and discuss their format and approach to dataset creation, curation, and documentation.
-- [ ] Work on final projects.
+- [ ] Work on final projects, using the *Responsible Datasets in Context* Project and the The Turing Way Community. (2022). *The Turing Way: A handbook for reproducible, ethical and collaborative research* (1.0.2). Zenodo. DOI 10.5281/zenodo.3233853. [https://book.the-turing-way.org/](https://book.the-turing-way.org/) as resources to guide your work.
 
 ## Additional Materials
 
